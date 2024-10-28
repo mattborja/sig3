@@ -40,21 +40,20 @@ DCAA15007BED9DE690CD9523378B845402277962:
 ```
 
 ## Contributing
-
 This repository is open to contributions via pull requests under the following guidelines:
 
 - **MUST** implement entire Schema to build YAML content for the identity assertion
 - **MUST** provide at least 1-2 valid references (`refs`) substantiating proposed `validity`
 - **MUST** use full length (160-bits) and uppercased format wherever GPG fingerprints are presented
-- **MUST** clearsign, armor, and comment YAML content with your own GPG Key, using appropriate filename formatted as full length GPG fingerprint, uppercased
+- **SHOULD** clearsign, armor, and comment YAML content with your own GPG Key, using appropriate filename formatted as full length GPG fingerprint, uppercased
   - Example: `gpg --clearsign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Scott Cantor" --output DCAA15007BED9DE690CD9523378B845402277962.yml.asc`
-- **MUST** have your own GPG key publicly available at one or more approved key servers ([Ubuntu](https://keyserver.ubuntu.com/), [OpenPGP](https://keys.openpgp.org/))
+- **SHOULD** have your own GPG key publicly available at one or more approved key servers ([Ubuntu](https://keyserver.ubuntu.com/), [OpenPGP](https://keys.openpgp.org/))
 - **SHOULD** include as many valid references as possible certifying validity of key ownership
 - Limit **one (1) identity assertion** per pull request
 - All submissions are ultimately subject to initial and recurring review and approval
 
 ### Pull Request Example
-The following example is considered complete for the purpose of submitting an acceptable pull request:
+The following example is considered ideally complete for the purpose of submitting an acceptable pull request:
 
 **Filename:** `DCAA15007BED9DE690CD9523378B845402277962.yml.asc`
 
