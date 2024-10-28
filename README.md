@@ -12,7 +12,8 @@ This repository provides a registry for identity assertion claims, detailing the
   - **`date`**: The date when the verification or cross-signing occurred.
   - **`comment`**: Notes regarding the verification process.
   - **`url`**: A link to relevant documentation or evidence.
-  - **`type`**: The type of verification performed (e.g., `live`, `cross-sign`).
+  - **`type`**: The type of verification performed
+    - Options: `live`, `cross-sign`, `role`
 - **`tags`**: Keywords for categorizing the identity assertion (e.g., roles, organizations).
 - **`summary`**: Brief overview of the key holder's role and ownership claims.
   - **`role`**: Description of the key holder's role.
