@@ -3,8 +3,9 @@
 This repository provides a registry for identity assertion claims, detailing the minimal information needed to substantiate each claim and its validity level.
 
 ## Schema
-**Key**: The unique fingerprint identifier for the GPG key.
-**Fields**
+**Key**: The full length unique fingerprint identifier for the GPG key being attested.
+
+**Fields:**
 - **`label`**: The name of the key holder (e.g., `Scott Cantor`).
 - **`validity`**: Indicates the status of the identity assertion.
   - Options: `full`, `marginal`, `revoked`, `none`
@@ -43,12 +44,18 @@ DCAA15007BED9DE690CD9523378B845402277962:
 This repository is open to contributions via pull requests under the following guidelines:
 
 - **MUST** implement entire Schema
+- **MUST** present full length GPG fingerprint uppercased wherever used
 - **MUST** provide at least 1-2 valid references (`refs`) substantiating proposed `validity`
-- **MUST** be clearsigned by your GPG Key and armored (`gpg --clerasign --armor --local-user <YOUR-KEY-ID>`)
+- **MUST** specify full length GPG fingerprint uppercased as the filename ending in *.yml
+- **MUST** have YAML content be clearsigned by your GPG Key and armored, with comment (`gpg --clerasign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Scott Cantor"`)
 - Limit **one (1) claim** per pull request
 - All submissions are ultimately subject to initial and recurring review and approval
 
 ### Pull Request Example
+The following example is considered complete for the purpose of submitting an acceptable pull request:
+
+**Filename:** `DCAA15007BED9DE690CD9523378B845402277962.yml.asc`
+
 ```
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
@@ -68,6 +75,7 @@ DCAA15007BED9DE690CD9523378B845402277962:
   tags:
     - Shibboleth
 -----BEGIN PGP SIGNATURE-----
+Comment: Verified GPG key for Scott Cantor
 
 iHUEARYKAB0WIQTUGoPhxrcBYZ0NgS/D9p0b5ry9FgUCZx9QSwAKCRDD9p0b5ry9
 FpOjAP9qLKmmiskSNMrvKF9rXnRVYxb5w7qDokdp1Lw6gO+PgAD+MfHt3eyQ1uI1
