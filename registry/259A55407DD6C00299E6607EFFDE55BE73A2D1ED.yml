@@ -1,0 +1,10 @@
+259A55407DD6C00299E6607EFFDE55BE73A2D1ED:
+  label: Jeremy Long
+  validity: marginal
+  refs:
+    - date: 2024-10-28
+      comment: Self-attestation from project website ("Dependency-Check") associated with OWASP
+      url: https://jeremylong.github.io/DependencyCheck/dependency-check-cli/index.html
+      type: role
+  tags:
+    - OWASP
