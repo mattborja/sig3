@@ -6,5 +6,21 @@
       comment: Self-attestation from project website ("Dependency-Check") associated with OWASP
       url: https://jeremylong.github.io/DependencyCheck/dependency-check-cli/index.html
       type: role
+    - date: 2024-10-28
+      comment: Independent verification of project affiliation via documentation hsitory
+      url: https://github.com/OWASP/www-project-dependency-check/commits/master/index.md
+      type: role
+    - date: 2024-10-29
+      comment: Independent verification of direct project involvement under organization (OWASP)
+      url: https://github.com/OWASP/www-project-dependency-check/commits?author=jeremylong
+      type: role
+    - date: 2024-10-28
+      comment: Independent verification of organization membership (OWASP)
+      url: https://github.com/orgs/OWASP/people?query=jeremylong
+      type: role
+    - date: 2024-10-28
+      comment: Independent verification of contribution activity and community involvement (open source)
+      url: https://github.com/jeremylong
+      type: role
   tags:
     - OWASP
