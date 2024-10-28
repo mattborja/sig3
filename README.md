@@ -43,14 +43,13 @@ DCAA15007BED9DE690CD9523378B845402277962:
 
 This repository is open to contributions via pull requests under the following guidelines:
 
-- **MUST** implement entire Schema
-- **MUST** correctly present any GPG fingerprint in full length (160-bits) and uppercased
+- **MUST** implement entire Schema to build YAML content for the identity assertion
 - **MUST** provide at least 1-2 valid references (`refs`) substantiating proposed `validity`
-- **MUST** specify full length GPG fingerprint uppercased as the filename ending in *.yml
-- **MUST** have YAML content be clearsigned by your own GPG Key and armored, with comment
-  - Example: `gpg --clerasign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Scott Cantor"`
+- **MUST** use full length (160-bits) and uppercased format wherever GPG fingerprints are presented
+- **MUST** clearsign, armor, and comment YAML content with your own GPG Key, using appropriate filename formatted as full length GPG fingerprint, uppercased
+  - Example: `gpg --clearsign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Scott Cantor" --output DCAA15007BED9DE690CD9523378B845402277962.yml.asc`
 - **MUST** have your own GPG key publicly available at one or more approved key servers ([Ubuntu](https://keyserver.ubuntu.com/), [OpenPGP](https://keys.openpgp.org/))
-- Limit **one (1) claim** per pull request
+- Limit **one (1) identity assertion** per pull request
 - All submissions are ultimately subject to initial and recurring review and approval
 
 ### Pull Request Example
@@ -79,12 +78,15 @@ DCAA15007BED9DE690CD9523378B845402277962:
 -----BEGIN PGP SIGNATURE-----
 Comment: Verified GPG key for Scott Cantor
 
-iHUEARYKAB0WIQTUGoPhxrcBYZ0NgS/D9p0b5ry9FgUCZx9QSwAKCRDD9p0b5ry9
-FpOjAP9qLKmmiskSNMrvKF9rXnRVYxb5w7qDokdp1Lw6gO+PgAD+MfHt3eyQ1uI1
-+shmkAr7b3lXu+fV/y0zFejYaYt3ZgQ=
-=FxEe
+iHUEARYKAB0WIQTUGoPhxrcBYZ0NgS/D9p0b5ry9FgUCZx9buwAKCRDD9p0b5ry9
+FhB/AQDRIhlg7qyccSVXHhGmjafSsFjcQVwu1tvWmobwnVHwjgEA1vH5BiZNHUlS
+WVBWncYq2aZOT4AcdGWzeKWde6RFYg4=
+=Ud1x
 -----END PGP SIGNATURE-----
 ```
+
+### Acceptance
+Once a submission has been reviewed and verified for compliance, the signed YAML will be extracted and merged into the main registry as a native YAML *`*.yml`) file.
 
 ## License
 
