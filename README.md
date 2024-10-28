@@ -4,6 +4,12 @@
 
 To provide a centralized, authoritative registry of identity claims and evidence, in support of their proposed validity levels and use in verifying artifact integrity and signature origin.
 
+## Rationale
+
+While open keyservers distribute public keys, they lack support for identity assurance, leaving a gap in trust verification essential for high-stakes applications like software signing. Existing identity assurance methods, such as banking industry Identity Assurance Level 3 (IAL3) practices or Extended Validation SSL certificates, are often limited to single-entity validation, proprietary, or costly—making them inaccessible for many open-source and community projects.
+
+This project offers a community-driven solution to enhance **GPG key identity assurance**. By inviting collaboration among security-focused professionals, it aims to establish an open, scalable, and accessible approach to verifying identities tied to cryptographic keys, providing a high degree of assurance for software signing and other critical applications without the barriers of traditional identity verification services.
+
 ## Schema
 
 **Key**: The full length unique fingerprint identifier for the GPG key being attested.
