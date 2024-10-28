@@ -1,6 +1,6 @@
 259A55407DD6C00299E6607EFFDE55BE73A2D1ED:
   label: Jeremy Long
-  validity: marginal
+  validity: full
   refs:
     - date: 2024-10-28
       comment: Self-attestation from project website ("Dependency-Check") associated with OWASP
@@ -22,5 +22,13 @@
       comment: Independent verification of contribution activity and community involvement (open source)
       url: https://github.com/jeremylong
       type: role
+    - date: 2024-10-29
+      comment: Independent verification of GPG key fingerprint hosted at GitHub username (jeremylong)
+      url: https://github.com/jeremylong.gpg
+      type: user
+    - date: 2024-10-29
+      commnet: Independent verification of key ownership via signed commits backed by GitHub vigilant mode
+      url: https://github.com/jeremylong/DependencyCheck/commit/48074e6c0679cf4429f80292e3234f328fc870e9
+      type: user
   tags:
     - OWASP
