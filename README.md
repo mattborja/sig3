@@ -20,7 +20,7 @@ This repository provides a centralized registry for maintaining identity asserti
   - **`role`**: Description of the key holder's role.
   - **`rating`**: Trust level rating of the identity assertion.
 
-## Identity Assertion Example
+### Identity Assertion Example
 
 ```yaml
 DCAA15007BED9DE690CD9523378B845402277962:
@@ -39,8 +39,11 @@ DCAA15007BED9DE690CD9523378B845402277962:
     - Shibboleth
 ```
 
-## Contributing
-This repository is open to contributions via pull requests under the following guidelines:
+## Found new evidence for an identity assertion?
+Simply **open a pull request** to amend an existing key's list of `refs`!
+
+## Submit a new identity assertion
+This repository is also open to new contributions via pull requests under the following guidelines:
 
 - **MUST** implement entire Schema to build YAML content for the identity assertion
 - **MUST** provide at least 1-2 valid references (`refs`) substantiating proposed `validity`
