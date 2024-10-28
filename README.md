@@ -7,7 +7,7 @@ This repository provides a registry for identity assertion claims, detailing the
 
 **Fields:**
 - **`label`**: The name of the key holder (e.g., `Scott Cantor`).
-- **`validity`**: Indicates the status of the identity assertion.
+- **`validity`**: Indicates the status of the identity assertion (see also https://www.gnupg.org/gph/en/manual/x334.html).
   - Options: `full`, `marginal`, `revoked`, `none`
 - **`refs`**: Documentation supporting the identity assertion, which may include multiple entries:
   - **`date`**: The date when the verification or cross-signing occurred.
