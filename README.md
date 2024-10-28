@@ -86,7 +86,7 @@ WVBWncYq2aZOT4AcdGWzeKWde6RFYg4=
 ```
 
 ### Acceptance
-Once a submission has been reviewed and verified for compliance, the signed YAML will be extracted and merged into the main registry as a native YAML *`*.yml`) file.
+Once a submission has been reviewed and verified for compliance, the signed YAML will be extracted and merged into the main registry as a native YAML (`*.yml`) file.
 
 ## License
 
