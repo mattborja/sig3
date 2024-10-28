@@ -44,10 +44,12 @@ DCAA15007BED9DE690CD9523378B845402277962:
 This repository is open to contributions via pull requests under the following guidelines:
 
 - **MUST** implement entire Schema
-- **MUST** present full length GPG fingerprint uppercased wherever used
+- **MUST** correctly present any GPG fingerprint in full length (160-bits) and uppercased
 - **MUST** provide at least 1-2 valid references (`refs`) substantiating proposed `validity`
 - **MUST** specify full length GPG fingerprint uppercased as the filename ending in *.yml
-- **MUST** have YAML content be clearsigned by your GPG Key and armored, with comment (`gpg --clerasign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Scott Cantor"`)
+- **MUST** have YAML content be clearsigned by your own GPG Key and armored, with comment
+  - Example: `gpg --clerasign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Scott Cantor"`
+- **MUST** have your own GPG key publicly available at one or more approved key servers ([Ubuntu](https://keyserver.ubuntu.com/), [OpenPGP](https://keys.openpgp.org/))
 - Limit **one (1) claim** per pull request
 - All submissions are ultimately subject to initial and recurring review and approval
 
