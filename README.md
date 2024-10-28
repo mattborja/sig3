@@ -62,27 +62,43 @@ To provide a centralized, authoritative registry of identity claims and evidence
     - OWASP
 ```
 
-## Found new evidence for an identity assertion?
-Simply **open a pull request** to amend an existing key's list of `refs`!
+## Contribution Guidelines
 
-## Submit a new identity assertion
-This repository is also open to new contributions via pull requests under the following guidelines:
+We welcome contributions to this registry, whether you're adding a new identity assertion or enhancing an existing one with additional evidence.
 
-- **MUST** implement entire Schema to build YAML content for the identity assertion
-- **MUST** provide at least 1-2 valid references (`refs`) substantiating proposed `validity`
-- **MUST** use full length (160-bits) and uppercased format wherever GPG fingerprints are presented
-- **SHOULD** clearsign, armor, and comment YAML content with your own GPG Key, using appropriate filename formatted as full length GPG fingerprint, uppercased
-  - Example: `gpg --clearsign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Jeremy Long" --output 259A55407DD6C00299E6607EFFDE55BE73A2D1ED.yml.asc`
-- **SHOULD** have your own GPG key publicly available at one or more approved key servers ([Ubuntu](https://keyserver.ubuntu.com/), [OpenPGP](https://keys.openpgp.org/), GitHub)
-- **SHOULD** include as many valid references as possible certifying validity of key ownership
-- Limit **one (1) identity assertion** per pull request
-- All submissions are ultimately subject to initial and recurring review and approval
+### Found New Evidence for an Existing Key?
+If you have additional evidence for an existing identity assertion, simply **open a pull request** to amend the key’s list of `refs` and help strengthen its validity.
+
+### Adding a New Identity Assertion
+For new assertions, please follow these guidelines:
+
+#### Required (MUST)
+- **Complete Schema**: Implement the full Schema to build YAML content for the identity assertion.
+- **References**: Provide 1-2 valid references (`refs`) to substantiate the proposed validity.
+- **GPG Fingerprints**: Use the full 160-bit, uppercase format wherever GPG fingerprints are presented.
+
+#### Recommended (SHOULD)
+- **GPG Signature**: Clearsign, armor, and comment your YAML content with your own GPG key. Format the filename as your full-length, uppercase GPG fingerprint.
+  
+  Example:
+  ```bash
+  gpg --clearsign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Jeremy Long" --output 259A55407DD6C00299E6607EFFDE55BE73A2D1ED.yml.asc
+  ```
+- **Public GPG Key**: Ensure your GPG key is publicly accessible on one or more approved key servers (Ubuntu, OpenPGP, GitHub).
+- **Additional References**: Include as many valid references as possible to certify key ownership.
+
+### Submission Rules
+- Limit **one (1) identity assertion** per pull request.
+- All contributions are subject to initial and recurring review and approval.
+
+Thank you for helping build a robust identity assurance registry!
 
 ### Pull Request Example
-The following example is considered ideally complete for the purpose of submitting an acceptable pull request:
+The following example is considered ideally complete for the purpose of submitting an acceptable pull request a new issue requesting admission:
 
-**Filename:** `259A55407DD6C00299E6607EFFDE55BE73A2D1ED.yml.asc`
-
+**PR/Issue Title:** `Key Verification for Jeremy Long (FFDE 55BE 73A2 D1ED)`  
+**Filename:** `259A55407DD6C00299E6607EFFDE55BE73A2D1ED.yml.asc`  
+**Body:**  
 ```
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
