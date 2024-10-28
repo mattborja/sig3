@@ -1,6 +1,6 @@
 # Identity Assertion Registry
 
-This repository provides a registry for identity assertion claims, detailing the minimal information needed to substantiate each claim and its validity level.
+This repository provides a centralized registry for maintaining identity assertion claims and corresponding evidences, detailing the minimal information needed to substantiate each claim and its validity level.
 
 ## Schema
 **Key**: The full length unique fingerprint identifier for the GPG key being attested.
