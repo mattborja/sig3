@@ -32,7 +32,7 @@ This repository provides a centralized registry for maintaining identity asserti
       url: https://jeremylong.github.io/DependencyCheck/dependency-check-cli/index.html
       type: role
     - date: 2024-10-28
-      comment: Independent verification of project affiliation via documentation hsitory
+      comment: Independent verification of project affiliation via documentation history
       url: https://github.com/OWASP/www-project-dependency-check/commits/master/index.md
       type: role
     - date: 2024-10-29
@@ -52,7 +52,7 @@ This repository provides a centralized registry for maintaining identity asserti
       url: https://github.com/jeremylong.gpg
       type: user
     - date: 2024-10-29
-      commnet: Independent verification of key ownership via signed commits backed by GitHub vigilant mode
+      comment: Independent verification of key ownership via signed commits backed by GitHub vigilant mode
       url: https://github.com/jeremylong/DependencyCheck/commit/48074e6c0679cf4429f80292e3234f328fc870e9
       type: user
   tags:
@@ -93,7 +93,7 @@ Hash: SHA512
       url: https://jeremylong.github.io/DependencyCheck/dependency-check-cli/index.html
       type: role
     - date: 2024-10-28
-      comment: Independent verification of project affiliation via documentation hsitory
+      comment: Independent verification of project affiliation via documentation history
       url: https://github.com/OWASP/www-project-dependency-check/commits/master/index.md
       type: role
     - date: 2024-10-29
@@ -113,7 +113,7 @@ Hash: SHA512
       url: https://github.com/jeremylong.gpg
       type: user
     - date: 2024-10-29
-      commnet: Independent verification of key ownership via signed commits backed by GitHub vigilant mode
+      comment: Independent verification of key ownership via signed commits backed by GitHub vigilant mode
       url: https://github.com/jeremylong/DependencyCheck/commit/48074e6c0679cf4429f80292e3234f328fc870e9
       type: user
   tags:
