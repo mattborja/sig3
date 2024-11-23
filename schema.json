@@ -37,11 +37,11 @@
               },
               "type": {
                 "type": "string",
-                "enum": ["role", "user"],
-                "description": "The type of verification or evidence provided. 'role' is for project affiliation, and 'user' verifies key ownership."
+                "enum": ["role", "user", "key"],
+                "description": "The type of verification or evidence provided. 'role' is for project affiliation, 'user' signifies independent key ownership verification, and 'signature' indicates submission from private key holder (separate signature artifact required)"
               }
             },
-            "required": ["date", "comment", "url", "type"],
+            "required": ["date", "comment", "type"],
             "additionalProperties": false
           },
           "description": "A list of references that provide evidence to support the identity assertion. Each reference must include a date, comment, URL, and type."
