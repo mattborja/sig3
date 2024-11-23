@@ -1,0 +1,86 @@
+type: object
+patternProperties:
+  # Pattern that matches a 40-character GPG fingerprint in hexadecimal format (A-F, a-f, 0-9).
+  "^([A-Fa-f0-9]{40})$":
+    type: object
+    description: |
+      Object representing an identity associated with a GPG fingerprint.
+      The key in this object is the GPG fingerprint (40 characters in hexadecimal format),
+      and the value is an identity assertion with details about the individual or entity.
+    properties:
+      # The name or label associated with the individual or entity identified by the GPG fingerprint.
+      label:
+        type: string
+        description: |
+          The label or name of the individual or entity, as associated with the GPG key.
+          This could be a person’s name, organization, or project designation.
+      
+      # The validity level of the identity assertion, indicating the level of trust or verification.
+      validity:
+        type: string
+        enum: [full, partial, none]
+        description: |
+          Indicates the degree of validation or verification of the identity claim:
+          - `full`: The identity has been fully verified with strong evidence.
+          - `partial`: The identity has been partially verified with some evidence.
+          - `none`: No verification or validation has been made for this identity.
+
+      # A list of references that provide evidence or documentation supporting the identity claim.
+      refs:
+        type: array
+        items:
+          type: object
+          description: |
+            A reference or piece of evidence that supports the identity claim.
+            This could be a link to documentation, project history, or other verifiable sources.
+          properties:
+            # The date when the reference was created or validated. Format is YYYY-MM-DD.
+            date:
+              type: string
+              format: date
+              description: |
+                The date the reference was established, verified, or validated. The format must be YYYY-MM-DD.
+            
+            # A brief explanation of the context or purpose of the reference. 
+            comment:
+              type: string
+              description: |
+                A textual explanation of what the reference proves or validates, such as project affiliation or GPG key ownership.
+            
+            # A URL that links to a publicly accessible source that validates or documents the reference.
+            url:
+              type: string
+              format: uri
+              description: |
+                A URL that links to an external resource that provides supporting evidence or verification for this reference.
+            
+            # The type of verification this reference represents: either a role-based or user-specific verification.
+            type:
+              type: string
+              enum: [role, user]
+              description: |
+                Specifies the type of reference:
+                - `role`: Refers to a verification of the individual’s or entity’s role, such as a project affiliation.
+                - `user`: Refers to user-specific verification, such as GPG key ownership.
+
+      # Tags used for categorizing or classifying the identity, e.g., project affiliation, organizational roles.
+      tags:
+        type: array
+        items:
+          type: string
+        description: |
+          A list of tags or keywords used for categorizing or identifying the individual or entity.
+          Tags can describe roles (e.g., developer, maintainer) or affiliations (e.g., OWASP, organization name).
+
+    # Required fields for each identity assertion object:
+    required:
+      - label      # Must provide a name or label for the entity
+      - validity   # Must specify the validity level (full, partial, none)
+      - refs       # Must provide at least one reference to substantiate the claim
+      - tags       # Must provide tags to categorize or identify the entity
+    
+    # No additional properties are allowed outside of the explicitly defined ones.
+    additionalProperties: false
+
+# The root object allows any valid 40-character GPG fingerprint as a key, and ensures no other keys are present at the top level.
+additionalProperties: false
