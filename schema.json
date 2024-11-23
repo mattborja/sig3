@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "patternProperties": {
+    "^([A-Fa-f0-9]{16,})$": {
+      "type": "object",
+      "description": "The main object representing an individual or entity identified by their full GPG fingerprint. The fingerprint must be at least 128 bits (16 characters) long.",
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "The label or name associated with the individual or entity, typically matching the name on the GPG key."
+        },
+        "validity": {
+          "type": "string",
+          "enum": ["full", "marginal", "revoked", "none"],
+          "description": "The validity level of the identity assertion. Indicates how thoroughly the identity has been verified.",
+          "example": "full"
+        },
+        "refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date",
+                "description": "The date when the verification or cross-signing took place, in YYYY-MM-DD format."
+              },
+              "comment": {
+                "type": "string",
+                "description": "A brief description of what the reference verifies or supports (e.g., project affiliation, key ownership)."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "A URL pointing to an authoritative source or resource that validates the reference."
+              },
+              "type": {
+                "type": "string",
+                "enum": ["role", "user"],
+                "description": "The type of verification or evidence provided. 'role' is for project affiliation, and 'user' verifies key ownership."
+              }
+            },
+            "required": ["date", "comment", "url", "type"],
+            "additionalProperties": false
+          },
+          "description": "A list of references that provide evidence to support the identity assertion. Each reference must include a date, comment, URL, and type."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "A list of tags or labels that categorize or identify the individual or entity (e.g., 'OWASP', 'developer')."
+          },
+          "description": "Tags associated with the identity, which help categorize or identify the individual or entity."
+        },
+        "summary": {
+          "type": "object",
+          "properties": {
+            "role": {
+              "type": "string",
+              "description": "A brief description of the individual or entity's role, function, or involvement."
+            },
+            "rating": {
+              "type": "string",
+              "description": "A brief statement or label describing the trust level of the identity (e.g., 'high trust' for software signing)."
+            }
+          },
+          "required": ["role", "rating"],
+          "description": "A brief summary of the keyholder’s identity, role, or involvement."
+        }
+      },
+      "required": ["label", "validity", "refs", "tags"],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
