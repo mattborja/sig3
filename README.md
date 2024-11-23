@@ -12,24 +12,68 @@ This project offers a community-driven solution to enhance **GPG key identity as
 
 ## Schema
 
-**Key**: The full length unique fingerprint identifier for the GPG key being attested.
+The **Schema** defines the structure for each identity assertion in the registry. Each identity is associated with a unique GPG key fingerprint and includes evidence to support the identity claim, along with metadata that helps clarify the trust level and origin of the verification.
 
-**Fields:**
-- **`label`**: The name of the key holder
-- **`validity`**: Indicates the status of the identity assertion (see also https://www.gnupg.org/gph/en/manual/x334.html)
-  - Options: `full`, `marginal`, `revoked`, `none`
-- **`refs`**: Documentation supporting the identity assertion, which may include multiple entries:
-  - **`date`**: The date when the verification or cross-signing occurred
-  - **`comment`**: Notes regarding the verification process
-  - **`url`**: A link to relevant documentation or evidence
-  - **`type`**: The type of verification performed
-    - Options: `live`, `cross-sign`, `role`
-- **`tags`**: Keywords for categorizing the identity assertion (e.g., roles, organizations)
-- **`summary`**: Brief overview of the key holder's role and ownership claims
-  - **`role`**: Description of the key holder's role
-  - **`rating`**: Trust level rating of the identity assertion
+### **Fields**
 
-### Identity Assertion Example
+Each identity assertion has the following fields:
+
+- **`key`**:  
+  The unique GPG fingerprint of the key being asserted (160-bit, uppercase). This is the primary identifier for the key and must be presented in full.  
+  Example: `259A55407DD6C00299E6607EFFDE55BE73A2D1ED`
+
+- **`label`**:  
+  The name of the key holder or entity. This should match the name associated with the GPG key.  
+  Example: `Jeremy Long`
+
+- **`validity`**:  
+  The level of trust associated with the identity assertion. This field helps indicate how thoroughly the identity has been verified. Possible values:
+  - `full`: The identity is fully verified with strong evidence from multiple independent sources.
+  - `marginal`: The identity has been partially verified, but some evidence or verification may be limited.
+  - `revoked`: The identity assertion has been withdrawn or is no longer valid.
+  - `none`: No verification has been performed or the identity could not be verified.
+
+- **`refs`**:  
+  A list of references that provide evidence to support the identity assertion. Each reference must include:
+  - **`date`**: The date when the verification or cross-signing took place (in YYYY-MM-DD format).
+  - **`comment`**: A brief description of what the reference verifies (e.g., project affiliation, GPG key fingerprint, etc.).
+  - **`url`**: A link to the online resource or evidence (e.g., a GitHub page, documentation, or project website).
+  - **`type`**: The type of verification or evidence provided. Common types include:
+    - `role`: Verifies the keyholder’s affiliation with a project, organization, or role.
+    - `user`: Verifies the keyholder’s ownership of the GPG key, often via direct key verification or signed commits.
+
+  Example:
+  ```yaml
+  refs:
+    - date: 2024-10-28
+      comment: Verified project affiliation with OWASP through public documentation
+      url: https://github.com/OWASP/www-project-dependency-check/commits/master/index.md
+      type: role
+  ```
+
+- **`tags`**:  
+  Keywords or categories that provide additional context for the keyholder’s identity. Tags might include roles (e.g., `developer`, `maintainer`) or organizations (e.g., `OWASP`).
+
+  Example:
+  ```yaml
+  tags:
+    - OWASP
+    - Software Developer
+  ```
+
+- **`summary`**:  
+  A brief description of the keyholder’s identity, role, or involvement. This section provides context for understanding the keyholder's association with the key and their relevant activities.
+
+  Example:
+  ```yaml
+  summary:
+    role: Project maintainer of the Dependency-Check tool under OWASP.
+    rating: Verified identity for high-trust software signing and open-source contributions.
+  ```
+
+### **Example Identity Assertion:**
+
+Here is an example that demonstrates the full schema in use:
 
 ```yaml
 259A55407DD6C00299E6607EFFDE55BE73A2D1ED:
@@ -45,28 +89,32 @@ This project offers a community-driven solution to enhance **GPG key identity as
       url: https://github.com/OWASP/www-project-dependency-check/commits/master/index.md
       type: role
     - date: 2024-10-29
-      comment: Independent verification of direct project involvement under organization (OWASP)
+      comment: Verification of direct project involvement under OWASP organization
       url: https://github.com/OWASP/www-project-dependency-check/commits?author=jeremylong
       type: role
     - date: 2024-10-28
-      comment: Independent verification of organization membership (OWASP)
+      comment: Confirmation of OWASP organization membership via GitHub
       url: https://github.com/orgs/OWASP/people?query=jeremylong
       type: role
     - date: 2024-10-28
-      comment: Independent verification of contribution activity and community involvement (open source)
-      url: https://github.com/jeremylong
-      type: role
-    - date: 2024-10-29
-      comment: Independent verification of GPG key fingerprint hosted at GitHub username (jeremylong)
+      comment: Verification of GPG key fingerprint hosted on GitHub
       url: https://github.com/jeremylong.gpg
       type: user
     - date: 2024-10-29
-      comment: Independent verification of key ownership via signed commits backed by GitHub vigilant mode
+      comment: Independent verification of key ownership via signed commits
       url: https://github.com/jeremylong/DependencyCheck/commit/48074e6c0679cf4429f80292e3234f328fc870e9
       type: user
   tags:
     - OWASP
+  summary:
+    role: Maintainer of Dependency-Check project under OWASP
+    rating: High trust level for software signing and open-source contributions.
 ```
+
+### **Important Notes:**
+- Ensure that **every reference** is verifiable and points to an **accessible, authoritative source**.
+- The **validity** status should reflect the level of verification based on the references. `Full` validity should be reserved for entries that are strongly supported by multiple independent sources.
+- The **tags** field can help categorize identity assertions for easier searching, such as linking keyholders to particular organizations or projects.
 
 ## Contribution Guidelines
 
