@@ -12,7 +12,7 @@ This project offers a community-driven solution to enhance **GPG key identity as
 
 ## Schema
 
-The **Schema** defines the structure for each identity assertion in the registry. Each identity is associated with a unique GPG key fingerprint and includes evidence to support the identity claim, along with metadata that clarifies the trust level and origin of the verification.
+The [**Schema**](/schema.json) defines the structure for each identity assertion in the registry. Each identity is associated with a unique GPG key fingerprint and includes evidence to support the identity claim, along with metadata that clarifies the trust level and origin of the verification.
 
 ### **Fields**
 
@@ -70,18 +70,6 @@ Each identity assertion is an object containing the following fields:
   Example:  
   ```json
   "tags": ["OWASP", "Software Developer"]
-  ```
-
-- **`summary`**:  
-  An object containing a brief description of the keyholder’s identity, role, or involvement. This section provides context for understanding the keyholder's association with the key and their relevant activities.
-  - **`role`**: A description of the individual or entity's role, function, or involvement.
-  - **`rating`**: A brief statement describing the trust level of the identity (e.g., `high trust` for software signing).  
-  Example:  
-  ```json
-  "summary": {
-    "role": "Project maintainer of the Dependency-Check tool under OWASP",
-    "rating": "Verified identity for high-trust software signing and open-source contributions."
-  }
   ```
 
 ### **Example Identity Assertion**
