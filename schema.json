@@ -67,24 +67,6 @@
         "description": "A list of tags or labels that categorize or identify the individual or entity (e.g., 'OWASP', 'developer')."
       },
       "description": "Tags associated with the identity, which help categorize or identify the individual or entity."
-    },
-    "summary": {
-      "type": "object",
-      "properties": {
-        "role": {
-          "type": "string",
-          "description": "A brief description of the individual or entity's role, function, or involvement."
-        },
-        "rating": {
-          "type": "string",
-          "description": "A brief statement or label describing the trust level of the identity (e.g., 'high trust' for software signing)."
-        }
-      },
-      "required": [
-        "role",
-        "rating"
-      ],
-      "description": "A brief summary of the keyholder’s identity, role, or involvement."
     }
   },
   "required": [
