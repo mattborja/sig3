@@ -1,0 +1,22 @@
+{
+    "fingerprint": "DCAA15007BED9DE690CD9523378B845402277962",
+    "label": "Scott Cantor",
+    "validity": "full",
+    "refs": [
+        {
+            "date": "2022-04-01",
+            "comment": "In-person verification during Shibboleth Developer's Meeting, 2022-04-01",
+            "url": "https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-04-01",
+            "type": "role"
+        },
+        {
+            "date": "2022-01-01",
+            "comment": "Cross-signed by Ian Young (9A80 4E97 D707 9C77)",
+            "url": "fpr://5E6D6EAE16C3DA75450B219C9A804E97D7079C77",
+            "type": "user"
+        }
+    ],
+    "tags": [
+        "Shibboleth"
+    ]
+}
