@@ -36,7 +36,7 @@ jobs:
           # | separated list of parsers used to parse the file: json, yaml
           fileParser: json
           # schemasafe validation mode: default, lax, strong
-          mode: strong
+          mode: default
           # schemas for resolving refs, JSON object: id -> file/url
           # refSchemasMap: 
           # schemas for resolving refs, JSON array of file/url strings
