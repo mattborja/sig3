@@ -30,9 +30,9 @@ jobs:
         uses: cardinalby/schema-validator-action@3.1.1
         with:
           # Schema file path or URL
-          schema: /schema.json
+          schema: 'schema.json'
           # | separated files to validate. Globs are allowed
-          file: /registry/*.json
+          file: 'registry/*.json'
           # | separated list of parsers used to parse the file: json, yaml
           fileParser: json
           # schemasafe validation mode: default, lax, strong
