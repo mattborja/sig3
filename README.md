@@ -75,7 +75,7 @@ Each identity assertion is an object containing the following fields:
   "tags": ["OWASP", "Software Developer"]
   ```
 
-### **Example Identity Assertion**
+### Example
 
 Here’s an example identity assertion that adheres to the schema:
 
@@ -102,45 +102,29 @@ Here’s an example identity assertion that adheres to the schema:
 }
 ```
 
-### **Important Notes**
+### Important Notes
 - **`fingerprint`**: Ensure that the **GPG fingerprint** is presented fully and adheres to the correct pattern (at least 16 alphanumeric characters).
 - **`validity`**: The **validity** status should reflect the level of verification based on the provided references. A `full` validity status should only be assigned if multiple independent sources have verified the identity.
 - **`refs`**: Each reference must be **verifiable** and should link to an **authoritative, accessible source**.
 - **`tags`**: The **tags** field can be used to categorize the keyholder by roles or affiliations (e.g., linking keyholders to specific projects or organizations).
 
-## Contribution Guidelines
-
+## Contributing
 We welcome contributions to this registry, whether you're adding a new identity assertion or enhancing an existing one with additional evidence.
 
-### Found New Evidence for an Existing Key?
+### Updating existing assertions
 If you have additional evidence for an existing identity assertion, simply **open a pull request** to amend the key’s list of `refs` and help strengthen its validity.
 
-### Adding a New Identity Assertion
-For new assertions, please follow these guidelines:
-
-#### Required (MUST)
+### Adding new assertions
 - **Complete Schema**: Implement the full Schema to build submission.
 - **References**: Provide 1-2 valid references (`refs`) to substantiate the proposed validity.
 - **GPG Fingerprints**: Use the full 160-bit, uppercase format wherever GPG fingerprints are presented.
-
-#### Recommended (SHOULD)
-- **GPG Signature**: Clearsign, armor, and comment your submission with your own GPG key. Format the filename as your full-length, uppercase GPG fingerprint.
-  
-  Example:
-  ```bash
-  gpg --clearsign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Jeremy Long" --output 259A55407DD6C00299E6607EFFDE55BE73A2D1ED.json.asc
-  ```
-- **Public GPG Key**: Ensure your GPG key is publicly accessible on one or more approved key servers (Ubuntu, OpenPGP, GitHub).
-- **Additional References**: Include as many valid references as possible to certify key ownership.
-
-### Submission Rules
 - Limit **one (1) identity assertion** per pull request.
 - All contributions are subject to initial and recurring review and approval.
 
 Thank you for helping build a robust identity assurance registry!
 
 ### Acceptance
-Once a submission has been reviewed and verified for compliance, the signed submission will be extracted and merged into the main registry as a native JSON (`*.json`) file.
+Once a submission has been reviewed and verified for compliance, the signed submission will be merged into the main registry.
 
 ## License
 
