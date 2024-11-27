@@ -14,6 +14,8 @@ This project offers a community-driven solution to enhance **GPG key identity as
 
 The [**Schema**](/schema.json) defines the structure for each identity assertion in the registry. Each identity is associated with a unique GPG key fingerprint and includes evidence to support the identity claim, along with metadata that clarifies the trust level and origin of the verification.
 
+**Pro tip.** Use an online schema validator like [JSONSchema.dev](https://jsonschema.dev/) to prepare a schema-valid JSON submission for a new ID assertion!
+
 ### **Fields**
 
 Each identity assertion is an object containing the following fields:
