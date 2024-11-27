@@ -1,0 +1,8 @@
+/LICENSE @mattborja
+/README.md @mattboraj
+/schema.json @mattborja
+/.github @mattborja
+/registry @mattborja
+/registry/*.json
+/registry/99BB608E30380C451952D6BBA1C7E813F160A407.json @mattborja
+/registry/F30FF4FC936584574EE3251833688C2EDC08CD38.json @mattborja
