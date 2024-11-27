@@ -40,6 +40,6 @@ jobs:
           fixSchemas: true
 
       - name: filename-validation-action
-        uses: stefanprodan/kube-tools@v1.7.2
+        uses: cloudposse/github-action-jq@0.4.0
         with:
-          command: bash filename-validate.sh
+          script: bash filename-validate.sh
