@@ -1,7 +1,7 @@
 #!/bin/bash
-REGISTRY_BLOB="registry/*.json"
+REGISTRY_DIR="registry"
 
-for json_file in "${REGISTRY_BLOB}"; do
+for json_file in "${REGISTRY_DIR}"/*.json; do
     filename=$(basename "$json_file")
     fingerprint=$(jq -r '.fingerprint' "$json_file")
 
