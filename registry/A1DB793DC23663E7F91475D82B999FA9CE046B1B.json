@@ -23,8 +23,14 @@
     },
     {
       "date": "2024-10-24",
-      "comment": "Email received from wk@gnupg.org listing fingerprint of 384-bit ECDH key used for PGP encryption and signing (Message-Id: <87jzegnvts.fsf@jacob.g10code.de>)",
+      "comment": "Encrypted email received from wk@gnupg.org (Message-Id: <87jzegnvts.fsf@jacob.g10code.de>) associating fingerprints of encryption subkey (2B99 9FA9 CE04 6B1B); and signing subkey (19CC 1C9E 085B 107A) of primary key and primary key (C85C 6311 3AE8 6658 7D0A)",
       "type": "user"
+    },
+    {
+      "date": "2024-11-27",
+      "comment": "User comment by site administrator (werner) self-attesting signing subkey (19CC 1C9E 085B 107A) and primary key (C85C 6311 3AE8 6658 7D0A)",
+      "url": "https://dev.gnupg.org/T5454#146523",
+      "type": "role"
     }
   ],
   "tags": [
