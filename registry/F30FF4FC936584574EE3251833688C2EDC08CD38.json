@@ -5,6 +5,7 @@
   "refs": [
     {
       "date": "2023-07-18",
+      "comment": "Signed artifact demonstrating private key use: `echo -n '3ED3 3CCE 4BED 165C 9107 3D9F 65B8 8DAC 23AF 5BCD E520 F723 C1E6 2A69 B369 F278' | gpg --clearsign`"
       "artifact": "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA512\n\n3ED3 3CCE 4BED 165C 9107 3D9F 65B8 8DAC 23AF 5BCD E520 F723 C1E6 2A69 B369 F278\n-----BEGIN PGP SIGNATURE-----\n\niQIzBAEBCgAdFiEESCXoP0Z0qi7+jBnOpjIppLTMI9kFAmdHP+gACgkQpjIppLTM\nI9km0xAAg0IYSosZyMX2Sel94R2kxr0bgILYcw0C1SCHmBCpXig0Iw0arWcyp97r\ns/elq17kyuRuHA8r+m3byAYvaz+7rj7SeCAVrSWqS+7MT/9m3ZTIq0NlLysXEExY\nF50LH5w6CmJdhtqEx/6ZJC13QA05O8PAY7engipiSMag/927NR5wXVLmDnPmn4GB\nUV58ZFsIvukK4VuVsASyk6NyhlYy3GUDTsIhGDGe7/fvrRbCgUI5lEw2/5n+RomI\nmWMqM58pI+6ETATYB8zh7RllVCH6Iawc0AiyNXZ3oewM8++T8kOJ/LLhyNSRbbVy\n8sFtha0ac9wsL0FOonD+skfIo2SfpD9c5EK6BttuQuZRktfPntP/Ky6jeVH8riWL\ni+0Ksz1PhnEL9ePMtJA9KzAVA3YU7PxD5KojV01rnLxqPH4ALUBghHhNbKYzAi1m\nxMVGx47jcz989AZmBCzQcQgFtH717CXldDxRfkdxTWZktm65fRV0m1RAgNhIXsrW\nYZXwjq7SP0R6COKfyKJfZ4cHuIBui86DYenly+QxLcuqns13QvixbjiGT/6uqd6w\nOlAsEI1rVrtlDTHVXo43uowLT+2oBYz1xFNrnNfuyruvwhkxfxwClauuIxz32gDK\nxJKrv2aQPNrApH9F+PhppwjUdj0Ndk3Y+vtrOLrk9/4S3haRtRU=\n=GpMP\n-----END PGP SIGNATURE-----\n",
       "type": "key"
     }
