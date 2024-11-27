@@ -1,7 +1,7 @@
 {
   "fingerprint": "A1DB793DC23663E7F91475D82B999FA9CE046B1B",
   "label": "Werner Koch (384-bit ECDH key)",
-  "validity": "none",
+  "validity": "full",
   "refs": [
     {
       "date": "2024-11-27",
@@ -24,8 +24,8 @@
     {
       "date": "2024-10-24",
       "comment": "Email received from wk@gnupg.org listing fingerprint of 384-bit ECDH key used for PGP encryption and signing (Message-Id: <87jzegnvts.fsf@jacob.g10code.de>)",
-      "type": "email"
-    },
+      "type": "user"
+    }
   ],
   "tags": [
     "GnuPG"
