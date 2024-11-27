@@ -39,11 +39,6 @@ jobs:
           # strip unknown features from the schema
           fixSchemas: true
 
-      - name: Install jq using jq-action
-        uses: jakejarvis/jq-action@v1
-        with:
-          version: 'latest'  # Optionally specify a specific version, e.g., 'jq-1.6'
-
       - name: filename-validation-action
         uses: stefanprodan/kube-tools@v1.7.2
         with:
