@@ -102,7 +102,7 @@ Here’s an example identity assertion that adheres to the schema:
 }
 ```
 
-### Important Notes
+### Important
 - **`fingerprint`**: Ensure that the **GPG fingerprint** is presented fully and adheres to the correct pattern (at least 16 alphanumeric characters).
 - **`validity`**: The **validity** status should reflect the level of verification based on the provided references. A `full` validity status should only be assigned if multiple independent sources have verified the identity.
 - **`refs`**: Each reference must be **verifiable** and should link to an **authoritative, accessible source**.
