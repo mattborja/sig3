@@ -39,7 +39,8 @@ jobs:
           # strip unknown features from the schema
           fixSchemas: true
 
+      - name: jq-install
+        run: sudo apt-get install jq
+
       - name: filename-validation-action
-        uses: cloudposse/github-action-jq@0.4.0
-        with:
-          script: bash filename-validate.sh
+        run: bash filename-validate.sh
