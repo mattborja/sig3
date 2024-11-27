@@ -54,7 +54,7 @@ Each identity assertion is an object containing the following fields:
   - **`type`**: The type of verification or evidence provided. Possible values:
     - `role`: Verifies the keyholder’s affiliation with a project, organization, or role.
     - `user`: Verifies the keyholder’s ownership of the GPG key, often via direct key verification or signed commits.
-    - `key`: Verifies the key itself, typically through a signed artifact or keyring.
+    - `key`: Demonstrates use of signing key used to sign approved artifact (see [artifact-sign.sh](/artifact-sign.sh) for approved artifact)
   
   Example:
   ```json
