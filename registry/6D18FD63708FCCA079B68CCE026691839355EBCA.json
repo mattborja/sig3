@@ -1,0 +1,19 @@
+{
+    "fingerprint": "6D18FD63708FCCA079B68CCE026691839355EBCA",
+    "label": "Henri Mikkonen",
+    "validity": "full",
+    "refs": [
+      {
+        "date": "2022-04-01",
+        "comment": "Self-verified during 2022-04-01 dev call.",
+        "url": "https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-04-01",
+        "type": "user"
+      }
+    ],
+    "tags": [
+      "Shibboleth",
+      "Developer",
+      "OpenID"
+    ]
+  }
+  
