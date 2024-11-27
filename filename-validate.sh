@@ -7,7 +7,7 @@ for json_file in "${REGISTRY_DIR}"/*.json; do
 
     # Filename must matche the fingerprint
     if [[ "$filename" != "${fingerprint}.json" ]]; then
-        echo "Error: Filename '$filename' does not match fingerprint '$fingerprint'."
+        echo "Error: Expecting valid identity filename '$fingerprint.json' but got '$filename' instead."
         exit 1
     fi
 done
