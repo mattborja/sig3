@@ -142,3 +142,14 @@ Once a submission has been reviewed and verified for compliance, the signed subm
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Learn More
+- [Building your web of trust](https://www.gnupg.org/gph/en/manual/x547.html), *The GNU Privacy Guard*
+- [Using trust to validate keys](https://www.gnupg.org/gph/en/manual/x334.html#AEN384), *The GNU Privacy Guard*
+- [Validating authenticity of a key](https://apache.org/info/verification.html#Validating), *The Apache Software Foundation*
+- [Validating other keys on your public keyring](https://www.gnupg.org/gph/en/manual/x334.html), *The GNU Privacy Guard*
+- [Exchanging keys](https://www.gnupg.org/gph/en/manual/x56.html), *The GNU Privacy Guard*
+- [Integrity check](https://gnupg.org/download/integrity_check.html), *The GNU Privacy Guard*
+- [Signature key](https://gnupg.org/signature_key.html), *The GNU Privacy Guard*
+
+> *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
