@@ -1,0 +1,31 @@
+{
+    "fingerprint": "DCAA15007BED9DE690CD9523378B845402277962",
+    "label": "Scott Cantor",
+    "validity": "full",
+    "refs": [
+      {
+        "date": "2022-04-01",
+        "comment": "Cross-signed by 5E6D6EAE16C3DA75450B219C9A804E97D7079C77.",
+        "url": "https://pgp.re/pks/lookup?search=0xDCAA15007BED9DE690CD9523378B845402277962&fingerprint=on&op=vindex",
+        "type": "user"
+      },
+      {
+        "date": "2022-04-01",
+        "comment": "Fingerprint self-verified during 2022-04-01 dev call.",
+        "url": "https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-04-01",
+        "type": "user"
+      },
+      {
+        "date": "2022-04-01",
+        "comment": "Podcast (authenticated by same voice on dev call) attesting to acceptance standards, security priorities, and transparency.",
+        "url": "https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-04-01",
+        "type": "role"
+      }
+    ],
+    "tags": [
+      "Shibboleth",
+      "Developer",
+      "Key Signing"
+    ]
+  }
+  

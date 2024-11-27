@@ -1,0 +1,19 @@
+{
+    "fingerprint": "4AF4D83EEDDF43DA3C06CB3101483F262A4B3FF0",
+    "label": "Rod Widdowson",
+    "validity": "full",
+    "refs": [
+      {
+        "date": "2022-04-01",
+        "comment": "Self-verified with full name verification during 2022-04-01 dev call.",
+        "url": "https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-04-01",
+        "type": "user"
+      }
+    ],
+    "tags": [
+      "Shibboleth",
+      "Supply Chain Integrity",
+      "Developer"
+    ]
+  }
+  
