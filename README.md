@@ -118,7 +118,6 @@ If you have additional evidence for an existing identity assertion, simply **ope
 - **Complete Schema**: Implement the full Schema to build submission.
 - **References**: Provide 1-2 valid references (`refs`) to substantiate the proposed validity.
 - **GPG Fingerprints**: Use the full 160-bit, uppercase format wherever GPG fingerprints are presented.
-- Limit **one (1) identity assertion** per pull request.
 - All contributions are subject to initial and recurring review and approval.
 
 Thank you for helping build a robust identity assurance registry!
