@@ -1,0 +1,19 @@
+{
+    "fingerprint": "B5B5DD332142AD657E8D87AC7D27E610B8A3DC52",
+    "label": "Philip David Smart",
+    "validity": "full",
+    "refs": [
+      {
+        "date": "2022-04-01",
+        "comment": "Self-verified during 2022-04-01 dev call.",
+        "url": "https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-04-01",
+        "type": "user"
+      }
+    ],
+    "tags": [
+      "Shibboleth",
+      "Developer",
+      "IdP"
+    ]
+  }
+  
