@@ -12,7 +12,10 @@ This project offers a community-driven solution to enhance **GPG key identity as
 
 ## Schema
 
-The [**Schema**](/schema.json) defines the structure for each identity assertion in the registry. Each identity is associated with a unique GPG key fingerprint and includes evidence to support the identity claim, along with metadata that clarifies the trust level and origin of the verification.
+The include [**schema**](/schema.json) in this repository defines the acceptable structure for identity assertions in the registry. Each identity is associated with a single unique GPG key fingerprint and must include key proofs (evidence) to support the identity claim. This section details the necessary requirements for satisfying the minimum schema validation requirements.
+
+> [!NOTE]
+> Use an online schema validator like [JSONSchema.dev](https://jsonschema.dev/) to prepare a schema-valid JSON submission for a new ID assertion!
 
 ### **Fields**
 
@@ -51,7 +54,7 @@ Each identity assertion is an object containing the following fields:
   - **`type`**: The type of verification or evidence provided. Possible values:
     - `role`: Verifies the keyholder’s affiliation with a project, organization, or role.
     - `user`: Verifies the keyholder’s ownership of the GPG key, often via direct key verification or signed commits.
-    - `key`: Verifies the key itself, typically through a signed artifact or keyring.
+    - `key`: Demonstrates use of signing key used to sign approved artifact (see [artifact-sign.sh](/artifact-sign.sh) for approved artifact)
   
   Example:
   ```json
@@ -72,7 +75,7 @@ Each identity assertion is an object containing the following fields:
   "tags": ["OWASP", "Software Developer"]
   ```
 
-### **Example Identity Assertion**
+### Example
 
 Here’s an example identity assertion that adheres to the schema:
 
@@ -99,46 +102,40 @@ Here’s an example identity assertion that adheres to the schema:
 }
 ```
 
-### **Important Notes**
+### Important
 - **`fingerprint`**: Ensure that the **GPG fingerprint** is presented fully and adheres to the correct pattern (at least 16 alphanumeric characters).
 - **`validity`**: The **validity** status should reflect the level of verification based on the provided references. A `full` validity status should only be assigned if multiple independent sources have verified the identity.
 - **`refs`**: Each reference must be **verifiable** and should link to an **authoritative, accessible source**.
 - **`tags`**: The **tags** field can be used to categorize the keyholder by roles or affiliations (e.g., linking keyholders to specific projects or organizations).
 
-## Contribution Guidelines
-
+## Contributing
 We welcome contributions to this registry, whether you're adding a new identity assertion or enhancing an existing one with additional evidence.
 
-### Found New Evidence for an Existing Key?
+### Updating existing assertions
 If you have additional evidence for an existing identity assertion, simply **open a pull request** to amend the key’s list of `refs` and help strengthen its validity.
 
-### Adding a New Identity Assertion
-For new assertions, please follow these guidelines:
-
-#### Required (MUST)
+### Adding new assertions
 - **Complete Schema**: Implement the full Schema to build submission.
 - **References**: Provide 1-2 valid references (`refs`) to substantiate the proposed validity.
 - **GPG Fingerprints**: Use the full 160-bit, uppercase format wherever GPG fingerprints are presented.
-
-#### Recommended (SHOULD)
-- **GPG Signature**: Clearsign, armor, and comment your submission with your own GPG key. Format the filename as your full-length, uppercase GPG fingerprint.
-  
-  Example:
-  ```bash
-  gpg --clearsign --armor --local-user <YOUR-KEY-ID> --comment "Verified GPG key for Jeremy Long" --output 259A55407DD6C00299E6607EFFDE55BE73A2D1ED.json.asc
-  ```
-- **Public GPG Key**: Ensure your GPG key is publicly accessible on one or more approved key servers (Ubuntu, OpenPGP, GitHub).
-- **Additional References**: Include as many valid references as possible to certify key ownership.
-
-### Submission Rules
-- Limit **one (1) identity assertion** per pull request.
 - All contributions are subject to initial and recurring review and approval.
 
 Thank you for helping build a robust identity assurance registry!
 
 ### Acceptance
-Once a submission has been reviewed and verified for compliance, the signed submission will be extracted and merged into the main registry as a native JSON (`*.json`) file.
+Once a submission has been reviewed and verified for compliance, the signed submission will be merged into the main registry.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Learn More
+- [Building your web of trust](https://www.gnupg.org/gph/en/manual/x547.html), *The GNU Privacy Guard*
+- [Using trust to validate keys](https://www.gnupg.org/gph/en/manual/x334.html#AEN384), *The GNU Privacy Guard*
+- [Validating authenticity of a key](https://apache.org/info/verification.html#Validating), *The Apache Software Foundation*
+- [Validating other keys on your public keyring](https://www.gnupg.org/gph/en/manual/x334.html), *The GNU Privacy Guard*
+- [Exchanging keys](https://www.gnupg.org/gph/en/manual/x56.html), *The GNU Privacy Guard*
+- [Integrity check](https://gnupg.org/download/integrity_check.html), *The GNU Privacy Guard*
+- [Signature key](https://gnupg.org/signature_key.html), *The GNU Privacy Guard*
+
+> *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*

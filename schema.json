@@ -36,6 +36,10 @@
             "type": "string",
             "description": "A brief description of what the reference verifies or supports (e.g., project affiliation, key ownership)."
           },
+          "artifact": {
+            "type": "string",
+            "description": "A cryptographic artifact (i.e. clearsigned message) demonstrating possession of a specific key (i.e. signing subkey)"
+          },
           "url": {
             "type": "string",
             "format": "uri",
