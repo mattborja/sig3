@@ -1,4 +1,6 @@
 # Identity Assertion Registry
+## Support this work
+- **GoFundMe:** [Support Identity Assurance with Sectigo EV Cert](https://gofund.me/5d81529b)
 
 ## Purpose
 
