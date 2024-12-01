@@ -1,5 +1,5 @@
 # Identity Assertion Registry
-## Support this work
+## Support this Work
 - **GoFundMe:** [Support Identity Assurance with Sectigo EV Cert](https://gofund.me/5d81529b)
 
 ## Purpose
@@ -8,20 +8,20 @@ To provide an open, collaborative, and authoritative registry of software signin
 
 ## Rationale
 
-In a time when developers are expected to engineer solutions at break-neck speed, we require advanced tools, frameworks, and methodologies for getting the same job done in a fraction of the time.
+In a time when developers are expected to engineer solutions at breakneck speed, we require advanced tools, frameworks, and methodologies to get the same job done in a fraction of the time.
 
-Building trust is hard work because trust is subjective. Everyone generally agrees on the requirement "to" trust a third-party entity for importing software, but few will agree on the "how," ranging from expert due diligence to mere blind trust, just to get solutions out the door and into the hands of vulnerable, unsuspecting customers.
+Building trust is hard work because trust is subjective. Everyone generally agrees on the requirement "to" trust a third-party entity for importing software, but few will agree on the "how," ranging from expert due diligence to mere blind trust—just to get solutions out the door and into the hands of vulnerable, unsuspecting customers.
 
-The threat model is simple: identity forgery is real, and proper identity validation requires more effort than what many are trained or are willing to do, placing entire enterprises, organizations, and their customer base at risk of theft and compromise.
+The threat model is simple: identity forgery is real, and proper identity validation requires more effort than many are trained for or willing to invest, placing entire enterprises, organizations, and their customer base at risk of theft and compromise.
 
-This project offers a community-driven solution to bootstrap the hard work of **key identity assurance**, providing deployers with a cache of evidence supporting the validity of software signing identities. By inviting collaboration among security-focused professionals, it aims to establish an open, scalable, and accessible approach to verifying identities tied to cryptographic keys, providing a high degree of assurance for software signing and other critical applications without the barriers of traditional identity verification services.
+This project offers a community-driven solution to bootstrap the hard work of **key identity assurance**, providing deployers with a cache of evidence supporting the validity of software signing identities. By inviting collaboration among security-focused professionals, it aims to establish an open, scalable, and accessible approach to verifying identities tied to cryptographic keys, providing a high degree of assurance for software signing and other critical applications, without the barriers of traditional identity verification services.
 
 ## Schema
 
-The included [**schema**](/schema.json) in this repository defines the acceptable structure for identity assertions in the registry. Each identity is associated with a single unique GPG key fingerprint and must include key proofs (evidence) to support the identity claim. This section details the necessary requirements for satisfying the minimum schema validation requirements.
+The included [**schema**](/schema.json) in this repository defines the acceptable structure for identity assertions in the registry. Each identity is associated with a unique GPG key fingerprint and must include key proofs (evidence) to support the identity claim. This section details the necessary requirements for satisfying the minimum schema validation requirements.
 
 > [!NOTE]
-> Use an online schema validator like [JSONSchema.dev](https://jsonschema.dev/) to prepare a schema-valid JSON submission for a new ID assertion!
+> Use an online schema validator like [JSONSchema.dev](https://jsonschema.dev/) to prepare a schema-valid JSON submission for a new identity assertion!
 
 ### **Fields**
 
@@ -60,8 +60,8 @@ Each identity assertion is an object containing the following fields:
   - **`type`**: The type of verification or evidence provided. Possible values:
     - `role`: Verifies the keyholder’s affiliation with a project, organization, or role.
     - `user`: Verifies the keyholder’s ownership of the GPG key, often via direct key verification or signed commits.
-    - `key`: Demonstrates use of signing key used to sign approved artifact (see [artifact-sign.sh](/artifact-sign.sh) for approved artifact)
-  
+    - `key`: Demonstrates use of the signing key to sign an approved artifact (see [artifact-sign.sh](/artifact-sign.sh) for approved artifacts).
+
   Example:
   ```json
   "refs": [
@@ -117,11 +117,11 @@ Here’s an example identity assertion that adheres to the schema:
 ## Contributing
 We welcome contributions to this registry, whether you're adding a new identity assertion or enhancing an existing one with additional evidence.
 
-### Updating existing assertions
+### Updating Existing Assertions
 If you have additional evidence for an existing identity assertion, simply **open a pull request** to amend the key’s list of `refs` and help strengthen its validity.
 
-### Adding new assertions
-- **Complete Schema**: Implement the full Schema to build submission.
+### Adding New Assertions
+- **Complete Schema**: Implement the full Schema to build your submission.
 - **References**: Provide 1-2 valid references (`refs`) to substantiate the proposed validity.
 - **GPG Fingerprints**: Use the full 160-bit, uppercase format wherever GPG fingerprints are presented.
 - All contributions are subject to initial and recurring review and approval.
@@ -145,3 +145,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Signature key](https://gnupg.org/signature_key.html), *The GNU Privacy Guard*
 
 > *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
+```
