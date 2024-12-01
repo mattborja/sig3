@@ -1,0 +1,22 @@
+{
+  "fingerprint": "C2FE4BD271C139B86C533E461E953E27D4311E58",
+  "validity": "full",
+  "label": "Chris Lamb",
+  "refs": [
+    {
+      "date": "2024-10-14",
+      "comment": "Debian Developer since 2008",
+      "type": "role",
+      "url": "https://portfolio.debian.net/result?email=lamby%40debian.org"
+    },
+    {
+      "date": "2024-10-14",
+      "comment": "Debian project leader",
+      "type": "role",
+      "url": "https://en.wikipedia.org/wiki/List_of_Debian_project_leaders#Chris_Lamb"
+    }
+  ],
+  "tags": [
+    "Debian"
+  ]
+}

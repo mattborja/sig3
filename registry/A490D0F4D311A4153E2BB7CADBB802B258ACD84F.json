@@ -1,0 +1,22 @@
+{
+  "fingerprint": "A490D0F4D311A4153E2BB7CADBB802B258ACD84F",
+  "validity": "full",
+  "label": "Tails OS Signing Key",
+  "refs": [
+    {
+      "date": "2024-10-14",
+      "comment": "Official Tails documentation for verifying downloads with GPG",
+      "type": "role",
+      "url": "https://tails.net/install/expert/index.en.html"
+    },
+    {
+      "date": "2024-10-14",
+      "comment": "Cross-signed by C2FE4BD271C139B86C533E461E953E27D4311E58",
+      "type": "role",
+      "url": "https://tails.net/install/expert/index.en.html#verify-key"
+    }
+  ],
+  "tags": [
+    "Tails"
+  ]
+}
