@@ -1,0 +1,39 @@
+{
+  "fingerprint": "A1DB793DC23663E7F91475D82B999FA9CE046B1B",
+  "label": "Werner Koch (384-bit ECDH key)",
+  "validity": "full",
+  "refs": [
+    {
+      "date": "2024-11-27",
+      "comment": "User comment by site administrator (werner) indicating key ID",
+      "url": "https://dev.gnupg.org/T6561#172087",
+      "type": "role"
+    },
+    {
+      "date": "2024-11-27",
+      "comment": "User profile and recent activity of named site administrator (werner) with listed project associations: GnuPG project and g10 code CmbH",
+      "url": "https://dev.gnupg.org/p/werner/",
+      "type": "role"
+    },
+    {
+      "date": "2024-11-27",
+      "comment": "Blog post at gnupg.org on ADSK by subject listing full fingerprint of real encryption key used in code samples",
+      "url": "https://www.gnupg.org/blog/20230321-adsk.html",
+      "type": "role"
+    },
+    {
+      "date": "2024-10-24",
+      "comment": "Encrypted email received from wk@gnupg.org (Message-Id: <87jzegnvts.fsf@jacob.g10code.de>) associating the fingerprints of the encryption subkey (2B99 9FA9 CE04 6B1B), the signing subkey (19CC 1C9E 085B 107A), and the primary key (C85C 6311 3AE8 6658 7D0A).",
+      "type": "user"
+    },
+    {
+      "date": "2024-11-27",
+      "comment": "User comment by site administrator (werner) self-attesting signing subkey (19CC 1C9E 085B 107A) and primary key (C85C 6311 3AE8 6658 7D0A)",
+      "url": "https://dev.gnupg.org/T5454#146523",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "GnuPG"
+  ]
+}
