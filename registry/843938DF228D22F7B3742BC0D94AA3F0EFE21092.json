@@ -1,0 +1,16 @@
+{
+  "fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
+  "validity": "marginal",
+  "label": "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>",
+  "refs": [
+    {
+      "date": "2024-10-14",
+      "comment": "Official Ubuntu documentation on verifying ISO images",
+      "type": "role",
+      "url": "https://help.ubuntu.com/community/VerifyIsoHowto"
+    }
+  ],
+  "tags": [
+    "Ubuntu"
+  ]
+}
