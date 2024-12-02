@@ -8,12 +8,6 @@
       "comment": "Fedora CoreOS download page cites this key as the signing key for downloads",
       "type": "role",
       "url": "https://fedoraproject.org/coreos/download?arch=x86_64#download_section"
-    },
-    {
-      "date": "2024-10-19",
-      "comment": "Website's trust is based on valid TLS certificate (no other third-party cross-reference available)",
-      "type": "role",
-      "url": "https://fedoraproject.org/coreos/download?arch=x86_64#download_section"
     }
   ],
   "tags": [
