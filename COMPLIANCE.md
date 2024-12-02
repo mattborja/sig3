@@ -26,7 +26,7 @@ JSON schema validation ([schema.json](/schema.json)) applied as follows:
 - Requires minimum GPG identity fingerprint length of 128 bits (16 characters)
 - Requires label or name of associated identity
 - Requires validity level to be either `full`, `marginal`, `revoked`, or `none`.
-- Requires a list of references (refs) that provide evidence to support the identity assertion, specifying required fields: date, comment, type (`role`, `user`, or `key`)
+- Requires a **minimum of 2 references** (`refs`) that provide evidence to support the identity assertion, specifying required fields: date, comment, type (`role`, `user`, or `key`)
 - Requires a list of tags associated with the identity, for the purpose of categorizing or further classifying the associated identity
 - No additional properties are permitted
 - Limit **1 identity per file** with strict filename validation ([filename-validate.sh](/filename-validate.sh))
