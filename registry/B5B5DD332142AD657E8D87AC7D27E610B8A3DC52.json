@@ -8,6 +8,12 @@
         "comment": "Self-verified during 2022-04-01 dev call.",
         "url": "https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-04-01",
         "type": "user"
+      },
+      {
+        "date": "2022-04-01",
+        "comment": "Listed as project lead with other named collaborators in Shibboleth projects: Scott Cantor, Rod Widdowson, Steven Premeau, Tom Zeller, John W. O'Brien, Daniel Fisher, Henri Mikkonen.",
+        "url": "https://shibboleth.atlassian.net/jira/projects",
+        "type": "role"
       }
     ],
     "tags": [
