@@ -62,7 +62,7 @@
         ],
         "additionalProperties": false
       },
-      "description": "A list of references that provide evidence to support the identity assertion. Each reference must include a date, comment, URL, and type."
+      "description": "A list of references that provide evidence to support the identity assertion. Each reference must include a date, comment, and type."
     },
     "tags": {
       "type": "array",
