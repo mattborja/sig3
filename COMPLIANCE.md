@@ -20,6 +20,7 @@ All files require review from Code Owners ([CODEOWNERS](/.github/CODEOWNERS)), e
 ## Required status checks
 - Requires branches to be up to date before merging
 - Requires schema validation to pass
+- Requires [GitGuardian Security Checks](https://www.gitguardian.com/monitor-internal-repositories-for-secrets) to pass
 ## Required schema validation
 JSON schema validation ([schema.json](/schema.json)) applied as follows:
 - Requires minimum GPG identity fingerprint length of 128 bits (16 characters)
