@@ -6,6 +6,12 @@
 
 To provide an open, collaborative, and authoritative registry of software signing identities with their respective proofs, in support of developers, security practitioners, and operations engineers securing the supply chain.
 
+As related in [**2.1 Expected Outcomes of Identity Proofing**](https://pages.nist.gov/800-63-3/sp800-63a.html#21-expected-outcomes-of-identity-proofing) of NIST Special Publication 800-63A:
+- To resolve a claimed identity to a single, unique identity within the context of the population of users the CSP serves.
+- To validate that all supplied evidence is correct and genuine (e.g., not counterfeit or misappropriated).
+- To validate that the claimed identity exists in the real world.
+- To verify that the claimed identity is associated with the real person supplying the identity evidence.
+
 ## Rationale
 
 In a time when developers are expected to engineer solutions at breakneck speed, we require advanced tools, frameworks, and methodologies to get the same job done in a fraction of the time.
