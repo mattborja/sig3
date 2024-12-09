@@ -1,0 +1,19 @@
+{
+  "fingerprint": "21CB256AE16FC54C6E652949702D426D350D275D",
+  "label": "Rocky Enterprise Software Foundation - Release key 2022 <releng@rockylinux.org>",
+  "validity": "full",
+  "refs": [
+    {
+      "date": "2022-05-09",
+      "comment": "Rocky Linux 9 Release Key",
+      "artifact": "RPM-GPG-KEY-Rocky-9",
+      "url": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-Rocky-9",
+      "type": "key"
+    }
+  ],
+  "tags": [
+    "Rocky Linux",
+    "release key",
+    "2022"
+  ]
+}
