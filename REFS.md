@@ -1,4 +1,4 @@
-# Proofs
+# ID References (Proofs)
 Circumstantial evidence corrobortaing the presumptive correlation between identity proofs and their reasonable outcomes.
 
 | Proof (controlled by subject)                | Presumption (implicated of subject)                           | Assertion (not controlled by subject)                            |
