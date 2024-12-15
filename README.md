@@ -73,7 +73,7 @@ Each identity assertion is an object containing the following fields:
     }
   ]
   ```
-
+  For a complete list of known identity references, please see [**REFS.md**](/REFS.md).
 - **`tags`**:  
   An array of strings representing keywords or categories that provide additional context for the keyholder’s identity. Tags might include roles (e.g., `developer`, `maintainer`) or organizations (e.g., `OWASP`).  
   Example:  
