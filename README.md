@@ -1,8 +1,8 @@
-# Identity Assertion Registry
+# Identity Registry for Critical Infrastructure Security
 
 ## Purpose
 
-To provide a centralized source for the collection of evidences in accordance with NIST SP 800-63A identity proofing requirements. By inviting collaboration among security-focused peers, this project aims to establish an open, scalable, and accessible approach to verifying identities tied to cryptographic keys, providing a high degree of assurance for software signing and other critical applications, without the barriers of traditional identity verification services.
+This project establishes a robust, independent registry for verifying identity proofs and assertions, aligned with NIST Special Publication 800-63A standards. Designed to support critical infrastructure protection, the registry ensures the integrity of vendors, enhances supply chain security, and facilitates the secure exchange of identity credentials. By providing a reliable mechanism for identity validation, this initiative contributes to national security efforts, safeguarding vital systems from unauthorized access and potential threats.
 
 ## Schema
 
@@ -61,7 +61,7 @@ Each identity assertion is an object containing the following fields:
     }
   ]
   ```
-
+  For a complete list of known identity references, please see [**REFS.md**](/REFS.md).
 - **`tags`**:  
   An array of strings representing keywords or categories that provide additional context for the keyholder’s identity. Tags might include roles (e.g., `developer`, `maintainer`) or organizations (e.g., `OWASP`).  
   Example:  
