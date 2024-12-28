@@ -10,4 +10,4 @@ Licensed under the MIT License.
 ```
 
 - [Open Proof of Cryptographic Key Ownership Using Git as a Registry](/papers/open-proof-key-ownership-git-registry-mattborja-2025.md) - A decentralized approach for cryptographic proof of key ownership using clearsigned artifacts and Git as a global registry
-- [Self-Attestation of Additional GPG Keys Using GitHub’s Internal Signing Key](/papers/self-attestation-gpg-keys-github-mattborja-2025.md)
+- [Self-Attestation of Additional GPG Keys Using GitHub’s Internal Signing Key](/papers/self-attestation-gpg-keys-github-mattborja-2025.md) - A method for asserting ownership of an external GPG key in a GitHub repository with Vigilant Mode enabled
