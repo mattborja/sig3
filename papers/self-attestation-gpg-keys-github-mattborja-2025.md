@@ -11,6 +11,7 @@ Licensed under the MIT License.
 ---
 
 **Abstract**
+
 This document outlines a method for asserting ownership of an external GPG key in a GitHub repository with Vigilant Mode enabled. Since the GitHub-provided signing key used for commits cannot be exported, this process leverages a self-attestation statement to cryptographically link the external GPG key to the repository. The commit signature, clearsigned artifact, and self-attestation statement together establish decentralized proof of ownership. This approach ensures transparency, traceability, and compliance with GitHub’s security requirements.
 
 ---

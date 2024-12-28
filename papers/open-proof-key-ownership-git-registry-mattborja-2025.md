@@ -11,6 +11,7 @@ Licensed under the MIT License.
 ---
 
 **Abstract**
+
 This paper presents a decentralized approach for cryptographic proof of key ownership using clearsigned artifacts and Git as a global registry. By combining the immutability and transparency of Git with GPG’s clearsigning capabilities, the proposed method ensures global replay resistance, complete traceability, and secure validation. A detailed workflow is outlined, leveraging Git’s content-addressable storage and distributed architecture to establish a self-contained, auditable registry. The paper concludes with a complete implementation of the artifact signing script and practical recommendations for deployment.
 
 ---
