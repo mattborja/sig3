@@ -6,7 +6,7 @@ A reference table listing circumstantial evidence that supports the presumptive 
 >
 > The information provided here is for **informational purposes only** and is not intended as legal or professional advice. By utilizing or sharing this information, you acknowledge that you are responsible for ensuring that no confidential or sensitive data is exposed inappropriately.
 >
-> **Indemnification Notice**: The authors and contributors of this document shall not be held liable for any misuse, legal consequences, or damage resulting from the use, dissemination, or exposure of the information contained herein. It is the user's responsibility to ensure that this document is used in compliance with applicable privacy laws and regulations.
+> **Indemnification Notice**: The authors and contributors of this document shall not be held liable for any misuse, legal consequences, or damage resulting from the use, dissemination, or exposure of the information contained herein. It is the user's responsibility to ensure that this document is used in compliance with applicable privacy laws and regulations (see also [LICENSE](/LICENSE)).
 
 
 | Classification            | Example                                | Assertion                                        | Verification                                         | Authority                      |
