@@ -2,11 +2,11 @@
 A reference table listing circumstantial evidence that supports the presumptive correlation between identity proofs and their reasonable outcomes.
 
 > [!WARNING]
-> **Exercise caution when considering the use of the proofs listed in this document.** Many of these entries contain **sensitive personally identifiable information (PII)** that should **NOT** be disclosed publicly (e.g., in commits or pull requests in this repository). 
+> **Exercise caution when using the proofs listed in this document.** Many of these entries contain **sensitive personally identifiable information (PII)**, which should **NOT** be disclosed publicly (e.g., in commits or pull requests in this repository). 
 >
-> The information provided here is intended for **informational purposes only**. It is not meant as legal advice or a guarantee of accuracy. By utilizing this information, you agree to take full responsibility for ensuring that no confidential or sensitive data is exposed inappropriately. 
+> The information provided here is for **informational purposes only** and is not intended as legal or professional advice. By utilizing or sharing this information, you acknowledge that you are responsible for ensuring that no confidential or sensitive data is exposed inappropriately.
 >
-> **Indemnification Notice**: The authors and contributors of this document are not responsible for any misuse, legal consequences, or damage resulting from the use or dissemination of the information contained herein.
+> **Indemnification Notice**: The authors and contributors of this document shall not be held liable for any misuse, legal consequences, or damage resulting from the use, dissemination, or exposure of the information contained herein. It is the user's responsibility to ensure that this document is used in compliance with applicable privacy laws and regulations.
 
 
 | Classification            | Example                                | Assertion                                        | Verification                                         | Authority                      |
