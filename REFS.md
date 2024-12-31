@@ -1,5 +1,13 @@
 # ID References (Proofs)
-Circumstantial evidence corroborating the presumptive correlation between identity proofs and their reasonable outcomes.
+A reference table listing circumstantial evidence that supports the presumptive correlation between identity proofs and their reasonable outcomes.
+
+> [!WARNING]
+> **Exercise caution when considering the use of the proofs listed in this document.** Many of these entries contain **sensitive personally identifiable information (PII)** that should **NOT** be disclosed publicly (e.g., in commits or pull requests in this repository). 
+>
+> The information provided here is intended for **informational purposes only**. It is not meant as legal advice or a guarantee of accuracy. By utilizing this information, you agree to take full responsibility for ensuring that no confidential or sensitive data is exposed inappropriately. 
+>
+> **Indemnification Notice**: The authors and contributors of this document are not responsible for any misuse, legal consequences, or damage resulting from the use or dissemination of the information contained herein.
+
 
 | Classification            | Example                                | Assertion                                        | Verification                                         | Authority                      |
 |---------------------------|--------------------------------------------------|-----------------------------------------------------------|------------------------------------------------------------|----------------------------------------|
