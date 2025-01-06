@@ -1,20 +1,8 @@
-# Identity Assertion Registry
-## Support this Work
-- **GoFundMe:** [Support Identity Assurance with Sectigo EV Cert](https://gofund.me/5d81529b)
+# Identity Registry for Critical Infrastructure Security
 
 ## Purpose
 
-To provide an open, collaborative, and authoritative registry of software signing identities with their respective proofs, in support of developers, security practitioners, and operations engineers securing the supply chain.
-
-## Rationale
-
-In a time when developers are expected to engineer solutions at breakneck speed, we require advanced tools, frameworks, and methodologies to get the same job done in a fraction of the time.
-
-Building trust is hard work because trust is subjective. Everyone generally agrees on the requirement "to" trust a third-party entity for importing software, but few will agree on the "how," ranging from expert due diligence to mere blind trust—just to get solutions out the door and into the hands of vulnerable, unsuspecting customers.
-
-The threat model is simple: identity forgery is real, and proper identity validation requires more effort than many are trained for or willing to invest, placing entire enterprises, organizations, and their customer base at risk of theft and compromise.
-
-This project offers a community-driven solution to bootstrap the hard work of **key identity assurance**, providing deployers with a cache of evidence supporting the validity of software signing identities. By inviting collaboration among security-focused professionals, it aims to establish an open, scalable, and accessible approach to verifying identities tied to cryptographic keys, providing a high degree of assurance for software signing and other critical applications, without the barriers of traditional identity verification services.
+This project establishes a robust, independent registry for verifying identity proofs and assertions, aligned with NIST Special Publication 800-63A standards. Designed to support critical infrastructure protection, the registry ensures the integrity of vendors, enhances supply chain security, and facilitates the secure exchange of identity credentials. By providing a reliable mechanism for identity validation, this initiative contributes to national security efforts, safeguarding vital systems from unauthorized access and potential threats.
 
 ## Schema
 
@@ -73,7 +61,7 @@ Each identity assertion is an object containing the following fields:
     }
   ]
   ```
-
+  
 - **`tags`**:  
   An array of strings representing keywords or categories that provide additional context for the keyholder’s identity. Tags might include roles (e.g., `developer`, `maintainer`) or organizations (e.g., `OWASP`).  
   Example:  
