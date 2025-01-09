@@ -1,4 +1,4 @@
-# Identity Registry for Critical Infrastructure Security
+# Identity Assertion Registry for Critical Infrastructure Security
 
 ## Purpose
 
