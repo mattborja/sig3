@@ -69,13 +69,14 @@ The `tags` property is an array of strings representing categories or roles asso
 ["OWASP", "Software Developer"]
 ```
 
-### Complete Example
+### JSON Example
 
-Below is a fully populated, schema-compliant JSON example:
+Below is a theoretical example that would be proposed via new Pull Request as follows:
+
+Filename: **/registry/259A55407DD6C00299E6607EFFDE55BE73A2D1ED.json**
 
 ```json
 {
-  "filename": "259A55407DD6C00299E6607EFFDE55BE73A2D1ED.json",
   "fingerprint": "259A55407DD6C00299E6607EFFDE55BE73A2D1ED",
   "label": "Jeremy Long",
   "validity": "full",
