@@ -36,7 +36,7 @@ The `refs` property contains an array of reference objects that support the iden
 | `url`      | A link to an authoritative source validating the reference.          | `https://github.com/OWASP/www-project-dependency-check`   |
 | `type`     | The type of evidence provided. Possible values: `role`, `user`, `key`.| `role`                                                   |
 
-**Full Example of `refs` Collection:**
+**Full Example of `refs` Collection**
 ```json
 [
   {
