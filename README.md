@@ -1,125 +1,21 @@
-# Identity Registry for Critical Infrastructure Security
+# Identity Assertion Registry
 
 ## Purpose
+To support critical infrastructure needs with an auditable and authoritative registry of digital identify proofs in accordance with industry guidelines and recommendations.
 
-This project establishes a robust, independent registry for verifying identity proofs and assertions, aligned with NIST Special Publication 800-63A standards. Designed to support critical infrastructure protection, the registry ensures the integrity of vendors, enhances supply chain security, and facilitates the secure exchange of identity credentials. By providing a reliable mechanism for identity validation, this initiative contributes to national security efforts, safeguarding vital systems from unauthorized access and potential threats.
+## Standards
+The following resources are considered applicable and relevant to the orientation and goals of this project:
+- [Digital Identity Guidelines (NIST SP 800-63A)](https://pages.nist.gov/800-63-3/sp800-63a.html)
+- [Key validity and owner trust (GnuPG)](https://www.gnupg.org/gph/en/manual/x334.html)
 
-## Schema
+## Getting Started
+1. Familiarize yourself with the resources provided in the Standards section above
+2. Refer to the [identity registry](/registry/) for existing evidence submissions (see also [schema](/SCHEMA.md))
+3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository
+4. Create a new pull request to submit evidence for a new or existing digital identity
 
-The included [**schema**](/schema.json) in this repository defines the acceptable structure for identity assertions in the registry. Each identity is associated with a unique GPG key fingerprint and must include key proofs (evidence) to support the identity claim. This section details the necessary requirements for satisfying the minimum schema validation requirements.
 
-> [!NOTE]
-> Use an online schema validator like [JSONSchema.dev](https://jsonschema.dev/) to prepare a schema-valid JSON submission for a new identity assertion!
-
-### **Fields**
-
-Each identity assertion is an object containing the following fields:
-
-- **`fingerprint`**:  
-  A string representing the unique GPG fingerprint of the key being asserted. The fingerprint must be at least 128 bits (16 characters) long and match the pattern `^[A-Fa-f0-9]{16,}$`. This is the primary identifier for the key and must be presented in full.  
-  Example:  
-  ```json
-  "fingerprint": "259A55407DD6C00299E6607EFFDE55BE73A2D1ED"
-  ```
-
-- **`label`**:  
-  The name of the key holder or entity, typically matching the name associated with the GPG key.  
-  Example:  
-  ```json
-  "label": "Jeremy Long"
-  ```
-
-- **`validity`**:  
-  A string representing the level of trust associated with the identity assertion. This field indicates how thoroughly the identity has been verified. Possible values are:
-  - `full`: The identity is fully verified with strong evidence from multiple independent sources.
-  - `marginal`: The identity has been partially verified, but some evidence or verification may be limited.
-  - `revoked`: The identity assertion has been withdrawn or is no longer valid.
-  - `none`: No verification has been performed, or the identity could not be verified.  
-  Example:  
-  ```json
-  "validity": "full"
-  ```
-
-- **`refs`**:  
-  An array of references providing evidence to support the identity assertion. Each reference includes:
-  - **`date`**: The date when the verification or cross-signing took place, in `YYYY-MM-DD` format.
-  - **`comment`**: A brief description of what the reference verifies (e.g., project affiliation, key ownership).
-  - **`url`**: A URL pointing to an authoritative source or resource that validates the reference.
-  - **`type`**: The type of verification or evidence provided. Possible values:
-    - `role`: Verifies the keyholder’s affiliation with a project, organization, or role.
-    - `user`: Verifies the keyholder’s ownership of the GPG key, often via direct key verification or signed commits.
-    - `key`: Demonstrates use of the signing key to sign an approved artifact (see [artifact-sign.sh](/artifact-sign.sh) for approved artifacts).
-
-  Example:
-  ```json
-  "refs": [
-    {
-      "date": "2024-10-28",
-      "comment": "Verified project affiliation with OWASP through public documentation",
-      "url": "https://github.com/OWASP/www-project-dependency-check/commits/master/index.md",
-      "type": "role"
-    }
-  ]
-  ```
-  For a complete list of known identity references, please see [**REFS.md**](/REFS.md).
-- **`tags`**:  
-  An array of strings representing keywords or categories that provide additional context for the keyholder’s identity. Tags might include roles (e.g., `developer`, `maintainer`) or organizations (e.g., `OWASP`).  
-  Example:  
-  ```json
-  "tags": ["OWASP", "Software Developer"]
-  ```
-
-### Example
-
-Here’s an example identity assertion that adheres to the schema:
-
-```json
-{
-  "fingerprint": "259A55407DD6C00299E6607EFFDE55BE73A2D1ED",
-  "label": "Jeremy Long",
-  "validity": "full",
-  "refs": [
-    {
-      "date": "2024-10-28",
-      "comment": "Verified project affiliation with OWASP through public documentation",
-      "url": "https://github.com/OWASP/www-project-dependency-check/commits/master/index.md",
-      "type": "role"
-    },
-    {
-      "date": "2024-10-29",
-      "comment": "Verification of key ownership via signed commits",
-      "url": "https://github.com/jeremylong/DependencyCheck/commit/48074e6c0679cf4429f80292e3234f328fc870e9",
-      "type": "user"
-    }
-  ],
-  "tags": ["OWASP", "Software Developer"]
-}
-```
-
-### Important
-- **`fingerprint`**: Ensure that the **GPG fingerprint** is presented fully and adheres to the correct pattern (at least 16 alphanumeric characters).
-- **`validity`**: The **validity** status should reflect the level of verification based on the provided references. A `full` validity status should only be assigned if multiple independent sources have verified the identity.
-- **`refs`**: Each reference must be **verifiable** and should link to an **authoritative, accessible source**.
-- **`tags`**: The **tags** field can be used to categorize the keyholder by roles or affiliations (e.g., linking keyholders to specific projects or organizations).
-
-## Contributing
-We welcome contributions to this registry, whether you're adding a new identity assertion or enhancing an existing one with additional evidence.
-
-### Updating Existing Assertions
-If you have additional evidence for an existing identity assertion, simply **open a pull request** to amend the key’s list of `refs` and help strengthen its validity.
-
-### Adding New Assertions
-- **Complete Schema**: Implement the full Schema to build your submission.
-- **References**: Provide 1-2 valid references (`refs`) to substantiate the proposed validity.
-- **GPG Fingerprints**: Use the full 160-bit, uppercase format wherever GPG fingerprints are presented.
-- All contributions are subject to initial and recurring review and approval.
-
-Thank you for helping build a robust identity assurance registry!
-
-### Acceptance
-Once a submission has been reviewed and verified for compliance, the signed submission will be merged into the main registry.
-
-## Learn More
+## Reference
 - [Building your web of trust](https://www.gnupg.org/gph/en/manual/x547.html), *The GNU Privacy Guard*
 - [Using trust to validate keys](https://www.gnupg.org/gph/en/manual/x334.html#AEN384), *The GNU Privacy Guard*
 - [Validating authenticity of a key](https://apache.org/info/verification.html#Validating), *The Apache Software Foundation*
