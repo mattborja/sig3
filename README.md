@@ -14,7 +14,6 @@ The following resources are considered applicable and relevant to the orientatio
 3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository
 4. Create a new pull request to submit evidence for a new or existing digital identity
 
-
 ## Reference
 - [Building your web of trust](https://www.gnupg.org/gph/en/manual/x547.html), *The GNU Privacy Guard*
 - [Using trust to validate keys](https://www.gnupg.org/gph/en/manual/x334.html#AEN384), *The GNU Privacy Guard*
@@ -36,5 +35,4 @@ The Code Owners of this project acknowledges and commemorates the extraordinary 
 > *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
 
 ## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+This project is licensed under the [MIT License](/LICENSE).

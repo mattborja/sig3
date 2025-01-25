@@ -13,6 +13,18 @@
       "date": "2024-10-06",
       "comment": "Cross-signed by F30FF4FC936584574EE3251833688C2EDC08CD38",
       "type": "user"
+    },
+    {
+      "date": "2025-01-17",
+      "comment": "Listed on LinkedIn profile as Download Public PGP Key link",
+      "type": "user",
+      "url": "https://www.linkedin.com/in/mattborja"
+    },
+    {
+      "date": "2025-01-17",
+      "comment": "LinkedIn profile showing identity verification by CLEAR using government ID",
+      "type": "user",
+      "url": "https://www.linkedin.com/help/linkedin/answer/a1359065"
     }
   ],
   "tags": [

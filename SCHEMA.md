@@ -4,67 +4,70 @@ The included [**schema**](/schema.json) in this repository defines the acceptabl
 > [!NOTE]
 > Use an online schema validator like [JSONSchema.dev](https://jsonschema.dev/) to prepare a schema-valid JSON submission for a new identity assertion!
 
-## **Fields**
+## Fields
 
-Each identity assertion is an object containing the following fields:
+The following table summarizes the top-level properties of the schema:
 
-- **`fingerprint`**:  
-  A string representing the unique GPG fingerprint of the key being asserted. The fingerprint must be at least 128 bits (16 characters) long and match the pattern `^[A-Fa-f0-9]{16,}$`. This is the primary identifier for the key and must be presented in full.  
-  Example:  
-  ```json
-  "fingerprint": "259A55407DD6C00299E6607EFFDE55BE73A2D1ED"
-  ```
+| Key           | Description                                                      | Example Value                                              |
+|---------------|------------------------------------------------------------------|------------------------------------------------------------|
+| `fingerprint` | The GPG key fingerprint associated with the identity assertion. | `259A55407DD6C00299E6607EFFDE55BE73A2D1ED`                |
+| `label`       | The name or title of the key holder.                             | `Jeremy Long`                                              |
+| `validity`    | The trust level of the identity assertion.                      | `full`                                                    |
+| `refs`        | An array of references supporting the identity claim.           | See "Refs" section below.                                  |
+| `tags`        | An array of tags categorizing the identity assertion.           | `["OWASP", "Software Developer"]`                       |
 
-- **`label`**:  
-  The name of the key holder or entity, typically matching the name associated with the GPG key.  
-  Example:  
-  ```json
-  "label": "Jeremy Long"
-  ```
+## Extended Properties
 
-- **`validity`**:  
-  A string representing the level of trust associated with the identity assertion. This field indicates how thoroughly the identity has been verified. Possible values are:
-  - `full`: The identity is fully verified with strong evidence from multiple independent sources.
-  - `marginal`: The identity has been partially verified, but some evidence or verification may be limited.
-  - `revoked`: The identity assertion has been withdrawn or is no longer valid.
-  - `none`: No verification has been performed, or the identity could not be verified.  
-  Example:  
-  ```json
-  "validity": "full"
-  ```
+### Refs
 
-- **`refs`**:  
-  An array of references providing evidence to support the identity assertion. Each reference includes:
-  - **`date`**: The date when the verification or cross-signing took place, in `YYYY-MM-DD` format.
-  - **`comment`**: A brief description of what the reference verifies (e.g., project affiliation, key ownership).
-  - **`url`**: A URL pointing to an authoritative source or resource that validates the reference.
-  - **`type`**: The type of verification or evidence provided. Possible values:
-    - `role`: Verifies the keyholder’s affiliation with a project, organization, or role.
-    - `user`: Verifies the keyholder’s ownership of the GPG key, often via direct key verification or signed commits.
-    - `key`: Demonstrates use of the signing key to sign an approved artifact (see [artifact-sign.sh](/artifact-sign.sh) for approved artifacts).
+The `refs` property contains an array of reference objects that support the identity assertion. Each reference includes details about the verification context.
 
-  Example:
-  ```json
-  "refs": [
-    {
-      "date": "2024-10-28",
-      "comment": "Verified project affiliation with OWASP through public documentation",
-      "url": "https://github.com/OWASP/www-project-dependency-check/commits/master/index.md",
-      "type": "role"
-    }
-  ]
-  ```
-  For a complete list of known identity references, please see [**REFS.md**](/REFS.md).
-- **`tags`**:  
-  An array of strings representing keywords or categories that provide additional context for the keyholder’s identity. Tags might include roles (e.g., `developer`, `maintainer`) or organizations (e.g., `OWASP`).  
-  Example:  
-  ```json
-  "tags": ["OWASP", "Software Developer"]
-  ```
+| Key        | Description                                                          | Example Value                                             |
+|------------|----------------------------------------------------------------------|-----------------------------------------------------------|
+| `date`     | The date of the verification or cross-signing in `YYYY-MM-DD` format.| `2024-10-28`                                              |
+| `comment`  | A description of the verification performed.                         | `Verified project affiliation with OWASP.`               |
+| `artifact` | A cryptographic artifact demonstrating possession of the key.        | `Signed commit hash: 48074e6c0679cf4429f80292e3234f328fc870e9` |
+| `url`      | A link to an authoritative source validating the reference.          | `https://github.com/OWASP/www-project-dependency-check`   |
+| `type`     | The type of evidence provided. Possible values: `role`, `user`, `key`.| `role`                                                   |
 
-## Example
+**Full Example of `refs` Collection**
+```json
+[
+  {
+    "date": "2024-10-28",
+    "comment": "Verified project affiliation with OWASP through public documentation",
+    "artifact": "Signed commit hash: 48074e6c0679cf4429f80292e3234f328fc870e9",
+    "url": "https://github.com/OWASP/www-project-dependency-check",
+    "type": "role"
+  },
+  {
+    "date": "2024-10-29",
+    "comment": "Verification of key ownership via signed commits",
+    "artifact": "Signed commit hash: 87374e6c0659ef4529b80291e5234f328fc671e9",
+    "url": "https://github.com/jeremylong/DependencyCheck/commit/87374e6c0659",
+    "type": "user"
+  }
+]
+```
 
-Here’s an example identity assertion that adheres to the schema:
+### Tags
+
+The `tags` property is an array of strings representing categories or roles associated with the identity assertion.
+
+| Key | Description                                       | Example Value               |
+|-----|---------------------------------------------------|-----------------------------|
+| -   | A tag categorizing the identity assertion.        | `"OWASP"`, `"Developer"` |
+
+**Full Example of `tags` Collection:**
+```json
+["OWASP", "Software Developer"]
+```
+
+## JSON Example
+
+Below is a theoretical example that would be proposed via new Pull Request as follows:
+
+Filename: **/registry/259A55407DD6C00299E6607EFFDE55BE73A2D1ED.json**
 
 ```json
 {
@@ -75,13 +78,15 @@ Here’s an example identity assertion that adheres to the schema:
     {
       "date": "2024-10-28",
       "comment": "Verified project affiliation with OWASP through public documentation",
-      "url": "https://github.com/OWASP/www-project-dependency-check/commits/master/index.md",
+      "artifact": "Signed commit hash: 48074e6c0679cf4429f80292e3234f328fc870e9",
+      "url": "https://github.com/OWASP/www-project-dependency-check",
       "type": "role"
     },
     {
       "date": "2024-10-29",
       "comment": "Verification of key ownership via signed commits",
-      "url": "https://github.com/jeremylong/DependencyCheck/commit/48074e6c0679cf4429f80292e3234f328fc870e9",
+      "artifact": "Signed commit hash: 87374e6c0659ef4529b80291e5234f328fc671e9",
+      "url": "https://github.com/jeremylong/DependencyCheck/commit/87374e6c0659",
       "type": "user"
     }
   ],
@@ -89,7 +94,9 @@ Here’s an example identity assertion that adheres to the schema:
 }
 ```
 
-## Important
+## Additional Considerations & Limitations
+
+- Each `fingerprint` must be unique within the registry. The schema enforces a strict limitation of **one JSON file per fingerprint** being attested. This ensures that every GPG key fingerprint is represented by exactly one identity assertion, preventing duplication and maintaining consistency across the registry. When updating or modifying an assertion, the existing JSON file for the relevant fingerprint must be replaced or updated.
 - **`fingerprint`**: Ensure that the **GPG fingerprint** is presented fully and adheres to the correct pattern (at least 16 alphanumeric characters).
 - **`validity`**: The **validity** status should reflect the level of verification based on the provided references. A `full` validity status should only be assigned if multiple independent sources have verified the identity.
 - **`refs`**: Each reference must be **verifiable** and should link to an **authoritative, accessible source**.
