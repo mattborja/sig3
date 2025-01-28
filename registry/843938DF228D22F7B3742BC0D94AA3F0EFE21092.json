@@ -1,0 +1,46 @@
+{
+  "fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
+  "validity": "full",
+  "label": "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>",
+  "refs": [
+    {
+      "date": "2024-10-14",
+      "comment": "Official Ubuntu documentation on verifying ISO images",
+      "type": "role",
+      "url": "https://help.ubuntu.com/community/VerifyIsoHowto"
+    },
+    {
+      "date": "2025-01-06",
+      "comment": "Example in tutorial documentation on ubuntu.com using production signing key",
+      "type": "role",
+      "url": "https://ubuntu.com/tutorials/how-to-verify-ubuntu#4-retrieve-the-correct-signature-key"
+    },
+    {
+      "date": "2025-01-06",
+      "comment": "Reference to key ID in post by trusted entity 'system' on official Ubuntu Discourse",
+      "type": "role",
+      "url": "https://discourse.ubuntu.com/t/how-to-verify-your-ubuntu-download/14010"
+    },
+    {
+      "date": "2025-01-06",
+      "comment": "First mention of fingerprint by GitHub user @pmahnke in association with the Ubuntu project",
+      "type": "user",
+      "url": "https://github.com/canonical-web-and-design/tutorials.ubuntu.com/blob/7e41d17831c94c1e23462986d4d69ccb0887bfc6/tutorials/how-to-verify-ubuntu/how-to-verify-ubuntu.md?plain=1#L49"
+    },
+    {
+      "date": "2025-01-06",
+      "comment": "Attestation by Ubuntu Security Team and AppArmor maintainer Steve Beattie regarding ACLs for editing access",
+      "type": "role",
+      "url": "https://discourse.ubuntu.com/t/is-ubuntu-vulnerable-to-fake-keys/21997/3"
+    },
+    {
+      "date": "2025-01-06",
+      "comment": "Referenced archive and import GPG keys by Steve Beattie, Ubuntu Security Team",
+      "type": "role",
+      "url": "https://wiki.ubuntu.com/SecurityTeam/FAQ#GPG_Keys_used_by_Ubuntu"
+    }
+  ],
+  "tags": [
+    "Ubuntu"
+  ]
+}
