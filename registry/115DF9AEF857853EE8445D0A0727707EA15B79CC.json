@@ -5,12 +5,25 @@
   "refs": [
     {
       "date": "2024-10-19",
-      "comment": "Fedora CoreOS download page cites this key as the signing key for downloads",
+      "comment": "Fedora CoreOS download page listing signing key(s) for downloads",
       "type": "role",
       "url": "https://fedoraproject.org/coreos/download?arch=x86_64#download_section"
+    },
+    {
+      "date": "2025-01-28",
+      "comment": "Vendor instructions for verifying GPG keys listing signing keys and OPENPGPKEY records (Fedora 40)",
+      "type": "role",
+      "url": "https://fedoraproject.org/security"
+    },
+    {
+      "date": "2025-01-28",
+      "comment": "Confirmed OPENPGPKEY DNS record existence (SOA) and fingerprint match",
+      "type": "role",
+      "url": "4d0cd6e4349d5979387749daf5995f20d0de7f7b2fdfdc76d7eb21a1._openpgpkey.fedoraproject.org"
     }
   ],
   "tags": [
-    "Fedora"
+    "Fedora",
+    "fedora-40"
   ]
 }
