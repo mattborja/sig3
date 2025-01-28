@@ -8,6 +8,13 @@ The following resources are considered applicable and relevant to the orientatio
 - [Digital Identity Guidelines (NIST SP 800-63A)](https://pages.nist.gov/800-63-3/sp800-63a.html)
 - [Key validity and owner trust (GnuPG)](https://www.gnupg.org/gph/en/manual/x334.html)
 
+### Goals
+As provided in NIST SP 800-63A:
+- To resolve a claimed identity to a single, unique identity within the context of the population of users the CSP serves.
+- To validate that all supplied evidence is correct and genuine (e.g., not counterfeit or misappropriated).
+- To validate that the claimed identity exists in the real world.
+- To verify that the claimed identity is associated with the real person supplying the identity evidence.
+
 ## Getting Started
 1. Familiarize yourself with the resources provided in the Standards section above
 2. Refer to the [identity registry](/registry/) for existing evidence submissions (see also [schema](/SCHEMA.md))
