@@ -32,3 +32,5 @@ JSON schema validation ([schema.json](/schema.json)) applied as follows:
 - Limit **1 identity per file** with strict filename validation ([filename-validate.sh](/filename-validate.sh))
 - Applies to all ***.json** files found within the registry
 
+## Acceptance
+Once a submission has been reviewed and verified for compliance, the signed submission will be merged into the main registry.
