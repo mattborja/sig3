@@ -48,8 +48,8 @@
           },
           "dns": {
             "type": "string",
-            "pattern": "^(?!-)[A-Za-z0-9-]{1,63}(?<!-)(\\.[A-Za-z0-9-]{1,63})*$",
-            "description": "Vali DNS domain name consisting of one or more labels (separated by dots), with each label containing only letters, numbers, and hyphens, and no label being longer than 63 characters. Provided for OPENPGPKEY DNS resource records (https://datatracker.ietf.org/doc/html/draft-ietf-dane-openpgpkey-06#section-2)."
+            "pattern": "^[A-Za-z0-9]+\\._openpgpkey\\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$",
+            "description": "Valid DNS domain name consisting of one or more labels (separated by dots), with each label containing only letters, numbers, and hyphens, and no label being longer than 63 characters. Provided for OPENPGPKEY DNS resource records (https://datatracker.ietf.org/doc/html/draft-ietf-dane-openpgpkey-06#section-2)."
           },
           "type": {
             "type": "string",
