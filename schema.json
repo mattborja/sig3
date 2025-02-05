@@ -4,8 +4,8 @@
   "properties": {
     "fingerprint": {
       "type": "string",
-      "pattern": "^([A-Fa-f0-9]{16,})$",
-      "description": "The main object representing an individual or entity identified by their full GPG fingerprint. The fingerprint must be at least 128 bits (16 characters) long."
+      "pattern": "^([A-F0-9]{32}|[A-F0-9]{40}|[A-F0-9]{64})$",
+      "description": "Valid GPG fingerprint length (128-bit v3, 160-bit v4, or 256-bit v6), uppercased"
     },
     "label": {
       "type": "string",
@@ -45,6 +45,11 @@
             "type": "string",
             "format": "uri",
             "description": "A URL pointing to an authoritative source or resource that validates the reference."
+          },
+          "dns": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9]+\\._openpgpkey\\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$",
+            "description": "Valid DNS domain name consisting of one or more labels (separated by dots), with each label containing only letters, numbers, and hyphens, and no label being longer than 63 characters. Provided for OPENPGPKEY DNS resource records (https://datatracker.ietf.org/doc/html/draft-ietf-dane-openpgpkey-06#section-2)."
           },
           "type": {
             "type": "string",
