@@ -9,6 +9,18 @@
       "artifact": "RPM-GPG-KEY-Rocky-9",
       "url": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-Rocky-9",
       "type": "key"
+    },
+    {
+      "date": "2023-01-17",
+      "comment": "Independent verification of Rocky Linux 9 Release Key via archived sources",
+      "url": "https://web.archive.org/web/20240331063950/https://rockylinux.org/keys/",
+      "type": "key"
+    },
+    {
+      "date": "2024-03-31",
+      "comment": "Independent research techniques documented and referenced",
+      "url": "https://github.com/mattborja/identity/pull/27#issue-2727122737",
+      "type": "key"
     }
   ],
   "tags": [
