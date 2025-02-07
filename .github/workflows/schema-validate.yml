@@ -42,5 +42,5 @@ jobs:
       - name: jq-install
         run: sudo apt-get install jq
 
-      - name: filename-validation-action
-        run: bash filename-validate.sh
+      - name: registry-checks
+        run: bash registry-checks.sh
