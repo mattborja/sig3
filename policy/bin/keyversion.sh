@@ -52,7 +52,7 @@ fi
 FPR=$(jq -r '.fingerprint' "$FILENAME")
 
 if [ -z "$FPR" ]; then
-    echo "Fingerprint not found" >&2
+    echo "Fingerprint missing" >&2
     exit 1
 fi
 
@@ -60,12 +60,12 @@ LEN=${#FPR}
 BITLEN=$((LEN / 2 * 8))
 
 # Return key version to STDOUT
-echo "${KEY_VERSIONS[$BITLEN]}"
+echo "[$FPR] Key version: ${KEY_VERSIONS[$BITLEN]}"
 
 # Fail on deprecated key version
 for KEYLEN in "${DEPRECATED_KEYLEN_BITS[@]}"; do
     if [ "$BITLEN" -eq "$KEYLEN" ]; then
-        echo "Deprecated key length detected: $BITLEN bits" >&2
+        echo "[$FPR] Deprecated key version: ${KEY_VERSIONS[$BITLEN]} ($BITLEN bits)" >&2
         exit 1
     fi
 done
