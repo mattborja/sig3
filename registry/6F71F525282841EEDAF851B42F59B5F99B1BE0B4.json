@@ -1,0 +1,33 @@
+{
+  "fingerprint": "6F71F525282841EEDAF851B42F59B5F99B1BE0B4",
+  "label": "NodeSource",
+  "validity": "full",
+  "refs": [
+    {
+      "date": "2024-12-14",
+      "comment": "SANS SEC540 (first acknowledgment of this key)",
+      "type": "user"
+    },
+    {
+      "date": "2024-12-14",
+      "comment": "Public key source from the NodeSource repository.",
+      "url": "https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key",
+      "type": "key"
+    },
+    {
+      "date": "2025-02-06",
+      "comment": "Maintainer @riosje cites official installation procedures exhibiting use of script (https://deb.nodesource.com/setup_20.x) which itself imports GPG key from https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key which resolves to 6F71F525282841EEDAF851B42F59B5F99B1BE0B4 when inspected with `gpg --list-packets`.",
+      "url": "https://github.com/nodesource/distributions/issues/1780#issuecomment-2020547993",
+      "type": "user"
+    },
+    {
+      "date": "2025-02-06",
+      "comment": "GitHub user @riosje (Jefferson) is affiliated with NodeSource, as indicated on their GitHub profile.",
+      "url": "https://github.com/riosje",
+      "type": "user"
+    }
+  ],
+  "tags": [
+    "Node"
+  ]
+}
