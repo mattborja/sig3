@@ -1,0 +1,20 @@
+{
+  "fingerprint": "0675BD19F4FFE3AD0B2D6FEBADA2860895AE3D91",
+  "label": "Rocky Linux 9 - Beta Key V1/2022 <releng@rockylinux.org>",
+  "validity": "marginal",
+  "refs": [
+    {
+      "date": "2022-04-26",
+      "comment": "Rocky Linux 9 Beta Key for 2022 release",
+      "artifact": "RPM-GPG-KEY-Rocky-9-Testing",
+      "url": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-Rocky-9-Testing",
+      "type": "key"
+    }
+  ],
+  "tags": [
+    "Rocky Linux",
+    "beta key",
+    "9",
+    "2022"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "fingerprint": "7051C470A929F454CEBE37B715AF5DAC6D745A60",
+  "label": "Rocky Linux (Rocky Linux Official Signing Key) <releng@rockylinux.org>",
+  "validity": "full",
+  "refs": [
+    {
+      "date": "2021-02-14",
+      "comment": "Rocky Linux 8 Official Signing Key",
+      "artifact": "RPM-GPG-KEY-Rocky-8",
+      "url": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-Rocky-8",
+      "type": "key"
+    }
+  ],
+  "tags": [
+    "Rocky Linux",
+    "official signing key",
+    "release"
+  ]
+}

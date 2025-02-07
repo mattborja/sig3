@@ -1,0 +1,19 @@
+{
+  "fingerprint": "091A44047C3D8B7A331F5E185489E42BBBE2C108",
+  "label": "Rocky Linux Testing (Rocky Linux Testing Key) <releng@rockylinux.org>",
+  "validity": "full",
+  "refs": [
+    {
+      "date": "2021-02-14",
+      "comment": "Rocky Linux 8 Testing Key",
+      "artifact": "RPM-GPG-KEY-Rocky-8-Testing",
+      "url": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-Rocky-8-Testing",
+      "type": "key"
+    }
+  ],
+  "tags": [
+    "Rocky Linux",
+    "testing key",
+    "8"
+  ]
+}
