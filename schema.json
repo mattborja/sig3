@@ -4,8 +4,8 @@
   "properties": {
     "fingerprint": {
       "type": "string",
-      "pattern": "^([A-Fa-f0-9]{16,})$",
-      "description": "The main object representing an individual or entity identified by their full GPG fingerprint. The fingerprint must be at least 128 bits (16 characters) long."
+      "pattern": "^([A-F0-9]{32}|[A-F0-9]{40}|[A-F0-9]{64})$",
+      "description": "Valid GPG fingerprint length (128-bit v3, 160-bit v4, or 256-bit v6), uppercased"
     },
     "label": {
       "type": "string",
