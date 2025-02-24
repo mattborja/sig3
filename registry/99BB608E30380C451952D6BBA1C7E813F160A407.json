@@ -25,6 +25,24 @@
       "comment": "LinkedIn profile showing identity verification by CLEAR using government ID",
       "type": "user",
       "url": "https://www.linkedin.com/help/linkedin/answer/a1359065"
+    },
+    {
+      "date": "2025-01-01",
+      "comment": "Industry certification requiring strong identity verification during proctored high stakes exam with Global Information Assurance Certification (https://www.giac.org/knowledge-base/proctor/)",
+      "type": "user",
+      "url": "https://www.credly.com/badges/c0ee1538-53dd-43a0-bf9e-7724e374ff43"
+    },
+    {
+      "date": "2025-01-01",
+      "comment": "Credly profile showing both user photo and industry certification with link to ORCiD profile (https://orcid.org/0009-0008-5528-9362)",
+      "type": "user",
+      "url": "https://www.credly.com/users/mattborja"
+    },
+    {
+      "date": "2025-01-01",
+      "comment": "OrciD profile referenced by Credly profile listing verified email domains, websites, social links, and GPG fingerprints in Keywords section using Uniform Resource Name format: urn:identity:gpg:<fingerprint>",
+      "type": "user",
+      "url": "https://orcid.org/0009-0008-5528-9362"
     }
   ],
   "tags": [
