@@ -24,7 +24,8 @@
     {
       "date": "2025-03-07",
       "comment": "Backward claim of signed commit under GitHub vigilant mode: 1) C3F69D1BE6BCBD16 (signing subkey of A1C7E813F160A407) is signing this commit via command line Git, 2) commit author is SSH authenticated as GitHub user @mattborja, AND 2) commit author affirms ownership of the selfsame commit ID (https://github.com/mattborja/identity/commit/bf06562979a0eb3ef5a9da8d92edb8c7dd886ec7)",
-      "type": "user"
+      "type": "user",
+      "url": "https://github.com/mattborja/identity/pull/46/commits/3bfb7244b68846bed074e9fbc78faefd1a839fda"
     },
     {
       "date": "2025-01-17",
