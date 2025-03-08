@@ -1,0 +1,27 @@
+{
+  "fingerprint": "1302DE60231889FE1EBACADC54678CF75A278D9C",
+  "label": "Paul Rudy",
+  "validity": "marginal",
+  "refs": [
+    {
+      "date": "2025-03-08",
+      "comment": "Named maintainer of DEB package for VSCodium",
+      "url": "https://vscodium.com/",
+      "type": "role"
+    },
+    {
+      "date": "2025-03-08",
+      "comment": "GitLab user profile with demonstrated community activity and self-attestation of GitHub profile (https://github.com/paulcarroty) and project affiliation (https://github.com/VSCodium/vscodium)",
+      "url": "https://gitlab.com/paulcarroty/",
+      "type": "user"
+    },
+    {
+      "date": "2025-03-08",
+      "comment": "Correlating public key sources shared between GitLab and GitHub user profiles",
+      "url": ["https://github.com/paulcarroty.gpg", "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"],
+      "type": "user"
+    },
+    # 1. GitHub matches GitLab PGP key
+  ],
+  "tags": ["VSCodium"]
+}
