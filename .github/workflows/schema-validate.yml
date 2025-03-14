@@ -27,7 +27,7 @@ jobs:
           # Schema file path or URL
           schema: 'schema.json'
           # | separated files to validate. Globs are allowed
-          file: 'registry/*.json'
+          file: './registry/*.json'
           # | separated list of parsers used to parse the file: json, yaml
           fileParser: json
           # schemasafe validation mode: default, lax, strong
@@ -43,4 +43,4 @@ jobs:
         run: sudo apt-get install jq
 
       - name: registry-checks
-        run: bash registry-checks.sh
+        run: bash ./bin/policy.sh
