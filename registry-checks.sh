@@ -1,7 +1,7 @@
 #!/bin/bash
 BASH_BIN="/bin/bash"
 REGISTRY_DIR="./registry"
-POLICY_BIN="./policy/bin"
+POLICY_BIN="./bin"
 
 for JSON_FILE in "${REGISTRY_DIR}"/*.json; do
     for CHECK_SCRIPT in "${POLICY_BIN}"/*.sh; do
