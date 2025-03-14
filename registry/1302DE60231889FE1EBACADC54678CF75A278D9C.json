@@ -17,8 +17,14 @@
     },
     {
       "date": "2025-03-08",
-      "comment": "Correlating public key sources shared between GitLab and GitHub user profiles",
-      "url": ["https://github.com/paulcarroty.gpg", "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"],
+      "comment": "Correlating public key source found at GitHub",
+      "url": "https://github.com/paulcarroty.gpg",
+      "type": "user"
+    },
+    {
+      "date": "2025-03-08",
+      "comment": "Correlating public key source found in repository at GitLab",
+      "url": "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg",
       "type": "user"
     }
   ],
