@@ -20,8 +20,7 @@
       "comment": "Correlating public key sources shared between GitLab and GitHub user profiles",
       "url": ["https://github.com/paulcarroty.gpg", "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"],
       "type": "user"
-    },
-    # 1. GitHub matches GitLab PGP key
+    }
   ],
   "tags": ["VSCodium"]
 }
