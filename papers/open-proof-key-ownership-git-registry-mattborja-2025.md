@@ -12,19 +12,12 @@ Licensed under the MIT License.
 
 **Abstract**
 
-This paper presents a decentralized approach for cryptographic proof of key ownership using clearsigned artifacts and Git as a global registry. By combining the immutability and transparency of Git with GPG’s clearsigning capabilities, the proposed method ensures global replay resistance, complete traceability, and secure validation. A detailed workflow is outlined, leveraging Git’s content-addressable storage and distributed architecture to establish a self-contained, auditable registry. The paper concludes with a complete implementation of the artifact signing script and practical recommendations for deployment.
-
----
-
-### Introduction
-The ability to prove control of a cryptographic private key is fundamental to modern security protocols. Traditionally, centralized systems such as databases or timestamp authorities are used to provide uniqueness and replay resistance for signed proofs. However, these systems introduce dependencies and scalability challenges. This paper proposes a decentralized alternative that utilizes Git’s version control system as a global, immutable registry for cryptographic artifacts.
-
-The proposed method employs GPG (GNU Privacy Guard) for signing artifacts in a clearsigned format, embedding the artifact payload, signature, and public key fingerprint in a single self-contained document. Replay resistance and auditing are achieved through Git’s deduplication and content-addressable storage.
+This paper presents a decentralized approach for demonstrating key ownership using newly generated cryptographic artifacts and Git as a timestamped repository. By combining the immutability and transparency of Git with GPG’s clearsigning capabilities, the proposed method seeks to ensure global **replay resistance**, traceability, and validation.
 
 ---
 
 ### Artifact Structure
-Artifacts are defined as self-contained, uniquely identifiable units that provide cryptographic proof of key ownership. The structure of an artifact is:
+The structure of an artifact conceived by this paper follows a URN format as follows:
 
 ```
 urn:artifact:<scope>:<random_sequence>
