@@ -4,7 +4,7 @@ on:
     types: [ "opened", "reopened", "synchronize" ]
 
 jobs:
-  build:
+  registry-validate:
     runs-on: ubuntu-latest
 
     steps:
