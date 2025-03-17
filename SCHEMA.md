@@ -19,6 +19,8 @@ The following table summarizes the top-level properties of the schema:
 ## Extended Properties
 
 ### Refs
+> [!NOTE]
+> For latest definitions of acceptable references, please see [REFS.md](/REFS.md) in this repository.
 
 The `refs` property contains an array of reference objects that support the identity assertion. Each reference includes details about the verification context.
 
