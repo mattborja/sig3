@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: Identity Assertions
+    name: Validate Registry Entries
     runs-on: ubuntu-latest
 
     steps:
