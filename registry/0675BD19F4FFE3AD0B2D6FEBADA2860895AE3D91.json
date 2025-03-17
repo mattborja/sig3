@@ -1,0 +1,32 @@
+{
+  "fingerprint": "0675BD19F4FFE3AD0B2D6FEBADA2860895AE3D91",
+  "label": "Rocky Linux 9 - Beta Key V1/2022 <releng@rockylinux.org>",
+  "validity": "full",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-rockyofficial"
+    },
+    {
+      "type": "raw",
+      "uri": "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nxsFNBGJnjEMBEADX1mxmmZXhjeayhSmCYFJ17WbuuJd79Jqxk5EXzW3toS3fK9p/\nta3SH/2Tt6Upb/OUCCsA5RDUXjYfcfSX17Bed6swxLR4BZNTwGVc6uWOQxCPjq6/\nRv552BxJsBc4D0DpbDtrGmKKIJqfie7f8V8WM9h+smnl1ntzTy98vefjnfnURnjZ\nf20pti8HBm20uk4lg0m55xVp5iIWRF89KhdhbhWl76M2gQYBg/Vp1pNXC61GnhWI\nNDu6qK145ViVxZMmU7M4Y4oA0yvmIoW+4mwHqsdN9tAPJ5YI/pzaUhAfkCP1CNjg\nD6oF7Qc1O8Lls3ZasK0nJQJrzfHzFMxCRWsP8/l7slAztXc37qiW4Jmz8v83b3S9\n9+ot6goW3EADTWcCkUyHK4L9Ect3cExM5jMYroMI9X91ehPCqoYUDX+25DY/PozZ\nV+dmssEjoAjMjaHPYI0sBUxVd+gmzJWdbdAeYuCMZjQj5x3jP2oNqgBg0VT6NXq4\nMv9vOLNR58KYPJwO/38tLYBvDls7oe4Ym41hOp1gOfiMoP/ARLZ8Bpv5eYyeBHtj\neBrklUKAa75a6elNUtwOIEEo94oeBeSWYIAIivC71nVmzLN1VqAZt1zgq/oj9N8k\nPkt4ThuOpkgWqczMCXgxdVrOmViKSvVPZ8mSE2dVccan7M1xyB/+K9zU6QARAQAB\nzThSb2NreSBMaW51eCA5IC0gQmV0YSBLZXkgVjEvMjAyMiA8cmVsZW5nQHJvY2t5\nbGludXgub3JnPsLBigQTAQgAPgUCYmeMQwmQraKGCJWuPZEWoQQGdb0Z9P/jrQst\nb+utooYIla49kQIbAwIeAQIZAQMLCQcCFQgDFgACAiIBAABM8g/8C1V/4Q3xgAAr\nW1bMDO9+agIpmmUHYCG8WB5t4sQWP4K2T1dP8+8MyEV+YpMa3l/E6voV3bVva4tV\nbw7cWT8kIJQJwxqfHhGrZdaG01BubGQeo0XQGafmgLZAjJitvMrRBP/FyHFR97Um\nYkiWT1Zup74HKIP43Uu7d2GsjGjZkSZSoKZjS8+95VWgW8ppNH3SF5dPA+RxmRsn\nx8+4gMWQ+SAfKyS5zcXOcLo+fyS1vbGjTfb7dhRyKGw3il+0nnD0ZrtFpGT/oeeA\nWAYNl7NNkdaTfIhEeQjxAOeUtgnKiTt4MNBoeo6vZ53ouQfc3ciqFsh5zVZaqKKi\nusVnKkvcjRbHctU1yG1IbynA8XiYQVXHz3wTakkd+DXagA924Zoyp5G8eP2Nag8R\nXjX2gpuG4qDazr2IoHeHO4QyJy20rOeVdRKeLjzd4a8iCA4FdaaaAokFoSpugLSL\na8V7GyLBGcGCiLc8Rz7DsYVvNXeW/AXPjJWgHU6fvdoo/KLF1A8fS/NZZtJqpuKE\nRF32WDykHMbpAKJyKZXRxIcLHfOqRYmqWB2KguCJ50PsG7UmQutGklE7eiqscHA1\nemqv/UHNyo1v/Tzu5WrLUnx4949tbcjaR/+Ip71MbGC/ESOaebL8SHPjMe4t5HI7\n3MPjevME0+T05RixaTgKdVhBIgmUZ/POwU0EYmeMQwEQAM27Lxq9mxiliGFzh19a\nAWO1AFBjtVGGSUy4s0djcLBZd1m8zO+QVUFx74PigLkk4GwpBqZEMWAcsKCDtagT\nTbnjYqWUDX5birWKaqfj7qP9sjvCgieEwHpXEkKHaM+G7mT7vpCXV+AKkjsWJdQ1\nSwzuJ47tJ0vpirlchL9o7YuHMqmddyT6KIPmaxj/RArbGX/rzNqGvMZxHaPOsCCW\n12RU8E3sHVdzRdNpU1/i3mDVLd/eZBuqeTAT0c+MzyfJxdZS9JmUNk48ASMUcETG\nkVBxc+XVpSVAmUFXvEisUi79+wS+GDwinSoeOF4OX/9YwwX2VDo7A8MVIcGyxmMJ\nM8+KaOclBMBTUt6hu2tjzfYKDcaZX82n1t+2Xy+AMrtDOnm90mv4whS3IgFqy2HY\njjPp4qpSAdV7KT98arSgtzskLfC3wS40mZ3bsy1NNWNNEljpq4h8DKQdEfh1LsxV\nm7rR+dWbdNEKUxk60yQZ3qCImo3a1S+N51kywFAcM8pNq/bIZrM5BR9bWkoVmQCg\nDexvj0xToaA+vJa4tylm+wCIALebWp1FQLZWTuwXbYbS1wlBZi7hg7ZeK7ZCzBEm\n1tk3MKnE6t+EUW9a1NIy4/OTN9VQsd00a38NuTJjedvsOjzqBk/JD98gs4pmuU7S\nHiV7kWgeWtG75Lycl/CWArcTABEBAAHCwXYEGAEIACoFAmJnjEMJkK2ihgiVrj2R\nFqEEBnW9GfT/460LLW/rraKGCJWuPZECGwwAAA49D/4nQaaaKub/gp/Iu620Aubq\nGcTB6yPkvR0Hz2pRVRC9Zv/yCefbHCHsTO+E6sI9DfmlQp3x+zohBBqZIJLmhr1o\nzzBwwSOTPdFqFHpOnQyHPWkuwG16IpCmCaaANupSSdcB3tPBSaD9PHo1cDWG4pEG\nEZYYdlMUnIHHe3Nu9DwDmV+LC5UICi/5NTCfn1UwC8Y1YTZX9f9un23Q2rVwwyjX\nbLziokg8zv3nnydcNS+rYwPWkCDbw7muGXDHsK2YNNu/lqeAHfGmHvIIV6g2aq1A\nx6JzvzWuEVHVLD9u1Q5sO2gTifz/Y6mLd8PuwdS8JOROeF9vq6BnEa2QSuedsz63\nJAl0o20GAIjONl4O+0Un3cw1cJSbN/+iZCgcezMLE7g7q2ZSnMddP+FxA+qy6b63\nBOOTbuY4EwdPk1eKfmZevoPpw6765zEYzrA1I090Mc+JnBALGgKj9gJujqEtSiqb\nriItjjBJcLPthUeh80BZyDBms72+DtjIDpHrTvIhFhEDdzspdxF5nAtc8b8aIqaq\n0VGuQGuEVkOjWQTwVen9djuNEZS5NbgUWFhuXpkQSMPUDzhQ/XCSSDPwvFGniW4C\n5T1HrCc+eQ4ig+VzXWYJDlTHBmmfzIp+AAjugP9kZ4QXAEa66lF6uwccayQFtBO3\n5fv/TZLO1kBYmYnl2rwA3A==\n=/Z/i\n-----END PGP PUBLIC KEY BLOCK-----"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2021-02-14",
+      "comment": "Listed with release packages as official signing key: RPM-GPG-KEY-Rocky-9-Testing (sha256:8e7fe59a799b38b32112ffa45c5aab83a44144556e1e06ab6ff149a547a1d41e)",
+      "url": "https://dl.rockylinux.org/pub/rocky/",
+      "type": "role"
+    },
+    {
+      "date": "2024-03-31",
+      "comment": "Listed with other Project Keys and instructions for verifying key fingerprints: Rocky Linux 9 (Testing)",
+      "url": "https://web.archive.org/web/20240331063950/https://rockylinux.org/keys/",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Rocky Linux"
+  ]
+}
