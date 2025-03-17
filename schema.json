@@ -99,9 +99,7 @@
   "required": [
     "fingerprint",
     "label",
-    "validity",
     "refs",
-    "tags"
   ],
   "additionalProperties": false
 }
