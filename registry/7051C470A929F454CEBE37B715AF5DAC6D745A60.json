@@ -1,6 +1,6 @@
 {
   "fingerprint": "7051C470A929F454CEBE37B715AF5DAC6D745A60",
-  "label": "Rocky Linux (Rocky Linux Official Signing Key) <releng@rockylinux.org>",
+  "label": "Release Engineering <infrastructure@rockylinux.org>",
   "validity": "full",
   "sources": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "date": "2024-03-31",
-      "comment": "Listed with other Project Keys and instructions for verifying key fingerprints: Rocky Linux 8",
+      "comment": "Listed with other Project Keys and instructions for verifying key fingerprints: Rocky Linux 8 (Release)",
       "url": "https://web.archive.org/web/20240331063950/https://rockylinux.org/keys/",
       "type": "role"
     }
