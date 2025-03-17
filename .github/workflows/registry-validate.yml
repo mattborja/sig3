@@ -4,7 +4,8 @@ on:
     types: [ "opened", "reopened", "synchronize" ]
 
 jobs:
-  registry-validate:
+  build:
+    name: Identity Assertions
     runs-on: ubuntu-latest
 
     steps:
