@@ -70,9 +70,12 @@
             "enum": [
               "role",
               "user",
-              "key"
+              "key",
+              "sig1",
+              "sig2",
+              "sig3"
             ],
-            "description": "The type of verification or evidence provided. 'role' is for project affiliation, 'user' signifies independent key ownership verification, and 'signature' indicates submission from private key holder"
+            "description": "The type of verification indicated by the evidence provided: project affiliation (role), self-attestation (user), private key use (key), certified by another key holder (sig1, sig2, sig3)"
           }
         },
         "required": [
