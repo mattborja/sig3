@@ -58,7 +58,7 @@
               "user",
               "key"
             ],
-            "description": "The type of verification or evidence provided. 'role' is for project affiliation, 'user' signifies independent key ownership verification, and 'signature' indicates submission from private key holder (separate signature artifact required)"
+            "description": "The type of verification or evidence provided. 'role' is for project affiliation, 'user' signifies independent key ownership verification, and 'signature' indicates submission from private key holder"
           }
         },
         "required": [
