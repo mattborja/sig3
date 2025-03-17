@@ -22,6 +22,33 @@
       "description": "The validity level of the identity assertion. Indicates how thoroughly the identity has been verified.",
       "example": "full"
     },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "url",
+              "raw"
+            ],
+            "description": "The type of source: 'url' for a web URL, 'raw' for raw PGP key data."
+          },
+          "uri": {
+            "type": "string",
+            "description": "The URI of the source, which can be a URL or raw PGP key block with newline characters escaped."
+          }
+        },
+        "required": [
+          "type",
+          "uri"
+        ],
+        "additionalProperties": false
+      },
+      "description": "A list of sources providing the key or related information, which can be a URL or raw key data with newline characters escaped."
+    },
     "refs": {
       "type": "array",
       "minItems": 2,
