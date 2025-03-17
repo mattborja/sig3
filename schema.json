@@ -25,6 +25,7 @@
     "refs": {
       "type": "array",
       "minItems": 2,
+      "uniqueItems": true,
       "items": {
         "type": "object",
         "properties": {
