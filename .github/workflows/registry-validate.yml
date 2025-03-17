@@ -1,0 +1,26 @@
+name: Registry Validation
+on:
+  pull_request:
+    types: [ "opened", "reopened", "synchronize" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: schema-validation-action
+        uses: cardinalby/schema-validator-action@3.1.1
+        with:
+          schema: ${{ env.GITHUB_WORKSPACE + '/schema.json' }}
+          file: ${{ env.GITHUB_WORKSPACE + '/registry/*.json' }}
+          fileParser: json
+          mode: default
+          fixSchemas: true
+
+      - name: jq-install
+        run: sudo apt-get install jq
+
+      - name: registry-checks
+        run: bash ${{ env.GITHUB_WORKSPACE + '/bin/policy.sh' }}
+
