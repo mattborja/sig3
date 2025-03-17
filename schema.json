@@ -42,9 +42,22 @@
             "description": "A cryptographic artifact (i.e. clearsigned message) demonstrating possession of a specific key (i.e. signing subkey)"
           },
           "url": {
-            "type": "string",
-            "format": "uri",
-            "description": "A URL pointing to an authoritative source or resource that validates the reference."
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "A URL pointing to an authoritative source or resource that validates the reference."
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "A list of related URLs pointing to authoritative sources or resources that validate the reference."
+                },
+                "description": "A URL (or an array of related URLs) pointing to authoritative sources or resources that validate the reference."
+              }
+            ]
           },
           "dns": {
             "type": "string",
