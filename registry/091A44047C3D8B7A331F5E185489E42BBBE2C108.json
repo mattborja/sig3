@@ -15,14 +15,6 @@
   "refs": [
     {
       "date": "2021-02-14",
-      "comment": "Rocky Linux 8 Testing Key",
-      "artifact": "RPM-GPG-KEY-Rocky-8-Testing",
-      "url": "https://dl.rockylinux.org/pub/rocky/RPM-GPG-KEY-Rocky-8-Testing",
-      "type": "key"
-    },
-
-    {
-      "date": "2021-02-14",
       "comment": "Listed with release packages as official signing key: RPM-GPG-KEY-Rocky-8-Testing (sha256:2e7c4e37463ab286d70978ff2358b9a03ce38adb4fe0bd8e7b8a2214c0bb62c4)",
       "url": "https://dl.rockylinux.org/pub/rocky/",
       "type": "role"
