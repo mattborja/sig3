@@ -24,6 +24,12 @@
       "comment": "Listed with other Project Keys and instructions for verifying key fingerprints: Rocky Linux 8 (Testing)",
       "url": "https://web.archive.org/web/20240331063950/https://rockylinux.org/keys/",
       "type": "role"
+    },
+    {
+      "date": "2025-03-17",
+      "comment": "Listed in BaseOS source package: rocky-release-8.10-1.9.el8.src.rpm (sha256:487c7bd08dcac094bea86fa4c9d74569ef29edc393344e2ddd9c5c590652e98c)",
+      "url": "https://dl.rockylinux.org/pub/rocky/8/BaseOS/source/tree/Packages/r/rocky-release-8.10-1.9.el8.src.rpm",
+      "type": "role"
     }
   ],
   "tags": [
