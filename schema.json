@@ -25,6 +25,7 @@
     "refs": {
       "type": "array",
       "minItems": 2,
+      "uniqueItems": true,
       "items": {
         "type": "object",
         "properties": {
@@ -42,9 +43,22 @@
             "description": "A cryptographic artifact (i.e. clearsigned message) demonstrating possession of a specific key (i.e. signing subkey)"
           },
           "url": {
-            "type": "string",
-            "format": "uri",
-            "description": "A URL pointing to an authoritative source or resource that validates the reference."
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "A URL pointing to an authoritative source or resource that validates the reference."
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "A list of related URLs pointing to authoritative sources or resources that validate the reference."
+                },
+                "description": "A URL (or an array of related URLs) pointing to authoritative sources or resources that validate the reference."
+              }
+            ]
           },
           "dns": {
             "type": "string",
@@ -56,9 +70,12 @@
             "enum": [
               "role",
               "user",
-              "key"
+              "key",
+              "sig1",
+              "sig2",
+              "sig3"
             ],
-            "description": "The type of verification or evidence provided. 'role' is for project affiliation, 'user' signifies independent key ownership verification, and 'signature' indicates submission from private key holder"
+            "description": "The type of verification indicated by the evidence provided: project affiliation (role), self-attestation (user), private key use (key), certified by another key holder (sig1, sig2, sig3)"
           }
         },
         "required": [
@@ -82,9 +99,7 @@
   "required": [
     "fingerprint",
     "label",
-    "validity",
-    "refs",
-    "tags"
+    "refs"
   ],
   "additionalProperties": false
 }
