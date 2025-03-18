@@ -28,5 +28,7 @@
       "type": "user"
     }
   ],
-  "tags": ["VSCodium"]
+  "tags": [
+    "VSCodium"
+  ]
 }
