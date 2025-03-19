@@ -22,7 +22,7 @@
     {
       "date": "2024-03-31",
       "comment": "Listed with other Project Keys and instructions for verifying key fingerprints: Rocky Linux 8 (Infrastructure)",
-      "url": "https://web.archive.org/web/20240331063950/https://rockylinux.org/keys/",
+      "url": ["https://github.com/rocky-linux/rockylinux.org/blob/develop/resources/gpg-key-info.md", "https://web.archive.org/web/20240331063950/https://rockylinux.org/keys/", "https://rockylinux.org/resources/gpg-key-info", "https://rockylinux.org/keys"],
       "type": "role"
     }
   ],
