@@ -8,7 +8,7 @@ A reference list classifying supporting evidence for key validation.
 | **Assurance** | `full` |
 | **Scope** | Subject demonstrates possession and exercise of the private key. |
 | **Requirement** | Subject MUST sign *any message*† using the private key. |
-| **Extensions** | Subject SHOULD use this method to send a *clearsigned* message from the email address listed to any verifier needing to perform additional email verification. |
+| **Extensions** | Verifiers participating in the [key distribution process](https://www.gnupg.org/gph/en/manual/x457.html) SHOULD first be performing email verification using this method to request a message from the email address listed on the public key, *clearsigned* ONLY by the corresponding private key.
 
 **Example**:  
 ```json
