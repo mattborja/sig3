@@ -11,17 +11,6 @@
       "type": "string",
       "description": "The label or name associated with the individual or entity, typically matching the name on the GPG key."
     },
-    "validity": {
-      "type": "string",
-      "enum": [
-        "full",
-        "marginal",
-        "revoked",
-        "none"
-      ],
-      "description": "The validity level of the identity assertion. Indicates how thoroughly the identity has been verified.",
-      "example": "full"
-    },
     "sources": {
       "type": "array",
       "minItems": 1,
