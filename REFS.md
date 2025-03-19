@@ -47,18 +47,25 @@ A reference list classifying supporting evidence for key validation.
 ```
 ---
 
-### Industry License and/or Certification
-**Type**: `role`  
-**Assurance**: `full`
+### Credential Service Provider (CSP)
+> [!NOTE]
+> For an official definition of this reference type, please see corresponding NIST glossary term: [credential service provider (CSP)](https://csrc.nist.gov/glossary/term/credential_service_provider).
 
-Subject has verified identity with independent proctor and demonstrates proficiency and/or license to operate within a specific industry or activity. Expects link to verifiable credential in URL field.
+| Instrument | Expectation |
+|:---|:---|
+| **Type** | `csp` |
+| **Assurance** | `full` |
+| **Scope** | Subject has performed adequate identity verification (SIG3/IAL3) with a trusted entity that issues electronic credentials. |
+| **Requirement** | The *results* of the ID verification process MUST be controlled exclusively by the CSP AND made publicly available the electronic credential with reasonable permanence and immutability. A secure URL (e.g., https://) corresponding to the electronic credential MUST be provided in the ref. |
+| **Extensions** | Valid refs in this space CAN also be used to chart a definitive and decisive path to confirming project involvement or affiliation as evidence of subject matter expertise when made prerequisite to obtaining industry licenses or certifications, as in the case of remote proctored Global Information Assurance Certification (GIAC) exams. |
+
 
 **Example**:  
 ```json
 {
     "date": "2025-01-01",
-    "comment": "Industry `certification requiring strong identity verification during proctored high stakes exam with global information assurance certification (https://www.giac.org/knowledge-base/proctor/)",`
-    "type": "user",
+    "comment": "Industry certification requiring strong identity verification during proctored high stakes exam with global information assurance certification (https://www.giac.org/knowledge-base/proctor/)",`
+    "type": "csp",
     "url": "https://www.credly.com/badges/c0ee1538-53dd-43a0-bf9e-7724e374ff43"
 },
 ```
