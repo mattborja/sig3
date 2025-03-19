@@ -12,7 +12,6 @@ The following table summarizes the top-level properties of the schema:
 |---------------|------------------------------------------------------------------|------------------------------------------------------------|
 | `fingerprint` | The GPG key fingerprint associated with the identity assertion. | `259A55407DD6C00299E6607EFFDE55BE73A2D1ED`                |
 | `label`       | The name or title of the key holder.                             | `Jeremy Long`                                              |
-| `validity`    | The trust level of the identity assertion.                      | `full`                                                    |
 | `refs`        | An array of references supporting the identity claim.           | See "Refs" section below.                                  |
 | `tags`        | An array of tags categorizing the identity assertion.           | `["OWASP", "Software Developer"]`                       |
 
@@ -75,7 +74,6 @@ Filename: **/registry/259A55407DD6C00299E6607EFFDE55BE73A2D1ED.json**
 {
   "fingerprint": "259A55407DD6C00299E6607EFFDE55BE73A2D1ED",
   "label": "Jeremy Long",
-  "validity": "full",
   "refs": [
     {
       "date": "2024-10-28",
@@ -100,6 +98,5 @@ Filename: **/registry/259A55407DD6C00299E6607EFFDE55BE73A2D1ED.json**
 
 - Each `fingerprint` must be unique within the registry. The schema enforces a strict limitation of **one JSON file per fingerprint** being attested. This ensures that every GPG key fingerprint is represented by exactly one identity assertion, preventing duplication and maintaining consistency across the registry. When updating or modifying an assertion, the existing JSON file for the relevant fingerprint must be replaced or updated.
 - **`fingerprint`**: Ensure that the **GPG fingerprint** is presented fully and adheres to the correct pattern (at least 16 alphanumeric characters).
-- **`validity`**: The **validity** status should reflect the level of verification based on the provided references. A `full` validity status should only be assigned if multiple independent sources have verified the identity.
 - **`refs`**: Each reference must be **verifiable** and should link to an **authoritative, accessible source**.
 - **`tags`**: The **tags** field can be used to categorize the keyholder by roles or affiliations (e.g., linking keyholders to specific projects or organizations).
