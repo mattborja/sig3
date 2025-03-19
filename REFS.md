@@ -4,7 +4,7 @@ A reference list classifying supporting evidence for key validation.
 ### GPG Signature
 | Instrument | Expectation |
 |:---|:---|
-| **Control** | Key |
+| **Type** | `key` |
 | **Assurance** | `full` |
 | **Scope** | Subject demonstrates possession and exercise of the private key. |
 | **Requirement** | Subject MUST sign *any message*† using the private key. |
@@ -23,25 +23,32 @@ A reference list classifying supporting evidence for key validation.
 
 ---
 
-### Commit History
-**Control**: Role  
-**Assurance**: `full`
-
-Subject demonstrates involvement and association with project. Expects link to commit in URL field.
+### Project or Affiliation
+| Instrument | Expectation |
+|:---|:---|
+| **Type** | `role` |
+| **Assurance** | `marginal`, `full` |
+| **Scope** | Subject demonstrates verifiable project involvement or affiliation. |
+| **Requirement** | Subject MUST show substantial project involvement via multiple factors including but not limited to: signed commits, community involvement, public profiles, affirmation of employment or affiliation, etc. |
+| **Extensions** | URLs to all related work SHOULD be included together as an array of values for the same ref. |
 
 **Example**:  
 ```json
 {
     "date": "2025-03-07",
     "comment": "Self-attestation of own key under GitHub vigilant mode: 1) B5690EEEBB952194 is signing this commit via GitHub web interface, 2) commit author is authenticated as GitHub user @mattborja, AND 2) commit author affirms ownership of this selfsame key (A1C7E813F160A407)",
-    "type": "user",
-    "url": "https://github.com/mattborja/identity/commit/bf06562979a0eb3ef5a9da8d92edb8c7dd886ec7"
+    "type": "role",
+    "url": [
+        "https://github.com/mattborja/identity/commit/bf06562979a0eb3ef5a9da8d92edb8c7dd886ec7",
+        "https://github.com/mattborja/sig3/commit/bf06562979a0eb3ef5a9da8d92edb8c7dd886ec7#diff-7fcdfe7c0b50a3c8d7978401b7d339839221a136e99b5d2c0f90386738f5af65R20",
+        "https://github.com/mattborja.gpg"
+    ]
 }
 ```
 ---
 
 ### Industry License and/or Certification
-**Control**: Role  
+**Type**: `role`  
 **Assurance**: `full`
 
 Subject has verified identity with independent proctor and demonstrates proficiency and/or license to operate within a specific industry or activity. Expects link to verifiable credential in URL field.
