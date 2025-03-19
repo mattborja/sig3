@@ -18,7 +18,7 @@ The below tables acknowledge important objectives in this space, while also clar
 
 | Out-of-Scope Objectives | Workaround |
 |:---|:---|
-| Owner verification of the email address listed with the claimed identity | Request key owner to send a *clearsigned* message from email address listed on the key using the same key (see also [/REFS.md#gpg-signature](/REFS.md#gpg-signature)) |
+| Owner verification of the email address listed with the claimed identity | A *clearsigned* message received from the listed email address using the corresponding private key (see also [/REFS.md#gpg-signature](/REFS.md#gpg-signature)) |
 
 ## Standards
 The following resources are considered applicable and relevant to the orientation and goals of this project:

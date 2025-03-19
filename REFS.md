@@ -49,14 +49,14 @@ A reference list classifying supporting evidence for key validation.
 
 ### Credential Service Provider (CSP)
 > [!NOTE]
-> For an official definition of this reference type, please see corresponding NIST glossary term: [credential service provider (CSP)](https://csrc.nist.gov/glossary/term/credential_service_provider).
+> For an official definition of this reference type, please see corresponding NIST glossary term: [Credential Service Provider (CSP)](https://csrc.nist.gov/glossary/term/credential_service_provider).
 
 | Instrument | Expectation |
 |:---|:---|
 | **Type** | `csp` |
 | **Assurance** | `full` |
 | **Scope** | Subject has performed adequate identity verification (SIG3/IAL3) with a trusted entity that issues electronic credentials. |
-| **Requirement** | The *results* of the ID verification process MUST be controlled exclusively by the CSP AND made publicly available the electronic credential with reasonable permanence and immutability. A secure URL (e.g., https://) corresponding to the electronic credential MUST be provided in the ref. |
+| **Requirement** | The electronic credential resulting from the ID verification process MUST be controlled exclusively by the CSP AND be made publicly available with reasonable permanence and immutability. A secure URL (e.g., https://) corresponding to the electronic credential MUST be provided in the ref. |
 | **Extensions** | Valid refs in this space CAN also be used to chart a definitive and decisive path to confirming project involvement or affiliation as evidence of subject matter expertise when made prerequisite to obtaining industry licenses or certifications, as in the case of remote proctored Global Information Assurance Certification (GIAC) exams. |
 
 
@@ -64,7 +64,7 @@ A reference list classifying supporting evidence for key validation.
 ```json
 {
     "date": "2025-01-01",
-    "comment": "Industry certification requiring strong identity verification during proctored high stakes exam with global information assurance certification (https://www.giac.org/knowledge-base/proctor/)",
+    "comment": "Industry certification requiring strong identity verification during proctored high stakes exam with Global Information Assurance Certification (https://www.giac.org/knowledge-base/proctor/)",
     "type": "csp",
     "url": "https://www.credly.com/badges/c0ee1538-53dd-43a0-bf9e-7724e374ff43"
 },
