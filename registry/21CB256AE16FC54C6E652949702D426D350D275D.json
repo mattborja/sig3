@@ -1,7 +1,6 @@
 {
   "fingerprint": "21CB256AE16FC54C6E652949702D426D350D275D",
   "label": "Rocky Enterprise Software Foundation - Release key 2022 <releng@rockylinux.org>",
-  "validity": "full",
   "sources": [
     {
       "type": "url",

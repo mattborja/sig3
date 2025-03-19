@@ -1,7 +1,6 @@
 {
   "fingerprint": "091A44047C3D8B7A331F5E185489E42BBBE2C108",
   "label": "Release Engineering <infrastructure@rockylinux.org>",
-  "validity": "full",
   "sources": [
     {
       "type": "url",

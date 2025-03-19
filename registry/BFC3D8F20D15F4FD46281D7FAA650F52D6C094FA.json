@@ -1,7 +1,6 @@
 {
   "fingerprint": "BFC3D8F20D15F4FD46281D7FAA650F52D6C094FA",
   "label": "Core Infrastructure <infrastructure@rockylinux.org>",
-  "validity": "full",
   "sources": [
     {
       "type": "url",
