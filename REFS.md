@@ -64,7 +64,7 @@ A reference list classifying supporting evidence for key validation.
 ```json
 {
     "date": "2025-01-01",
-    "comment": "Industry certification requiring strong identity verification during proctored high stakes exam with global information assurance certification (https://www.giac.org/knowledge-base/proctor/)",`
+    "comment": "Industry certification requiring strong identity verification during proctored high stakes exam with global information assurance certification (https://www.giac.org/knowledge-base/proctor/)",
     "type": "csp",
     "url": "https://www.credly.com/badges/c0ee1538-53dd-43a0-bf9e-7724e374ff43"
 },
