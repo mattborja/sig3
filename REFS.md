@@ -2,10 +2,13 @@
 A reference list classifying supporting evidence for key validation.
 
 ### GPG Signature
-**Control**: Key  
-**Assurance**: `unknown`
-
-Subject demonstrates possession and exercise of private key.  Expects `artifact` to be populated with a valid PGP signature.
+| Instrument | Expectation |
+|:---|:---|
+| **Control** | Key |
+| **Assurance** | `full` |
+| **Scope** | Subject demonstrates possession and exercise of the private key. |
+| **Requirement** | Subject MUST sign *any message*† using the private key. |
+| **Extensions** | Subject SHOULD use this method to send a *clearsigned* message from the email address listed to any verifier needing to perform additional email verification. |
 
 **Example**:  
 ```json
@@ -16,15 +19,7 @@ Subject demonstrates possession and exercise of private key.  Expects `artifact`
     "type": "key"
 }
 ```
-**Note:** The use of a cryptographically strong random sequence for demonstrating possession and exercise of private key is not precisely necessary. Simply signing the phrase, "Hello, world!" inherits the same assurance by virtue of cryptographic operation and the mandatory presence of the *Signature Creation Time* in the hashed packet ([§5.2.3.4, RFC 4880](https://www.rfc-editor.org/rfc/rfc4880#section-5.2.3.4)), making it trivial for a verifier to assess how recent a signature was produced. It would be more useful for the prover to sign a message containing more pertinent information or claims to the verifier to establish relevance (i.e. asymmetric encryption using the verifier's public GPG key).
-
----
-
-### S/MIME Encrypted and/or Signed Email
-**Control**: Email  
-**Assurance**: `marginal+`
-
-Subject demonstrates possession and exercise of email address and inbox.
+†The use of a cryptographic *nonce* for demonstrating message uniqueness is not strictly necessary due to the presence of the *Signature Creation Time* in the resulting hashed packet ([§5.2.3.4, RFC 4880](https://www.rfc-editor.org/rfc/rfc4880#section-5.2.3.4)).
 
 ---
 
