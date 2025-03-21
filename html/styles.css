@@ -1,0 +1,25 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+a {
+  color: #555;
+  text-decoration-color: #888 !important;
+}
+
+input, textarea, button {
+  border-radius: 0 !important;
+}
+
+.sig3-logo {
+  font-family: 'Courier New', Courier, monospace
+}
+
+.sig3-logo svg {
+  margin-right: .50rem;
+}
+
+.sig3-logo mark {
+  background: none;
+  color: #c00;
+  font-weight: bold;
+}
