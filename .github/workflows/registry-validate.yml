@@ -14,6 +14,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: jq-install
+        run: sudo apt-get install jq
+
+      - name: node-setup
+        uses: actions/setup-node@v4.3.0
+        with:
+          # node-version-file: 'package.json'
+          cache: 'npm'
+      
+      - name: node-deps
+        run: npm ci
+      
+      - name: node-tests
+        run: npm test
+
       - name: schema-validation-action
         uses: cardinalby/schema-validator-action@3.1.1
         with:
@@ -22,9 +38,6 @@ jobs:
           fileParser: json
           mode: default
           fixSchemas: true
-
-      - name: jq-install
-        run: sudo apt-get install jq
 
       - name: registry-checks
         run: bash "${GITHUB_WORKSPACE}/bin/policy.sh"
