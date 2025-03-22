@@ -1,4 +1,4 @@
-# Identity Assertion Registry
+# SIG3: High Identity Assurance Registry
 [![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/ci.yml?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/ci.yml)
 [![Milestone Progress](https://img.shields.io/github/milestones/progress/mattborja/sig3/1?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Milestone+Progress)](https://github.com/mattborja/sig3/milestones)
 [![Software Provenance](https://img.shields.io/badge/%E2%98%B0-007ec6?style=for-the-badge&logo=github&label=Software+Provenance&labelColor=333)](https://github.com/mattborja/sig3/attestations/)  
