@@ -46,3 +46,10 @@ jobs:
       - name: Deploy GH pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: registry-dist
+          path: ./dist/
+          compression-level: 9
+          overwrite: true
