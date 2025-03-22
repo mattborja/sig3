@@ -24,8 +24,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    id: sig3-ci
+  sig3-ci:
     name: SIG3 CI
     runs-on: ubuntu-latest
 
@@ -53,8 +52,7 @@ jobs:
           path: dist/*.json
           name: registry-dist
 
-  deploy:
-    id: sig3-cd
+  sig3-cd:
     name: SIG3 CD
     if: ${{ github.ref == 'refs/heads/master' }}
     needs: sig3-ci
