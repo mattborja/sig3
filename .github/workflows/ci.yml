@@ -52,6 +52,20 @@ jobs:
           path: dist/*.json
           name: registry-dist
 
+      - id: build-html-dist
+        run: |
+          [ -d html/dist ] && mv html/dist .html-dist
+          mv dist/ html/
+      
+      - id: build-gh-pages-setup
+        uses: actions/configure-pages@v5
+
+      - id: build-gh-pages-upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: ./html
+
   sig3-cd:
     name: SIG3 CD
     if: ${{ github.ref == 'refs/heads/master' }}
@@ -64,30 +78,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - id: deploy-html-dist-sanitize
-        run: |
-          [ -d html/dist ] && mv html/dist .html-dist || :
-
-      - id: deploy-dist-download
-        uses: actions/download-artifact@v4
-        with:
-          name: registry-dist
-          path: html/
-          pattern: '*.json' # Extracted output filenames sanitized for static web
-      
-      - id: deploy-gh-pages-setup
-        uses: actions/configure-pages@v5
-
-      - id: deploy-gh-pages-upload-html
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./html
-          
-      - id: deploy-gh-pages-deploy
-        uses: actions/deploy-pages@v4
-      
       - id: deploy-slsa-attestations
         uses: actions/attest-build-provenance@v2
         with:
           subject-name: registry-dist
           subject-digest: sha256:${{ needs.sig3-ci.outputs.artifact_digest }}
+
+      - id: deploy-gh-pages-deploy
+        uses: actions/deploy-pages@v4
