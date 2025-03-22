@@ -21,20 +21,28 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+  sanitize-dist:
     steps:
-      - name: Displace root relative /dist if exists
+      - name: Displace ./html/dist if exists
         run: |
           [ -d ./html/dist ] && mv ./html/dist ./.html-dist
 
-      - uses: mattborja/sig3/.github/workflows/registry-validate.yml@1
-        with:
-          artifact_base: ./html/dist/
-          
+  build-dist:
+    needs: sanitize-dist
+    uses: mattborja/sig3/.github/workflows/registry-validate.yml@1
+    with:
+      artifact_base: ./html/dist/
+
+  deploy-html-dist:
+    needs: registry-dist
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Configure GH pages
         uses: actions/configure-pages@v5
 
@@ -50,6 +58,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: registry-dist
-          path: ./dist/
+          path: ./html/dist/
           compression-level: 9
           overwrite: true
