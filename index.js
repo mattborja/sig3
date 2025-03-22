@@ -53,7 +53,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
 
                 const entry = {
                     status: {},
-                    approval: {}
+                    valid: false
                 };
 
                 // entry.source
@@ -125,15 +125,13 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                 {
                     // build additional meta (post-validation)
                     entry.id = entry.source.fingerprint;
+                    entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
 
                     // report
                     const summary = {
-                        src: outFilename
+                        valid: entry.valid,
+                        ...Object.fromEntries(Object.keys(entry.status).map(k => [k, entry.status[k].valid])),
                     };
-
-                    Object.keys(entry.status).forEach(k => {
-                        summary[k] = entry.status[k].valid
-                    });
 
                     fs.writeFile(outFilename, JSON.stringify(entry, null, 2), err => {
                         if (err)
