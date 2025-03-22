@@ -10,7 +10,7 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
 (function (){
     const $form = $('form#registry-search');
     const $query = $form.find('input');
-    const $code = $('#registry-entry-details pre > code');
+    const $code = $('#registry-entry-details code');
 
     const $modal = new bootstrap.Modal('#registry-entry-details');
 
