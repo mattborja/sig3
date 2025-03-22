@@ -1,8 +1,8 @@
 # Identity Assertion Registry
-[![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/ci.yml?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/ci.yml)
-[![Software Provenance](https://img.shields.io/badge/%E2%98%B0-007ec6?style=for-the-badge&logo=github&label=Software+Provenance&labelColor=333333)](https://github.com/mattborja/sig3/attestations/)
-[![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
-[![Milestone Progress](https://img.shields.io/github/milestones/progress/mattborja/sig3/1?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Milestone+Progress)](https://github.com/mattborja/sig3/milestones)
+[![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/ci.yml?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/ci.yml)
+[![Milestone Progress](https://img.shields.io/github/milestones/progress/mattborja/sig3/1?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Milestone+Progress)](https://github.com/mattborja/sig3/milestones)
+[![Software Provenance](https://img.shields.io/badge/%E2%98%B0-007ec6?style=for-the-badge&logo=github&label=Software+Provenance&labelColor=333)](https://github.com/mattborja/sig3/attestations/)  
+[![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333&color=222&logo=github&logoColor=fff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
 
 ## Purpose
 To support critical infrastructure needs with an auditable and authoritative registry of digital identify proofs in accordance with industry guidelines and recommendations.
