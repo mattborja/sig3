@@ -68,7 +68,7 @@ jobs:
         with:
           name: registry-dist.zip
           path: html/
-          pattern: *.json # Extracted output filenames sanitized for static web
+          pattern: '*.json' # Extracted output filenames sanitized for static web
 
       - id: deploy-html-dist-sanitize
         run: |
