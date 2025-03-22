@@ -21,16 +21,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  registry-dist:
-    - name: Displace ./html/dist if exists
-      run: |
-        [ -d ./html/dist ] && mv ./html/dist ./.html-dist
-        
-    - uses: mattborja/sig3/.github/workflows/registry-validate.yml@1
-      with:
-        artifact_base: ./html/dist/
+  sanitize-dist:
+    steps:
+      - name: Displace ./html/dist if exists
+        run: |
+          [ -d ./html/dist ] && mv ./html/dist ./.html-dist
 
-  deploy:
+  build-dist:
+    needs: sanitize-dist
+    uses: mattborja/sig3/.github/workflows/registry-validate.yml@1
+    with:
+      artifact_base: ./html/dist/
+
+  deploy-html-dist:
     needs: registry-dist
 
     environment:
