@@ -6,7 +6,7 @@ import schema from './schema.json' with { type: 'json' };
 
 const REGISTRY_BASE = './registry';
 const REGISTRY_EXT = '.json';
-const ARTIFACT_BASE = './dist';
+const ARTIFACT_BASE = process.argv[2] || './dist/';
 
 const validator = new Validator(schema);
 

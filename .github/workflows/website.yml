@@ -27,15 +27,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Initialize site root related /dist (displace if exists)
+      - name: Displace root relative /dist if exists
         run: |
           [ -d ./html/dist ] && mv ./html/dist ./.html-dist
-          mkdir -p ./html/dist
 
-      - uses: actions/download-artifact@v4
+      - uses: mattborja/sig3/.github/workflows/registry-validate.yml@1
         with:
-          name: registry-dist
-          path: ./html/dist/
+          artifact_base: ./html/dist/
           
       - name: Configure GH pages
         uses: actions/configure-pages@v5
