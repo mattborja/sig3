@@ -1,0 +1,33 @@
+{
+  "name": "sig3",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "SIG3: High identity assurance registry to support critical infrastructure integrity with independent GPG identity verifications in accordance with industry guidelines and recommendations.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattborja/sig3.git"
+  },
+  "keywords": [
+    "identity",
+    "gpg",
+    "weboftrust",
+    "sig3",
+    "ial3",
+    "nist800-63a",
+    "pgp"
+  ],
+  "author": "Matt Borja (A1C7 E813 F160 A407)",
+  "license": "SEE LICENSE IN ./LICENSE",
+  "homepage": "https://github.com/mattborja/sig3#readme",
+  "dependencies": {
+    "@cfworker/json-schema": "^4.1.1"
+  },
+  "engines": {
+    "npm": "^10.9.2",
+    "node": "^22.14.0"
+  }
+}

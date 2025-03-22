@@ -26,6 +26,45 @@ The following resources are considered applicable and relevant to the orientatio
 - [Key validity and owner trust (GnuPG)](https://www.gnupg.org/gph/en/manual/x334.html)
 
 ## Getting Started
+First, clone the repository:
+```bash
+~$ git clone git@github.com:mattborja/sig3.git
+```
+
+Next, navigate into the newly cloned repository directory and run `npm install` to install the [related dependencies](/package.json):
+```bash
+~/sig3$ cd sig3
+~/sig3$ npm install
+```
+
+Finally, run `npm run build` to build the **dist/** folder from registry entries that have successfully passed all validation checks and see their respective audit summaries in the standard output<sup>†</sup>.
+```bash
+~/sig3$ npm run build
+
+
+> sig3@1.0.0 build
+> node index.js
+
+Skipping file on parse failure: registry/<FILENAME>.json (SyntaxError: Expected double-quoted property name in JSON at position 1474 (line 16 column 5))
+
+F30FF4FC936584574EE3251833688C2EDC08CD38 {
+  src: 'dist/F30FF4FC936584574EE3251833688C2EDC08CD38.json',
+  schema: true,
+  keyVersion: false,
+  filename: true
+}
+
+99BB608E30380C451952D6BBA1C7E813F160A407 {
+  src: 'dist/99BB608E30380C451952D6BBA1C7E813F160A407.json',
+  schema: true,
+  keyVersion: true,
+  filename: true
+}
+...
+```
+<sup>†</sup>Newlines and spacing added for readability.
+
+## Contributing
 1. Familiarize yourself with the resources provided in the Standards section above
 2. Refer to the [identity registry](/registry/) for existing evidence submissions (see also [schema](/SCHEMA.md))
 3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository

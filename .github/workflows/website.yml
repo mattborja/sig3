@@ -1,7 +1,7 @@
 name: Deploy static HTML
 
 on:
-  # Runs on pushes targeting the default branch
+  # Assumes all pre-merge workflows have completed successfully via branch protection
   push:
     branches: ["master"]
 
@@ -27,14 +27,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Initialize site root related /dist (displace if exists)
+        run: |
+          [ -d ./html/dist ] && mv ./html/dist ./.html-dist
+          mkdir -p ./html/dist
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: registry-dist
+          path: ./html/dist/
+          
       - name: Configure GH pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: ./html
+
       - name: Deploy GH pages
         id: deployment
         uses: actions/deploy-pages@v4
