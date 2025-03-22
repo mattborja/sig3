@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      artifact_sha256: ${{ steps.dist.outputs.artifact-digest }}
+      artifact_sha256: ${{ steps.build-dist-upload.outputs.artifact-digest }}
 
     steps:
       - id: build-dist-checkout
@@ -46,7 +46,6 @@ jobs:
           npm run build
       
       - id: build-dist-upload
-        id: dist
         uses: actions/upload-artifact@v4
         with:
           path: dist/*.json
@@ -58,7 +57,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.gh-pages-deploy.outputs.page_url }}
+      url: ${{ steps.deploy-gh-pages-deploy.outputs.page_url }}
 
     runs-on: ubuntu-latest
 
@@ -84,7 +83,6 @@ jobs:
           path: ./html
           
       - id: deploy-gh-pages-deploy
-        id: gh-pages-deploy
         uses: actions/deploy-pages@v4
       
       - id: deploy-slsa-build
