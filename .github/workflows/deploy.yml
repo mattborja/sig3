@@ -29,7 +29,7 @@ jobs:
 
   build-dist:
     needs: sanitize-dist
-    uses: mattborja/sig3/.github/workflows/registry-validate.yml@master
+    uses: mattborja/sig3/.github/workflows/build.yml@master
     with:
       artifact_base: ./html/dist/
 
