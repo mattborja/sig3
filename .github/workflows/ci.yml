@@ -64,17 +64,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - id: deploy-html-dist-sanitize
+        run: |
+          [ -d html/dist ] && mv html/dist .html-dist
+
       - id: deploy-dist-download
         uses: actions/download-artifact@v4
         with:
           name: registry-dist
           path: html/
           pattern: '*.json' # Extracted output filenames sanitized for static web
-
-      - id: deploy-html-dist-sanitize
-        run: |
-          [ -d html/dist ] && mv html/dist .html-dist
-          mv dist/ html/
       
       - id: deploy-gh-pages-setup
         uses: actions/configure-pages@v5
@@ -87,8 +86,8 @@ jobs:
       - id: deploy-gh-pages-deploy
         uses: actions/deploy-pages@v4
       
-      - id: deploy-slsa-build
+      - id: deploy-slsa-attestations
         uses: actions/attest-build-provenance@v2
         with:
-          subject-name: registry-dist.zip
+          subject-name: registry-dist
           subject-digest: sha256:${{ needs.sig3-ci.outputs.artifact_digest }}
