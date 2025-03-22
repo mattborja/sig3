@@ -34,3 +34,10 @@ jobs:
       
       - name: node-build
         run: npm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: registry-dist
+          path: ./dist/
+          compression-level: 9
+          overwrite: true
