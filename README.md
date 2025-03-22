@@ -1,5 +1,6 @@
 # Identity Assertion Registry
 [![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/build.yml?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/build.yml)
+[![Software Provenance](https://img.shields.io/badge/%E2%98%B0-007ec6?style=for-the-badge&logo=github&label=Software+Provenance&labelColor=333333)](https://github.com/mattborja/sig3/attestations/)
 [![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
 [![Milestone Progress](https://img.shields.io/github/milestones/progress/mattborja/sig3/1?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Milestone+Progress)](https://github.com/mattborja/sig3/milestones)
 
