@@ -4,6 +4,13 @@ permissions:
   contents: read
 
 on:
+  workflow_call:
+    inputs:
+      artifact_base:
+        description: 'Output directory for registry entries passing validation checks from `npm run build`'
+        default: './dist/'
+        required: true
+        type: string
   pull_request:
     types: [ "opened", "reopened", "synchronize" ]
 
@@ -34,10 +41,3 @@ jobs:
       
       - name: node-build
         run: npm run build
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: registry-dist
-          path: ./dist/
-          compression-level: 9
-          overwrite: true
