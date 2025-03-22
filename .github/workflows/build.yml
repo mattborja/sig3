@@ -1,7 +1,9 @@
 name: Registry Validation
 
 permissions:
+  attestations: write
   contents: read
+  id-token: write
 
 on:
   workflow_call:
@@ -41,3 +43,16 @@ jobs:
       
       - name: node-build
         run: npm run build
+      
+      - name: registry-dist
+        id: registry-dist-bundle
+        uses: actions/upload-artifact@v4
+        with:
+          path: dist/*.json
+          name: registry-dist.zip
+      
+      - name: slsa-build
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: registry-dist.zip
+          subject-digest: sha256:${{ steps.registry-dist-bundle.outputs.artifact-digest }}

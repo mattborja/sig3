@@ -26,15 +26,18 @@ jobs:
       - name: Displace ./html/dist if exists
         run: |
           [ -d ./html/dist ] && mv ./html/dist ./.html-dist
+          mkdir -p ./html/dist
 
   build-dist:
     needs: sanitize-dist
-    uses: mattborja/sig3/.github/workflows/build.yml@master
-    with:
-      artifact_base: ./html/dist/
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: registry-dist
+        path: ./html/dist/
 
   deploy-html-dist:
-    needs: registry-dist
+    needs: build-dist
 
     environment:
       name: github-pages
@@ -55,9 +58,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: registry-dist
-          path: ./html/dist/
-          compression-level: 9
-          overwrite: true
