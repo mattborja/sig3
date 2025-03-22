@@ -1,0 +1,94 @@
+name: SIG3 CI/CD
+
+on:
+  workflow_dispatch:
+  
+  pull_request:
+    types: [
+      "opened",
+      "reopened",
+      "synchronize"
+    ]
+
+  push:
+    branches: [ "master" ]
+
+permissions:
+  attestations: write
+  contents: read
+  id-token: write
+  pages: write
+
+concurrency:
+  group: sig3-ci
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      artifact_sha256: ${{ steps.dist.outputs.artifact-digest }}
+
+    steps:
+      - id: build-dist-checkout
+        uses: actions/checkout@v4
+
+      - id: build-dist-setup
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: 'package.json'
+          cache: 'npm'
+      
+      - id: build-dist-run
+        run: |
+          npm ci
+          npm run build
+      
+      - id: build-dist-upload
+        id: dist
+        uses: actions/upload-artifact@v4
+        with:
+          path: dist/*.json
+          name: registry-dist.zip
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: build
+
+    environment:
+      name: github-pages
+      url: ${{ steps.gh-pages-deploy.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: deploy-dist-download
+        uses: actions/download-artifact@v4
+        with:
+          name: registry-dist.zip
+          path: html/
+          pattern: *.json # Extracted output filenames sanitized for static web
+
+      - id: deploy-html-dist-sanitize
+        run: |
+          [ -d html/dist ] && mv html/dist .html-dist
+          mv dist/ html/
+      
+      - id: deploy-gh-pages-setup
+        uses: actions/configure-pages@v5
+
+      - id: deploy-gh-pages-upload-html
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./html
+          
+      - id: deploy-gh-pages-deploy
+        id: gh-pages-deploy
+        uses: actions/deploy-pages@v4
+      
+      - id: deploy-slsa-build
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: registry-dist.zip
+          subject-digest: sha256:${{ steps.registry-dist-bundle.outputs.artifact-digest }}
