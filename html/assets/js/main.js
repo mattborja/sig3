@@ -19,7 +19,7 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
     };
 
     // Optional digest index to enable fast substring searches across all indexed fingerprints
-    fetch('/dist-all.shza256.txt')
+    fetch('/dist-all.sha256.txt')
       .then(res => {
         if (!res.ok)
         {
@@ -63,6 +63,10 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
           return found.length ? found[0] : (returnInputIfNotFound ? q : null);
         }
 
+        function _formatKeyID(fpr) {
+          return fpr.substr(-16).match(/.{1,4}/g).join(' ');
+        }
+
         const fpr = _searchDigests(q);
 
         if (!fpr)
@@ -81,11 +85,10 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
             })
             .then(json => {
                 const sorted = {
-                  id: json.id,
+                  id: _formatKeyID(json.id),
                   valid: json.valid,
                   status: json.status,
-                  source: json.source,
-                  ...json
+                  source: json.source
                 };
 
                 const formatted = JSON.stringify(sorted, null, 2);
