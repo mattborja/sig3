@@ -55,8 +55,8 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
           if (!q)
             return null;
 
-          const sanitized = q.replace(/\s/g, '');
-          const regex = new RegExp(`${RegExp.escape(sanitized)}`, 'i');
+          const sanitized = q.replace(/[^0-9A-F]/gi, '');
+          const regex = new RegExp(sanitized, 'i');
 
           const found = Object.keys(engine.digests).filter(k => regex.test(k));
 
