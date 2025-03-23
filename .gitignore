@@ -1,4 +1,5 @@
 dist/
+dist-all.sha256.txt
 
 #
 # Node.js
