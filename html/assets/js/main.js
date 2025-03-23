@@ -14,16 +14,68 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
 
     const $modal = new bootstrap.Modal('#registry-entry-details');
 
+    const engine = {
+      digests: {}
+    };
+
+    // Optional digest index to enable fast substring searches across all indexed fingerprints
+    fetch('/dist-all.shza256.txt')
+      .then(res => {
+        if (!res.ok)
+        {
+          // Append warning
+          $('<div />')
+            .addClass('text-danger text-small my-3').html('<strong>Service Degraded.</strong> Support for partial fingerprint matching is currently unavailable.')
+            .insertAfter($query);
+          
+          return false;
+        }
+
+        return res.text();
+      }).then(raw => {
+        if (!raw)
+          return;
+
+        function _baseFPRValue(f) {
+          const matches = f.matchAll(/\/?([0-9A-F]+)\.?/g);
+          
+          for (const match of matches)
+            return match[1];
+        }
+
+        engine.digests = Object.fromEntries(raw.trim().split('\n').map(line => line.split(/\s+/)).map(e => [ _baseFPRValue(e[1]), { digest: `sha256:${e[0]}` } ]));
+      });
+
+    // Core entry search, load, and reporting
     $form.submit(e => {
         e.preventDefault();
+        const q = $query.val();
 
-        const fpr = $query.val().toUpperCase();
-        const src = `dist/${fpr}.json`;
+        function _searchDigests(q, returnInputIfNotFound = true) {
+          if (!q)
+            return null;
 
-        fetch(src)
+          const sanitized = q.replace(/\s/g, '');
+          const regex = new RegExp(`${RegExp.escape(sanitized)}`, 'i');
+
+          const found = Object.keys(engine.digests).filter(k => regex.test(k));
+
+          return found.length ? found[0] : (returnInputIfNotFound ? q : null);
+        }
+
+        const fpr = _searchDigests(q);
+
+        if (!fpr)
+        {
+          alert('No entry found for your search terms.\n\nPlease modify your query and try again.');
+          
+          return false;
+        }
+
+        fetch(`dist/${fpr.toUpperCase()}.json`)
             .then(res => {
               if (!res.ok)
-                throw "No entry found for your search terms.\n\nPlease modify your query and try again.";
+                throw 'No entry found for your search terms.\n\nPlease modify your query and try again.';
 
               return res.json();
             })
