@@ -28,7 +28,7 @@ The following resources are considered applicable and relevant to the orientatio
 
 ## Getting Started
 > [!NOTE]
-> You can also just test drive the proof-of-concept **ID Lookup** tool built from this repository at https://sig3.org.uk/.
+> You can also now test drive the proof-of-concept **ID Lookup** tool built from this repository at https://sig3.org.uk/.
 > 
 > ![image](https://github.com/user-attachments/assets/cef3f1c4-120c-41fd-abb7-19bb911053e3)
 
@@ -98,3 +98,8 @@ The Code Owners of this project acknowledges and commemorates the extraordinary 
 
 ## License
 This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
+
+## Donations
+The following methods are currently supported for receiving donations:
+- Email money transfer (e.g., PayPal, Zelle, etc.) to the maintainer's email address shown in the UID output of: `gpg --list-keys A1C7E813F160A407`
+- Bitcoin address (static): `bc1q69f987tgm59haz9n2nycfhka4z3czy30vm8nhz`
