@@ -23,7 +23,7 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
         fetch(src)
             .then(res => {
               if (!res.ok)
-                throw res.statusText
+                throw "No entry found for your search terms.\n\nPlease modify your query and try again.";
 
               return res.json();
             })
