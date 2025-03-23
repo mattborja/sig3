@@ -27,7 +27,12 @@ The following resources are considered applicable and relevant to the orientatio
 - [Key validity and owner trust (GnuPG)](https://www.gnupg.org/gph/en/manual/x334.html)
 
 ## Getting Started
-First, clone the repository:
+> [!NOTE]
+> You can also just test drive the proof-of-concept **ID Lookup** tool built from this repository at https://sig3.org.uk/.
+> 
+> ![image](https://github.com/user-attachments/assets/cef3f1c4-120c-41fd-abb7-19bb911053e3)
+
+To run your own tests, first clone the repository:
 ```bash
 ~$ git clone git@github.com:mattborja/sig3.git
 ```
