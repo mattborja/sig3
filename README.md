@@ -101,5 +101,5 @@ This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
 
 ## Donations
 The following methods are currently supported for receiving donations:
-- Maintainer's email address as shown in the UID output of: `gpg --list-keys A1C7E813F160A407`
+- Email money transfer (e.g., PayPal, Zelle, etc.) to the maintainer's email address shown in the UID output of: `gpg --list-keys A1C7E813F160A407`
 - Bitcoin address (static): `bc1q69f987tgm59haz9n2nycfhka4z3czy30vm8nhz`
