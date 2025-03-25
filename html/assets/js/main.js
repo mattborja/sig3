@@ -62,11 +62,6 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
 
           return found.length ? found[0] : (returnInputIfNotFound ? q : null);
         }
-
-        function _formatKeyID(fpr) {
-          return fpr.substr(-16).match(/.{1,4}/g).join(' ');
-        }
-
         const fpr = _searchDigests(q);
 
         if (!fpr)
@@ -84,14 +79,7 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
               return res.json();
             })
             .then(json => {
-                const sorted = {
-                  id: _formatKeyID(json.id),
-                  valid: json.valid,
-                  status: json.status,
-                  source: json.source
-                };
-
-                const formatted = JSON.stringify(sorted, null, 2);
+                const formatted = JSON.stringify(json, null, 2);
                 const highlighted = jsonHighlight(formatted);
 
                 $code.html(highlighted);

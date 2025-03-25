@@ -32,6 +32,14 @@ const VALID_KEY_VERS = {
 
 const validator = new Validator(schema);
 
+function toDictionary(keySelectFields, obj) {
+  return Object.fromEntries(keySelectFields.map(k => [k, obj[k]]));
+}
+
+function _formatKeyID(fpr, withSpaces = false) {
+  return fpr.substr(-16).match(/.{1,4}/g).join(withSpaces ? ' ' : '');
+}
+
 // block on output dir creation
 if (!fs.existsSync(ARTIFACT_BASE))
     fs.mkdirSync(ARTIFACT_BASE);
@@ -128,7 +136,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                 try
                 {
                     // build additional meta (post-validation)
-                    entry.id = entry.source.fingerprint;
+                    entry.id = _formatKeyID(entry.source.fingerprint);
                     entry.ver = entry.status.keyVersion.meta.ver;
                     entry.deprecated = entry.status.keyVersion.meta.deprecated;
                     entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
@@ -142,10 +150,6 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                     fs.writeFile(outFilename, JSON.stringify(entry, null, 2), err => {
                         if (err)
                             throw `Failed to write to file: ${outFilename} (${err})`;
-
-                        function toDictionary(keySelectFields, obj) {
-                            return Object.fromEntries(keySelectFields.map(k => [k, obj[k]]));
-                        }
 
                         // include specific log fields in $
                         const log = toDictionary(ENTRY_LOG_FIELDS, entry);
