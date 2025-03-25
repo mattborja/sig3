@@ -10,6 +10,9 @@ const ARTIFACT_BASE = process.argv[2] || './dist/';
 
 const NIST_SHA1_WITHDRAWAL_DATE = "2030-12-31T00:00:00Z";
 
+const ENTRY_LOG_FIELDS = ['id', 'valid', 'status', '@timestamp', '@level', '@message'];
+const ENTRY_LOG_STATUS_FIELDS = ['valid', 'errors'];
+
 const VALID_KEY_VERS = {
     128: {
         ver: 3,
@@ -82,6 +85,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
 
                     entry.status.keyVersion = {
                         valid: validKeyVersion && !validKeyDeprecated,
+                        meta: VALID_KEY_VERS[keyLenBits],
                         errors:
                             !validKeyVersion
                             ? [ `Unrecognized key length: ${keyLenBits} bits` ]
@@ -125,19 +129,34 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                 {
                     // build additional meta (post-validation)
                     entry.id = entry.source.fingerprint;
+                    entry.ver = entry.status.keyVersion.meta.ver;
+                    entry.deprecated = entry.status.keyVersion.meta.deprecated;
                     entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
 
-                    // report
-                    const summary = {
-                        valid: entry.valid,
-                        ...Object.fromEntries(Object.keys(entry.status).map(k => [k, entry.status[k].valid])),
-                    };
+                    // include standard $.log fields in dist
+                    entry['@timestamp'] = (new Date()).toISOString();
+                    entry['@level'] = entry.valid ? 'INFO' : 'WARN';
+                    entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
 
+                    // dist
                     fs.writeFile(outFilename, JSON.stringify(entry, null, 2), err => {
                         if (err)
                             throw `Failed to write to file: ${outFilename} (${err})`;
-                        
-                        console.log(entry.id, summary);
+
+                        function toDictionary(keySelectFields, obj) {
+                            return Object.fromEntries(keySelectFields.map(k => [k, obj[k]]));
+                        }
+
+                        // include specific log fields in $
+                        const log = toDictionary(ENTRY_LOG_FIELDS, entry);
+
+                        // include specific log subfields in $.status.*
+                        log.status = Object.fromEntries(Object.keys(log.status).map(k => [k, toDictionary(ENTRY_LOG_STATUS_FIELDS, log.status[k])]));
+
+                        // simplify schema validation errors
+                        log.status.schema.errors = log.status.schema.errors.map(e => `${e.instanceLocation}: ${e.error}`);
+
+                        console.log(JSON.stringify(log));
                     });
                 }
                 catch (e)
