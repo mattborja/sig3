@@ -129,6 +129,8 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                 {
                     // build additional meta (post-validation)
                     entry.id = entry.source.fingerprint;
+                    entry.ver = entry.status.keyVersion.meta.ver;
+                    entry.deprecated = entry.status.keyVersion.meta.deprecated;
                     entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
 
                     // include standard $.log fields in dist
