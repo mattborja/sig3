@@ -41,6 +41,12 @@ jobs:
           node-version-file: 'package.json'
           cache: 'npm'
       
+      - id: tool-status
+        run: |
+          npm -v
+          node -v
+          gpg --version
+      
       - id: build-dist-run
         run: |
           npm ci
