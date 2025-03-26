@@ -43,9 +43,9 @@ jobs:
       
       - id: tool-status
         run: |
-          npm -v
-          node -v
-          gpg --version
+          echo "NPM version: $(npm -v)"
+          echo "Node.js version: $(node -v)"
+          echo "GPG version: $(gpg --version)"
       
       - id: build-dist-run
         run: |
