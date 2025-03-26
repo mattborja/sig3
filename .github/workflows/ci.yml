@@ -41,11 +41,9 @@ jobs:
           node-version-file: 'package.json'
           cache: 'npm'
       
-      - id: tool-status
+      - id: gpg-status
         run: |
-          echo "NPM version: $(npm -v)"
-          echo "Node.js version: $(node -v)"
-          echo "GPG version: $(gpg --version)"
+          gpg --version
       
       - id: build-dist-run
         run: |
