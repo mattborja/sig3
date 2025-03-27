@@ -57,7 +57,25 @@ function gpgImportPublicKeyOnce(entry) {
 
     const localKeyFilename = path.join(KEYCACHE_BASE, `${entry.source.fingerprint}.asc`);
 
-    // source: local cache
+    // source: remote keyring (for multiple runs across different machines)
+    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (function() {
+        try
+        {
+            const esc = btoa(entry.source.fingerprint);
+
+            const stdout = child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --list-keys {}`);
+                
+            imported = true;
+            loadedFromCache = true;
+            console.log(`Found ${entry.source.fingerprint} in local keyring`);
+        }
+        catch(e)
+        {
+            
+        }
+    })();
+
+    // source: local cache (for multiple runs on same machine)
     !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (function() {
         try
         {

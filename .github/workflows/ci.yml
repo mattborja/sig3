@@ -45,11 +45,33 @@ jobs:
         run: |
           gpg --version
       
+      - id: gpg-pubring-import
+        continue-on-error: true
+        env:
+          SIG3_PUBRING_SYMMETRIC_KEY: ${{ secrets.SIG3_PUBRING_SYMMETRIC_KEY }}
+        
+        run: |
+          curl -fsO https://sig3.org.uk/dist/.pubring.gpg \
+            && gpg --batch --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" --decrypt .pubring.gpg --output .pubring.kbx --yes \
+            && rm .pubring.gpg \
+            && gpg --import .pubring.kbx \
+            && rm .pubring.kbx
+      
       - id: build-dist-run
         run: |
           npm ci
           npm run build
       
+      - id: gpg-pubring-export
+        continue-on-error: true
+        env:
+          SIG3_PUBRING_SYMMETRIC_KEY: ${{ secrets.SIG3_PUBRING_SYMMETRIC_KEY }}
+        
+        run: |
+          gpg --export > .pubring.kbx
+          sh ./bin/gpg-symmetric.sh "$SIG3_PUBRING_SYMMETRIC_KEY" .pubring.kbx "dist/.pubring.gpg"
+          rm .pubring.kbx
+        
       - id: build-dist-upload
         uses: actions/upload-artifact@v4
         with:
