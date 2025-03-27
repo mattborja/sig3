@@ -1,6 +1,16 @@
 {
   "fingerprint": "A1DB793DC23663E7F91475D82B999FA9CE046B1B",
   "label": "Werner Koch (384-bit ECDH key)",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://gnupg.org/.well-known/openpgpkey/hu/nq6t9teux7edsnwdksswydu4o9i5es3f?l=wk"
+    },
+    {
+      "type": "url",
+      "uri": "https://openpgpkey.gnupg.org/.well-known/openpgpkey/gnupg.org/hu/nq6t9teux7edsnwdksswydu4o9i5es3f?l=wk"
+    }
+  ],
   "refs": [
     {
       "date": "2024-11-27",

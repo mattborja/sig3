@@ -1,6 +1,20 @@
 {
     "fingerprint": "5E6D6EAE16C3DA75450B219C9A804E97D7079C77",
     "label": "Ian Young",
+    "sources": [
+      {
+        "type": "url",
+        "uri": "https://iay.org.uk/identity/pgp/d7079c77.asc"
+      },
+      {
+        "type": "url",
+        "uri": "https://keybase.io/iay/pgp_keys.asc?fingerprint=5e6d6eae16c3da75450b219c9a804e97d7079c77"
+      },
+      {
+        "type": "url",
+        "uri": "https://shibboleth.net/downloads/PGP_KEYS"
+      }
+    ],
     "refs": [
       {
         "date": "2022-04-01",

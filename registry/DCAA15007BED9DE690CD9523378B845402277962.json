@@ -1,6 +1,12 @@
 {
     "fingerprint": "DCAA15007BED9DE690CD9523378B845402277962",
     "label": "Scott Cantor",
+    "sources": [
+      {
+        "type": "url",
+        "uri": "https://shibboleth.net/downloads/PGP_KEYS"
+      }
+    ],
     "refs": [
       {
         "date": "2022-04-01",

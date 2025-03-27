@@ -1,6 +1,12 @@
 {
     "fingerprint": "B5B5DD332142AD657E8D87AC7D27E610B8A3DC52",
     "label": "Philip David Smart",
+    "sources": [
+      {
+        "type": "url",
+        "uri": "https://shibboleth.net/downloads/PGP_KEYS"
+      }
+    ],
     "refs": [
       {
         "date": "2022-04-01",
