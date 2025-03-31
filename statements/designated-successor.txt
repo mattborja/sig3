@@ -1,0 +1,25 @@
+Designated Successor Statement
+
+For Current Primary Key (Fingerprint): 
+
+IMPORTANT:
+This document is not valid UNLESS it is signed by the primary key with the fingerprint above.
+
+About this document
+
+As applied in U.S. government, a designated successor shall be a different primary key
+controlled by the same owner that is secured away from the current primary key in use,
+to reduce the chance that verified key identities will be lost or disassociated in a
+catastrophic event (e.g., theft, hardware failure, expiry, replacement).
+
+The successor key shall be established using the same procedures for production use, but
+kept in an undisclosed secure location, reserved only for future use.
+
+In such an event whereby the primary key (identified by the fingerprint above) has been
+compromised or is being superseded, this signed statement serves to appoint the following
+primary key fingerprint(s) as its designated successor(s).
+
+Successor Primary Key Fingerprints:
+- 
+- 
+- 
