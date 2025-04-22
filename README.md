@@ -103,7 +103,7 @@ The following named individuals and entities are further recognized for their si
 
 "Fair enough, but what about the **sig3.** part in the domain?"
 
-It means we did [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) :)
+In addition to seeking alignment with IAL3 with NIST SP 800-63A, it means we did [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) according to GnuPG :)
 
 ## License
 This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
