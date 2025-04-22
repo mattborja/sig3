@@ -92,12 +92,12 @@ As such, though based in the U.S., this project adopts the non-profit `.org.uk` 
 
 The following named individuals and entities are further recognized for their significant contributions and influence on the development and direction of this project:
 
-- [Werner Koch](https://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke) – for his dedication to developing and maintaining GnuPG, a cornerstone tool for secure communication and email encryption.
+- [Werner Koch](https://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke) — for his dedication to developing and maintaining GnuPG, a cornerstone tool for secure communication and email encryption.
 - [Christof Paar](https://en.wikipedia.org/wiki/Christof_Paar) — German professor and renowned researcher in hardware security and cryptography. Known for his academic contributions in [applied cryptography](https://link.springer.com/book/10.1007/978-3-662-69007-9) and hardware implementations.
-- [Elmar Hoffman](http://www.elho.net/crypto/policy/) – for his advocacy in cryptographic policy and practices.
-- [Ian Young](https://iay.org.uk/identity/pgp/policy/2021-02-25/) – for his comprehensive documentation of PGP policy and its applications in identity verification.
+- [Elmar Hoffman](http://www.elho.net/crypto/policy/) — for his advocacy in cryptographic policy and practices.
+- [Ian Young](https://iay.org.uk/identity/pgp/policy/2021-02-25/) — for his comprehensive documentation of PGP policy and its applications in identity verification.
 - [Simon Josefsson](https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/) – for his innovation in secure key management and the use of hardware security devices.
-- [Tails](https://tails.net/contribute/design/download_verification/) – for their commitment to providing users with robust, verifiable tools for privacy and security.
+- [Tails](https://tails.net/contribute/design/download_verification/) — for their commitment to providing users with robust, verifiable tools for privacy and security.
 
 > *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
 
