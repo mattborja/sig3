@@ -85,16 +85,25 @@ F30FF4FC936584574EE3251833688C2EDC08CD38 {
 - [Integrity check](https://gnupg.org/download/integrity_check.html), *The GNU Privacy Guard*
 - [Signature key](https://gnupg.org/signature_key.html), *The GNU Privacy Guard*
 
-## Acknowledgments
-The Code Owners of this project acknowledges and commemorates the extraordinary contributions of the following individuals and organizations dedicated to advancing the critical yet often underappreciated field of digital security and identity; whose work has significantly shaped and inspired this effort:
+## Why the top-level domain `sig3.org.uk`? (Acknowledgments)
+The Code Owners of this project recognize the substantial research, development, and generous contributions of individuals at home and abroad, which have helped inspire and shape digital security as we know it today—an endeavor that this project assiduously seeks to further.
+
+As such, though based in the U.S., this project adopts the non-profit `.org.uk` domain as a tribute to the UK (and greater EU) commitment to privacy and data protection, reflected in their robust privacy laws (e.g., GDPR), digital rights frameworks, and leadership in data security. The open and non-profit nature of this project is also symbolic of the value of transparency in this space.
+
+The following named individuals and entities are further recognized for their significant contributions and influence on the development and direction of this project:
 
 - [Werner Koch](https://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke) – for his dedication to developing and maintaining GnuPG, a cornerstone tool for secure communication and email encryption.
+- [Christof Paar](https://en.wikipedia.org/wiki/Christof_Paar) — German professor and renowned researcher in hardware security and cryptography. Known for his academic contributions in [applied cryptography](https://link.springer.com/book/10.1007/978-3-662-69007-9) and hardware implementations.
 - [Elmar Hoffman](http://www.elho.net/crypto/policy/) – for his advocacy in cryptographic policy and practices.
 - [Ian Young](https://iay.org.uk/identity/pgp/policy/2021-02-25/) – for his comprehensive documentation of PGP policy and its applications in identity verification.
 - [Simon Josefsson](https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/) – for his innovation in secure key management and the use of hardware security devices.
 - [Tails](https://tails.net/contribute/design/download_verification/) – for their commitment to providing users with robust, verifiable tools for privacy and security.
 
 > *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
+
+"Fair enough, but what about the **sig3.** part in the domain?"
+
+It means we did [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) :)
 
 ## License
 This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
