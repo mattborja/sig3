@@ -3,21 +3,15 @@ by Matt Borja
 
 ## About this document
 
-Derived from its usage in U.S. government, a "designated successor" is an alternate primary key
-(albeit, controlled by the same owner) that is secured away from the current primary key in use,
-to reduce the chance that previously verified identities will be lost or disassociated in a
-catastrophic event (e.g., theft, hardware failure, expiry, replacement).
+Derived from its usage in U.S. government, a "designated successor" is an alternate primary key (albeit, controlled by the same owner) that is secured away from the current primary key in use, to reduce the chance that previously verified identities will be lost or disassociated in a catastrophic event (e.g., theft, hardware failure, expiry, replacement).
 
-The successor key(s) shall be established using the same procedures for production use, but
-kept in an undisclosed secure location, reserved only for future use.
+The successor key(s) shall be established using the same procedures for production use, but kept in an undisclosed secure location, reserved only for future use.
 
-In such an event whereby the primary key has been compromised or is being superseded, the
-signed attestation serves to appoint delegates as its effective replacement, or designated successor(s).
+In such an event whereby the primary key has been compromised or is being superseded, the signed attestation serves to appoint delegates as its effective replacement, or designated successor(s).
 
 ## Identity Equivalency and Authority (Template)
 
-Beyond a general power of attorney, and in accordance with this adaptation of the "designated successor,"
-the following template further restricts exercise of the instrument to the Principal itself ("controlled by the same owner").
+Beyond a general power of attorney, and in accordance with this adaptation of the "designated successor," the following template further restricts exercise of the instrument to the Principal itself ("controlled by the same owner").
 
 The attestation must be cryptographically signed by the signing key of the Principal, along with a copy of the Agent's public key certified by the Principal using **signature level 3** (see `gpg --list-sigs`), in order for the instrument to be valid.
 
