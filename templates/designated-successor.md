@@ -30,9 +30,14 @@ Principal: <SIGNING KEYID>, <UID>
 Agent: <DELEGATE KEYID>, <UID>
 Scope: GPG, SSH
 
-It is the intent of this instrument (clearsigned by aforementioned "Principal") to unequivocally vest identity equivalency and authority and do hereby make, constitute, and appoint aforementioned "Agent" to perform within the protocols listed ("Scope") all related cryptographic operations on its behalf.
+It is the intent of this instrument (clearsigned by aforementioned "Principal")
+to unequivocally vest identity equivalency and authority and do hereby make,
+constitute, and appoint aforementioned "Agent" to perform within the protocols
+listed ("Scope") all related cryptographic operations on its behalf.
 
-IN WITNESS WHEREOF, I have hereunto set my hand and cryptographic signature, and have furnished my certification on a copy of the Agent's public key at signature level 3, this <DAY> day of <MONTH> <YEAR>.
+IN WITNESS WHEREOF, I have hereunto set my hand and cryptographic signature,
+and have furnished my certification on a copy of the Agent's public key at
+signature level 3, this <DAY> day of <MONTH> <YEAR>.
 ```
 
 To sign the statement, use the command `gpg --clearsign -u <SIGNING KEYID>`, paste in the completed template, and hit **Ctl+D** to conclude message input.
