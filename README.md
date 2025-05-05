@@ -31,6 +31,9 @@ The following resources are considered applicable and relevant to the orientatio
 3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository
 4. Create a new pull request to submit evidence for a new or existing digital identity
 
+## Guidelines & Recommendations
+- If the amount of evidence for a given key is satisfactory for your purposes, please consider enclosing your signed copy of the public key in the Pull Request description itself (not as a file commit). Remember to use `gpg --ask-cert-level` for specifying your personal assurance level (up through `sig 3`) when certifying a public key.
+
 ## Additional Reading
 - [Building your web of trust](https://www.gnupg.org/gph/en/manual/x547.html), *The GNU Privacy Guard*
 - [Using trust to validate keys](https://www.gnupg.org/gph/en/manual/x334.html#AEN384), *The GNU Privacy Guard*
