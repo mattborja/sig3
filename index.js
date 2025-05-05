@@ -67,7 +67,7 @@ function gpgImportPublicKeyOnce(entry) {
                 
             imported = true;
             loadedFromCache = true;
-            console.log(`Found ${entry.source.fingerprint} in local keyring`);
+            // console.log(`Found ${entry.source.fingerprint} in local keyring`);
         }
         catch(e)
         {
