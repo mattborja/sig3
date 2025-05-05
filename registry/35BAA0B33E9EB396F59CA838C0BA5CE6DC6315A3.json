@@ -10,8 +10,8 @@
   "refs": [
     {
       "date": "2025-03-21",
-      "comment": "Listed as repository signing key on Firefox installation instructions page for Linux",
-      "url": "https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions-recommended",
+      "comment": "Internet Archive snapshot of official Mozilla \"moz://a\" Support page citing fingerprint as Mozilla APT repository signing key",
+      "url": "https://web.archive.org/web/20250505051223/https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions-recommended",
       "type": "role"
     }
   ],
