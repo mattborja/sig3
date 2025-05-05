@@ -1,0 +1,21 @@
+{
+  "fingerprint": "35BAA0B33E9EB396F59CA838C0BA5CE6DC6315A3",
+  "label": "Mozilla APT repository signing key (Artifact Registry Repository Signer <artifact-registry-repository-signer@google.com>)",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://packages.mozilla.org/apt/repo-signing-key.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-03-21",
+      "comment": "Internet Archive snapshot of official Mozilla \"moz://a\" Support page citing fingerprint as Mozilla APT repository signing key",
+      "url": "https://web.archive.org/web/20250505051223/https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions-recommended",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Mozilla"
+  ]
+}
