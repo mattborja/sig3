@@ -32,7 +32,8 @@ The following resources are considered applicable and relevant to the orientatio
 4. Create a new pull request to submit evidence for a new or existing digital identity
 
 ## Guidelines & Recommendations
-- If the amount of evidence for a given key is satisfactory for your purposes, please consider enclosing your signed copy of the public key in the Pull Request description itself (not as a file commit). Remember to use `gpg --ask-cert-level` for specifying your personal assurance level (up through `sig 3`) when certifying a public key.
+- **Show Your Support!** If the amount of evidence for a given key is satisfactory for your purposes, please consider enclosing your signed copy of the public key in the Pull Request description itself (not as a file commit). Remember to use `gpg --ask-cert-level` for specifying your personal assurance level (up through `sig 3`) when certifying a public key.
+- **Preserve Evidence.** URLs once pointing to valid key references may change at any time. To help preserve evidence, please consider first [saving the canonical page URL to the Wayback Machine](https://web.archive.org/save) and using the resulting URL as the reference URL instead. In the future, this may become a requirement for any key references specifying a URL.
 
 ## Additional Reading
 - [Building your web of trust](https://www.gnupg.org/gph/en/manual/x547.html), *The GNU Privacy Guard*
