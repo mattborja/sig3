@@ -95,10 +95,6 @@ function gpgImportPublicKeyOnce(entry) {
         }
     })();
 
-    // Reporting key retrieval attempt
-    if (!loadedFromCache && (!imported || FORCE_FETCH_ALL))
-        // console.log(`Attempting to retrieve ${entry.source.fingerprint} from available sources...`);
-
     // source: inline cache
     !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (entry.source.sources || []).filter(src => src.type === 'cache').every(src => {
         try
