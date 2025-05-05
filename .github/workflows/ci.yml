@@ -51,11 +51,10 @@ jobs:
           SIG3_PUBRING_SYMMETRIC_KEY: ${{ secrets.SIG3_PUBRING_SYMMETRIC_KEY }}
         
         run: |
-          curl -fsO https://sig3.org.uk/dist/.pubring.gpg \
-            && gpg --batch --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" --decrypt .pubring.gpg --output .pubring.kbx --yes \
-            && rm .pubring.gpg \
-            && gpg --import .pubring.kbx \
-            && rm .pubring.kbx
+          export GNUPGHOME=$(mktemp -d -t XXXXXX)
+          echo "[gpg-pubring-import] GNUPGHOME: $GNUPGHOME"
+
+          curl -fs https://sig3.org.uk/dist/.pubring.gpg | gpg --batch --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" -d --yes | gpg --import
       
       - id: build-dist-run
         run: |
@@ -68,14 +67,16 @@ jobs:
           SIG3_PUBRING_SYMMETRIC_KEY: ${{ secrets.SIG3_PUBRING_SYMMETRIC_KEY }}
         
         run: |
-          gpg --export > .pubring.kbx
-          sh ./bin/gpg-symmetric.sh "$SIG3_PUBRING_SYMMETRIC_KEY" .pubring.kbx "dist/.pubring.gpg"
-          rm .pubring.kbx
+          echo "[gpg-pubring-export] GNUPGHOME: $GNUPGHOME"
+          
+          gpg --export | gpg --batch --symmetric --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --s2k-cipher-algo AES256 --armor --yes --output dist/.pubring.gpg
         
       - id: build-dist-upload
         uses: actions/upload-artifact@v4
         with:
-          path: dist/*.json
+          path: |
+            dist/*.json
+            dist/.pubring.gpg
           name: registry-dist
 
       - id: build-html-dist
