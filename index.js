@@ -63,7 +63,7 @@ function gpgImportPublicKeyOnce(entry) {
         {
             const esc = btoa(entry.source.fingerprint);
 
-            const stdout = child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --list-keys {}`);
+            const stdout = child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --list-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`);
                 
             imported = true;
             loadedFromCache = true;
@@ -156,7 +156,7 @@ function gpgImportPublicKeyOnce(entry) {
         child_process.exec(`echo '${esc}' | base64 -d | xargs -I {} gpg --export --armor {} > ${localKeyFilename}`);
 
         // Return key listings
-        return child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --with-fingerprint --list-public-keys {}`).toString().split('\n');
+        return child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --with-fingerprint --list-public-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`).toString().split('\n');
 
     }
     catch (e)
