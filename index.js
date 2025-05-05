@@ -1,17 +1,28 @@
 import { Validator } from '@cfworker/json-schema';
 import fs from 'fs';
 import path from 'path';
+import child_process from 'child_process';
 
 import schema from './schema.json' with { type: 'json' };
 
 const REGISTRY_BASE = './registry';
 const REGISTRY_EXT = '.json';
 const ARTIFACT_BASE = process.argv[2] || './dist/';
+const KEYCACHE_BASE = process.argv[3] || './cache/';
 
 const NIST_SHA1_WITHDRAWAL_DATE = "2030-12-31T00:00:00Z";
 
 const ENTRY_LOG_FIELDS = ['id', 'valid', 'status', '@timestamp', '@level', '@message'];
 const ENTRY_LOG_STATUS_FIELDS = ['valid', 'errors'];
+
+// Useful when merging disparate key updates across multiple sources for building local cache
+const FORCE_FETCH_ALL = true;
+
+const VALID_KEYSERVERS = [
+    'hkps://keyserver.ubuntu.com',
+    'hkps://keys.gnupg.net',
+    'hkps://keys.openpgp.org'
+];
 
 const VALID_KEY_VERS = {
     128: {
@@ -40,9 +51,126 @@ function _formatKeyID(fpr, withSpaces = false) {
   return fpr.substr(-16).match(/.{1,4}/g).join(withSpaces ? ' ' : '');
 }
 
+function gpgImportPublicKeyOnce(entry) {
+    let imported = false;
+    let loadedFromCache = false;
+
+    const localKeyFilename = path.join(KEYCACHE_BASE, `${entry.source.fingerprint}.asc`);
+
+    // source: remote keyring (for multiple runs across different machines)
+    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (function() {
+        try
+        {
+            const esc = btoa(entry.source.fingerprint);
+
+            const stdout = child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --list-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`);
+                
+            imported = true;
+            loadedFromCache = true;
+            // console.log(`Found ${entry.source.fingerprint} in local keyring`);
+        }
+        catch(e)
+        {
+            
+        }
+    })();
+
+    // source: local cache (for multiple runs on same machine)
+    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (function() {
+        try
+        {
+            const fd = fs.openSync(localKeyFilename);
+            const stat = fs.fstatSync(fd);
+
+            if (!stat.size)
+                return;
+                
+            imported = true;
+            loadedFromCache = true;
+            // console.log(`Found ${entry.source.fingerprint} in local cache`);
+        }
+        catch(e)
+        {
+            
+        }
+    })();
+
+    // source: inline cache
+    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (entry.source.sources || []).filter(src => src.type === 'cache').every(src => {
+        try
+        {
+            const esc = btoa(src.uri);
+
+            child_process.execSync(`echo '${esc}' | base64 -d | gpg --import`);
+
+            imported = true;
+            // console.log(`Found ${entry.source.fingerprint} in inline cache`);
+        }
+        catch (e)
+        {
+            console.warn(`${entry.id}: Failed to import public key from inline cache: ${e}`);
+        }
+    });
+
+    // source: first matching key server
+    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && VALID_KEYSERVERS.every(HKS => {
+        try
+        {
+            const esc = btoa(entry.source.fingerprint);
+
+            const stdout = child_process.execSync(`echo '${esc}' | base64 -d | xargs gpg --keyserver ${HKS} --recv-keys`);
+
+            imported = true;
+            // console.log(`Found ${entry.source.fingerprint} in at keyserver (${HKS})`);
+
+            return false; // exit .every() loop
+        }
+        catch (e)
+        {
+            
+        }
+    });
+
+    // source: url
+    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (entry.source.sources || []).filter(src => src.type === 'url').every(src => {
+        try
+        {
+            const esc = btoa(src.uri);
+
+            child_process.execSync(`echo '${esc}' | base64 -d | xargs curl -s | gpg --import`);
+
+            imported = true;
+            // console.log(`Found ${entry.source.fingerprint} at external URL (${src.uri})`);
+        }
+        catch (e)
+        {
+            console.warn(`${entry.id}: Failed to import public key from external URL (${src.uri}): ${e}`);
+        }
+    });
+
+    try
+    {
+        const esc = btoa(entry.source.fingerprint);
+
+        // Update local cache
+        child_process.exec(`echo '${esc}' | base64 -d | xargs -I {} gpg --export --armor {} > ${localKeyFilename}`);
+
+        // Return key listings
+        return child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --with-fingerprint --list-public-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`).toString().split('\n');
+
+    }
+    catch (e)
+    {
+        return [];
+    }
+}
+
 // block on output dir creation
 if (!fs.existsSync(ARTIFACT_BASE))
     fs.mkdirSync(ARTIFACT_BASE);
+
+if (!fs.existsSync(KEYCACHE_BASE))
+    fs.mkdirSync(KEYCACHE_BASE);
 
 // async
 fs.readdir(REGISTRY_BASE, (err, files) => {
@@ -145,6 +273,9 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                     entry['@timestamp'] = (new Date()).toISOString();
                     entry['@level'] = entry.valid ? 'INFO' : 'WARN';
                     entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
+
+                    // import GPG to invoke key listings (--with-colons)
+                    entry['@listing'] = gpgImportPublicKeyOnce(entry);
 
                     // dist
                     fs.writeFile(outFilename, JSON.stringify(entry, null, 2), err => {

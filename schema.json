@@ -21,13 +21,13 @@
             "type": "string",
             "enum": [
               "url",
-              "raw"
+              "cache"
             ],
-            "description": "The type of source: 'url' for a web URL, 'raw' for raw PGP key data."
+            "description": "The type of source: 'url' for a web URL, 'cache' for a local copy of the public key."
           },
           "uri": {
             "type": "string",
-            "description": "The URI of the source, which can be a URL or raw PGP key block with newline characters escaped."
+            "description": "The URI of the source, which can be a URL or a copy of the PGP key block with newline characters escaped (see also bin/keyblock-oneline.sh)."
           }
         },
         "required": [
@@ -36,7 +36,7 @@
         ],
         "additionalProperties": false
       },
-      "description": "A list of sources providing the key or related information, which can be a URL or raw key data with newline characters escaped."
+      "description": "A list of sources providing the key or related information, which can be a URL or a copy of key data with newline characters escaped (see also bin/keyblock-oneline.sh)."
     },
     "refs": {
       "type": "array",
