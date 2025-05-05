@@ -1,0 +1,92 @@
+name: SIG3 CI/CD
+
+on:
+  workflow_dispatch:
+  
+  pull_request:
+    types: [
+      "opened",
+      "reopened",
+      "synchronize"
+    ]
+
+  push:
+    branches: [ "master" ]
+
+permissions:
+  attestations: write
+  contents: read
+  id-token: write
+  pages: write
+
+concurrency:
+  group: sig3-cicd
+  cancel-in-progress: false
+
+jobs:
+  sig3-ci:
+    name: SIG3 CI
+    runs-on: ubuntu-latest
+
+    outputs:
+      artifact_digest: ${{ steps.build-dist-upload.outputs.artifact-digest }}
+
+    steps:
+      - id: build-dist-checkout
+        uses: actions/checkout@v4
+
+      - id: build-dist-setup
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: 'package.json'
+          cache: 'npm'
+      
+      - id: build-dist-run
+        run: |
+          npm ci
+          npm run build
+      
+      - id: build-dist-upload
+        uses: actions/upload-artifact@v4
+        with:
+          path: dist/*.json
+          name: registry-dist
+
+      - id: build-html-dist
+        run: |
+          [ -d html/dist ] && mv html/dist .html-dist
+          mv dist/ html/
+
+          cd html/ && sha256sum dist/*.json > dist-all.sha256.txt
+      
+      - id: build-gh-pages-setup
+        uses: actions/configure-pages@v5
+
+      - id: build-gh-pages-upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: ./html
+
+  sig3-cd:
+    name: SIG3 CD
+    if: ${{ github.ref == 'refs/heads/master' }}
+    needs: sig3-ci
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy-gh-pages-deploy.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: deploy-slsa-attestations
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: registry-dist
+          subject-digest: sha256:${{ needs.sig3-ci.outputs.artifact_digest }}
+
+      - id: deploy-gh-pages-deploy
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages

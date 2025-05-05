@@ -1,6 +1,12 @@
 {
     "fingerprint": "4AF4D83EEDDF43DA3C06CB3101483F262A4B3FF0",
     "label": "Rod Widdowson",
+    "sources": [
+      {
+        "type": "url",
+        "uri": "https://shibboleth.net/downloads/PGP_KEYS"
+      }
+    ],
     "refs": [
       {
         "date": "2022-04-01",

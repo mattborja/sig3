@@ -1,7 +1,8 @@
-# Identity Assertion Registry
-[![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/registry-validate.yml?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/registry-validate.yml)
-[![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
-[![Milestone Progress](https://img.shields.io/github/milestones/progress/mattborja/sig3/1?style=for-the-badge&labelColor=333333&color=007ec6&logo=github&logoColor=ffffff&label=Milestone+Progress)](https://github.com/mattborja/sig3/milestones)
+# SIG3: High Identity Assurance Registry
+[![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/ci.yml?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/ci.yml)
+[![Milestone Progress](https://img.shields.io/github/milestones/progress/mattborja/sig3/1?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Milestone+Progress)](https://github.com/mattborja/sig3/milestones)
+[![Software Provenance](https://img.shields.io/badge/%E2%98%B0-007ec6?style=for-the-badge&logo=github&label=Software+Provenance&labelColor=333)](https://github.com/mattborja/sig3/attestations/)  
+[![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333&color=222&logo=github&logoColor=fff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
 
 ## Purpose
 To support critical infrastructure needs with an auditable and authoritative registry of digital identify proofs in accordance with industry guidelines and recommendations.
@@ -26,6 +27,50 @@ The following resources are considered applicable and relevant to the orientatio
 - [Key validity and owner trust (GnuPG)](https://www.gnupg.org/gph/en/manual/x334.html)
 
 ## Getting Started
+> [!NOTE]
+> You can also now test drive the proof-of-concept **ID Lookup** tool built from this repository at https://sig3.org.uk/.
+> 
+> ![image](https://github.com/user-attachments/assets/cef3f1c4-120c-41fd-abb7-19bb911053e3)
+
+To run your own tests, first clone the repository:
+```bash
+~$ git clone git@github.com:mattborja/sig3.git
+```
+
+Next, navigate into the newly cloned repository directory and run `npm install` to install the [related dependencies](/package.json):
+```bash
+~/sig3$ cd sig3
+~/sig3$ npm install
+```
+
+Finally, run `npm run build` to build the **dist/** folder from registry entries that have successfully passed all validation checks and see their respective audit summaries in the standard output<sup>†</sup>.
+```bash
+~/sig3$ npm run build
+
+
+> sig3@1.0.0 build
+> node index.js
+
+Skipping file on parse failure: registry/<FILENAME>.json (SyntaxError: Expected double-quoted property name in JSON at position 1474 (line 16 column 5))
+
+F30FF4FC936584574EE3251833688C2EDC08CD38 {
+  src: 'dist/F30FF4FC936584574EE3251833688C2EDC08CD38.json',
+  schema: true,
+  keyVersion: false,
+  filename: true
+}
+
+99BB608E30380C451952D6BBA1C7E813F160A407 {
+  src: 'dist/99BB608E30380C451952D6BBA1C7E813F160A407.json',
+  schema: true,
+  keyVersion: true,
+  filename: true
+}
+...
+```
+<sup>†</sup>Newlines and spacing added for readability.
+
+## Contributing
 1. Familiarize yourself with the resources provided in the Standards section above
 2. Refer to the [identity registry](/registry/) for existing evidence submissions (see also [schema](/SCHEMA.md))
 3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository
@@ -44,16 +89,30 @@ The following resources are considered applicable and relevant to the orientatio
 - [Integrity check](https://gnupg.org/download/integrity_check.html), *The GNU Privacy Guard*
 - [Signature key](https://gnupg.org/signature_key.html), *The GNU Privacy Guard*
 
-## Acknowledgments
-The Code Owners of this project acknowledges and commemorates the extraordinary contributions of the following individuals and organizations dedicated to advancing the critical yet often underappreciated field of digital security and identity; whose work has significantly shaped and inspired this effort:
+## Why the top-level domain `sig3.org.uk`? (Acknowledgments)
+The Code Owners of this project recognize the substantial research, development, and generous contributions of individuals at home and abroad, which have helped inspire and shape digital security as we know it today—an endeavor that this project assiduously seeks to further.
 
-- [Werner Koch](https://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke) – for his dedication to developing and maintaining GnuPG, a cornerstone tool for secure communication and email encryption.
-- [Elmar Hoffman](http://www.elho.net/crypto/policy/) – for his advocacy in cryptographic policy and practices.
-- [Ian Young](https://iay.org.uk/identity/pgp/policy/2021-02-25/) – for his comprehensive documentation of PGP policy and its applications in identity verification.
+As such, though based in the U.S., this project adopts the non-profit `.org.uk` domain as a tribute to the UK (and greater EU) commitment to privacy and data protection, reflected in their robust privacy laws (e.g., GDPR), digital rights frameworks, and leadership in data security. The open and non-profit nature of this project is also symbolic of the value of transparency in this space.
+
+The following named individuals and entities are further recognized for their significant contributions and influence on the development and direction of this project:
+
+- [Werner Koch](https://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke) — for his dedication to developing and maintaining GnuPG, a cornerstone tool for secure communication and email encryption.
+- [Christof Paar](https://en.wikipedia.org/wiki/Christof_Paar) — German professor and renowned researcher in hardware security and cryptography. Known for his academic contributions in [applied cryptography](https://link.springer.com/book/10.1007/978-3-662-69007-9) and hardware implementations.
+- [Elmar Hoffman](http://www.elho.net/crypto/policy/) — for his advocacy in cryptographic policy and practices.
+- [Ian Young](https://iay.org.uk/identity/pgp/policy/2021-02-25/) — for his comprehensive documentation of PGP policy and its applications in identity verification.
 - [Simon Josefsson](https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/) – for his innovation in secure key management and the use of hardware security devices.
-- [Tails](https://tails.net/contribute/design/download_verification/) – for their commitment to providing users with robust, verifiable tools for privacy and security.
+- [Tails](https://tails.net/contribute/design/download_verification/) — for their commitment to providing users with robust, verifiable tools for privacy and security.
 
 > *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
 
+"Fair enough, but what about the **sig3.** part in the domain?"
+
+In addition to seeking alignment with IAL3 with NIST SP 800-63A, it means we did [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) according to GnuPG :)
+
 ## License
 This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
+
+## Donations
+The following methods are currently supported for receiving donations:
+- Email money transfer (e.g., PayPal, Zelle, etc.) to the maintainer's email address shown in the UID output of: `gpg --list-keys A1C7E813F160A407`
+- Bitcoin address (static): `bc1q69f987tgm59haz9n2nycfhka4z3czy30vm8nhz`
