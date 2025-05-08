@@ -7,6 +7,8 @@
 ## Purpose
 To support critical infrastructure needs with an auditable and authoritative registry of digital identify proofs in accordance with industry guidelines and recommendations.
 
+> *Why is it called "SIG3?"* — In seeking alignment with IAL3 in NIST SP 800-63A, we're making every effort to do [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html).
+
 ## Scope
 The below tables acknowledge important objectives in this space, while also clarifying which are considered to be **in-scope** vs. **out-of-scope** based on a number of factors, including but not limited to time, effort, resource availability, etc.
 
@@ -89,12 +91,8 @@ F30FF4FC936584574EE3251833688C2EDC08CD38 {
 - [Integrity check](https://gnupg.org/download/integrity_check.html), *The GNU Privacy Guard*
 - [Signature key](https://gnupg.org/signature_key.html), *The GNU Privacy Guard*
 
-## Why the top-level domain `sig3.org.uk`? (Acknowledgments)
-The Code Owners of this project recognize the substantial research, development, and generous contributions of individuals at home and abroad, which have helped inspire and shape digital security as we know it today—an endeavor that this project assiduously seeks to further.
-
-As such, though based in the U.S., this project adopts the non-profit `.org.uk` domain as a tribute to the UK (and greater EU) commitment to privacy and data protection, reflected in their robust privacy laws (e.g., GDPR), digital rights frameworks, and leadership in data security. The open and non-profit nature of this project is also symbolic of the value of transparency in this space.
-
-The following named individuals and entities are further recognized for their significant contributions and influence on the development and direction of this project:
+## Acknowledgments
+The Code Owners of this project recognize the substantial research, development, and generous contributions of individuals at home and abroad, which have helped inspire and shape digital security as we know it today—an endeavor that this project assiduously seeks to further, including but not limited to:
 
 - [Werner Koch](https://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke) — for his dedication to developing and maintaining GnuPG, a cornerstone tool for secure communication and email encryption.
 - [Christof Paar](https://en.wikipedia.org/wiki/Christof_Paar) — German professor and renowned researcher in hardware security and cryptography. Known for his academic contributions in [applied cryptography](https://link.springer.com/book/10.1007/978-3-662-69007-9) and hardware implementations.
@@ -104,10 +102,6 @@ The following named individuals and entities are further recognized for their si
 - [Tails](https://tails.net/contribute/design/download_verification/) — for their commitment to providing users with robust, verifiable tools for privacy and security.
 
 > *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
-
-"Fair enough, but what about the **sig3.** part in the domain?"
-
-In addition to seeking alignment with IAL3 with NIST SP 800-63A, it means we did [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) according to GnuPG :)
 
 ## License
 This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
