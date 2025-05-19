@@ -7,6 +7,7 @@ import schema from './schema.json' with { type: 'json' };
 
 const REGISTRY_BASE = './registry';
 const REGISTRY_EXT = '.json';
+const IDX_BASE = './';
 const ARTIFACT_BASE = process.argv[2] || './dist/';
 const KEYCACHE_BASE = process.argv[3] || './cache/';
 
@@ -51,6 +52,12 @@ function _formatKeyID(fpr, withSpaces = false) {
   return fpr.substr(-16).match(/.{1,4}/g).join(withSpaces ? ' ' : '');
 }
 
+// Custom IDX format (as with --with-colons) to enable better searchability in web application (https://sig3.dev)
+// Format: fingerprint:tags_csv:label
+function _formatIDXEntry(entry) {
+    return `${entry.source.fingerprint}:${entry.source.tags.join(',')}:${entry.source.label}`;
+}
+
 function gpgImportPublicKeyOnce(entry) {
     let imported = false;
     let loadedFromCache = false;
@@ -63,11 +70,10 @@ function gpgImportPublicKeyOnce(entry) {
         {
             const esc = btoa(entry.source.fingerprint);
 
-            const stdout = child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --list-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`);
+            child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --list-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`);
                 
             imported = true;
             loadedFromCache = true;
-            // console.log(`Found ${entry.source.fingerprint} in local keyring`);
         }
         catch(e)
         {
@@ -87,7 +93,6 @@ function gpgImportPublicKeyOnce(entry) {
                 
             imported = true;
             loadedFromCache = true;
-            // console.log(`Found ${entry.source.fingerprint} in local cache`);
         }
         catch(e)
         {
@@ -104,7 +109,6 @@ function gpgImportPublicKeyOnce(entry) {
             child_process.execSync(`echo '${esc}' | base64 -d | gpg --import`);
 
             imported = true;
-            // console.log(`Found ${entry.source.fingerprint} in inline cache`);
         }
         catch (e)
         {
@@ -118,10 +122,9 @@ function gpgImportPublicKeyOnce(entry) {
         {
             const esc = btoa(entry.source.fingerprint);
 
-            const stdout = child_process.execSync(`echo '${esc}' | base64 -d | xargs gpg --keyserver ${HKS} --recv-keys`);
+            child_process.execSync(`echo '${esc}' | base64 -d | xargs gpg --keyserver ${HKS} --recv-keys`);
 
             imported = true;
-            // console.log(`Found ${entry.source.fingerprint} in at keyserver (${HKS})`);
 
             return false; // exit .every() loop
         }
@@ -176,6 +179,8 @@ if (!fs.existsSync(KEYCACHE_BASE))
 fs.readdir(REGISTRY_BASE, (err, files) => {
     if (err)
         throw err;
+
+    const IDX = fs.createWriteStream(path.join(IDX_BASE, 'registry.idx.txt'));
 
     files.forEach(baseFilename => {
         const inFilename = path.join(REGISTRY_BASE, baseFilename);
@@ -268,6 +273,8 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                     entry.ver = entry.status.keyVersion.meta.ver;
                     entry.deprecated = entry.status.keyVersion.meta.deprecated;
                     entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
+                    
+                    IDX.write(`${_formatIDXEntry(entry)}\n`);
 
                     // include standard $.log fields in dist
                     entry['@timestamp'] = (new Date()).toISOString();
@@ -275,10 +282,11 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                     entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
 
                     // import GPG to invoke key listings (--with-colons)
-                    entry['@listing'] = gpgImportPublicKeyOnce(entry);
+                    // entry['@listing'] = gpgImportPublicKeyOnce(entry);
+                    gpgImportPublicKeyOnce(entry);
 
                     // dist
-                    fs.writeFile(outFilename, JSON.stringify(entry, null, 2), err => {
+                    fs.writeFile(outFilename, JSON.stringify(entry), err => {
                         if (err)
                             throw `Failed to write to file: ${outFilename} (${err})`;
 
@@ -301,4 +309,6 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             });
         })(inFilename, outFilename);
     });
+
+    IDX.end();
 });

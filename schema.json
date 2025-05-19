@@ -108,6 +108,7 @@
       "type": "array",
       "items": {
         "type": "string",
+        "pattern": "[^,]",
         "description": "A list of tags or labels that categorize or identify the individual or entity (e.g., 'OWASP', 'developer')."
       },
       "description": "Tags associated with the identity, which help categorize or identify the individual or entity."
