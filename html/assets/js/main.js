@@ -15,7 +15,7 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
     const $modal = new bootstrap.Modal('#registry-entry-details');
 
     const engine = {
-      idx: {}
+      idx: []
     };
 
     // Format: fingerprint:tags_csv:label
@@ -33,22 +33,24 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
     }
 
     // Optional registry index to enable fast substring searches across all indexed fingerprints
+    const $serviceDegraded = $('<div />').addClass('text-danger text-small my-3')
+                                        .html('<strong>Service Degraded.</strong> Some features may be temporarily unavailable.');
     fetch('/dist/registry.idx.txt')
       .then(res => {
         if (!res.ok)
         {
-          // Append warning
-          $('<div />')
-            .addClass('text-danger text-small my-3').html('<strong>Service Degraded.</strong> Support for partial fingerprint matching is currently unavailable.')
-            .insertAfter($query);
+          $serviceDegraded.insertAfter($query);
           
           return false;
         }
 
         return res.text();
       }).then(raw => {
-        if (!raw)
-          return;
+        if (!raw) {
+          $serviceDegraded.insertAfter($query);
+
+          return false;
+        }
 
         // Return searchable fields indexed by fingerprint
         engine.idx = raw.trim().split('\n').map(_parseIDXEntry);
