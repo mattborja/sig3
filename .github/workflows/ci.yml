@@ -58,7 +58,7 @@ jobs:
           chmod 0600 .gnupghome
           echo "$GNUPGHOME" > .gnupghome
 
-          curl -fs https://sig3.org.uk/dist/.pubring.gpg | gpg --batch --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" -d --yes | gpg --import
+          curl -fs https://sig3.dev/dist/.pubring.gpg | gpg --batch --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" -d --yes | gpg --import
       
       - id: build-dist-run
         run: |
