@@ -70,7 +70,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
         
         // async (pinned)
         (function(inFilename, outFilename) {
-            fs.readFile(inFilename, (err, json) => {
+            fs.readFileSync(inFilename, (err, json) => {
                 if (err)
                     return console.warn(`Skipping file on read failure: ${inFilename} (${err})`);
 
@@ -153,7 +153,8 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                     entry.deprecated = entry.status.keyVersion.meta.deprecated;
                     entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
                     
-                    IDX.write(`${_formatIDXEntry(entry)}\n`);
+                    if (!IDX.write(`${_formatIDXEntry(entry)}\n`))
+                        throw(`Failed to write to IDX: ${entry.id}`);
 
                     // include standard $.log fields in dist
                     entry['@timestamp'] = (new Date()).toISOString();
