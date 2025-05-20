@@ -1,7 +1,6 @@
 import { Validator } from '@cfworker/json-schema';
 import fs from 'fs';
 import path from 'path';
-import child_process from 'child_process';
 
 import schema from './schema.json' with { type: 'json' };
 
@@ -15,15 +14,6 @@ const NIST_SHA1_WITHDRAWAL_DATE = "2030-12-31T00:00:00Z";
 
 const ENTRY_LOG_FIELDS = ['id', 'valid', 'status', '@timestamp', '@level', '@message'];
 const ENTRY_LOG_STATUS_FIELDS = ['valid', 'errors'];
-
-// Useful when merging disparate key updates across multiple sources for building local cache
-const FORCE_FETCH_ALL = true;
-
-const VALID_KEYSERVERS = [
-    'hkps://keyserver.ubuntu.com',
-    'hkps://keys.gnupg.net',
-    'hkps://keys.openpgp.org'
-];
 
 const VALID_KEY_VERS = {
     128: {
@@ -56,116 +46,6 @@ function _formatKeyID(fpr, withSpaces = false) {
 // Format: fingerprint:tags_csv:label
 function _formatIDXEntry(entry) {
     return `${entry.source.fingerprint}:${entry.source.tags.join(',')}:${entry.source.label}`;
-}
-
-function gpgImportPublicKeyOnce(entry) {
-    let imported = false;
-    let loadedFromCache = false;
-
-    const localKeyFilename = path.join(KEYCACHE_BASE, `${entry.source.fingerprint}.asc`);
-
-    // source: remote keyring (for multiple runs across different machines)
-    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (function() {
-        try
-        {
-            const esc = btoa(entry.source.fingerprint);
-
-            child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --list-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`);
-                
-            imported = true;
-            loadedFromCache = true;
-        }
-        catch(e)
-        {
-            
-        }
-    })();
-
-    // source: local cache (for multiple runs on same machine)
-    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (function() {
-        try
-        {
-            const fd = fs.openSync(localKeyFilename);
-            const stat = fs.fstatSync(fd);
-
-            if (!stat.size)
-                return;
-                
-            imported = true;
-            loadedFromCache = true;
-        }
-        catch(e)
-        {
-            
-        }
-    })();
-
-    // source: inline cache
-    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (entry.source.sources || []).filter(src => src.type === 'cache').every(src => {
-        try
-        {
-            const esc = btoa(src.uri);
-
-            child_process.execSync(`echo '${esc}' | base64 -d | gpg --import`);
-
-            imported = true;
-        }
-        catch (e)
-        {
-            console.warn(`${entry.id}: Failed to import public key from inline cache: ${e}`);
-        }
-    });
-
-    // source: first matching key server
-    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && VALID_KEYSERVERS.every(HKS => {
-        try
-        {
-            const esc = btoa(entry.source.fingerprint);
-
-            child_process.execSync(`echo '${esc}' | base64 -d | xargs gpg --keyserver ${HKS} --recv-keys`);
-
-            imported = true;
-
-            return false; // exit .every() loop
-        }
-        catch (e)
-        {
-            
-        }
-    });
-
-    // source: url
-    !loadedFromCache && (!imported || FORCE_FETCH_ALL) && (entry.source.sources || []).filter(src => src.type === 'url').every(src => {
-        try
-        {
-            const esc = btoa(src.uri);
-
-            child_process.execSync(`echo '${esc}' | base64 -d | xargs curl -s | gpg --import`);
-
-            imported = true;
-            // console.log(`Found ${entry.source.fingerprint} at external URL (${src.uri})`);
-        }
-        catch (e)
-        {
-            console.warn(`${entry.id}: Failed to import public key from external URL (${src.uri}): ${e}`);
-        }
-    });
-
-    try
-    {
-        const esc = btoa(entry.source.fingerprint);
-
-        // Update local cache
-        child_process.exec(`echo '${esc}' | base64 -d | xargs -I {} gpg --export --armor {} > ${localKeyFilename}`);
-
-        // Return key listings
-        return child_process.execSync(`echo '${esc}' | base64 -d | xargs -I {} gpg --with-colons --with-fingerprint --list-public-keys {} | sed -E 's/(<)?[^@ ]+@/\\1***@/g'`).toString().split('\n');
-
-    }
-    catch (e)
-    {
-        return [];
-    }
 }
 
 // block on output dir creation
@@ -280,10 +160,6 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
                     entry['@timestamp'] = (new Date()).toISOString();
                     entry['@level'] = entry.valid ? 'INFO' : 'WARN';
                     entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
-
-                    // import GPG to invoke key listings (--with-colons)
-                    // entry['@listing'] = gpgImportPublicKeyOnce(entry);
-                    gpgImportPublicKeyOnce(entry);
 
                     // dist
                     fs.writeFile(outFilename, JSON.stringify(entry), err => {
