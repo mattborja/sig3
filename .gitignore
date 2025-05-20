@@ -1,6 +1,7 @@
 dist/
 cache/
-dist-all.sha256.txt
+SHA256SUMS.txt
+*.idx*
 
 #
 # Node.js

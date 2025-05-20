@@ -15,11 +15,25 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
     const $modal = new bootstrap.Modal('#registry-entry-details');
 
     const engine = {
-      digests: {}
+      idx: {}
     };
 
-    // Optional digest index to enable fast substring searches across all indexed fingerprints
-    fetch('/dist-all.sha256.txt')
+    // Format: fingerprint:tags_csv:label
+    function _parseIDXEntry(line) {
+      const parts = line.trim().split(':', 3);
+
+      if (!parts.length === 3)
+        return null;
+
+      return {
+        fpr: parts[0],
+        tags: parts[1].split(',').map(t => t.trim()),
+        label: parts[2]
+      };
+    }
+
+    // Optional registry index to enable fast substring searches across all indexed fingerprints
+    fetch('/registry.idx.txt')
       .then(res => {
         if (!res.ok)
         {
@@ -36,14 +50,8 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
         if (!raw)
           return;
 
-        function _baseFPRValue(f) {
-          const matches = f.matchAll(/\/?([0-9A-F]+)\.?/g);
-          
-          for (const match of matches)
-            return match[1];
-        }
-
-        engine.digests = Object.fromEntries(raw.trim().split('\n').map(line => line.split(/\s+/)).map(e => [ _baseFPRValue(e[1]), { digest: `sha256:${e[0]}` } ]));
+        // Return searchable fields indexed by fingerprint
+        engine.idx = raw.trim().split('\n').map(_parseIDXEntry);
       });
 
     // Core entry search, load, and reporting
@@ -51,25 +59,49 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
         e.preventDefault();
         const q = $query.val();
 
-        function _searchDigests(q, returnInputIfNotFound = true) {
-          if (!q)
-            return null;
+        // Returns array of FPRs found by search criteria
+        function _searchRegistry(q, minLength = 4) {
+          if (!q || q.length < minLength)
+            return [];
+          
+          // Mode: Key ID (min. length 4) or full fingerprint (hexadecimal characters only)
+          if (q.match(/^[0-9A-F]{4,}$/gi)) {
+            const idsFound = engine.idx.filter(e => e.fpr.match(q));
+            if (idsFound)
+              return idsFound;
+          }
 
-          const sanitized = q.replace(/[^0-9A-F]/gi, '');
-          const regex = new RegExp(sanitized, 'i');
+          const idsFoundByTags = engine.idx.filter(e => e.tags.includes(q));
+          if (idsFoundByTags.length)
+            return idsFoundByTags;
 
-          const found = Object.keys(engine.digests).filter(k => regex.test(k));
+          const idsFoundByLabel = engine.idx.filter(e => e.label.search(q) > -1);
+          if (idsFoundByLabel.length)
+            return idsFoundByLabel;
 
-          return found.length ? found[0] : (returnInputIfNotFound ? q : null);
+          return [];
         }
-        const fpr = _searchDigests(q);
 
-        if (!fpr)
+        let results = _searchRegistry(q);
+
+        if (!results.length)
         {
           alert('No entry found for your search terms.\n\nPlease modify your query and try again.');
           
           return false;
         }
+
+        if (results.length > 1)
+        {
+          alert(
+            "Multiple entries found!\n\nPlease highlight and copy from the list below, the fingerprint you wish to refine your search with:\n"
+            + '- ' + results.map(e => `${e.fpr} (${e.label})`).join("\n- ")
+          );
+
+          return false;
+        }
+
+        const fpr = results[0].fpr;
 
         fetch(`dist/${fpr.toUpperCase()}.json`)
             .then(res => {

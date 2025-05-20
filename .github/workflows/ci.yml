@@ -41,25 +41,6 @@ jobs:
           node-version-file: 'package.json'
           cache: 'npm'
       
-      - id: gpg-status
-        run: |
-          gpg --version
-      
-      - id: gpg-pubring-import
-        continue-on-error: true
-        env:
-          SIG3_PUBRING_SYMMETRIC_KEY: ${{ secrets.SIG3_PUBRING_SYMMETRIC_KEY }}
-        
-        run: |
-          export GNUPGHOME=$(mktemp -d -t XXXXXX)
-          echo "[gpg-pubring-import] GNUPGHOME: $GNUPGHOME"
-
-          touch .gnupghome
-          chmod 0600 .gnupghome
-          echo "$GNUPGHOME" > .gnupghome
-
-          curl -fs https://sig3.org.uk/dist/.pubring.gpg | gpg --batch --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" -d --yes | gpg --import
-      
       - id: build-dist-run
         run: |
           npm ci
@@ -68,24 +49,12 @@ jobs:
           echo "[build-dist-run] GNUPGHOME: $GNUPGHOME"
 
           npm run build
-      
-      - id: gpg-pubring-export
-        continue-on-error: true
-        env:
-          SIG3_PUBRING_SYMMETRIC_KEY: ${{ secrets.SIG3_PUBRING_SYMMETRIC_KEY }}
-        
-        run: |
-          export GNUPGHOME=$(cat .gnupghome)
-          echo "[gpg-pubring-export] GNUPGHOME: $GNUPGHOME"
-
-          gpg --export | gpg --batch --symmetric --passphrase "$SIG3_PUBRING_SYMMETRIC_KEY" --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo SHA512 --s2k-cipher-algo AES256 --armor --yes --output dist/.pubring.gpg
         
       - id: build-dist-upload
         uses: actions/upload-artifact@v4
         with:
           path: |
             dist/*.json
-            dist/.pubring.gpg
           name: registry-dist
 
       - id: build-html-dist
@@ -93,7 +62,7 @@ jobs:
           [ -d html/dist ] && mv html/dist .html-dist
           mv dist/ html/
 
-          cd html/ && sha256sum dist/*.json > dist-all.sha256.txt
+          cd html/ && sha256sum dist/*.json > SHA256SUMS.txt
       
       - id: build-gh-pages-setup
         uses: actions/configure-pages@v5
