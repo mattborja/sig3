@@ -6,7 +6,6 @@ import schema from './schema.json' with { type: 'json' };
 
 const REGISTRY_BASE = './registry';
 const REGISTRY_EXT = '.json';
-const IDX_BASE = './';
 const ARTIFACT_BASE = process.argv[2] || './dist/';
 const KEYCACHE_BASE = process.argv[3] || './cache/';
 
@@ -60,7 +59,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
     if (err)
         throw err;
 
-    const IDX = fs.createWriteStream(path.join(IDX_BASE, 'registry.idx.txt'));
+    const IDX = fs.createWriteStream(path.join(ARTIFACT_BASE, 'registry.idx.txt'));
 
     files.forEach(baseFilename => {
         const inFilename = path.join(REGISTRY_BASE, baseFilename);
