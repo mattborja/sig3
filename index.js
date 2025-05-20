@@ -70,119 +70,123 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
         
         // async (pinned)
         (function(inFilename, outFilename) {
-            fs.readFileSync(inFilename, (err, json) => {
-                if (err)
-                    return console.warn(`Skipping file on read failure: ${inFilename} (${err})`);
+            const entry = {
+                status: {},
+                valid: false
+            };
 
-                const entry = {
-                    status: {},
-                    valid: false
+            try
+            {
+                const json = fs.readFileSync(inFilename);
+                entry.source = JSON.parse(json);
+            }
+            catch(e)
+            {
+                return console.warn(`Skipping file on read failure: ${inFilename} (${e})`);
+            }
+
+            // entry.source
+            try
+            {
+                entry.status.schema = validator.validate(entry.source);
+            }
+            catch (e)
+            {
+                return console.warn(`Skipping file on schema validation failure: ${inFilename} (${e})`);
+            }
+
+            // entry.status.keyVersion
+            // Checks the key fingerprint length from a JSON file and determines its corresponding key version.
+            // If the key length matches a deprecated version (e.g., 128-bit for version 3), a warning is displayed.
+            //
+            // Please note:
+            // - As of July 2024, RFC9580 §5.5.4.1 specifies that "version 3 (128-bit) keys and MD5 are deprecated" (https://datatracker.ietf.org/doc/html/rfc9580#section-5.5.4.1)
+            // - As of December 2022, NIST has retired SHA-1 with an expected full withdrawal date of December 31, 2030 (https://www.nist.gov/news-events/news/2022/12/nist-retires-sha-1-cryptographic-algorithm)
+            try
+            {
+                const keyLenBits = 8 * ((entry.source.fingerprint || '').length / 2);
+                const validKeyVersion = (keyLenBits in VALID_KEY_VERS);
+                const validKeyDeprecated = validKeyVersion && VALID_KEY_VERS[keyLenBits].deprecated;
+
+                entry.status.keyVersion = {
+                    valid: validKeyVersion && !validKeyDeprecated,
+                    meta: VALID_KEY_VERS[keyLenBits],
+                    errors:
+                        !validKeyVersion
+                        ? [ `Unrecognized key length: ${keyLenBits} bits` ]
+
+                        : validKeyDeprecated
+                        ? [ `Deprecated key version: ${VALID_KEY_VERS[keyLenBits].ver} (${keyLenBits} bits)` ]
+                        
+                        : []
+                };
+            }
+            catch (e)
+            {
+                return console.warn(`Skipping file on keyVersion validation failure: ${inFilename} (${e})`);
+            }
+
+            // entry.status.filename
+            // Checks if the fingerprint from the JSON file matches the expected
+            // filename format: FINGERPRINT.json
+            try
+            {
+                const expectedFilename = `${entry.source.fingerprint}${REGISTRY_EXT}`;
+                const isValidFilename = (baseFilename === expectedFilename);
+
+                entry.status.filename = {
+                    valid: isValidFilename,
+                    errors: !isValidFilename ? [ `Expected filename ${expectedFilename}, got ${baseFilename}` ] : []
+                };
+            }
+            catch (e)
+            {
+                entry.status.filename = {
+                    valid: false,
+                    errors: [ `Filename validation failure: ${e}` ]
                 };
 
-                // entry.source
-                try
-                {
-                    entry.source = JSON.parse(json);
-                    entry.status.schema = validator.validate(entry.source);
-                }
-                catch (e)
-                {
-                    return console.warn(`Skipping file on schema validation failure: ${inFilename} (${e})`);
-                }
+                return console.warn(`Skipping file on filename validation failure: ${inFilename} (${e})`);
+            }
 
-                // entry.status.keyVersion
-                // Checks the key fingerprint length from a JSON file and determines its corresponding key version.
-                // If the key length matches a deprecated version (e.g., 128-bit for version 3), a warning is displayed.
-                //
-                // Please note:
-                // - As of July 2024, RFC9580 §5.5.4.1 specifies that "version 3 (128-bit) keys and MD5 are deprecated" (https://datatracker.ietf.org/doc/html/rfc9580#section-5.5.4.1)
-                // - As of December 2022, NIST has retired SHA-1 with an expected full withdrawal date of December 31, 2030 (https://www.nist.gov/news-events/news/2022/12/nist-retires-sha-1-cryptographic-algorithm)
-                try
-                {
-                    const keyLenBits = 8 * ((entry.source.fingerprint || '').length / 2);
-                    const validKeyVersion = (keyLenBits in VALID_KEY_VERS);
-                    const validKeyDeprecated = validKeyVersion && VALID_KEY_VERS[keyLenBits].deprecated;
+            // build dist artifacts
+            try
+            {
+                // build additional meta (post-validation)
+                entry.id = _formatKeyID(entry.source.fingerprint);
+                entry.ver = entry.status.keyVersion.meta.ver;
+                entry.deprecated = entry.status.keyVersion.meta.deprecated;
+                entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
+                
+                if (!IDX.write(`${_formatIDXEntry(entry)}\n`))
+                    throw(`Failed to write to IDX: ${entry.id}`);
 
-                    entry.status.keyVersion = {
-                        valid: validKeyVersion && !validKeyDeprecated,
-                        meta: VALID_KEY_VERS[keyLenBits],
-                        errors:
-                            !validKeyVersion
-                            ? [ `Unrecognized key length: ${keyLenBits} bits` ]
+                // include standard $.log fields in dist
+                entry['@timestamp'] = (new Date()).toISOString();
+                entry['@level'] = entry.valid ? 'INFO' : 'WARN';
+                entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
 
-                            : validKeyDeprecated
-                            ? [ `Deprecated key version: ${VALID_KEY_VERS[keyLenBits].ver} (${keyLenBits} bits)` ]
-                            
-                            : []
-                    };
-                }
-                catch (e)
-                {
-                    return console.warn(`Skipping file on keyVersion validation failure: ${inFilename} (${e})`);
-                }
+                // dist
+                fs.writeFile(outFilename, JSON.stringify(entry), err => {
+                    if (err)
+                        throw `Failed to write to file: ${outFilename} (${err})`;
 
-                // entry.status.filename
-                // Checks if the fingerprint from the JSON file matches the expected
-                // filename format: FINGERPRINT.json
-                try
-                {
-                    const expectedFilename = `${entry.source.fingerprint}${REGISTRY_EXT}`;
-                    const isValidFilename = (baseFilename === expectedFilename);
+                    // include specific log fields in $
+                    const log = toDictionary(ENTRY_LOG_FIELDS, entry);
 
-                    entry.status.filename = {
-                        valid: isValidFilename,
-                        errors: !isValidFilename ? [ `Expected filename ${expectedFilename}, got ${baseFilename}` ] : []
-                    };
-                }
-                catch (e)
-                {
-                    entry.status.filename = {
-                        valid: false,
-                        errors: [ `Filename validation failure: ${e}` ]
-                    };
+                    // include specific log subfields in $.status.*
+                    log.status = Object.fromEntries(Object.keys(log.status).map(k => [k, toDictionary(ENTRY_LOG_STATUS_FIELDS, log.status[k])]));
 
-                    return console.warn(`Skipping file on filename validation failure: ${inFilename} (${e})`);
-                }
+                    // simplify schema validation errors
+                    log.status.schema.errors = log.status.schema.errors.map(e => `${e.instanceLocation}: ${e.error}`);
 
-                // build dist artifacts
-                try
-                {
-                    // build additional meta (post-validation)
-                    entry.id = _formatKeyID(entry.source.fingerprint);
-                    entry.ver = entry.status.keyVersion.meta.ver;
-                    entry.deprecated = entry.status.keyVersion.meta.deprecated;
-                    entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
-                    
-                    if (!IDX.write(`${_formatIDXEntry(entry)}\n`))
-                        throw(`Failed to write to IDX: ${entry.id}`);
-
-                    // include standard $.log fields in dist
-                    entry['@timestamp'] = (new Date()).toISOString();
-                    entry['@level'] = entry.valid ? 'INFO' : 'WARN';
-                    entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
-
-                    // dist
-                    fs.writeFile(outFilename, JSON.stringify(entry), err => {
-                        if (err)
-                            throw `Failed to write to file: ${outFilename} (${err})`;
-
-                        // include specific log fields in $
-                        const log = toDictionary(ENTRY_LOG_FIELDS, entry);
-
-                        // include specific log subfields in $.status.*
-                        log.status = Object.fromEntries(Object.keys(log.status).map(k => [k, toDictionary(ENTRY_LOG_STATUS_FIELDS, log.status[k])]));
-
-                        // simplify schema validation errors
-                        log.status.schema.errors = log.status.schema.errors.map(e => `${e.instanceLocation}: ${e.error}`);
-
-                        console.log(JSON.stringify(log));
-                    });
-                }
-                catch (e)
-                {
-                    return console.warn(`Skipping file on artifact write failure: ${inFilename} (${e})`);
-                }
-            });
+                    console.log(JSON.stringify(log));
+                });
+            }
+            catch (e)
+            {
+                return console.warn(`Skipping file on artifact write failure: ${inFilename} (${e})`);
+            }
         })(inFilename, outFilename);
     });
 
