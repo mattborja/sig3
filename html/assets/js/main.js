@@ -33,7 +33,7 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
     }
 
     // Optional registry index to enable fast substring searches across all indexed fingerprints
-    fetch('/registry.idx.txt')
+    fetch('/dist/registry.idx.txt')
       .then(res => {
         if (!res.ok)
         {
