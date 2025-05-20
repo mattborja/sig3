@@ -62,7 +62,7 @@ jobs:
           [ -d html/dist ] && mv html/dist .html-dist
           mv dist/ html/
 
-          cd html/ && sha256sum dist/*.json > dist-all.sha256.txt
+          cd html/ && sha256sum dist/*.json > SHA256SUMS.txt
       
       - id: build-gh-pages-setup
         uses: actions/configure-pages@v5
