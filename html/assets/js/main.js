@@ -10,9 +10,9 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
 (function (){
     const $form = $('form#registry-search');
     const $query = $form.find('input');
-    const $code = $('#registry-entry-details code');
+    const $modalBody = $('#registry-entry-modal .modal-body');
 
-    const $modal = new bootstrap.Modal('#registry-entry-details');
+    const $modal = new bootstrap.Modal('#registry-entry-modal');
 
     const engine = {
       idx: []
@@ -135,7 +135,11 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
                 const formatted = JSON.stringify(json, null, 2);
                 const highlighted = jsonHighlight(formatted);
 
-                $code.html(highlighted);
+                const $lead = $('<h1 />').addClass('fs-5').text(`${json.source.label} (${json.id})`);
+                const $code = $('<code />').html(highlighted);
+                
+                $modalBody.html($lead);
+                $modalBody.append($code);
                 
                 $modal.show();
             })
