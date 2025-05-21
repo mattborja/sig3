@@ -95,10 +95,29 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
 
         if (results.length > 1)
         {
-          alert(
-            "Multiple entries found!\n\nPlease highlight and copy from the list below, the fingerprint you wish to refine your search with:\n"
-            + '- ' + results.map(e => `${e.fpr} (${e.label})`).join("\n- ")
-          );
+          const resultsModal = new bootstrap.Modal('#results-modal');
+          const modalBody = $('#results-modal .modal-body').empty();
+
+          const intro = $('<p><strong>Multiple entries found!</strong></p><p>Please highlight and copy a fingerprint or UID from the list below to refine your search with:</p>').appendTo(modalBody);
+
+          const table = $('<table />').addClass('table table-hover table-striped').appendTo(modalBody);
+          const thead = $('<thead />').appendTo(table);
+          const theadRow = $('<tr><th scope="col">Fingerprint</th><th scope="col">UID</th></tr>').appendTo(thead);
+
+          const tbody = $('<tbody />').addClass('table-group-divider').appendTo(table);
+
+          results.forEach(e => {
+            $('<tr />')
+              .append(
+                $('<td />').text(e.fpr)
+              )
+              .append(
+                $('<td />').text(e.label)
+              )
+              .appendTo(tbody);
+          });
+
+          resultsModal.show();
 
           return false;
         }
