@@ -12,9 +12,14 @@ THIS DOCUMENTATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 1. **Purpose.** Why do we need trust (e.g., business, transaction, integrity)
 3. **Methodology.** How do we establish trust (e.g., reputation, authentication, representation)
 
-**What is Web of Trust?** A decentralized trust model for establishing the authenticity of the **binding** between a public key and its owner (Wikipedia).
+**What is Web of Trust?** A decentralized trust model for establishing the authenticity of the **binding** between a public key and its owner ([Wikipedia](https://en.wikipedia.org/wiki/Web_of_trust)).
 
 Or more simply, a method for validating the named owner on a public key.
+
+## Responsibility
+As developers and deployers of software products and services, use of third-party libraries or software must be carefully vetted to mitigate damages incurred by malicious attempts on our own supply chains.
+
+Furthermore, when distributing software, it is imperative that customers are able to verify our software as ensuring it came from us, and not a malicious fork.
 
 ## Real-World Scenarios
 
@@ -29,6 +34,7 @@ Topics include:
 ### Top 10 Supply Chain Attacks that Shook the World (Encryption Consulting)
 Source: https://www.encryptionconsulting.com/top-10-supply-chain-attacks-that-shook-the-world/
 
+Topics include:
 - Supply Chain Poisoning
 - Certificate Abuse and Forgery
 - SolarWinds Breach (2020)
@@ -39,11 +45,6 @@ Source: https://shibboleth.atlassian.net/wiki/spaces/DEV/pages/2951020545/2022-0
 During installation of the then latest version of Shibboleth IdP, it was observed that the name listed with the signature on the installation package exhibited an unrecognized email domain (`@steadingsoftware.com`).
 
 After several emails exchanged with the developer group, key information was exchanged over Zoom to confirm the unknown identity with all members as Shibboleth developer, Rod Widdowson.
-
-## Responsibility
-As developers and deployers of software products and services, use of third-party libraries or software must be carefully vetted to mitigate damages incurred by malicious attempts on our own supply chains.
-
-Furthermore, when distributing software, it is imperative that customers are able to verify our software as ensuring it came from us, and not a malicious fork.
 
 ## Landscape
 - **Key Management** - Secure storage, retrieval, and use of private key material
