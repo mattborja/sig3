@@ -47,10 +47,18 @@
           <h2 class="text-body-emphasis">Learn more</h2>
           <ul class="list-unstyled ps-0">
             <li>
-              <a class="icon-link mb-1" href="https://github.com/mattborja/sig3/#readme" rel="noopener" target="_blank">
-                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
-                mattborja/sig3
+              <a class="icon-link mb-1" href="https://pages.nist.gov/800-63-3/sp800-63a.html" rel="noopener" target="_blank">
+                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"></use></svg>
+                Digital Identities (NIST SP 800-63A)
               </a>
+            </li>
+            <li>
+              <a class="icon-link mb-1" href="https://www.gnupg.org/gph/en/manual/x334.html" rel="noopener" target="_blank">
+                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"></use></svg>Key Validity (GnuPG)</a>
+            </li>
+            <li>
+              <a class="icon-link mb-1" href="https://github.com/mattborja/sig3/#readme" rel="noopener" target="_blank">
+                <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"></use></svg>SIG3 (@mattborja)</a>
             </li>
           </ul>
         </div>
@@ -58,7 +66,7 @@
           <h2 class="text-body-emphasis">Support</h2>
           <ul class="list-unstyled ps-0">
             <li>
-              <a class="icon-link mb-1" href="https://github.com/mattborja/sig3/security">
+              <a class="icon-link mb-1" href="https://github.com/mattborja/sig3/issues">
                 <svg class="bi" width="16" height="16"><use xlink:href="#arrow-right-circle"/></svg>
                 Report an issue
               </a>
@@ -71,19 +79,32 @@
       &copy; 2025 SIG3 by Matt Borja
     </footer>
 
-    <div id="registry-entry-details" class="modal">
+    <div id="registry-entry-modal" class="modal">
       <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-body">
-            <h3>Key ID Provenance (Attestations)</h3>
-            <p>For more information on identity proofing guidelines, see <a href="https://pages.nist.gov/800-63-3/sp800-63a.html" target="_blank">NIST Special Publication 800-63A</a>.</p>
-            <code></code>
+            
           </div>
         </div>
       </div>
     </div>
-          
   </div>
+  
+  <div id="results-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Results</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="/assets/js/bootstrap-5.3.3.bundle.min.js"></script>
   <script src="/assets/js/jquery-3.7.1.min.js"></script>  
   <script src="/assets/js/main.js"></script>

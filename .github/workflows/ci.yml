@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      artifact_digest: ${{ steps.build-dist-upload.outputs.artifact-digest }}
+      artifact_digest: ${{ steps.build-provenance-dist.outputs.artifact-digest }}
 
     steps:
       - id: build-dist-checkout
@@ -49,20 +49,23 @@ jobs:
           echo "[build-dist-run] GNUPGHOME: $GNUPGHOME"
 
           npm run build
+
+      - id: build-sha256sums
+        run: |
+          sha256sum dist/*.json > SHA256SUMS.txt
         
-      - id: build-dist-upload
+      - id: build-provenance-dist
         uses: actions/upload-artifact@v4
         with:
           path: |
             dist/*.json
+            SHA256SUMS.txt
           name: registry-dist
 
       - id: build-html-dist
         run: |
           [ -d html/dist ] && mv html/dist .html-dist
           mv dist/ html/
-
-          cd html/ && sha256sum dist/*.json > SHA256SUMS.txt
       
       - id: build-gh-pages-setup
         uses: actions/configure-pages@v5

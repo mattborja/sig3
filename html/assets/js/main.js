@@ -10,12 +10,12 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
 (function (){
     const $form = $('form#registry-search');
     const $query = $form.find('input');
-    const $code = $('#registry-entry-details code');
+    const $modalBody = $('#registry-entry-modal .modal-body');
 
-    const $modal = new bootstrap.Modal('#registry-entry-details');
+    const $modal = new bootstrap.Modal('#registry-entry-modal');
 
     const engine = {
-      idx: {}
+      idx: []
     };
 
     // Format: fingerprint:tags_csv:label
@@ -33,22 +33,24 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
     }
 
     // Optional registry index to enable fast substring searches across all indexed fingerprints
-    fetch('/registry.idx.txt')
+    const $serviceDegraded = $('<div />').addClass('text-danger text-small my-3')
+                                        .html('<strong>Service Degraded.</strong> Some features may be temporarily unavailable.');
+    fetch('/dist/registry.idx.txt')
       .then(res => {
         if (!res.ok)
         {
-          // Append warning
-          $('<div />')
-            .addClass('text-danger text-small my-3').html('<strong>Service Degraded.</strong> Support for partial fingerprint matching is currently unavailable.')
-            .insertAfter($query);
+          $serviceDegraded.insertAfter($query);
           
           return false;
         }
 
         return res.text();
       }).then(raw => {
-        if (!raw)
-          return;
+        if (!raw) {
+          $serviceDegraded.insertAfter($query);
+
+          return false;
+        }
 
         // Return searchable fields indexed by fingerprint
         engine.idx = raw.trim().split('\n').map(_parseIDXEntry);
@@ -93,10 +95,29 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
 
         if (results.length > 1)
         {
-          alert(
-            "Multiple entries found!\n\nPlease highlight and copy from the list below, the fingerprint you wish to refine your search with:\n"
-            + '- ' + results.map(e => `${e.fpr} (${e.label})`).join("\n- ")
-          );
+          const resultsModal = new bootstrap.Modal('#results-modal');
+          const modalBody = $('#results-modal .modal-body').empty();
+
+          const intro = $('<p><strong>Multiple entries found!</strong></p><p>Please highlight and copy a fingerprint or UID from the list below to refine your search with:</p>').appendTo(modalBody);
+
+          const table = $('<table />').addClass('table table-hover table-striped').appendTo(modalBody);
+          const thead = $('<thead />').appendTo(table);
+          const theadRow = $('<tr><th scope="col">Fingerprint</th><th scope="col">UID</th></tr>').appendTo(thead);
+
+          const tbody = $('<tbody />').addClass('table-group-divider').appendTo(table);
+
+          results.forEach(e => {
+            $('<tr />')
+              .append(
+                $('<td />').text(e.fpr)
+              )
+              .append(
+                $('<td />').text(e.label)
+              )
+              .appendTo(tbody);
+          });
+
+          resultsModal.show();
 
           return false;
         }
@@ -114,7 +135,11 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
                 const formatted = JSON.stringify(json, null, 2);
                 const highlighted = jsonHighlight(formatted);
 
-                $code.html(highlighted);
+                const $lead = $('<h1 />').addClass('fs-5').text(`${json.source.label} (${json.id})`);
+                const $code = $('<code />').html(highlighted);
+                
+                $modalBody.html($lead);
+                $modalBody.append($code);
                 
                 $modal.show();
             })
