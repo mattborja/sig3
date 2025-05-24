@@ -7,6 +7,67 @@
  */
 function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t")),(e=e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")).replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,(function(e){var t="number";return/^"/.test(e)?t=/:$/.test(e)?"key":"string":/true|false/.test(e)?t="boolean":/null/.test(e)&&(t="null"),'<span class="'+t+'">'+e+"</span>"}))}
 
+function renderKeyDetails(json) {
+  const $targets = $('[data-sig3]');
+
+  $targets.each((i, e) => {
+    const $e = $(e).empty(); // Reset
+    
+    const val = $e.data('sig3');
+    const parts = val.split(':');
+    
+    if (parts.length === 1) {
+        const k = parts[0];
+        const v = json[k] || json.source[k];
+        
+        $e.text(v);
+        return;
+    }
+    
+    if (parts.length === 2) {
+        const mode = parts[0];
+        const k = parts[1];
+        const v = json[k] || json.source[k];
+        
+        if (mode === 'csv') {
+          $e.text(v.join(', '));
+          return;
+        }
+        
+        if (mode === 'table') {
+          // TODO: Normalize column count across all rows to ensure alignment in rendered table
+          const rows = v;
+          
+          const $table = $('<table />').addClass('table table-sm').appendTo($e);
+          
+          const $thead = $('<thead />').appendTo($table);
+          const $theadRow = $('<tr />').appendTo($thead);
+          Object.keys(rows[0]).forEach(h => {
+              $('<th />').text(h).appendTo($theadRow);
+          });
+          
+          const $tbody = $('<tbody />').appendTo($table);
+          v.forEach((e, i) => {
+              const $tr = $('<tr />').appendTo($tbody);
+              Object.keys(rows[i]).forEach(r => {
+                const $td = $('<td />').appendTo($tr);
+                const val = rows[i][r];
+                const blockMode = (r === 'artifact') || (r === 'url' && val.startsWith('data:'));
+                
+                if (blockMode) {
+                    const $div = $('<pre />').css('max-width', '400px').css('max-height', '200px').css('overflow', 'auto').css('text-wrap', 'balance').text(val).appendTo($td);
+                    return;
+                }
+                
+                $td.text(val);
+              })
+          });
+        }
+    }
+  });
+
+}
+
 (function (){
     const $form = $('form#registry-search');
     const $query = $form.find('input');
@@ -132,15 +193,10 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
               return res.json();
             })
             .then(json => {
-                const formatted = JSON.stringify(json, null, 2);
-                const highlighted = jsonHighlight(formatted);
+                // TODO: Update schema to meet rendering requirements (e.g., uid, email_sha256, etc.)
+                // Example: const json = {"status":{"schema":{"valid":true,"errors":[]},"keyVersion":{"valid":true,"meta":{"ver":4,"deprecated":false},"errors":[]},"filename":{"valid":true,"errors":[]}},"valid":true,"source":{"fingerprint":"99BB608E30380C451952D6BBA1C7E813F160A407","uid":"Matt Borja","email_sha256":"sha256(email)","refs":[{"date":"2024-11-27","comment":"Signed artifact demonstrating private key use: `echo -n '3ED3 3CCE 4BED 165C 9107 3D9F 65B8 8DAC 23AF 5BCD E520 F723 C1E6 2A69 B369 F278' | gpg --clearsign --local-user D41A83E1C6B701619D0D812FC3F69D1BE6BCBD16`","artifact":"-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA512\n\n3ED3 3CCE 4BED 165C 9107 3D9F 65B8 8DAC 23AF 5BCD E520 F723 C1E6 2A69 B369 F278\n-----BEGIN PGP SIGNATURE-----\n\niHUEARYKAB0WIQTUGoPhxrcBYZ0NgS/D9p0b5ry9FgUCZ0dD0AAKCRDD9p0b5ry9\nFvonAQCHwAHRduopWn8I534GNRXQ0+dX5JO2ztnFxnlwZd+NMAD/Wr0NWLEc+eCf\nQm2UHkDp8lKswj6kXxTi9GI3elvpQgE=\n=L95q\n-----END PGP SIGNATURE-----\n","type":"key"},{"date":"2024-10-06","comment":"Cross-signed (sig 3) by own previous key F30FF4FC936584574EE3251833688C2EDC08CD38","type":"user","url":"data:text/gpg;base64,mDMEZwQ0hRYJKwYBBAHaRw8BAQdAjQHXtHJ4wvN87wxQp1738Y4o1dyhuOvxEsTglOl7ozK0P01hdHQgQm9yamEgKE9mZmxpbmUgbG9uZy1saXZlZCBpZGVudGl0eSBrZXkpIDxtZUBtYXR0Ym9yamEuZGV2PoiWBBMWCgA+FiEEmbtgjjA4DEUZUta7ocfoE/FgpAcFAmcENIUCGwEFCQPCZwAFCwkIBwMFFQoJCAsFFgIDAQACHgECF4AACgkQocfoE/FgpAehTgD+KkcV0dttoPqr0srjE1mR//hizxGX+YasxZ9Q9I/ely8BAImpEps59UG4hTvPpt0/YxhjmxH8ntKuH2bn13RPui4IiQIzBBMBCAAdFiEE8w/0/JNlhFdO4yUYM2iMLtwIzTgFAmcIeiAACgkQM2iMLtwIzTi8rg/+MpCQsy+Wy/dcX6L6jtzd4mv3M8poWntYAWozfk6ip0JDA6ZUy/wWkXMW1PWKe9VXtATnB7tGXRGewc/0T9vMjC9BRqKPjk5pggotz/0YRzF+MCxM4lwsOd/8zqauIZLhh1BGVebozGOkzOs0iG6yGUDc3Ru6HuWHRbMpkTYMvweXtPACm3cLDgp4p8Q+PSCCTHdmtMPh99FilQn3NLWMdJ97S2VlHq9uCMrMz+wouMWSB5/vELrxO4R8YGwKC2rMeSJlYPPH/sAJOTMD3iV8yF1JtwaMgbHQoniOxJZIWXp4EjqOS8lF3HnoLssP7tbrgKzu33mzExThhNHsDSJmbDTg/3Z771pX+aKnNgPPIHEPgnvySlznWzMbdh9q5K1M3CcCHNleMJjZCoYJ7+igqim4wir3wo0efyf7kchaR3rtDtAyYwcpenn57Wg43P3GXChF1sLJaQz6gkpXo8ptnZl2G2Ge+DSKahu7aIKF/vSagyTqHeiyfZtSEjF17ezJICw4bCQUFtmlaQgM0o2tHMTtw0d1LDZql+4ub6VPcea9K7apSuI/naJxr6peLHapfNn+M7WBTqZi9sG7BQssSwfjis3IpETRkz+8J8CJbaWUkgG4gWs5qH5YJW80I0CLK8UwOQ300AHU6ClE1q9rGX2oqzj5u2AAt2/gSIgdnBC4MwRnBDTYFgkrBgEEAdpHDwEBB0AVFISAVVYYyAu8dP0R7IBDjd3tfdCUrWfn6W+LV5+m3Yj1BBgWCgAmFiEEmbtgjjA4DEUZUta7ocfoE/FgpAcFAmcENNgCGwIFCQHhM4AAgQkQocfoE/FgpAd2IAQZFgoAHRYhBNQag+HGtwFhnQ2BL8P2nRvmvL0WBQJnBDTYAAoJEMP2nRvmvL0W+UgA/js0wuSmoJWQWxdya48cLAKujs1rEqcstUfUXWWfi03OAQCGcXKdhD7nqRvieu07S0sJWI+PeflSyh8UpT8u3/kgD7BDAP454vTYQlhvgIsp/jsg8xGrJLRlEylkFvaHO+rzyRVZsAEAx6i9lJvUP6+/S/lyXnhVWWt++p6YEBT7F5Ga5xdY4wq4OARnBDTqEgorBgEEAZdVAQUBAQdAKv43Eiz70oucXmgFGBwD96s5Z4HqGdTknVqzMeR/1ScDAQgHiH4EGBYKACYWIQSZu2COMDgMRRlS1ruhx+gT8WCkBwUCZwQ06gIbDAUJAeEzgAAKCRChx+gT8WCkBzpnAQDAelwoEw/zA8Hd/iTeoFhBfy24qTBlezShSwqz6LHn2AEA1Qottpexb5UxzxgQNqJ0FXexWPk8M31LYT5yfmFmSgO4MwRnBDT6FgkrBgEEAdpHDwEBB0CB4sTJe3sz39Dmq0hTRTNqu6S54JViX1ECTW4AdUffZ4h+BBgWCgAmFiEEmbtgjjA4DEUZUta7ocfoE/FgpAcFAmcENPoCGyAFCQHhM4AACgkQocfoE/FgpAdBigD/UM2XqrBJskjerYebkS3kmaZHDUZq6QoM08xH3L4M/r0BAKpjtc2h/fxOs3F+w9SH/yWHEWu9cYl1FQlIn7vSbGMK=O0fn"},{"date":"2025-03-07","comment":"Self-attestation of own key under GitHub vigilant mode: 1) B5690EEEBB952194 is signing this commit via GitHub web interface, 2) commit author is authenticated as GitHub user @mattborja, AND 2) commit author affirms ownership of this selfsame key (A1C7E813F160A407)","type":"user","url":"https://github.com/mattborja/identity/commit/bf06562979a0eb3ef5a9da8d92edb8c7dd886ec7"},{"date":"2025-03-07","comment":"Backward claim of signed commit under GitHub vigilant mode: 1) C3F69D1BE6BCBD16 (signing subkey of A1C7E813F160A407) is signing this commit via command line Git, 2) commit author is SSH authenticated as GitHub user @mattborja, AND 2) commit author affirms ownership of the selfsame commit ID (https://github.com/mattborja/identity/commit/bf06562979a0eb3ef5a9da8d92edb8c7dd886ec7)","type":"user","url":"https://github.com/mattborja/identity/pull/46/commits/3bfb7244b68846bed074e9fbc78faefd1a839fda"},{"date":"2025-01-17","comment":"Listed on LinkedIn profile as Download Public PGP Key link","type":"user","url":"https://www.linkedin.com/in/mattborja"},{"date":"2025-01-17","comment":"LinkedIn profile showing identity verification by CLEAR using government ID","type":"user","url":"https://www.linkedin.com/help/linkedin/answer/a1359065"},{"date":"2025-01-01","comment":"Industry certification requiring strong identity verification during proctored high stakes exam with Global Information Assurance Certification (https://www.giac.org/knowledge-base/proctor/)","type":"csp","url":"https://www.credly.com/badges/c0ee1538-53dd-43a0-bf9e-7724e374ff43"},{"date":"2025-01-01","comment":"Credly profile showing both user photo and industry certification with link to ORCiD profile (https://orcid.org/0009-0008-5528-9362)","type":"user","url":"https://www.credly.com/users/mattborja"},{"date":"2025-01-01","comment":"ORCiD profile referenced by Credly profile listing verified email domains, websites, social links, and GPG fingerprints in Keywords section using Uniform Resource Name format: urn:identity:gpg:<fingerprint>","type":"user","url":"https://orcid.org/0009-0008-5528-9362"}],"tags":["SIG3"]},"id":"A1C7E813F160A407","version":4,"deprecated":false,"@timestamp":"2025-05-24T18:32:53.276Z","@level":"INFO","@message":"A1C7E813F160A407 successfully validated!"};
 
-                const $lead = $('<h1 />').addClass('fs-5').text(`${json.source.label} (${json.id})`);
-                const $code = $('<code />').html(highlighted);
-                
-                $modalBody.html($lead);
-                $modalBody.append($code);
-                
+                $modalBody.html(renderKeyDetails(json));
                 $modal.show();
             })
             .catch(e => {
