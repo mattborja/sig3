@@ -11,61 +11,67 @@ function renderKeyDetails(json) {
   const $targets = $('[data-sig3]');
 
   $targets.each((i, e) => {
-    const $e = $(e).empty(); // Reset
-    
-    const val = $e.data('sig3');
-    const parts = val.split(':');
-    
-    if (parts.length === 1) {
+     const $e = $(e).empty(); // Reset
+     
+     const val = $e.data('sig3');
+     const parts = val.split(':');
+     
+     if (parts.length === 1) {
         const k = parts[0];
         const v = json[k] || json.source[k];
         
         $e.text(v);
         return;
-    }
-    
-    if (parts.length === 2) {
+     }
+     
+     if (parts.length === 2) {
         const mode = parts[0];
         const k = parts[1];
         const v = json[k] || json.source[k];
         
         if (mode === 'csv') {
-          $e.text(v.join(', '));
-          return;
+           $e.text(v.join(', '));
+           return;
         }
         
         if (mode === 'table') {
-          // TODO: Normalize column count across all rows to ensure alignment in rendered table
-          const rows = v;
-          
-          const $table = $('<table />').addClass('table table-sm').appendTo($e);
-          
-          const $thead = $('<thead />').appendTo($table);
-          const $theadRow = $('<tr />').appendTo($thead);
-          Object.keys(rows[0]).forEach(h => {
-              $('<th />').text(h).appendTo($theadRow);
-          });
-          
-          const $tbody = $('<tbody />').appendTo($table);
-          v.forEach((e, i) => {
+           const rows = v;
+           const cols = rows.map(r => Object.keys(r))
+                            .flat()
+                            .filter((val, i, stack) => stack.indexOf(val) === i)
+                            .sort((a, b) => {
+                               const order = ['date', 'type', 'comment', 'url', 'artifact'];
+                               
+                               return order.indexOf(a) - order.indexOf(b);
+                             });
+           
+           const $table = $('<table />').addClass('table table-sm').appendTo($e);
+           
+           const $thead = $('<thead />').appendTo($table);
+           const $theadRow = $('<tr />').appendTo($thead);
+           cols.forEach(c => {
+              $('<th />').text(c).appendTo($theadRow);
+           });
+           
+           const $tbody = $('<tbody />').appendTo($table);
+           v.forEach((e, i) => {
               const $tr = $('<tr />').appendTo($tbody);
-              Object.keys(rows[i]).forEach(r => {
-                const $td = $('<td />').appendTo($tr);
-                const val = rows[i][r];
-                const blockMode = (r === 'artifact') || (r === 'url' && val.startsWith('data:'));
-                
-                if (blockMode) {
+              cols.forEach(c => {
+                 const $td = $('<td />').appendTo($tr);
+                 const val = rows[i][c];
+                 const blockMode = (c === 'artifact') || (c === 'url' && !!val && val.startsWith('data:'));
+                 
+                 if (blockMode) {
                     const $div = $('<pre />').css('max-width', '400px').css('max-height', '200px').css('overflow', 'auto').css('text-wrap', 'balance').text(val).appendTo($td);
                     return;
-                }
-                
-                $td.text(val);
+                 }
+                 
+                 $td.text(val);
               })
-          });
+           });
         }
-    }
-  });
-
+     }
+  });  
 }
 
 (function (){
