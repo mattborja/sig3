@@ -44,10 +44,6 @@ jobs:
       - id: build-dist-run
         run: |
           npm ci
-
-          export GNUPGHOME=$(cat .gnupghome)
-          echo "[build-dist-run] GNUPGHOME: $GNUPGHOME"
-
           npm run build
 
       - id: build-sha256sums
