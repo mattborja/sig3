@@ -12,9 +12,6 @@ const KEYCACHE_BASE = process.argv[3] || './cache/';
 
 const NIST_SHA1_WITHDRAWAL_DATE = "2030-12-31T00:00:00Z";
 
-const ENTRY_LOG_FIELDS = ['id', 'valid', 'status', '@timestamp', '@level', '@message'];
-const ENTRY_LOG_STATUS_FIELDS = ['valid', 'errors'];
-
 const VALID_KEY_VER_BITS = {
     128: {
         ver: 3,
@@ -36,28 +33,50 @@ const validator = new Validator(schema);
 
 // Tokenizes email address portion in UID using new 32-byte salt (nonce) each time
 function tokenizeUID(uid, n = 32) {
-    const REGEX = /\b([^ @<>]+)@([^ @<>]+)\b/;
+    const REGEX_EMAIL = /\b([^ @<>]+)@([^ @<>]+)\b/;
+    const REGEX_COMMENT = / \(([^\)]+)\)/;
+    const REGEX_NAME_INV = /( \([^\)]+\))?( <[^ @<>]+@[^ @<>]+>)?$/;
 
     const salt = randomBytes(n);
 
     const result = {
         salt: salt.toString('base64'),
         domain: null,
-        uid: uid,
+        name: null,
+        email: null,
+        comment: null,
+        label: uid
     };
 
-    const parts = result.uid.match(REGEX);
+    // REGEX_NAME
+    (function () {
+        result.name = uid.replace(REGEX_NAME_INV, '');
+    })();
 
-    if (!!parts) {
-        result.domain = parts[2];
+    // REGEX_COMMENT
+    (function () {
+        const parts = uid.match(REGEX_COMMENT);
+        if (!parts)
+            return;
+
+        result.comment = parts[1];
+    })();
+
+    // REGEX_EMAIL
+    (function () {
+        const parts = uid.match(REGEX_EMAIL);
+        if (!parts)
+            return;
 
         const hash = createHash('sha256')
                         .update(parts[1])
                         .update(salt) // Globally unique per-message salt (32-byte)
                         .digest('hex');
 
-        result.uid = result.uid.replace(REGEX, `${hash}@${result.domain}`);
-    }
+        result.domain = parts[2];
+        result.email = `${hash}@${result.domain}`;
+        result.label = uid.replace(REGEX_EMAIL, result.email);
+    })();
 
     return result;
 }
@@ -138,8 +157,6 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
 
                 // Assigns if schema validation passes
                 Object.assign(entry, source);
-
-                entry.status = validationStatus;
             }
             catch (e)
             {
@@ -162,17 +179,13 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             }
 
             // Tokenize UID (derived from label)
-            // Overwrites .salt, .label, .domain, .id
+            // Overwrites .id, .salt, .uid, .email, .domain, .comment, .label
             try
-            {
-                const t = tokenizeUID(entry.label);
-                entry.id = t.id;
-                entry.salt = t.salt;
-                entry.label = t.uid;
-                entry.domain = t.domain;
-
-                // build additional ID meta
+            {  
                 entry.id = _formatKeyID(entry.fingerprint);
+
+                const t = tokenizeUID(entry.label);
+                Object.assign(entry, t);
             }
             catch (e)
             {
