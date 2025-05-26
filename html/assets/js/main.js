@@ -18,7 +18,7 @@ function renderKeyDetails(json) {
      
      if (parts.length === 1) {
         const k = parts[0];
-        const v = json[k] || json.source[k];
+        const v = json[k];
         
         $e.text(v);
         return;
@@ -27,7 +27,7 @@ function renderKeyDetails(json) {
      if (parts.length === 2) {
         const mode = parts[0];
         const k = parts[1];
-        const v = json[k] || json.source[k];
+        const v = json[k];
         
         if (mode === 'csv') {
            $e.text(v.join(', '));
