@@ -98,13 +98,17 @@
     </footer>
 
     <div id="registry-entry-modal" class="modal">
-      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-dialog modal-fullscreen modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
-          <div class="modal-body">
-            <h1 class="key-title fs-5">
+          <div class="modal-header">
+            <h1 class="modal-title key-title fs-5">
               <span data-sig3="name">Matt Borja</span>
               <span class="text-secondary fs-6">(<span data-sig3="id">A1C7E813F160A407</span>)</span>
             </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+    
+          <div class="modal-body">
             <div class="card my-3">
               <div class="card-header">
                 <h2 class="fs-6">Summary</h2>
@@ -131,8 +135,12 @@
                       </tr>
                       <tr>
                         <th>Email (SHA256)</th>
-                        <td><span
-                            data-sig3="email"></span>
+                        <td><span data-sig3="email"></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Comment</th>
+                        <td><span data-sig3="comment"></span>
                         </td>
                       </tr>
                       <tr>
@@ -157,6 +165,10 @@
                 </table>
               </div>
             </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
