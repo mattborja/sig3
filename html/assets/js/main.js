@@ -7,6 +7,73 @@
  */
 function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t")),(e=e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")).replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,(function(e){var t="number";return/^"/.test(e)?t=/:$/.test(e)?"key":"string":/true|false/.test(e)?t="boolean":/null/.test(e)&&(t="null"),'<span class="'+t+'">'+e+"</span>"}))}
 
+function renderKeyDetails(json) {
+  const $targets = $('[data-sig3]');
+
+  $targets.each((i, e) => {
+     const $e = $(e).empty(); // Reset
+     
+     const val = $e.data('sig3');
+     const parts = val.split(':');
+     
+     if (parts.length === 1) {
+        const k = parts[0];
+        const v = json[k];
+        
+        $e.text(v);
+        return;
+     }
+     
+     if (parts.length === 2) {
+        const mode = parts[0];
+        const k = parts[1];
+        const v = json[k];
+        
+        if (mode === 'csv') {
+           $e.text(v.join(', '));
+           return;
+        }
+        
+        if (mode === 'table') {
+           const rows = v;
+           const cols = rows.map(r => Object.keys(r))
+                            .flat()
+                            .filter((val, i, stack) => stack.indexOf(val) === i)
+                            .sort((a, b) => {
+                               const order = ['date', 'type', 'comment', 'url', 'artifact'];
+                               
+                               return order.indexOf(a) - order.indexOf(b);
+                             });
+           
+           const $table = $('<table />').addClass('table table-sm').appendTo($e);
+           
+           const $thead = $('<thead />').appendTo($table);
+           const $theadRow = $('<tr />').appendTo($thead);
+           cols.forEach(c => {
+              $('<th />').text(c).appendTo($theadRow);
+           });
+           
+           const $tbody = $('<tbody />').appendTo($table);
+           v.forEach((e, i) => {
+              const $tr = $('<tr />').appendTo($tbody);
+              cols.forEach(c => {
+                 const $td = $('<td />').appendTo($tr);
+                 const val = rows[i][c];
+                 const blockMode = (c === 'artifact') || (c === 'url' && !!val && val.startsWith('data:'));
+                 
+                 if (blockMode) {
+                    const $div = $('<pre />').css('max-width', '400px').css('max-height', '200px').css('overflow', 'auto').css('text-wrap', 'balance').text(val).appendTo($td);
+                    return;
+                 }
+                 
+                 $td.text(val);
+              })
+           });
+        }
+     }
+  });  
+}
+
 (function (){
     const $form = $('form#registry-search');
     const $query = $form.find('input');
@@ -132,15 +199,7 @@ function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t
               return res.json();
             })
             .then(json => {
-                const formatted = JSON.stringify(json, null, 2);
-                const highlighted = jsonHighlight(formatted);
-
-                const $lead = $('<h1 />').addClass('fs-5').text(`${json.source.label} (${json.id})`);
-                const $code = $('<code />').html(highlighted);
-                
-                $modalBody.html($lead);
-                $modalBody.append($code);
-                
+                $modalBody.html(renderKeyDetails(json));
                 $modal.show();
             })
             .catch(e => {

@@ -1,6 +1,7 @@
 import { Validator } from '@cfworker/json-schema';
 import fs from 'fs';
 import path from 'path';
+import { createHash, randomBytes } from 'crypto';
 
 import schema from './schema.json' with { type: 'json' };
 
@@ -11,10 +12,7 @@ const KEYCACHE_BASE = process.argv[3] || './cache/';
 
 const NIST_SHA1_WITHDRAWAL_DATE = "2030-12-31T00:00:00Z";
 
-const ENTRY_LOG_FIELDS = ['id', 'valid', 'status', '@timestamp', '@level', '@message'];
-const ENTRY_LOG_STATUS_FIELDS = ['valid', 'errors'];
-
-const VALID_KEY_VERS = {
+const VALID_KEY_VER_BITS = {
     128: {
         ver: 3,
         deprecated: true,
@@ -33,6 +31,56 @@ const VALID_KEY_VERS = {
 
 const validator = new Validator(schema);
 
+// Tokenizes email address portion in UID using new 32-byte salt (nonce) each time
+function tokenizeUID(uid, n = 32) {
+    const REGEX_EMAIL = /\b([^ @<>]+)@([^ @<>]+)\b/;
+    const REGEX_COMMENT = / \(([^\)]+)\)/;
+    const REGEX_NAME_INV = /( \([^\)]+\))?( <[^ @<>]+@[^ @<>]+>)?$/;
+
+    const salt = randomBytes(n);
+
+    const result = {
+        salt: salt.toString('base64'),
+        domain: null,
+        name: null,
+        email: null,
+        comment: null,
+        label: uid
+    };
+
+    // REGEX_NAME
+    (function () {
+        result.name = uid.replace(REGEX_NAME_INV, '');
+    })();
+
+    // REGEX_COMMENT
+    (function () {
+        const parts = uid.match(REGEX_COMMENT);
+        if (!parts)
+            return;
+
+        result.comment = parts[1];
+    })();
+
+    // REGEX_EMAIL
+    (function () {
+        const parts = uid.match(REGEX_EMAIL);
+        if (!parts)
+            return;
+
+        const hash = createHash('sha256')
+                        .update(parts[1])
+                        .update(salt) // Globally unique per-message salt (32-byte)
+                        .digest('hex');
+
+        result.domain = parts[2];
+        result.email = `${hash}@${result.domain}`;
+        result.label = uid.replace(REGEX_EMAIL, result.email);
+    })();
+
+    return result;
+}
+
 function toDictionary(keySelectFields, obj) {
   return Object.fromEntries(keySelectFields.map(k => [k, obj[k]]));
 }
@@ -44,7 +92,7 @@ function _formatKeyID(fpr, withSpaces = false) {
 // Custom IDX format (as with --with-colons) to enable better searchability in web application (https://sig3.dev)
 // Format: fingerprint:tags_csv:label
 function _formatIDXEntry(entry) {
-    return `${entry.source.fingerprint}:${entry.source.tags.join(',')}:${entry.source.label}`;
+    return `${entry.fingerprint}:${entry.tags.join(',')}:${entry.label}`;
 }
 
 // block on output dir creation
@@ -53,6 +101,30 @@ if (!fs.existsSync(ARTIFACT_BASE))
 
 if (!fs.existsSync(KEYCACHE_BASE))
     fs.mkdirSync(KEYCACHE_BASE);
+
+function log(level, message, context) {
+    const logCmd = (level in console) ? level : 'info';
+
+    const prefix = `[${context}] ${level.toUpperCase()}`;
+
+    console[logCmd](prefix, message);
+}
+
+function info(message, context) {
+    return log('info', message, context);
+}
+
+function warn(message, context) {
+    return log('warn', message, context);
+}
+
+function error(message, context) {
+    return log('error', message, context);
+}
+
+function debug(message, context) {
+    return log('debug', message, context);
+}
 
 // async
 fs.readdir(REGISTRY_BASE, (err, files) => {
@@ -66,64 +138,29 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
         const outFilename = path.join(ARTIFACT_BASE, baseFilename);
 
         if (path.extname(inFilename) !== REGISTRY_EXT)
-            return console.warn(`Skipping extraneous file: ${inFilename}`);
+            return log('submission', `Skipping extraneous file`, inFilename);
         
         // async (pinned)
         (function(inFilename, outFilename) {
-            const entry = {
-                status: {},
-                valid: false
-            };
+            const entry = {};
 
+            // Validate schema
+            // Overwrites .status
             try
             {
                 const json = fs.readFileSync(inFilename);
-                entry.source = JSON.parse(json);
-            }
-            catch(e)
-            {
-                return console.warn(`Skipping file on read failure: ${inFilename} (${e})`);
-            }
+                const source = JSON.parse(json);
 
-            // entry.source
-            try
-            {
-                entry.status.schema = validator.validate(entry.source);
+                const validationStatus = validator.validate(source);
+                if (validationStatus.errors.length > 0)
+                    throw validationStatus.errors;
+
+                // Assigns if schema validation passes
+                Object.assign(entry, source);
             }
             catch (e)
             {
-                return console.warn(`Skipping file on schema validation failure: ${inFilename} (${e})`);
-            }
-
-            // entry.status.keyVersion
-            // Checks the key fingerprint length from a JSON file and determines its corresponding key version.
-            // If the key length matches a deprecated version (e.g., 128-bit for version 3), a warning is displayed.
-            //
-            // Please note:
-            // - As of July 2024, RFC9580 §5.5.4.1 specifies that "version 3 (128-bit) keys and MD5 are deprecated" (https://datatracker.ietf.org/doc/html/rfc9580#section-5.5.4.1)
-            // - As of December 2022, NIST has retired SHA-1 with an expected full withdrawal date of December 31, 2030 (https://www.nist.gov/news-events/news/2022/12/nist-retires-sha-1-cryptographic-algorithm)
-            try
-            {
-                const keyLenBits = 8 * ((entry.source.fingerprint || '').length / 2);
-                const validKeyVersion = (keyLenBits in VALID_KEY_VERS);
-                const validKeyDeprecated = validKeyVersion && VALID_KEY_VERS[keyLenBits].deprecated;
-
-                entry.status.keyVersion = {
-                    valid: validKeyVersion && !validKeyDeprecated,
-                    meta: VALID_KEY_VERS[keyLenBits],
-                    errors:
-                        !validKeyVersion
-                        ? [ `Unrecognized key length: ${keyLenBits} bits` ]
-
-                        : validKeyDeprecated
-                        ? [ `Deprecated key version: ${VALID_KEY_VERS[keyLenBits].ver} (${keyLenBits} bits)` ]
-                        
-                        : []
-                };
-            }
-            catch (e)
-            {
-                return console.warn(`Skipping file on keyVersion validation failure: ${inFilename} (${e})`);
+                return log('schema', e, inFilename);
             }
 
             // entry.status.filename
@@ -131,61 +168,86 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             // filename format: FINGERPRINT.json
             try
             {
-                const expectedFilename = `${entry.source.fingerprint}${REGISTRY_EXT}`;
-                const isValidFilename = (baseFilename === expectedFilename);
+                const expectedFilename = `${entry.fingerprint}${REGISTRY_EXT}`;
 
-                entry.status.filename = {
-                    valid: isValidFilename,
-                    errors: !isValidFilename ? [ `Expected filename ${expectedFilename}, got ${baseFilename}` ] : []
-                };
+                if (baseFilename !== expectedFilename)
+                    throw `Expected ${expectedFilename}, got ${baseFilename}`;
             }
             catch (e)
             {
-                entry.status.filename = {
-                    valid: false,
-                    errors: [ `Filename validation failure: ${e}` ]
-                };
+                return log('filename', `Skipping entry on filename validation failure: ${e})`, inFilename);
+            }
 
-                return console.warn(`Skipping file on filename validation failure: ${inFilename} (${e})`);
+            // Tokenize UID (derived from label)
+            // Overwrites .id, .salt, .uid, .email, .domain, .comment, .label
+            try
+            {  
+                entry.id = _formatKeyID(entry.fingerprint);
+
+                const t = tokenizeUID(entry.label);
+                Object.assign(entry, t);
+            }
+            catch (e)
+            {
+                return log('meta', `Skipping entry on meta update: ${e}`, inFilename);
+            }
+
+            // Assess key version
+            // Checks the key fingerprint length from a JSON file and determines its corresponding key version.
+            // If the key length matches a deprecated version (e.g., 128-bit for version 3), a warning is displayed.
+            //
+            // Please note:
+            // - As of July 2024, RFC9580 §5.5.4.1 specifies that "version 3 (128-bit) keys and MD5 are deprecated" (https://datatracker.ietf.org/doc/html/rfc9580#section-5.5.4.1)
+            // - As of December 2022, NIST has retired SHA-1 with an expected full withdrawal date of December 31, 2030 (https://www.nist.gov/news-events/news/2022/12/nist-retires-sha-1-cryptographic-algorithm)
+            //
+            // Overwrites .version, .deprecated
+            try
+            {
+                const keyLenBits = 8 * ((entry.fingerprint || '').length / 2);
+
+                const keyVersion = VALID_KEY_VER_BITS[keyLenBits];
+                if (!keyVersion)
+                    throw 'Unrecognized fingerprint length';
+                
+                entry.version = keyVersion.ver;
+                entry.deprecated = keyVersion.deprecated;
+            }
+            catch (e)
+            {
+                return log('version', `Skipping entry on keyVersion validation failure: ${e}`, inFilename);
             }
 
             // build dist artifacts
             try
-            {
-                // build additional meta (post-validation)
-                entry.id = _formatKeyID(entry.source.fingerprint);
-                entry.ver = entry.status.keyVersion.meta.ver;
-                entry.deprecated = entry.status.keyVersion.meta.deprecated;
-                entry.valid = Object.values(entry.status).reduce((final, e) => final && e.valid, true);
-                
+            {   
                 if (!IDX.write(`${_formatIDXEntry(entry)}\n`))
                     throw(`Failed to write to IDX: ${entry.id}`);
 
                 // include standard $.log fields in dist
-                entry['@timestamp'] = (new Date()).toISOString();
-                entry['@level'] = entry.valid ? 'INFO' : 'WARN';
-                entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
+                // entry['@timestamp'] = (new Date()).toISOString();
+                // entry['@level'] = entry.valid ? 'INFO' : 'WARN';
+                // entry['@message'] = entry.valid ? `${entry.id} successfully validated!` : `${entry.id} failed one or more validation checks.`;
 
                 // dist
-                fs.writeFile(outFilename, JSON.stringify(entry), err => {
+                fs.writeFile(outFilename, JSON.stringify(entry, null, 2), err => {
                     if (err)
                         throw `Failed to write to file: ${outFilename} (${err})`;
 
                     // include specific log fields in $
-                    const log = toDictionary(ENTRY_LOG_FIELDS, entry);
+                    // const log = toDictionary(ENTRY_LOG_FIELDS, entry);
 
                     // include specific log subfields in $.status.*
-                    log.status = Object.fromEntries(Object.keys(log.status).map(k => [k, toDictionary(ENTRY_LOG_STATUS_FIELDS, log.status[k])]));
+                    // log.status = Object.fromEntries(Object.keys(log.status).map(k => [k, toDictionary(ENTRY_LOG_STATUS_FIELDS, log.status[k])]));
 
                     // simplify schema validation errors
-                    log.status.schema.errors = log.status.schema.errors.map(e => `${e.instanceLocation}: ${e.error}`);
+                    // log.status.schema.errors = log.status.schema.errors.map(e => `${e.instanceLocation}: ${e.error}`);
 
-                    console.log(JSON.stringify(log));
+                    // console.log(JSON.stringify(log));
                 });
             }
             catch (e)
             {
-                return console.warn(`Skipping file on artifact write failure: ${inFilename} (${e})`);
+                return log('dist', `Skipping entry on artifact write failure: ${e}`, inFilename);
             }
         })(inFilename, outFilename);
     });
