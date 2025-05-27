@@ -52,20 +52,53 @@ function renderKeyDetails(json) {
            cols.forEach(c => {
               $('<th />').text(c).appendTo($theadRow);
            });
+
+           function _formatTextBlock(val) {
+            return $('<pre />')
+                    .css('max-width', '400px')
+                    .css('max-height', '200px')
+                    .css('overflow', 'auto')
+                    .css('text-wrap', 'balance')
+                    .text(val);
+           }
            
            const $tbody = $('<tbody />').appendTo($table);
            v.forEach((e, i) => {
               const $tr = $('<tr />').appendTo($tbody);
               cols.forEach(c => {
                  const $td = $('<td />').appendTo($tr);
-                 const val = rows[i][c];
-                 const blockMode = (c === 'artifact') || (c === 'url' && !!val && val.startsWith('data:'));
-                 
-                 if (blockMode) {
-                    const $div = $('<pre />').css('max-width', '400px').css('max-height', '200px').css('overflow', 'auto').css('text-wrap', 'balance').text(val).appendTo($td);
+
+                 // Leave column empty if cols list specifies extra properties not set in this row
+                 if (!(c in rows[i]))
                     return;
+
+                 const val = rows[i][c];
+                 
+                 if (c === 'artifact') {
+                  _formatTextBlock(val).appendTo($td);
+
+                  return;
+                 }
+
+                 if (c === 'url') {
+                  if (Array.isArray(val)) {
+                    const $ul = $('<ul />').appendTo($td);
+
+                    val.forEach(url => {
+                      $li = $('<li />').text(url).appendTo($ul);
+                    });
+
+                    return;
+                  }
+
+                  if (val.startsWith('data:')) {
+                    _formatTextBlock(val).appendTo($td);
+                    
+                    return;
+                  }
                  }
                  
+                 // Default
                  $td.text(val);
               })
            });
