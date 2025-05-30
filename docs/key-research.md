@@ -5,7 +5,7 @@ Copyright (c) 2025 Matt Borja
 This document demonstrates methodologies for corroborating key validity through a variety of circumstantial evidence, techniques, and rationale; as applied to a number of research cases. A framework of tools is provided as guidance to the reader to explain how each contribute to the effectiveness of research and to what extent they are to be used in assessments. The overall document is intended to produce a more holistic view of any given key, based on the spread of information available at the time of collection.
 
 ## Framework
-**Search Engine Algorithm (SEA).** While not conclusively authoritative, search engines alone often contribute a certain degree of verity to the identity of official websites, including but not limited to context analysis, relevancy, and page ranking algorithms. Search engines typically consider external factors in the determination of page rank such as the amount of high quality links back to a given domain. To an extent, this provides a framework for trusting search engine results to a certain degree, backed by a large number of decentralized resources.
+**Search Engine Algorithm (SEA).** While not conclusively authoritative, search engines alone often contribute a certain degree of verity to the identity of official websites, including but not limited to content analysis, relevancy, and page ranking algorithms. Search engines typically consider external factors in the determination of page rank such as the amount of high quality links back to a given domain. To an extent, this provides a framework for trusting search engine results to a certain degree, backed by a large number of decentralized resources.
 
 **Public Key Infrastructure (PKI).**
 
@@ -14,7 +14,7 @@ This document demonstrates methodologies for corroborating key validity through 
 ## Research Cases
 ### Node.js
 #### Inferrence of Domain
-Node.js is a widely used JavaScript runtime, commonly found in high performing server-side applications, microservers, and cloud-based development environments. Because of its widespread industry adoption in production environments, an official website must be publicly available for the general audience to access and download the runtime from. The de facto mode of discovery of said website will be through the use of also widely accepted search engines, such as Google, Bing, DuckDuckGo, etc.
+Node.js is a widely used JavaScript runtime, commonly found in high performing server-side applications, serverless APIs, microservices, and cloud-based development environments. Because of its widespread industry adoption in production environments, an official website must be publicly available for the general audience to access and download the runtime from. The de facto mode of discovery of said website will be through the use of also widely accepted search engines, such as Google, Bing, DuckDuckGo, etc.
 
 **Result:**
 ```yaml
