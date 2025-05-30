@@ -132,7 +132,7 @@ Chain: SEA+PKI+OSS
 ```
 
 #### Fingerprint Corroboration
-Noting the discovery of release signing keys has only been built on a singular chain of trust to this point (`SEA+PKI+OSS`), additional research is preferred to being corroborating evidence with other external sources.
+Noting the discovery of release signing keys has only been built on a singular chain of trust to this point (`SEA+PKI+OSS`), additional research is preferred to begin corroborating evidence with other external sources.
 
 Additional sources include, but are not limited to:
 - Forums
