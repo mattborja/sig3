@@ -20,6 +20,36 @@ function regexEscape(string) {
     : string;
 }
 
+// Source: https://stackoverflow.com/a/7641812/901156
+function friendlyDate(dt) {
+  let delta = Math.round((+new Date - dt) / 1000);
+
+  let minute = 60,
+      hour = minute * 60,
+      day = hour * 24,
+      week = day * 7;
+
+  let fuzzy;
+
+  if (delta < 30) {
+      fuzzy = 'just then.';
+  } else if (delta < minute) {
+      fuzzy = delta + ' seconds ago.';
+  } else if (delta < 2 * minute) {
+      fuzzy = 'a minute ago.'
+  } else if (delta < hour) {
+      fuzzy = Math.floor(delta / minute) + ' minutes ago.';
+  } else if (Math.floor(delta / hour) == 1) {
+      fuzzy = '1 hour ago.'
+  } else if (delta < day) {
+      fuzzy = Math.floor(delta / hour) + ' hours ago.';
+  } else if (delta < day * 2) {
+      fuzzy = 'yesterday';
+  }
+
+  return fuzzy;
+}
+
 function renderKeyDetails(json) {
   const FIELD_SORT_ORDER = ['date', 'type', 'comment', 'url', 'artifact'];
   const $targets = $('[data-sig3]');
@@ -29,6 +59,8 @@ function renderKeyDetails(json) {
      
      const val = $e.data('sig3');
      const parts = val.split(':');
+
+     const fieldIdNotUnique = val;
      
      if (parts.length === 1) {
         const k = parts[0];
@@ -46,6 +78,55 @@ function renderKeyDetails(json) {
         if (mode === 'csv') {
            $e.text(v.join(', '));
            return;
+        }
+
+        // Combines .list-group-item rendering with .accordion-flush
+        // Disclaimer: Fixed field implementation
+        if (mode === 'accordion-fixed') {
+          const items = v;
+
+          const $accordion = $e;
+          items.forEach((e, i) => {
+            const item = items[i];
+            const panelId = `${fieldIdNotUnique}-panel-${i}`;
+
+            const $accordionItem = $('<div />').addClass('accordion-item').appendTo($accordion);
+            const $accordionHeader = $('<h2 />').addClass('accordion-header').appendTo($accordionItem);
+            const $accordionHeaderButton = $('<button />').addClass('accordion-button collapsed')
+                                                          .attr('type', 'button')
+                                                          .data('bs-toggle', 'collapse')
+                                                          .data('bs-target', `#${panelId}`)
+                                                          .attr('aria-expanded', 'false')
+                                                          .attr('aria-controls', panelId)
+                                                          .text(`Exhibit #${i+1}`)
+                                                          .appendTo($accordionHeader);
+            const $accordionPanel = $('<div />').addClass('accordion-collapse collapse')
+                                                .attr('id', panelId)
+                                                .appendTo($accordionItem);
+            
+            const $accordionPanelBody = $('<div />').addClass('accordion-body')
+                                                    .appendTo($accordionPanel);
+
+            const $listGroupItem = $('<a />').addClass('list-group-item list-group-item-action')
+                                             .appendTo($accordionPanelBody);
+
+            const $listGroupItemHeader = $('<div />').addClass('d-flex justify-content-between')
+                                                     .appendTo($listGroupItem);
+
+            const $listGroupItemHeaderHeadnig = $('<h5 />').addClass('mb-1')
+                                                           .text(item.type)
+                                                           .appendTo($listGroupItemHeader);
+
+            const $listGroupItemHeaderDate = $('<small />').addClass('text-body-secondary')
+                                                           .text(friendlyDate(item.date))
+                                                           .appendTo($listGroupItemHeader);
+            
+            const $listGroupItemBodyMain = $('<p />').addClass('mb-3')
+                                                     .text(item.comment)
+                                                     .appendTo($listGroupItem);
+            
+            // TODO: $listGroupItemBodyMeta[url, artifact, ...]
+          });
         }
         
         if (mode === 'table') {
