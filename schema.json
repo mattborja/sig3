@@ -21,9 +21,9 @@
             "type": "string",
             "enum": [
               "url",
-              "cache"
+              "hkps"
             ],
-            "description": "The type of source: 'url' for a web URL, 'cache' for a local copy of the public key."
+            "description": "The URI type of the source provided: url (web address), hkps (secure HTTP key server)"
           },
           "uri": {
             "type": "string",
