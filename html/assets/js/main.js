@@ -132,30 +132,6 @@ function renderKeyDetails(json) {
       };
     }
 
-    // Optional registry index to enable fast substring searches across all indexed fingerprints
-    const $serviceDegraded = $('<div />').addClass('text-danger text-small my-3')
-                                        .html('<strong>Service Degraded.</strong> Some features may be temporarily unavailable.');
-    fetch('/dist/registry.idx.txt')
-      .then(res => {
-        if (!res.ok)
-        {
-          $serviceDegraded.insertAfter($query);
-          
-          return false;
-        }
-
-        return res.text();
-      }).then(raw => {
-        if (!raw) {
-          $serviceDegraded.insertAfter($query);
-
-          return false;
-        }
-
-        // Return searchable fields indexed by fingerprint
-        engine.idx = raw.trim().split('\n').map(_parseIDXEntry);
-      });
-
     // Core entry search, load, and reporting
     $form.submit(e => {
         e.preventDefault();
@@ -240,15 +216,42 @@ function renderKeyDetails(json) {
             });
     });
 
-    // Invoke $form.submit() if valid FPR is requested via hash
-    (function (){
-      const FPR_REGEX = /^#fpr=([0-9A-F]+)$/;
+    // Optional registry index to enable fast substring searches across all indexed fingerprints
+    const $serviceDegraded = $('<div />').addClass('text-danger text-small my-3')
+                                         .html('<strong>Service Degraded.</strong> Some features may be temporarily unavailable.');
+    
+    fetch('/dist/registry.idx.txt')
+      .then(res => {
+        if (!res.ok)
+        {
+          $serviceDegraded.insertAfter($query);
+          
+          return false;
+        }
 
-      const match = window.location.hash.match(FPR_REGEX);
-      if (!match)
-        return;
+        return res.text();
+      })
+      .then(raw => {
+        if (!raw) {
+          $serviceDegraded.insertAfter($query);
 
-      $query.val(match[1]);
-      $form.submit();
-    })();
+          return false;
+        }
+
+        // Return searchable fields indexed by fingerprint
+        engine.idx = raw.trim().split('\n').map(_parseIDXEntry);
+
+        // Invoke $form.submit() if valid FPR is requested via hash
+        // Depends on engine.idx
+        (function (){
+          const FPR_REGEX = /^#fpr=([0-9A-F]+)$/;
+
+          const match = window.location.hash.match(FPR_REGEX);
+          if (!match)
+            return;
+
+          $query.val(match[1]);
+          $form.submit();
+        })();
+      });
 })();
