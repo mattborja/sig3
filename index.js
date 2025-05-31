@@ -12,8 +12,6 @@ const KEYCACHE_BASE = process.argv[3] || './cache/';
 
 const NIST_SHA1_WITHDRAWAL_DATE = "2030-12-31T00:00:00Z";
 
-let CI_EXIT_STATUS = 0;
-
 const VALID_KEY_VER_BITS = {
     128: {
         ver: 3,
@@ -162,7 +160,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             }
             catch (e)
             {
-                CI_EXIT_STATUS |= 1;
+                process.exitCode |= 1;
 
                 return log('schema', e, inFilename);
             }
@@ -179,7 +177,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             }
             catch (e)
             {
-                CI_EXIT_STATUS |= 1;
+                process.exitCode |= 1;
 
                 return log('filename', `Skipping entry on filename validation failure: ${e})`, inFilename);
             }
@@ -195,7 +193,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             }
             catch (e)
             {
-                CI_EXIT_STATUS |= 1;
+                process.exitCode |= 1;
 
                 return log('meta', `Skipping entry on meta update: ${e}`, inFilename);
             }
@@ -222,7 +220,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             }
             catch (e)
             {
-                CI_EXIT_STATUS |= 1;
+                process.exitCode |= 1;
 
                 return log('version', `Skipping entry on keyVersion validation failure: ${e}`, inFilename);
             }
@@ -257,7 +255,7 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
             }
             catch (e)
             {
-                CI_EXIT_STATUS |= 1;
+                process.exitCode |= 1;
 
                 return log('dist', `Skipping entry on artifact write failure: ${e}`, inFilename);
             }
@@ -265,6 +263,4 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
     });
 
     IDX.end();
-
-    process.exit(CI_EXIT_STATUS);
 });
