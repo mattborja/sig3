@@ -165,7 +165,7 @@ Chain: SEA+PKI+OSS+GPG
 #### Source Directory: SIG3
 Host to an increasing volume of shared research, the [SIG3 project](https://sig3.dev/) serves as an ideal starting point for Rapid Identity Assessment (RIA) of submitted keys.
 
-**Example:** **https://sig3.dev/#fpr=21D900FFDB233756**
+**Example:** **https://sig3.dev/?fpr=21D900FFDB233756**
 
 By policy and schema enforcement, keys listed with SIG3 are accompanied by a collection of external references (`$.refs[N]`). For each reference listed (`R`), verifiers are equipped with the added knowledge of autonomous, third party sources demonstrating independent attestations of the key under assessment, including but not limited to the owner's activity, community acknowledgment, and the purview of intelligence and information sharing communities.
 
