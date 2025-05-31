@@ -7,6 +7,19 @@
  */
 function jsonHighlight(e){return"string"!=typeof e&&(e=JSON.stringify(e,null,"\t")),(e=e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")).replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,(function(e){var t="number";return/^"/.test(e)?t=/:$/.test(e)?"key":"string":/true|false/.test(e)?t="boolean":/null/.test(e)&&(t="null"),'<span class="'+t+'">'+e+"</span>"}))}
 
+// Source: https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L152, http://ecma-international.org/ecma-262/7.0/#sec-patterns
+const REGEX_ESC = /[\\^$.*+?()[\]{}|]/g,
+      REGEX_ESC_REGEX = RegExp(REGEX_ESC.source);
+
+// Source: https://github.com/lodash/lodash/blob/4.17.15/lodash.js#L14273
+function regexEscape(string) {
+  string = string || '';
+
+  return (string && REGEX_ESC_REGEX.test(string))
+    ? string.replace(REGEX_ESC, '\\$&')
+    : string;
+}
+
 function renderKeyDetails(json) {
   const $targets = $('[data-sig3]');
 
@@ -135,12 +148,15 @@ function renderKeyDetails(json) {
     // Core entry search, load, and reporting
     $form.submit(e => {
         e.preventDefault();
+
         const q = $query.val();
 
         // Returns array of FPRs found by search criteria
         function _searchRegistry(q, minLength = 4) {
           if (!q || q.length < minLength)
             return [];
+
+          const REGEX_Q = new RegExp(regexEscape(q), 'i');
           
           // Mode: Key ID (min. length 4) or full fingerprint (hexadecimal characters only)
           if (q.match(/^[0-9A-F]{4,}$/gi)) {
@@ -149,11 +165,13 @@ function renderKeyDetails(json) {
               return idsFound;
           }
 
-          const idsFoundByTags = engine.idx.filter(e => e.tags.includes(q));
+          // Case-insensitive matching on any tag
+          const idsFoundByTags = engine.idx.filter(e => e.tags.some(t => REGEX_Q.test(t)));
           if (idsFoundByTags.length)
             return idsFoundByTags;
 
-          const idsFoundByLabel = engine.idx.filter(e => e.label.search(q) > -1);
+          // Case-insensitive matching on label
+          const idsFoundByLabel = engine.idx.filter(e => REGEX_Q.test(e.label));
           if (idsFoundByLabel.length)
             return idsFoundByLabel;
 

@@ -5,9 +5,9 @@
 [![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333&color=222&logo=github&logoColor=fff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
 
 ## Purpose
-To support critical infrastructure needs with an auditable and authoritative registry of digital identify proofs in accordance with industry guidelines and recommendations.
+A Rapid Identity Assessment (RIA) directory and framework to support critical infrastructure integrity and supply chain security with a strong set (global web of trust) of verifiable identity proofs in accordance with industry standards and guidelines.
 
-> *Why is it called "SIG3?"* — In seeking alignment with IAL3 in NIST SP 800-63A, we're making every effort to do [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html).
+*Why is it called "SIG3?"* - Because we're doing [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) these days.
 
 ## Scope
 The below tables acknowledge important objectives in this space, while also clarifying which are considered to be **in-scope** vs. **out-of-scope** based on a number of factors, including but not limited to time, effort, resource availability, etc.
@@ -29,48 +29,68 @@ The following resources are considered applicable and relevant to the orientatio
 - [Key validity and owner trust (GnuPG)](https://www.gnupg.org/gph/en/manual/x334.html)
 
 ## Getting Started
-> [!NOTE]
-> You can also now test drive the proof-of-concept **ID Lookup** tool built from this repository at https://sig3.org.uk/.
-> 
-> ![image](https://github.com/user-attachments/assets/cef3f1c4-120c-41fd-abb7-19bb911053e3)
+> [!NOTE]  
+> Visit the **SIG3** key search application at https://sig3.dev/
 
-To run your own tests, first clone the repository:
-```bash
+
+To run your own tests, clone the repository, install any missing dependencies and run the `build` command:
+```shell
 ~$ git clone git@github.com:mattborja/sig3.git
 ```
+```shell
+~$ cd sig3
+~/sig3$ npm ci
 
-Next, navigate into the newly cloned repository directory and run `npm install` to install the [related dependencies](/package.json):
-```bash
-~/sig3$ cd sig3
-~/sig3$ npm install
+added 1 package, and audited 2 packages in 3s
+
+found 0 vulnerabilities
 ```
-
-Finally, run `npm run build` to build the **dist/** folder from registry entries that have successfully passed all validation checks and see their respective audit summaries in the standard output<sup>†</sup>.
-```bash
+```shell
 ~/sig3$ npm run build
-
 
 > sig3@1.0.0 build
 > node index.js
 
-Skipping file on parse failure: registry/<FILENAME>.json (SyntaxError: Expected double-quoted property name in JSON at position 1474 (line 16 column 5))
-
-F30FF4FC936584574EE3251833688C2EDC08CD38 {
-  src: 'dist/F30FF4FC936584574EE3251833688C2EDC08CD38.json',
-  schema: true,
-  keyVersion: false,
-  filename: true
-}
-
-99BB608E30380C451952D6BBA1C7E813F160A407 {
-  src: 'dist/99BB608E30380C451952D6BBA1C7E813F160A407.json',
-  schema: true,
-  keyVersion: true,
-  filename: true
-}
-...
+[registry/F30FF4FC936584574EE3251833688C2EDC08CD38.json] SCHEMA [
+  {
+    instanceLocation: '#',
+    keyword: 'properties',
+    keywordLocation: '#/properties',
+    error: 'Property "refs" does not match schema.'
+  },
+  {
+    instanceLocation: '#/refs',
+    keyword: 'items',
+    keywordLocation: '#/properties/refs/items',
+    error: 'Items did not match schema.'
+  },
+  {
+    instanceLocation: '#/refs/0',
+    keyword: 'properties',
+    keywordLocation: '#/properties/refs/items/properties',
+    error: 'Property "type" does not match schema.'
+  },
+  {
+    instanceLocation: '#/refs/0/type',
+    keyword: 'enum',
+    keywordLocation: '#/properties/refs/items/properties/type/enum',
+    error: 'Instance does not match any of ["role","user","key","sig1","sig2","sig3","csp"].'
+  }
+]
 ```
-<sup>†</sup>Newlines and spacing added for readability.
+**Note:** Running SIG3 on the command line is typically reserved for developers and key introducers. Users simply looking to inspect key references (as key verifiers) should instead use the main web application at https://sig3.dev/.
+
+**Disclaimer:** In the case where no validation errors are encountered (as in the above contrived example), no further output will be displayed, but exit status can be verified by evaluating `$?` immediately following program runtime.
+
+```shell
+~/sig3$ npm run build
+
+> sig3@1.0.0 build
+> node index.js
+
+~/sig3$ echo $?
+0
+```
 
 ## Contributing
 1. Familiarize yourself with the resources provided in the Standards section above
