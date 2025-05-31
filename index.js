@@ -265,6 +265,6 @@ fs.readdir(REGISTRY_BASE, (err, files) => {
     });
 
     IDX.end();
-});
 
-process.exit(CI_EXIT_STATUS);
+    process.exit(CI_EXIT_STATUS);
+});
