@@ -93,10 +93,16 @@ found 0 vulnerabilities
 ```
 
 ## Contributing
-1. Familiarize yourself with the resources provided in the Standards section above
-2. Refer to the [identity registry](/registry/) for existing evidence submissions (see also [schema](/SCHEMA.md))
-3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository
-4. Create a new pull request to submit evidence for a new or existing digital identity
+1. Familiarize yourself with the resources provided in the Standards section above.
+2. Review the included documentation to ensure alignment with evidence admission expectations:
+   - [Key Research Practice](/docs/key-research.md)
+   - [Registry Schema](/SCHEMA.md)
+   - [Identity References](/REFS.md)
+2. Optionally refer to the [registry](/registry/) for existing submissions that have been accepted; but do not copy and paste!
+3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository.
+4. [Create a new pull request](https://github.com/mattborja/sig3/new/master/registry) to submit evidence for a new key.
+
+Experienced contributors are also permitted to amend *existing* keys with additional attestation evidence, with the caveat of being made subject to a more strict review process necessary to enforce evidence integrity.
 
 ## Guidelines & Recommendations
 - **Show Your Support!** If the amount of evidence for a given key is satisfactory for your purposes, please consider enclosing your signed copy of the public key in the Pull Request description itself (not as a file commit). Remember to use `gpg --ask-cert-level` for specifying your personal assurance level (up through `sig 3`) when certifying a public key.

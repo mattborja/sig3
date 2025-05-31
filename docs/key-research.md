@@ -1,4 +1,4 @@
-# Key Research
+# Key Research Practice (SIG3)
 Copyright (c) 2025 Matt Borja
 
 ## Abstract
