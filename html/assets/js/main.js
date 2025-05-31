@@ -21,6 +21,7 @@ function regexEscape(string) {
 }
 
 function renderKeyDetails(json) {
+  const FIELD_SORT_ORDER = ['date', 'type', 'comment', 'url', 'artifact'];
   const $targets = $('[data-sig3]');
 
   $targets.each((i, e) => {
@@ -52,14 +53,9 @@ function renderKeyDetails(json) {
            const cols = rows.map(r => Object.keys(r))
                             .flat()
                             .filter((val, i, stack) => stack.indexOf(val) === i)
-                            .sort((a, b) => {
-                               const order = ['date', 'type', 'comment', 'url', 'artifact'];
-                               
-                               return order.indexOf(a) - order.indexOf(b);
-                             });
+                            .sort((a, b) => FIELD_SORT_ORDER.indexOf(a) - FIELD_SORT_ORDER.indexOf(b));
            
-           const $table = $('<table />').addClass('table table-sm').appendTo($e);
-           
+           const $table = $e;
            const $thead = $('<thead />').appendTo($table);
            const $theadRow = $('<tr />').appendTo($thead);
            cols.forEach(c => {
