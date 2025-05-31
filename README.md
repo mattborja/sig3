@@ -1,6 +1,6 @@
 # SIG3: High Identity Assurance Registry
 
-$${{\colorbox{black}{\color{ffc000}TLP:AMBER+STRICT}}}$$
+$${\color{ffc000}TLP:AMBER+STRICT}$$
 ```
 This repository contains information that can be shared amongst technical
 professionals (e.g., developers, system administrators, security experts),
