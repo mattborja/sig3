@@ -126,7 +126,7 @@ The Code Owners of this project recognize the substantial research, development,
 ## License
 This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
 
-## Donations
-The following methods are currently supported for receiving donations:
-- Email money transfer (e.g., PayPal, Zelle, etc.) to the maintainer's email address shown in the UID output of: `gpg --list-keys A1C7E813F160A407`
-- Bitcoin address (static): `bc1q69f987tgm59haz9n2nycfhka4z3czy30vm8nhz`
+## Support this project
+Please consider supporting this project via the **Sponsor** buttons associated with this repository.
+
+[Learn more about GitHub Sponsors](https://github.com/sponsors)
