@@ -5,9 +5,9 @@
 [![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333&color=222&logo=github&logoColor=fff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
 
 ## Purpose
-To support critical infrastructure needs with an auditable and authoritative registry of digital identify proofs in accordance with industry guidelines and recommendations.
+A Rapid Identity Assessment (RIA) directory and framework to support critical infrastructure integrity and supply chain security with a strong set (global web of trust) of verifiable identity proofs in accordance with industry standards and guidelines.
 
-> *Why is it called "SIG3?"* — In seeking alignment with IAL3 in NIST SP 800-63A, we're making every effort to do [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html).
+*Why is it called "SIG3?"* - Because we're doing [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) these days.
 
 ## Scope
 The below tables acknowledge important objectives in this space, while also clarifying which are considered to be **in-scope** vs. **out-of-scope** based on a number of factors, including but not limited to time, effort, resource availability, etc.
