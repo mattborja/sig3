@@ -11,9 +11,8 @@ This document demonstrates methodologies for corroborating key validity through 
 
 **Open Source (OSS).**
 
-## Research Cases
-### Node.js
-#### Inferrence of Domain
+## Research Case: Node.js
+### Inferrence of Domain
 Node.js is a widely used JavaScript runtime, commonly found in high performing server-side applications, serverless APIs, microservices, and cloud-based development environments. Because of its widespread industry adoption in production environments, an official website must be publicly available for the general audience to access and download the runtime from. The de facto mode of discovery of said website will be through the use of also widely accepted search engines, such as Google, Bing, DuckDuckGo, etc.
 
 **Result:**
@@ -25,7 +24,7 @@ Reputation: +0
 Chain: SEA
 ```
 
-#### PKI Verification
+### PKI Verification
 Given the implementation and requirements of the `https://` protocol, users are expected to carefully examine the certificate presented by the server to determine if it meets their expectations ([RFC 2818, § 3.1](https://www.rfc-editor.org/rfc/rfc2818#section-3.1)).
 
 This can be done in the terminal using the `openssl s_client` command to observe that the certificate is [Domain Validated by Sectigo Limited](https://www.sectigo.com/ssl-certificates-tls/dv-domain-validation), a Certificate Authority and Lifecycle Management platform in use by a number of other high profile businesses:
@@ -111,7 +110,7 @@ Reputation: +10
 Chain: SEA+PKI
 ```
 
-#### Inferrence of GPG Source
+### Inferrence of GPG Source
 Borrowing from `Domain Validation` trust, it is both common and expected to find GPG sources involved in the cryptographic signing of artifacts that provide assurance to the user communities of the integrity and origin of released software. Therefore, public keys will typically be found on or in close connection to the same page where downloads are published.
 
 Linear navigation sequence:
@@ -131,11 +130,52 @@ Reputation: +1
 Chain: SEA+PKI+OSS
 ```
 
-#### Fingerprint Corroboration
-Noting the discovery of release signing keys has only been built on a singular chain of trust to this point (`SEA+PKI+OSS`), additional research is preferred to begin corroborating evidence with other external sources.
+### Fingerprint Corroboration
+Noting the discovery of release signing keys has only been built on a singular chain of trust to this point (`SEA+PKI+OSS`), external corroborating sources should be researched and triaged to produce a more complete snapshot of the key, including but not limited to:
 
-Additional sources include, but are not limited to:
 - Forums
 - Blogs
 - Mailing lists
 - Archives
+
+One way to begin researching external sources is to first take inventory of current (e.g., recently used) signing keys and scour the web for their external references:
+
+```shell
+$ curl -s https://nodejs.org/dist/v24.1.0/SHASUMS256.txt.sig | gpg --list-packets
+# off=0 ctb=89 tag=2 hlen=3 plen=563
+:signature packet: algo 1, keyid 21D900FFDB233756
+        version 4, created 1747841356, md5len 0, sigclass 0x00
+        digest algo 8, begin of digest 03 95
+        hashed subpkt 33 len 21 (issuer fpr v4 C0D6248439F1D5604AAFFB4021D900FFDB233756)
+        hashed subpkt 2 len 4 (sig created 2025-05-21)
+        subpkt 16 len 8 (issuer key ID 21D900FFDB233756)
+        data: [4096 bits]
+```
+
+**Result:**
+```yaml
+Yield: Latest signer key ID (21D900FFDB233756)
+Method: GPG
+Authority: Domain Validation (nodejs.org)
+Reputation: +0
+Chain: SEA+PKI+OSS+GPG
+```
+
+
+#### Source Directory: SIG3
+Host to an increasing volume of shared research, the [SIG3 project](https://sig3.dev/) serves as an ideal starting point for Rapid Identity Assessment (RIA) of submitted keys.
+
+**Example:** **https://sig3.dev/#fpr=21D900FFDB233756**
+
+By policy and schema enforcement, keys listed with SIG3 are accompanied by a collection of external references (`$.refs[N]`). For each reference listed (`R`), verifiers are equipped with the added knowledge of autonomous, third party sources demonstrating independent attestations of the key under assessment, including but not limited to the owner's activity, community acknowledgment, and the purview of intelligence and information sharing communities.
+
+**Result:**
+```yaml
+Yield: Key references for signer ($.refs[N])
+Method: SIG3
+Authority: External references listed
+Reputation: +(R x N)
+Chain: SIG3+(R x N)
+```
+
+**Disclaimer.** Not all fingerprints are immediately available or complete and ready for querying. If you find a key ID to be missing and have corresponding evidence to submit, please consider contributing a new [SIG3-compliant JSON file](https://github.com/mattborja/sig3/blob/master/SCHEMA.md) to the registry by [forking the repository](https://github.com/mattborja/sig3/new/master/registry/) and submitting a pull request.
