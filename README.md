@@ -1,7 +1,8 @@
 # SIG3: High Identity Assurance Registry
 
-$${\color{ffc000}TLP:AMBER+STRICT}$$
 ```
+TLP:AMBER+STRICT
+
 This repository contains information that can be shared amongst technical
 professionals (e.g., developers, system administrators, security experts),
 but is subject to strict handling requirements. Access, interaction, or
@@ -18,6 +19,7 @@ informed decisions about trusting key identities. Users are encouraged to
 be mindful of their actions and the potential implications of sharing or
 using this information.
 ```
+
 ---
 
 [![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/ci.yml?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/ci.yml)
