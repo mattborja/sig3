@@ -4,16 +4,19 @@ The included [**schema**](/schema.json) in this repository defines the acceptabl
 > [!NOTE]
 > Use an online schema validator like [JSONSchema.dev](https://jsonschema.dev/) to prepare a schema-valid JSON submission for a new identity assertion!
 
+## Format
+- JSON document should use 2-space identation
+
 ## Fields
 
 The following table summarizes the top-level properties of the schema:
 
 | Key           | Description                                                      | Example Value                                              |
 |---------------|------------------------------------------------------------------|------------------------------------------------------------|
-| `fingerprint` | The GPG key fingerprint associated with the identity assertion. | `259A55407DD6C00299E6607EFFDE55BE73A2D1ED`                |
+| `fingerprint` | The GPG key fingerprint associated with the identity assertion.  | `259A55407DD6C00299E6607EFFDE55BE73A2D1ED`                 |
 | `label`       | The name or title of the key holder.                             | `Jeremy Long`                                              |
-| `refs`        | An array of references supporting the identity claim.           | See "Refs" section below.                                  |
-| `tags`        | An array of tags categorizing the identity assertion.           | `["OWASP", "Software Developer"]`                       |
+| `refs`        | An array of references supporting the identity claim.            | See "Refs" section below.                                  |
+| `tags`        | An array of tags categorizing the identity assertion.            | `["OWASP", "Software Developer", "Username"]`              |
 
 ## Extended Properties
 
@@ -55,13 +58,13 @@ The `refs` property contains an array of reference objects that support the iden
 
 The `tags` property is an array of strings representing categories or roles associated with the identity assertion.
 
-| Key | Description                                       | Example Value               |
-|-----|---------------------------------------------------|-----------------------------|
-| -   | A tag categorizing the identity assertion.        | `"OWASP"`, `"Developer"` |
+| Key | Description                                       | Example Value                          |
+|-----|---------------------------------------------------|----------------------------------------|
+| -   | A tag categorizing the identity assertion.        | `"OWASP"`, `"Developer"`, `"username"` |
 
 **Full Example of `tags` Collection:**
 ```json
-["OWASP", "Software Developer"]
+["OWASP", "Software Developer", "jeremylong"]
 ```
 
 ## JSON Example
