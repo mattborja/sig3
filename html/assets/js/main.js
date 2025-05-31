@@ -192,7 +192,7 @@ function renderKeyDetails(json) {
           const resultsModal = new bootstrap.Modal('#results-modal');
           const modalBody = $('#results-modal .modal-body').empty();
 
-          const intro = $('<p><strong>Multiple entries found!</strong></p><p>Please highlight and copy a fingerprint or UID from the list below to refine your search with:</p>').appendTo(modalBody);
+          const intro = $('<p><strong>Multiple entries found!</strong></p><p>Please click on the fingerprint you wish to view or refine your search with the UID information from the list below:</p>').appendTo(modalBody);
 
           const table = $('<table />').addClass('table table-hover table-striped').appendTo(modalBody);
           const thead = $('<thead />').appendTo(table);
@@ -201,9 +201,12 @@ function renderKeyDetails(json) {
           const tbody = $('<tbody />').addClass('table-group-divider').appendTo(table);
 
           results.forEach(e => {
+            const $fpr = $('<a />').attr('href', `?fpr=${encodeURIComponent(e.fpr)}`)
+                                   .text(e.fpr);
+
             $('<tr />')
               .append(
-                $('<td />').text(e.fpr)
+                $('<td />').append($fpr)
               )
               .append(
                 $('<td />').text(e.label)
@@ -262,13 +265,13 @@ function renderKeyDetails(json) {
         // Invoke $form.submit() if valid FPR is requested via hash
         // Depends on engine.idx
         (function (){
-          const FPR_REGEX = /^#fpr=([0-9A-F]+)$/;
+          const FPR_REGEX = /(\?|&)fpr=([0-9A-F]+)([A-F0-9]{32}|[A-F0-9]{40}|[A-F0-9]{64})/; 
 
-          const match = window.location.hash.match(FPR_REGEX);
+          const match = window.location.search.match(FPR_REGEX);
           if (!match)
             return;
 
-          $query.val(match[1]);
+          $query.val(`${match[2]}${match[3]}`);
           $form.submit();
         })();
       });

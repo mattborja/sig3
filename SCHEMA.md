@@ -1,4 +1,4 @@
-# Schema
+# Registry Schema
 The included [**schema**](/schema.json) in this repository defines the acceptable structure for identity assertions in the registry. Each identity is associated with a unique GPG key fingerprint and must include key proofs (evidence) to support the identity claim. This section details the necessary requirements for satisfying the minimum schema validation requirements.
 
 > [!NOTE]
