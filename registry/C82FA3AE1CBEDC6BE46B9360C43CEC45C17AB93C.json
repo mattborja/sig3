@@ -1,0 +1,26 @@
+{
+  "fingerprint": "C82FA3AE1CBEDC6BE46B9360C43CEC45C17AB93C",
+  "label": "Richard Lau",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/richardlau.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2020-07-20",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/1b6565b13c0eaa96416f09972acf89a6d8e18cfd",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "richardlau"
+  ]
+}

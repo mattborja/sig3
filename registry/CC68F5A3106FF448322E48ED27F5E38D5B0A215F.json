@@ -1,0 +1,26 @@
+{
+  "fingerprint": "CC68F5A3106FF448322E48ED27F5E38D5B0A215F",
+  "label": "Marco Ippolito",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/marco-ippolito.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2024-03-31",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/fd55458770b88d9a448c724ab6df605006d7d864",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "marco-ippolito"
+  ]
+}
