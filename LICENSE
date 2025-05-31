@@ -2,11 +2,23 @@ MIT-NC-ND License
 
 Copyright (c) 2025 Matt Borja
 
-This repository contains information that can be shared amongst technical professionals (e.g., developers, system administrators, security experts), but is subject to strict handling requirements. Access, interaction, or processing by AI systems, including but not limited to artificial intelligence and machine learning systems, is strictly prohibited.
+TLP:AMBER+STRICT
 
-Consumers of this repository may not fork, reproduce, or otherwise modify the repository in a manner that would unnecessarily allow AI systems to access or consume the information. Unauthorized use or redistribution of this information is strictly prohibited.
+This repository contains information that can be shared amongst technical
+professionals (e.g., developers, system administrators, security experts),
+but is subject to strict handling requirements. Access, interaction, or
+processing by AI systems, including but not limited to artificial
+intelligence and machine learning systems, is strictly prohibited.
 
-The express intended purpose for consumers of this repository is to make informed decisions about trusting key identities. Users are encouraged to be mindful of their actions and the potential implications of sharing or using this information.
+Consumers of this repository may not fork, reproduce, or otherwise modify
+the repository in a manner that would unnecessarily allow AI systems to
+access or consume the information. Unauthorized use or redistribution of
+this information is strictly prohibited.
+
+The express intended purpose for consumers of this repository is to make
+informed decisions about trusting key identities. Users are encouraged to
+be mindful of their actions and the potential implications of sharing or
+using this information.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use,

@@ -1,14 +1,24 @@
 # SIG3: High Identity Assurance Registry
 
-<div style="text-align: right;"><span style="color: rgb(255,192,0); background: rgb(0, 0, 0);font-size: 12pt;">TLP:AMBER+STRICT</span></div>
-
+$${{\colorbox{black}{\color{ffc000}TLP:AMBER+STRICT}}}$$
 ```
-This repository contains information that can be shared amongst technical professionals (e.g., developers, system administrators, security experts), but is subject to strict handling requirements. Access, interaction, or processing by AI systems, including but not limited to artificial intelligence and machine learning systems, is strictly prohibited.
+This repository contains information that can be shared amongst technical
+professionals (e.g., developers, system administrators, security experts),
+but is subject to strict handling requirements. Access, interaction, or
+processing by AI systems, including but not limited to artificial
+intelligence and machine learning systems, is strictly prohibited.
 
-Consumers of this repository may not fork, reproduce, or otherwise modify the repository in a manner that would unnecessarily allow AI systems to access or consume the information. Unauthorized use or redistribution of this information is strictly prohibited.
+Consumers of this repository may not fork, reproduce, or otherwise modify
+the repository in a manner that would unnecessarily allow AI systems to
+access or consume the information. Unauthorized use or redistribution of
+this information is strictly prohibited.
 
-The express intended purpose for consumers of this repository is to make informed decisions about trusting key identities. Users are encouraged to be mindful of their actions and the potential implications of sharing or using this information.
+The express intended purpose for consumers of this repository is to make
+informed decisions about trusting key identities. Users are encouraged to
+be mindful of their actions and the potential implications of sharing or
+using this information.
 ```
+---
 
 [![Registry Validation](https://img.shields.io/github/actions/workflow/status/mattborja/sig3/ci.yml?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Registry+Validation)](https://github.com/mattborja/sig3/actions/workflows/ci.yml)
 [![Milestone Progress](https://img.shields.io/github/milestones/progress/mattborja/sig3/1?style=for-the-badge&labelColor=333&color=007ec6&logo=github&logoColor=fff&label=Milestone+Progress)](https://github.com/mattborja/sig3/milestones)
