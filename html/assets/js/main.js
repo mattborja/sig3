@@ -192,7 +192,7 @@ function renderKeyDetails(json) {
           const resultsModal = new bootstrap.Modal('#results-modal');
           const modalBody = $('#results-modal .modal-body').empty();
 
-          const intro = $('<p><strong>Multiple entries found!</strong></p><p>Please highlight and copy a fingerprint or UID from the list below to refine your search with:</p>').appendTo(modalBody);
+          const intro = $('<p><strong>Multiple entries found!</strong></p><p>Please click on the fingerprint you wish to view or refine your search with the UID information from the list below:</p>').appendTo(modalBody);
 
           const table = $('<table />').addClass('table table-hover table-striped').appendTo(modalBody);
           const thead = $('<thead />').appendTo(table);
@@ -201,9 +201,12 @@ function renderKeyDetails(json) {
           const tbody = $('<tbody />').addClass('table-group-divider').appendTo(table);
 
           results.forEach(e => {
+            const $fpr = $('<a />').attr('href', `?fpr=${encodeURIComponent(e.fpr)}`)
+                                   .text(e.fpr);
+
             $('<tr />')
               .append(
-                $('<td />').text(e.fpr)
+                $('<td />').append($fpr)
               )
               .append(
                 $('<td />').text(e.label)
