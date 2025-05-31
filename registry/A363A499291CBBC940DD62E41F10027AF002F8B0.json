@@ -1,0 +1,26 @@
+{
+  "fingerprint": "A363A499291CBBC940DD62E41F10027AF002F8B0",
+  "label": "Ulises Gascón",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/UlisesGascon.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2023-09-07",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/b3c4f663287ffbe4c473ba5e194b0c9d4e4936f8",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "UlisesGascon"
+  ]
+}

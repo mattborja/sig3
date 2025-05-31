@@ -1,0 +1,26 @@
+{
+  "fingerprint": "C0D6248439F1D5604AAFFB4021D900FFDB233756",
+  "label": "Antoine du Hamel",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/aduh95.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2024-10-10",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/d62075566125455dafa2e84cd41373676cb7e158",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "aduh95"
+  ]
+}

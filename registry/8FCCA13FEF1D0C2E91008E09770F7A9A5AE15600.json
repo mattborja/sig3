@@ -1,0 +1,26 @@
+{
+  "fingerprint": "8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600",
+  "label": "Michaël Zasso",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/targos.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2018-06-08",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/55e597d30658d34388eaeb2248b87ad76b338dff",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "targos"
+  ]
+}

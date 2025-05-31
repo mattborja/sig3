@@ -1,0 +1,26 @@
+{
+  "fingerprint": "890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4",
+  "label": "Rafael Gonzaga",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/RafaelGSS.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2022-05-20",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/fbee0a896c4a42f7ffbf2dc11b2877641a8568f4",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "RafaelGSS"
+  ]
+}

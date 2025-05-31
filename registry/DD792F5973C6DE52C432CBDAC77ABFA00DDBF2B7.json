@@ -1,0 +1,28 @@
+{
+  "fingerprint": "DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7",
+  "label": "Juan José Arboleda",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2023-03-05",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/0b9cf6fbeccf5c02a59b0908628d3e506ecd2485",
+      "type": "role"
+    },
+    {
+      "date": "2023-03-09",
+      "comment": "Key owner's GitHub account referenced by contributor and technical steering committee member @BethGriggs",
+      "url": "https://github.com/nodejs/release-keys/issues/23#issuecomment-1462936104",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "juanarbol"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "fingerprint": "108F52B48DB57BB0CC439B2997B01419BD92F80A",
+  "label": "Ruy Adorno",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2020-08-05",
+      "comment": "Listed as GPG owner authorized to create and sign releases for Node.js",
+      "url": "https://github.com/nodejs/node/commit/96fd6810b697aa0ec9d090c010f25f139f3995c7",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Node.js",
+    "ruyadorno"
+  ]
+}
