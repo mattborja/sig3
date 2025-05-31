@@ -239,4 +239,16 @@ function renderKeyDetails(json) {
                 alert(e);
             });
     });
+
+    // Invoke $form.submit() if valid FPR is requested via hash
+    (function (){
+      const FPR_REGEX = /^#fpr=([0-9A-F]+)$/;
+
+      const match = window.location.hash.match(FPR_REGEX);
+      if (!match)
+        return;
+
+      $query.val(match[1]);
+      $form.submit();
+    })();
 })();
