@@ -20,7 +20,12 @@ function regexEscape(string) {
     : string;
 }
 
+function friendlyDate(dt) {
+  return (new Date(dt)).toDateString();
+}
+
 function renderKeyDetails(json) {
+  const FIELD_SORT_ORDER = ['date', 'type', 'comment', 'url', 'artifact'];
   const $targets = $('[data-sig3]');
 
   $targets.each((i, e) => {
@@ -28,6 +33,8 @@ function renderKeyDetails(json) {
      
      const val = $e.data('sig3');
      const parts = val.split(':');
+
+     const fieldIdNotUnique = val;
      
      if (parts.length === 1) {
         const k = parts[0];
@@ -46,20 +53,81 @@ function renderKeyDetails(json) {
            $e.text(v.join(', '));
            return;
         }
+
+        // Combines .list-group-item rendering with .accordion-flush
+        if (mode === 'accordion-fixed') {
+          const items = v;
+
+          const $accordion = $e;
+          const accordionId = $accordion.attr('id');
+
+          items.forEach((e, i) => {
+            const item = items[i];
+            const panelId = `accordion-${k}-panel-${i}`;
+
+            const $accordionItem = $('<div />').addClass('accordion-item').appendTo($accordion);
+            const $accordionHeader = $('<h2 />').addClass('accordion-header').appendTo($accordionItem);
+            const $accordionHeaderButton = $('<button />').addClass('accordion-button collapsed text-uppercase')
+                                                          .attr('type', 'button')
+                                                          .data('bs-toggle', 'collapse')
+                                                          .data('bs-target', `#${panelId}`)
+                                                          .attr('aria-expanded', 'false')
+                                                          .attr('aria-controls', panelId)
+                                                          .text(`Exhibit #${i+1}: ${item.type}`)
+                                                          .appendTo($accordionHeader);
+
+            const $accordionPanel = $('<div />').addClass('accordion-collapse collapse')
+                                                .attr('id', panelId)
+                                                // .data('bs-parent', `#${accordionId}`)
+                                                .appendTo($accordionItem);
+
+            // Must be re-invoked if DOM has already loaded Bootstrap bindings
+            const $collapse = new bootstrap.Collapse($accordionPanel, { toggle: false });
+            $accordionHeaderButton.click(e => {
+              $collapse.toggle();
+            })
+            
+            const $accordionPanelBody = $('<div />').addClass('accordion-body')
+                                                    .appendTo($accordionPanel);
+            
+            const $table = $('<table />').addClass('table')
+                                         .appendTo($accordionPanelBody);
+            const $tbody = $('<tbody />').appendTo($table);
+
+            Object.keys(item).forEach(label => {
+              const $tr = $('<tr />').appendTo($tbody);
+              const $th = $('<th />').text(label).appendTo($tr);
+              const $td = $('<td />').appendTo($tr);
+
+              switch (label) {
+                case 'artifact':
+                  const $pre = $('<pre />').text(item[label]).appendTo($td);
+                  break;
+                
+                case 'date':
+                  $td.text(friendlyDate(item[label]));
+                  break;
+                
+                case 'url':
+                  const $a = $('<a />').attr('target', '_blank').attr('href', item[label]).text(item[label]).appendTo($td);
+                  break;
+
+                default:
+                  $td.text(item[label]);
+                  break;
+              }
+            });
+          });
+        }
         
         if (mode === 'table') {
            const rows = v;
            const cols = rows.map(r => Object.keys(r))
                             .flat()
                             .filter((val, i, stack) => stack.indexOf(val) === i)
-                            .sort((a, b) => {
-                               const order = ['date', 'type', 'comment', 'url', 'artifact'];
-                               
-                               return order.indexOf(a) - order.indexOf(b);
-                             });
+                            .sort((a, b) => FIELD_SORT_ORDER.indexOf(a) - FIELD_SORT_ORDER.indexOf(b));
            
-           const $table = $('<table />').addClass('table table-sm').appendTo($e);
-           
+           const $table = $e;
            const $thead = $('<thead />').appendTo($table);
            const $theadRow = $('<tr />').appendTo($thead);
            cols.forEach(c => {

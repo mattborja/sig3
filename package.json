@@ -5,7 +5,8 @@
   "description": "SIG3: High identity assurance registry to support critical infrastructure integrity with independent GPG identity verifications in accordance with industry guidelines and recommendations.",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js"
+    "build": "node index.js",
+    "server": "node index.js; cp -R ./dist html/; echo [!] Firefox recommended for local testing; python3 -m http.server -d ./html"
   },
   "repository": {
     "type": "git",
