@@ -99,22 +99,35 @@ function renderKeyDetails(json) {
               const $th = $('<th />').text(label).appendTo($tr);
               const $td = $('<td />').appendTo($tr);
 
-              switch (label) {
-                case 'artifact':
-                  const $pre = $('<pre />').text(item[label]).appendTo($td);
-                  break;
-                
-                case 'date':
-                  $td.text(friendlyDate(item[label]));
-                  break;
-                
-                case 'url':
-                  const $a = $('<a />').attr('target', '_blank').attr('href', item[label]).text(item[label]).appendTo($td);
-                  break;
+              function _render(label, e) {
+                switch (label) {
+                  case 'artifact':
+                    return $('<pre />').text(e);
+                    break;
+                  
+                  case 'date':
+                    return friendlyDate(e);
+                    break;
+                  
+                  case 'url':
+                    return $('<a />').attr('target', '_blank').attr('href', e).text(e);
+                    break;
+  
+                  default:
+                    return $('<span />').text(e);
+                    break;
+                }
+              }
 
-                default:
-                  $td.text(item[label]);
-                  break;
+              // Support value arrays (e.g., url[])
+              if (Array.isArray(item[label])) {
+                item[label].forEach(e => {
+                  $('<div />').html(_render(label, e)).appendTo($td);
+                })
+              }
+              else
+              {
+                $('<div />').html(_render(label, item[label])).appendTo($td);
               }
             });
           });
