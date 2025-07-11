@@ -20,34 +20,8 @@ function regexEscape(string) {
     : string;
 }
 
-// Source: https://stackoverflow.com/a/7641812/901156
 function friendlyDate(dt) {
-  let delta = Math.round((+new Date - dt) / 1000);
-
-  let minute = 60,
-      hour = minute * 60,
-      day = hour * 24,
-      week = day * 7;
-
-  let fuzzy;
-
-  if (delta < 30) {
-      fuzzy = 'just then.';
-  } else if (delta < minute) {
-      fuzzy = delta + ' seconds ago.';
-  } else if (delta < 2 * minute) {
-      fuzzy = 'a minute ago.'
-  } else if (delta < hour) {
-      fuzzy = Math.floor(delta / minute) + ' minutes ago.';
-  } else if (Math.floor(delta / hour) == 1) {
-      fuzzy = '1 hour ago.'
-  } else if (delta < day) {
-      fuzzy = Math.floor(delta / hour) + ' hours ago.';
-  } else if (delta < day * 2) {
-      fuzzy = 'yesterday';
-  }
-
-  return fuzzy;
+  return (new Date(dt)).toDateString();
 }
 
 function renderKeyDetails(json) {
@@ -81,51 +55,68 @@ function renderKeyDetails(json) {
         }
 
         // Combines .list-group-item rendering with .accordion-flush
-        // Disclaimer: Fixed field implementation
         if (mode === 'accordion-fixed') {
           const items = v;
 
           const $accordion = $e;
+          const accordionId = $accordion.attr('id');
+
           items.forEach((e, i) => {
             const item = items[i];
-            const panelId = `${fieldIdNotUnique}-panel-${i}`;
+            const panelId = `accordion-${k}-panel-${i}`;
 
             const $accordionItem = $('<div />').addClass('accordion-item').appendTo($accordion);
             const $accordionHeader = $('<h2 />').addClass('accordion-header').appendTo($accordionItem);
-            const $accordionHeaderButton = $('<button />').addClass('accordion-button collapsed')
+            const $accordionHeaderButton = $('<button />').addClass('accordion-button collapsed text-uppercase')
                                                           .attr('type', 'button')
                                                           .data('bs-toggle', 'collapse')
                                                           .data('bs-target', `#${panelId}`)
                                                           .attr('aria-expanded', 'false')
                                                           .attr('aria-controls', panelId)
-                                                          .text(`Exhibit #${i+1}`)
+                                                          .text(`Exhibit #${i+1}: ${item.type}`)
                                                           .appendTo($accordionHeader);
+
             const $accordionPanel = $('<div />').addClass('accordion-collapse collapse')
                                                 .attr('id', panelId)
+                                                // .data('bs-parent', `#${accordionId}`)
                                                 .appendTo($accordionItem);
+
+            // Must be re-invoked if DOM has already loaded Bootstrap bindings
+            const $collapse = new bootstrap.Collapse($accordionPanel, { toggle: false });
+            $accordionHeaderButton.click(e => {
+              $collapse.toggle();
+            })
             
             const $accordionPanelBody = $('<div />').addClass('accordion-body')
                                                     .appendTo($accordionPanel);
-
-            const $listGroupItem = $('<a />').addClass('list-group-item list-group-item-action')
-                                             .appendTo($accordionPanelBody);
-
-            const $listGroupItemHeader = $('<div />').addClass('d-flex justify-content-between')
-                                                     .appendTo($listGroupItem);
-
-            const $listGroupItemHeaderHeadnig = $('<h5 />').addClass('mb-1')
-                                                           .text(item.type)
-                                                           .appendTo($listGroupItemHeader);
-
-            const $listGroupItemHeaderDate = $('<small />').addClass('text-body-secondary')
-                                                           .text(friendlyDate(item.date))
-                                                           .appendTo($listGroupItemHeader);
             
-            const $listGroupItemBodyMain = $('<p />').addClass('mb-3')
-                                                     .text(item.comment)
-                                                     .appendTo($listGroupItem);
-            
-            // TODO: $listGroupItemBodyMeta[url, artifact, ...]
+            const $table = $('<table />').addClass('table')
+                                         .appendTo($accordionPanelBody);
+            const $tbody = $('<tbody />').appendTo($table);
+
+            Object.keys(item).forEach(label => {
+              const $tr = $('<tr />').appendTo($tbody);
+              const $th = $('<th />').text(label).appendTo($tr);
+              const $td = $('<td />').appendTo($tr);
+
+              switch (label) {
+                case 'artifact':
+                  const $pre = $('<pre />').text(item[label]).appendTo($td);
+                  break;
+                
+                case 'date':
+                  $td.text(friendlyDate(item[label]));
+                  break;
+                
+                case 'url':
+                  const $a = $('<a />').attr('target', '_blank').attr('href', item[label]).text(item[label]).appendTo($td);
+                  break;
+
+                default:
+                  $td.text(item[label]);
+                  break;
+              }
+            });
           });
         }
         
