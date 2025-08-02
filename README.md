@@ -48,6 +48,9 @@ The below tables acknowledge important objectives in this space, while also clar
 
 | Out-of-Scope Objectives | Workaround |
 |:---|:---|
+| Acting key server | Public keys and their collection of signatures should be made available for download via URL and referenced via the `sources` property as defined in the registry schema |
+| Public key validation | Public keys must be downloaded (merged if multiple listed) by the client separately and validated against the fingerprint and evidences provided by the registry |
+| Mitigating correlations between cross-signed keys | Public key holders should discern whether it is in the best interest of their privacy and the privacy of others to publish their certifications together with their public key |
 | Owner verification of the email address listed with the claimed identity | A *clearsigned* message received from the listed email address using the corresponding private key (see also [/REFS.md#gpg-signature](/REFS.md#gpg-signature)) |
 
 ## Standards
