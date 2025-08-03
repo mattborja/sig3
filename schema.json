@@ -19,7 +19,6 @@
       "items": {
         "type": "object",
         "properties": {
-
           "type": {
             "type": "string",
             "enum": [
@@ -34,6 +33,12 @@
             "type": "string",
             "pattern": "^(https://|hkps://)",
             "description": "The typed resource URI which a client can use to fetch and validate a copy of the public key indicated in the fingerprint field"
+          },
+
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the indicated public key source was found (YYYY-MM-DD)"
           }
         },
         "required": [
@@ -54,7 +59,7 @@
           "date": {
             "type": "string",
             "format": "date",
-            "description": "The date when the verification or cross-signing took place, in YYYY-MM-DD format."
+            "description": "The date when the verification or cross-signing took place (YYYY-MM-DD)"
           },
           "comment": {
             "type": "string",
