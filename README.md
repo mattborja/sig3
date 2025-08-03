@@ -104,7 +104,7 @@ found 0 vulnerabilities
     instanceLocation: '#/refs/0/type',
     keyword: 'enum',
     keywordLocation: '#/properties/refs/items/properties/type/enum',
-    error: 'Instance does not match any of ["role","user","key","sig1","sig2","sig3","csp"].'
+    error: 'Instance does not match any of ["role","user","key","csp","introducer"].'
   }
 ]
 ```

@@ -93,13 +93,10 @@
               "role",
               "user",
               "key",
-              "sig1",
-              "sig2",
-              "sig3",
               "csp",
               "introducer"
             ],
-            "description": "The type of verification indicated by the evidence provided: role base association (role), self-attestation (user), private key use (key), certified by another key holder (sig1, sig2, sig3), certified by a Credential Service Provider (CSP), stronger role based association demonstrating higher ownertrust confidence (introducer)"
+            "description": "The type of verification indicated by the evidence provided: role base association (role), self-attestation (user), private key use (key), certified by a Credential Service Provider (CSP), stronger role based association demonstrating higher ownertrust confidence (introducer)"
           }
         },
         "required": [
