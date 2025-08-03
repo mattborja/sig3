@@ -32,7 +32,7 @@ using this information.
 [![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333&color=222&logo=github&logoColor=fff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
 
 ## Purpose
-A Rapid Identity Assurance Level (RIAL) framework aimed at producing `sig 3` level assurances for most keys through a continuously delivered and readily available registry of identity proofs.
+A Rapid Identity Assurance Level (RIAL) framework aimed at producing `sig 3` level assurance for most keys through a rigorously vetted, continuously delivered, and readily available registry of identity proofs.
 
 ```console
 $ gpg --ask-cert-level --edit-key "$KEYID"
@@ -75,7 +75,7 @@ The below tables acknowledge important objectives in this space, while also clar
 
 | Out-of-Scope Objectives | Workaround |
 |:---|:---|
-| Certify key validating or ownertrust | While it is the goal of this project to produce only `sig 3` equivalent assurance, it is ultimately the client's responsibility (per [Disclaimer of Warranty](LICENSE.md)) to determine whether the supporting identity proofs provided by the registry is satisfactory for adoption |
+| Certify key validity or ownertrust | While it is the goal of this project to produce only `sig 3` equivalent assurance, it is ultimately the client's responsibility (per [Disclaimer of Warranty](LICENSE)) to determine whether the supporting identity proofs provided by the registry is satisfactory for adoption |
 | Acting key server | Public keys and their collection of signatures should be made available for download via URL and referenced via the `sources` property as defined in the registry schema |
 | Public key validation | Public keys must be downloaded (merged if multiple listed) by the client separately and validated against the fingerprint and evidences provided by the registry |
 | Mitigating correlations between cross-signed keys | Public key holders should discern whether it is in the best interest of their privacy and the privacy of others to publish their certifications together with their public key |
