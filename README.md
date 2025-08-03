@@ -1,9 +1,7 @@
 # SIG3: High Identity Assurance Registry
-> [!WARNING]
+> [!NOTE]
 > On August 1, 2025, Revision 4 of NIST SP 800-63 was [released](https://www.nist.gov/blogs/cybersecurity-insights/lets-get-digital-updated-digital-identity-guidelines-are-here), said to contain "many substantial content changes to the entire suite of documents."
-> Further work on SIG3 is being suspended until the new set of documents can be assimilated and determined to either have this project's continual support and alignment as intended, or supersession altogether.
-> No part of this notice is to be construed as a suspension or relinquishment of any licenses or restrictions placed on this project or repository, nor the conclusion of this project.
-
+> These updated documents should be reviewed thoroughly for applicability, esp. as it peetains to the adoption of this registry.
 ```
 TLP:AMBER+STRICT
 
