@@ -1,6 +1,12 @@
 {
   "fingerprint": "115DF9AEF857853EE8445D0A0727707EA15B79CC",
   "label": "Fedora CoreOS Signing Key",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://fedoraproject.org/fedora.gpg"
+    }
+  ],
   "refs": [
     {
       "date": "2024-10-19",
@@ -10,9 +16,10 @@
     },
     {
       "date": "2025-01-28",
-      "comment": "Vendor instructions for verifying GPG keys listing signing keys and OPENPGPKEY records (Fedora 40)",
-      "type": "role",
-      "url": "https://fedoraproject.org/security"
+      "comment": "Each stable RPM package published by the Fedora Project is signed with a GPG signature. By default, dnf and the graphical update tools will verify these signatures and refuse to install any packages that are not signed or have bad signatures. These signatures ensure that the packages you install are what was produced by the Fedora Project and have not been altered (accidentally or maliciously) by any mirror or website that is providing the packages.",
+      "type": "verify",
+      "url": "https://fedoraproject.org/security",
+      "snapshot": "https://web.archive.org/web/20250803065520/https://fedoraproject.org/security/"
     },
     {
       "date": "2025-01-28",
