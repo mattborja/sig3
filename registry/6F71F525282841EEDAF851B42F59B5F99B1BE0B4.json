@@ -1,17 +1,19 @@
 {
   "fingerprint": "6F71F525282841EEDAF851B42F59B5F99B1BE0B4",
   "label": "NodeSource",
+  "sources": [
+    {
+      "date": "2024-12-14",
+      "comment": "Public key source from the NodeSource repository.",
+      "uri": "https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key",
+      "type": "url"
+    }
+  ],
   "refs": [
     {
       "date": "2024-12-14",
       "comment": "SANS SEC540 (first acknowledgment of this key)",
       "type": "user"
-    },
-    {
-      "date": "2024-12-14",
-      "comment": "Public key source from the NodeSource repository.",
-      "url": "https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key",
-      "type": "key"
     },
     {
       "date": "2025-02-06",

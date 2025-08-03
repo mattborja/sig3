@@ -1,6 +1,13 @@
 {
   "fingerprint": "259A55407DD6C00299E6607EFFDE55BE73A2D1ED",
   "label": "Jeremy Long",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://github.com/jeremylong.gpg",
+      "date": "2024-10-29"
+    }
+  ],
   "refs": [
     {
       "date": "2024-10-28",
@@ -31,12 +38,6 @@
       "comment": "Independent verification of contribution activity and community involvement (open source)",
       "url": "https://github.com/jeremylong",
       "type": "role"
-    },
-    {
-      "date": "2024-10-29",
-      "comment": "Independent verification of GPG key fingerprint hosted at GitHub username (jeremylong)",
-      "url": "https://github.com/jeremylong.gpg",
-      "type": "user"
     },
     {
       "date": "2024-10-29",

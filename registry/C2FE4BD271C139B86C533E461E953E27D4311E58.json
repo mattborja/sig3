@@ -1,10 +1,17 @@
 {
   "fingerprint": "C2FE4BD271C139B86C533E461E953E27D4311E58",
   "label": "Chris Lamb",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=C2FE4BD271C139B86C533E461E953E27D4311E58",
+      "date": "2025-08-03"
+    }
+  ],
   "refs": [
     {
       "date": "2024-10-14",
-      "comment": "Debian Developer since 2008",
+      "comment": "Member listing on Debian Member Portfolio Service (since 2008)",
       "type": "role",
       "url": "https://portfolio.debian.net/result?email=lamby%40debian.org"
     },
