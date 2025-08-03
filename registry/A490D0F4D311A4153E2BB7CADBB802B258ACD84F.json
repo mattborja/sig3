@@ -1,6 +1,13 @@
 {
   "fingerprint": "A490D0F4D311A4153E2BB7CADBB802B258ACD84F",
   "label": "Tails OS Signing Key",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://tails.net/tails-signing.key",
+      "date": "2025-08-03"
+    }
+  ],
   "refs": [
     {
       "date": "2024-10-14",
@@ -10,7 +17,7 @@
     },
     {
       "date": "2024-10-14",
-      "comment": "Cross-signed by C2FE4BD271C139B86C533E461E953E27D4311E58",
+      "comment": "Cross-signed by former Debian Project Leader Chris Lamb (C2FE4BD271C139B86C533E461E953E27D4311E58)",
       "type": "role",
       "url": "https://tails.net/install/expert/index.en.html#verify-key"
     }

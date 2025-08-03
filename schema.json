@@ -7,10 +7,12 @@
       "pattern": "^([A-F0-9]{32}|[A-F0-9]{40}|[A-F0-9]{64})$",
       "description": "Valid GPG fingerprint length (128-bit v3, 160-bit v4, or 256-bit v6), uppercased"
     },
+    
     "label": {
       "type": "string",
       "description": "The label or name associated with the individual or entity, typically matching the name on the GPG key."
     },
+
     "sources": {
       "type": "array",
       "minItems": 1,
@@ -21,13 +23,27 @@
             "type": "string",
             "enum": [
               "url",
-              "hkps"
+              "hkps",
+              "wkd"
             ],
-            "description": "The URI type of the source provided: url (web address), hkps (secure HTTP key server)"
+            "description": "The URI type of the source provided: url (web address), hkps (secure HTTP key server), wkd (web key directory)"
           },
+
           "uri": {
             "type": "string",
-            "description": "The URI of the source, which can be a URL or a copy of the PGP key block with newline characters escaped (see also bin/keyblock-oneline.sh)."
+            "pattern": "^(https://|hkps://)",
+            "description": "The typed resource URI which a client can use to fetch and validate a copy of the public key indicated in the fingerprint field"
+          },
+
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the indicated public key source was found (YYYY-MM-DD)"
+          },
+
+          "comment": {
+            "type": "string",
+            "description": "A brief description of the indicated public key source"
           }
         },
         "required": [
@@ -36,7 +52,7 @@
         ],
         "additionalProperties": false
       },
-      "description": "A list of sources providing the key or related information, which can be a URL or a copy of key data with newline characters escaped (see also bin/keyblock-oneline.sh)."
+      "description": "A list of typed resource URIs which a client can use to fetch and validate a copy of the public key indicated in the fingerprint field"
     },
     "refs": {
       "type": "array",
@@ -48,7 +64,7 @@
           "date": {
             "type": "string",
             "format": "date",
-            "description": "The date when the verification or cross-signing took place, in YYYY-MM-DD format."
+            "description": "The date when the verification or cross-signing took place (YYYY-MM-DD)"
           },
           "comment": {
             "type": "string",
@@ -87,12 +103,10 @@
               "role",
               "user",
               "key",
-              "sig1",
-              "sig2",
-              "sig3",
-              "csp"
+              "csp",
+              "introducer"
             ],
-            "description": "The type of verification indicated by the evidence provided: project affiliation (role), self-attestation (user), private key use (key), certified by another key holder (sig1, sig2, sig3), certified by a Credential Service Provider (CSP)"
+            "description": "The type of verification indicated by the evidence provided: role base association (role), self-attestation (user), private key use (key), certified by a Credential Service Provider (CSP), stronger role based association demonstrating higher ownertrust confidence (introducer)"
           }
         },
         "required": [
@@ -117,6 +131,7 @@
   "required": [
     "fingerprint",
     "label",
+    "sources",
     "refs"
   ],
   "additionalProperties": false

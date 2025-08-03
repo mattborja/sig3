@@ -1,22 +1,28 @@
 {
   "fingerprint": "843938DF228D22F7B3742BC0D94AA3F0EFE21092",
   "label": "Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com",
+      "date": "2025-08-03"
+    },
+    {
+      "type": "url",
+      "uri": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x843938df228d22f7b3742bc0d94aa3f0efe21092",
+      "date": "2025-08-03"
+    }
+  ],
   "refs": [
     {
       "date": "2024-10-14",
-      "comment": "Official Ubuntu documentation on verifying ISO images",
-      "type": "role",
-      "url": "https://help.ubuntu.com/community/VerifyIsoHowto"
+      "comment": "Instructions for verifying Ubuntu downloads accompanied by full length fingerprint shown listed alongside 0x46181433FBB75451",
+      "type": "introducer",
+      "url": "https://web.archive.org/web/20250803155653/https://ubuntu.com/tutorials/how-to-verify-ubuntu#4-retrieve-the-correct-signature-key"
     },
     {
       "date": "2025-01-06",
-      "comment": "Example in tutorial documentation on ubuntu.com using production signing key",
-      "type": "role",
-      "url": "https://ubuntu.com/tutorials/how-to-verify-ubuntu#4-retrieve-the-correct-signature-key"
-    },
-    {
-      "date": "2025-01-06",
-      "comment": "Reference to key ID in post by trusted entity 'system' on official Ubuntu Discourse",
+      "comment": "Instructions for verifying Ubuntu downloads posted under Ubuntu Community Hub system account bearing Discourse Trust Level 4 (Leader)",
       "type": "role",
       "url": "https://discourse.ubuntu.com/t/how-to-verify-your-ubuntu-download/14010"
     },

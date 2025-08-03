@@ -1,9 +1,7 @@
 # SIG3: High Identity Assurance Registry
-> [!WARNING]
+> [!NOTE]
 > On August 1, 2025, Revision 4 of NIST SP 800-63 was [released](https://www.nist.gov/blogs/cybersecurity-insights/lets-get-digital-updated-digital-identity-guidelines-are-here), said to contain "many substantial content changes to the entire suite of documents."
-> Further work on SIG3 is being suspended until the new set of documents can be assimilated and determined to either have this project's continual support and alignment as intended, or supersession altogether.
-> No part of this notice is to be construed as a suspension or relinquishment of any licenses or restrictions placed on this project or repository, nor the conclusion of this project.
-
+> These updated documents should be reviewed thoroughly for applicability, esp. as it pertains to the adoption of this registry.
 ```
 TLP:AMBER+STRICT
 
@@ -32,9 +30,36 @@ using this information.
 [![Last Activity](https://img.shields.io/github/last-commit/mattborja/sig3?style=for-the-badge&labelColor=333&color=222&logo=github&logoColor=fff&label=Last+Activity)](https://github.com/mattborja/sig3/pulse)
 
 ## Purpose
-A Rapid Identity Assessment (RIA) directory and framework to support critical infrastructure integrity and supply chain security with a strong set (global web of trust) of verifiable identity proofs in accordance with industry standards and guidelines.
+A Rapid Identity Assurance Level (RIAL) framework aimed at producing `sig 3` level assurance for most keys through a rigorously vetted, continuously delivered, and readily available registry of identity proofs.
 
-*Why is it called "SIG3?"* - Because we're doing [*very careful checking*](https://lists.gnupg.org/pipermail/gnupg-users/2004-July/022910.html) these days.
+```console
+$ gpg --ask-cert-level --edit-key "$KEYID"
+
+gpg> sign
+
+How carefully have you verified the key you are about to sign actually belongs
+to the person named above?
+
+"0" means you make no particular claim as to how carefully you verified the
+    key.
+
+"1" means you believe the key is owned by the person who claims to own it
+    but you could not, or did not verify the key at all.  This is useful for
+    a "persona" verification, where you sign the key of a pseudonymous user.
+
+"2" means you did casual verification of the key.  For example, this could
+    mean that you verified the key fingerprint and checked the user ID on the
+    key against a photo ID.
+
+"3" means you did extensive verification of the key.  For example, this could
+    mean that you verified the key fingerprint with the owner of the key in
+    person, and that you checked, by means of a hard to forge document with a
+    photo ID (such as a passport) that the name of the key owner matches the
+    name in the user ID on the key, and finally that you verified (by exchange
+    of email) that the email address on the key belongs to the key owner.
+
+Your selection? (enter '?' for more information): 3
+```
 
 ## Scope
 The below tables acknowledge important objectives in this space, while also clarifying which are considered to be **in-scope** vs. **out-of-scope** based on a number of factors, including but not limited to time, effort, resource availability, etc.
@@ -48,6 +73,10 @@ The below tables acknowledge important objectives in this space, while also clar
 
 | Out-of-Scope Objectives | Workaround |
 |:---|:---|
+| Certify key validity or ownertrust | While it is the goal of this project to produce only `sig 3` equivalent assurance, it is ultimately the client's responsibility (per [Disclaimer of Warranty](LICENSE)) to determine whether the supporting identity proofs provided by the registry is satisfactory for adoption |
+| Acting key server | Public keys and their collection of signatures should be made available for download via URL and referenced via the `sources` property as defined in the registry schema |
+| Public key validation | Public keys must be downloaded (merged if multiple listed) by the client separately and validated against the fingerprint and evidences provided by the registry |
+| Mitigating correlations between cross-signed keys | Public key holders should discern whether it is in the best interest of their privacy and the privacy of others to publish their certifications together with their public key |
 | Owner verification of the email address listed with the claimed identity | A *clearsigned* message received from the listed email address using the corresponding private key (see also [/REFS.md#gpg-signature](/REFS.md#gpg-signature)) |
 
 ## Standards
@@ -101,7 +130,7 @@ found 0 vulnerabilities
     instanceLocation: '#/refs/0/type',
     keyword: 'enum',
     keywordLocation: '#/properties/refs/items/properties/type/enum',
-    error: 'Instance does not match any of ["role","user","key","sig1","sig2","sig3","csp"].'
+    error: 'Instance does not match any of ["role","user","key","csp","introducer"].'
   }
 ]
 ```

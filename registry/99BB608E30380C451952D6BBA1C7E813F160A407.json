@@ -1,6 +1,12 @@
 {
   "fingerprint": "99BB608E30380C451952D6BBA1C7E813F160A407",
   "label": "Matt Borja",
+  "sources": [
+    {
+      "type": "url",
+      "uri": "https://github.com/mattborja.gpg"
+    }
+  ],
   "refs": [
     {
       "date": "2024-11-27",
