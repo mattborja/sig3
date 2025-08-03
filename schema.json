@@ -39,6 +39,11 @@
             "type": "string",
             "format": "date",
             "description": "The date when the indicated public key source was found (YYYY-MM-DD)"
+          },
+
+          "comment": {
+            "type": "string",
+            "description": "A brief description of the indicated public key source"
           }
         },
         "required": [
