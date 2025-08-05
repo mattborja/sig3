@@ -43,7 +43,7 @@
       "date": "2025-07-12",
       "comment": "Valid signature posted to public mailing list in security update: [SECURITY] [DLA 4240-1] redis security update",
       "url": "https://lists.debian.org/debian-lts-announce/2025/07/msg00003.html",
-      "role": "key"
+      "type": "key"
     }
   ],
   "tags": [
