@@ -1,0 +1,90 @@
+{
+  "fingerprint": "0482D84022F52DF1C4E7CD43293ACD0907D9495A",
+  "label": "Natanael Copa",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com",
+      "date": "2025-08-18"
+    },
+    {
+      "type": "url",
+      "uri": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0482D84022F52DF1C4E7CD43293ACD0907D9495A",
+      "date": "2025-08-18"
+    },
+    {
+      "type": "url",
+      "uri": "https://web.archive.org/web/20250722151739/https://alpinelinux.org/keys/ncopa.asc",
+      "date": "2025-07-22"
+    },
+    {
+      "type": "url",
+      "uri": "https://keybase.io/ncopa/pgp_keys.asc?fingerprint=0482d84022f52df1c4e7cd43293acd0907d9495a",
+      "date": "2015-07-15"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-07-23",
+      "comment": "Internet Archive snapshot of download page presenting full-length fingerprint (0482 D840 22F5 2DF1 C4E7 CD43 293A CD09 07D9 495A) with link to public key and signed releases",
+      "url": "https://web.archive.org/web/20250723193534/https://alpinelinux.org/downloads/",
+      "type": "role"
+    },
+    {
+      "date": "2025-07-23",
+      "comment": "Verified GPG signature release bearing public key fingerprint",
+      "url": [
+        "https://web.archive.org/web/20250723193534/https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/aarch64/alpine-rpi-3.22.1-aarch64.tar.gz.asc",
+        "https://web.archive.org/web/20250723193534/https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/aarch64/alpine-rpi-3.22.1-aarch64.tar.gz"
+      ],
+      "type": "key"
+    },
+    {
+      "date": "2025-08-18",
+      "comment": "Internet Archive snapshot of trusted wildcard domain certificate used by download page",
+      "url": "https://web.archive.org/web/20250819063743/https://www.ssllabs.com/ssltest/analyze.html?d=alpinelinux.org&s=213.219.36.190&hideResults=on",
+      "type": "role"
+    },
+    {
+      "date": "2025-07-15",
+      "comment": "Claimed ownership of GitHub account @ncopa in connection with public key fingerprint",
+      "url": "https://keybase.io/ncopa/sigchain#2be91813c4518b8774ad940cf238b3dfaa33d2676f3554334e5a47f572b82f3c0f",
+      "type": "user"
+    },
+    {
+      "date": "2025-07-15",
+      "comment": "Claimed ownership of GitHub account @ncopa in connection with public key fingerprint",
+      "url": "https://keybase.io/ncopa/sigchain#2be91813c4518b8774ad940cf238b3dfaa33d2676f3554334e5a47f572b82f3c0f",
+      "type": "user"
+    },
+    {
+      "date": "2025-08-18",
+      "comment": "Clear involvement of GitHub account @ncopa in Alpine Linux project via alpinelinux/aports repository commits",
+      "url": "https://github.com/alpinelinux/aports/commits?author=ncopa",
+      "type": "role"
+    },
+    {
+      "date": "2020-01-09",
+      "comment": "Demonstrated ownership of alpinelinux.org via https",
+      "url": "https://keybase.io/ncopa/sigchain#c70a4a2a0efd3c79810117cfb08bd6d5eb47ce1a97632b2076b5c3d90fe558930f",
+      "type": "role"
+    },
+    {
+      "date": "2020-01-09",
+      "comment": "Demonstrated ownership of alpinelinux.org via DNS",
+      "url": "https://keybase.io/ncopa/sigchain#ff19fea760a3c8cba9edc34e969bb3f236a4c01e49ed72abe146bba4016776a80f",
+      "type": "role"
+    },
+    {
+      "date": "2025-08-19",
+      "comment": "Keybase profile (ncopa)",
+      "url": "https://keybase.io/ncopa",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Alpine",
+    "Alpline Linux",
+    "ncopa"
+  ]
+}
