@@ -52,12 +52,6 @@
       "type": "user"
     },
     {
-      "date": "2025-07-15",
-      "comment": "Claimed ownership of GitHub account @ncopa in connection with public key fingerprint",
-      "url": "https://keybase.io/ncopa/sigchain#2be91813c4518b8774ad940cf238b3dfaa33d2676f3554334e5a47f572b82f3c0f",
-      "type": "user"
-    },
-    {
       "date": "2025-08-18",
       "comment": "Clear involvement of GitHub account @ncopa in Alpine Linux project via alpinelinux/aports repository commits",
       "url": "https://github.com/alpinelinux/aports/commits?author=ncopa",
