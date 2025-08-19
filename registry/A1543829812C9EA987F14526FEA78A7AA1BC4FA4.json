@@ -1,0 +1,50 @@
+{
+  "fingerprint": "A1543829812C9EA987F14526FEA78A7AA1BC4FA4",
+  "label": "David M. Shaw",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com",
+      "date": "2025-08-18"
+    },
+    {
+      "type": "url",
+      "uri": "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xA1543829812C9EA987F14526FEA78A7AA1BC4FA4",
+      "date": "2025-08-18"
+    },
+    {
+      "type": "url",
+      "uri": "https://web.archive.org/web/20240221203250/https://github.com/dmshaw/paperkey?tab=readme-ov-file#copyright",
+      "date": "2024-02-21"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-07-15",
+      "comment": "Internet Archive snapshot of support and download page citing primary key ID (0x99242560) and link to GitHub (@dmshaw)",
+      "url": "https://web.archive.org/web/20250715151547/https://www.jabberwocky.com/software/paperkey/",
+      "type": "role"
+    },
+    {
+      "date": "2002-06-08",
+      "comment": "Internet Archive snapshot of early interest in PGP and links to old PGP key",
+      "url": "https://web.archive.org/web/20020608211031/http://www.cs.jhu.edu/~dshaw/computer/",
+      "type": "role"
+    },
+    {
+      "date": "2024-02-21",
+      "comment": "Internet Archive snapshot of repository README containing hard copy of primary key used to sign releases",
+      "url": "https://web.archive.org/web/20240221203250/https://github.com/dmshaw/paperkey",
+      "type": "role"
+    },
+    {
+      "date": "2024-02-21",
+      "comment": "Internet Archive snapshot of latest signed release (paperkey-1.6) bearing fingerprint",
+      "url": "https://web.archive.org/web/20240221203250/https://github.com/dmshaw/paperkey/releases",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "Paperkey"
+  ]
+}
