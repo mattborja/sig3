@@ -85,9 +85,123 @@ The following resources are considered applicable and relevant to the orientatio
 - [Key validity and owner trust (GnuPG)](https://www.gnupg.org/gph/en/manual/x334.html)
 
 ## Getting Started
-> [!NOTE]  
-> Visit the **SIG3** key search application at https://sig3.dev/
+To get started:
+1. Familiarize yourself with the resources provided in the Standards section above.
+2. Review the included documentation to ensure alignment with evidence admission expectations:
+   - [Key Research Practice](/docs/key-research.md)
+   - [Registry Schema](/SCHEMA.md)
+   - [Identity References](/REFS.md)
+2. Optionally refer to the [registry](/registry/) for existing submissions that have been accepted; but do not copy and paste!
+3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository.
+4. [Create a new pull request](https://github.com/mattborja/sig3/new/master/registry) to submit evidence for a new key.
 
+Experienced contributors are also permitted to amend *existing* keys with additional attestation evidence, with the caveat of being made subject to a more strict review process necessary to enforce evidence integrity.
+
+### Example
+Use the following reference entry to provide yourself with the minimum set of requirements:
+```json
+{
+  "fingerprint": "54C3DD610D9D1B4AF82A37758738CD6B956F460C",
+  "label": "Raspberry Pi Downloads Signing Key",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "keyserver.ubuntu.com"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-20",
+      "comment": "Valid GPG signature bearing public key fingerprint",
+      "url": [
+        "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-05-13/2025-05-13-raspios-bookworm-arm64.img.xz.sig",
+        "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-05-13/2025-05-13-raspios-bookworm-arm64.img.xz"
+      ],
+      "type": "key"
+    }
+  ],
+  "tags": [
+    "raspbian",
+    "raspberry"
+  ]
+}
+```
+
+**Definitions**
+| fingerprint | The full-length fingerprint of the public key                               |
+|-------------|-----------------------------------------------------------------------------|
+| label       | The UID of the public key                                                   |
+| sources     | A list of typed URIs for downloading the public key                         |
+| refs        | A list of typed and timestamped references proving key validity (ownership) |
+
+### Sources
+An easy way to discover a public key source is to use the built-in support for known keyservers (using **hkps://**).
+
+```console
+$ gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 54C3DD610D9D1B4AF82A37758738CD6B956F460C
+gpg: key 8738CD6B956F460C: public key "Raspberry Pi Downloads Signing Key" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+```
+
+If import from **hkps://keyserver.ubuntu.com** is successful, you may add this to the list of `sources` for this entry as follows:
+
+```json
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "keyserver.ubuntu.com"
+    }
+  ]
+```
+
+Additional sources should be provided for redundancy.
+
+### References
+A simple but important reference to always include is recent evidence of public key use (typed as `key`). Include the URIs of both signature and the file itself that was signed. Wherever possible, **Internet Archive URLs** are preferred for long-term availability.
+
+Avoid linking large downloads: use the smallest, most recent download available with an accompanying signature (e.g., **imager_1.9.4_amd64.deb** at 54M is also signed, but preferred over **2025-05-13-raspios-bookworm-arm64-full.img.xz** at 3.0G).
+
+```console
+$ wget https://downloads.raspberrypi.com/imager/imager_1.9.4_amd64.deb
+$ wget https://downloads.raspberrypi.com/imager/imager_1.9.4_amd64.deb.sig
+
+$ gpg --verify imager_1.9.4_amd64.deb.sig imager_1.9.4_amd64.deb
+gpg: Signature made Thu Jun  5 15:02:04 2025 UTC
+gpg:                using RSA key 54C3DD610D9D1B4AF82A37758738CD6B956F460C
+gpg: Good signature from "Raspberry Pi Downloads Signing Key" [unknown]
+...
+```
+
+Despite the trusted signature warning, signature verification of the download itself still constitutes a valid reference as it adequately demonstrates private key ownership and should be added as shown below:
+
+```json
+  "refs": [
+    {
+      "date": "2025-08-20",
+      "comment": "Valid GPG signature bearing public key fingerprint",
+      "url": [
+        "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-05-13/2025-05-13-raspios-bookworm-arm64.img.xz.sig",
+        "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-05-13/2025-05-13-raspios-bookworm-arm64.img.xz"
+      ],
+      "type": "key"
+    }
+  ]
+```
+
+Additional references should be added to further strengthen the validity of this public key.
+
+### Tags
+To facilitate key searching, please provide only relevant keywords in the tags collection. Keywords listed here will surface this entry when using the search application at https://sig3.dev/
+
+```json
+  "tags": [
+    "raspbian",
+    "raspberry"
+  ]
+```
+
+## Tests
 
 To run your own tests, clone the repository, install any missing dependencies and run the `build` command:
 ```shell
@@ -147,18 +261,6 @@ found 0 vulnerabilities
 ~/sig3$ echo $?
 0
 ```
-
-## Contributing
-1. Familiarize yourself with the resources provided in the Standards section above.
-2. Review the included documentation to ensure alignment with evidence admission expectations:
-   - [Key Research Practice](/docs/key-research.md)
-   - [Registry Schema](/SCHEMA.md)
-   - [Identity References](/REFS.md)
-2. Optionally refer to the [registry](/registry/) for existing submissions that have been accepted; but do not copy and paste!
-3. Review all [contributing policies](/COMPLIANCE.md) in effect on this repository.
-4. [Create a new pull request](https://github.com/mattborja/sig3/new/master/registry) to submit evidence for a new key.
-
-Experienced contributors are also permitted to amend *existing* keys with additional attestation evidence, with the caveat of being made subject to a more strict review process necessary to enforce evidence integrity.
 
 ## Guidelines & Recommendations
 - **Show Your Support!** If the amount of evidence for a given key is satisfactory for your purposes, please consider enclosing your signed copy of the public key in the Pull Request description itself (not as a file commit). Remember to use `gpg --ask-cert-level` for specifying your personal assurance level (up through `sig 3`) when certifying a public key.

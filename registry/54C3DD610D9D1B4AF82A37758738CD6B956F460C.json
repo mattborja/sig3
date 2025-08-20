@@ -1,0 +1,37 @@
+{
+  "fingerprint": "54C3DD610D9D1B4AF82A37758738CD6B956F460C",
+  "label": "Raspberry Pi Downloads Signing Key",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-20",
+      "comment": "Valid GPG signature bearing public key fingerprint",
+      "url": [
+        "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-05-13/2025-05-13-raspios-bookworm-arm64.img.xz.sig",
+        "https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-05-13/2025-05-13-raspios-bookworm-arm64.img.xz"
+      ],
+      "type": "key"
+    },
+    {
+      "date": "2021-04-03",
+      "comment": "Public key acknowledgment by forum moderator (ShiftPlusOne)",
+      "url": "https://forums.raspberrypi.com/viewtopic.php?t=308681",
+      "type": "role"
+    },
+    {
+      "date": "2025-06-12",
+      "comment": "Public key acknowledgment by Linux Handbook author (Sylvain Leroux)",
+      "url": "https://web.archive.org/web/20250612160231/https://linuxhandbook.com/raspberry-pi-headless-setup/",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "raspbian",
+    "raspberry"
+  ]
+}
