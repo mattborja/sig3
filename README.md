@@ -106,7 +106,7 @@ Use the following reference entry to provide yourself with the minimum set of re
   "sources": [
     {
       "type": "hkps",
-      "uri": "keyserver.ubuntu.com"
+      "uri": "hkps://keyserver.ubuntu.com"
     }
   ],
   "refs": [
