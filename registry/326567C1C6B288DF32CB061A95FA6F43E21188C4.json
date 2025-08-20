@@ -1,0 +1,29 @@
+{
+  "fingerprint": "326567C1C6B288DF32CB061A95FA6F43E21188C4",
+  "label": "Arduino Packages <support@arduino.cc>",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2017-03-22",
+      "comment": "Valid GPG signature on clearsigned message bearing public key fingerprint by GitHub contributor @cmaglie",
+      "url": "https://github.com/arduino/Arduino/issues/5619#issuecomment-288436727",
+      "type": "key"
+    },
+    {
+      "date": "2017-03-24",
+      "comment": "Valid GPG signature on release bearing public key fingerprint from main GitHub account @arduino",
+      "url": [
+        "https://github.com/arduino/Arduino/releases/download/1.8.2/Arduino-1.8.2.tar.xz.sig",
+        "https://github.com/arduino/Arduino/releases/download/1.8.2/Arduino-1.8.2.tar.xz" 
+      ]
+    }
+  ],
+  "tags": [
+    "arduino"
+  ]
+}

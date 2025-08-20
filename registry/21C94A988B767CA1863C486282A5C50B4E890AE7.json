@@ -1,0 +1,31 @@
+{
+  "fingerprint": "21C94A988B767CA1863C486282A5C50B4E890AE7",
+  "label": "Christian Maglie",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com"
+    },
+    {
+      "type": "url",
+      "uri": "https://github.com/cmaglie.gpg"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2017-03-22",
+      "comment": "Offer of valid GPG signature on clearsigned message representing public key fingerprint on behalf of GitHub account @arduino",
+      "url": "https://github.com/arduino/Arduino/issues/5619#issuecomment-288436727",
+      "type": "key"
+    },
+    {
+      "date": "2025-05-04",
+      "comment": "Listed as organization member for Arduino",
+      "url": "https://web.archive.org/web/20250504131917/https://github.com/orgs/arduino/people"
+    }
+  ],
+  "tags": [
+    "cmaglie",
+    "arduino"
+  ]
+}
