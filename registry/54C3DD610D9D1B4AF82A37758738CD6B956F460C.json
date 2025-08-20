@@ -4,7 +4,7 @@
   "sources": [
     {
       "type": "hkps",
-      "uri": "keyserver.ubuntu.com"
+      "uri": "hkps://keyserver.ubuntu.com"
     }
   ],
   "refs": [
