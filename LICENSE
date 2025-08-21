@@ -1,4 +1,4 @@
-MIT-NC-ND License
+MIT-NR-ND License
 
 Copyright (c) 2025 Matt Borja
 
@@ -22,27 +22,28 @@ using this information.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use,
-copy, and distribute the Software **for personal, educational, research, or 
-auditing purposes**, subject to the following conditions:
+copy, and distribute the Software **for personal, educational, research
+auditing, or commercial purposes**, subject to the following conditions:
 
-1. **Non-Commercial Use Only**  
-   This Software may **not** be used for commercial purposes by any entity 
-   other than the original author without explicit written permission.  
+1. **No Resale**  
+   The Software may be used for commercial purposes, but it may **not** be resold,
+   sublicensed, or distributed as a standalone commercial product without explicit
+   written permission from the original author.
 
 2. **No Derivative Works**  
    You may **not** modify, adapt, or create derivative works based on this Software.
    Only the original author may create modifications or distribute altered versions.
 
 3. **Attribution Requirement**  
-   Any distribution of this Software must include this license and provide 
-   clear attribution to the original author.
+   Any distribution or use of this Software, including for commercial purposes, must
+   include this license and provide clear attribution to the original author.
 
 4. **Disclaimer of Warranty**  
    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-   PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-   HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION 
-   OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE 
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+   PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+   HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION
+   OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-For commercial use or permission to modify the Software, please contact the original author.
+For inquiries, please contact the original author.

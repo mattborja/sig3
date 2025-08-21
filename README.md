@@ -288,7 +288,7 @@ The Code Owners of this project recognize the substantial research, development,
 > *Wir nehmen Abschied von einem sicher geglaubten Freund, dem Fernmeldegeheimnis (Artikel 10 Grundgesetz), [18. Dezember 2015](https://lists.gnupg.org/pipermail/gnupg-users/2016-February/055173.html)*
 
 ## License
-This project is licensed under a custom [MIT-NC-ND License](/LICENSE).
+This project is licensed under a custom [MIT-NR-ND License](/LICENSE).
 
 ## Support this project
 Please consider supporting this project via the **Sponsor** buttons associated with this repository.
