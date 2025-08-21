@@ -1,0 +1,30 @@
+{
+  "fingerprint": "574CE6F6855CFDEB7D368E9D19796C2B3E4F7DF7",
+  "label": "Martin Roth (coreboot developer) <martin@coreboot.org>",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-21",
+      "comment": "Valid GPG signature bearing public key fingerprint",
+      "url": [
+        "https://coreboot.org/releases/coreboot-25.06.tar.xz.sig",
+        "https://coreboot.org/releases/coreboot-25.06.tar.xz"
+      ],
+      "type": "key"
+    },
+    {
+      "date": "2025-08-21",
+      "comment": "Listed fingerprint on downloads page",
+      "url": "https://coreboot.org/downloads.html",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "coreboot"
+  ]
+}
