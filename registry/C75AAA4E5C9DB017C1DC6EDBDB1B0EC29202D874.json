@@ -1,0 +1,21 @@
+{
+  "fingerprint": "C75AAA4E5C9DB017C1DC6EDBDB1B0EC29202D874",
+  "label": "Matt DeVillier <matt.devillier@gmail.com>",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-21",
+      "comment": "Listed fingerprint on downloads page",
+      "url": "https://coreboot.org/downloads.html",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "coreboot"
+  ]
+}

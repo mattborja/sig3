@@ -1,0 +1,21 @@
+{
+  "fingerprint": "7642F206B20B77DAEB5B611A53C88CBFBC4F65F3",
+  "label": "Angel Pons <th3fanbus@gmail.com>",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-21",
+      "comment": "Listed fingerprint on downloads page",
+      "url": "https://coreboot.org/downloads.html",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "coreboot"
+  ]
+}
