@@ -1,0 +1,21 @@
+{
+  "fingerprint": "1504DB83B93905F5160EB3FD86EB211649573F59",
+  "label": "Jason Glenesk (coreboot developer) <Jason.Glenesk@gmail.com>",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyserver.ubuntu.com"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-21",
+      "comment": "Listed fingerprint on downloads page",
+      "url": "https://coreboot.org/downloads.html",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "coreboot"
+  ]
+}
