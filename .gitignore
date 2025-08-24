@@ -1,5 +1,7 @@
 dist/
 cache/
+artifacts/
+
 SHA256SUMS.txt
 *.idx*
 
