@@ -47,6 +47,7 @@
     }
   ],
   "tags": [
-    "gpgtools"
+    "gpgtools",
+    "macgpg"
   ]
 }

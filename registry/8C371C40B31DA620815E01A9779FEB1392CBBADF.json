@@ -28,6 +28,7 @@
     }
   ],
   "tags": [
-    "gpgtools"
+    "gpgtools",
+    "macgpg"
   ]
 }
