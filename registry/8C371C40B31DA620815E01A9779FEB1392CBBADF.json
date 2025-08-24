@@ -1,0 +1,33 @@
+{
+  "fingerprint": "8C371C40B31DA620815E01A9779FEB1392CBBADF",
+  "label": "Steve (GPGTools)",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keys.openpgp.org"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2023-09-06",
+      "comment": "Knowledge Base article presenting primary key fingerprint from working keyserver in screenshots",
+      "url": "https://gpgtools.tenderapp.com/kb/gpg-keychain-faq/upload-and-verify-your-public-key",
+      "type": "role"
+    },
+    {
+      "date": "2019-06-19",
+      "comment": "Forum post showing system attribution of role SUPPORT STAFF to Steve (#1407340)",
+      "url": "https://gpgtools.tenderapp.com/discussions/problems/100465#comment_63661462",
+      "type": "role"
+    },
+    {
+      "date": "2013-10-30",
+      "comment": "Forum post from suport staff Steve (#1407340) claiming primary key fingerprint",
+      "url": "https://gpgtools.tenderapp.com/discussions/problems/12584#comment_29713775",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "gpgtools"
+  ]
+}
