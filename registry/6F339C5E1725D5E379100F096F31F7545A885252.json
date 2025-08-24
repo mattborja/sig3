@@ -1,0 +1,25 @@
+{
+  "fingerprint": "6F339C5E1725D5E379100F096F31F7545A885252",
+  "label": "Nicolas Dandrimont",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=6F339C5E1725D5E379100F096F31F7545A885252"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F78CBA07817BB149A11D339069F2FC516EA71993",
+  "label": "Sebastian Ramacher",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F78CBA07817BB149A11D339069F2FC516EA71993"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "419FB4B6567E6EF7DEAF80A09026108FB942BEA4",
+  "label": "Jonathan McDowell",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=419FB4B6567E6EF7DEAF80A09026108FB942BEA4"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

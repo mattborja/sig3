@@ -1,0 +1,25 @@
+{
+  "fingerprint": "6791403B68AE2690517C42EAE6FFF1E38DC968B0",
+  "label": "Marco d'Itri",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=6791403B68AE2690517C42EAE6FFF1E38DC968B0"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

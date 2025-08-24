@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F75FBFCD771DEB5E9C86050550C3634D3A291CF9",
+  "label": "Philipp Kern",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F75FBFCD771DEB5E9C86050550C3634D3A291CF9"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

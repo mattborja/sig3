@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2100A32C46F895AF3A08783AF6D3495BB0AE9A02",
+  "label": "Clint Adams",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2100A32C46F895AF3A08783AF6D3495BB0AE9A02"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

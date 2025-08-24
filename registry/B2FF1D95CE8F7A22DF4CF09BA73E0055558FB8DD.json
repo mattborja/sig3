@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B2FF1D95CE8F7A22DF4CF09BA73E0055558FB8DD",
+  "label": "Jan Dittberner",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B2FF1D95CE8F7A22DF4CF09BA73E0055558FB8DD"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

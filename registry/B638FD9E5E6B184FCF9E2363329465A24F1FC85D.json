@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B638FD9E5E6B184FCF9E2363329465A24F1FC85D",
+  "label": "Carsten Hey",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B638FD9E5E6B184FCF9E2363329465A24F1FC85D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

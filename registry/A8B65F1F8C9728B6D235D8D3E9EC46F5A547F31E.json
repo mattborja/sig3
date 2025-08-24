@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A8B65F1F8C9728B6D235D8D3E9EC46F5A547F31E",
+  "label": "Shih-Yuan Lee",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A8B65F1F8C9728B6D235D8D3E9EC46F5A547F31E"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

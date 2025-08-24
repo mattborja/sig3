@@ -1,0 +1,25 @@
+{
+  "fingerprint": "4762F1AE6F400841A52AD16D79B0C7A2CBD93B9E",
+  "label": "Vincent Sanders",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=4762F1AE6F400841A52AD16D79B0C7A2CBD93B9E"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

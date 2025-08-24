@@ -1,0 +1,25 @@
+{
+  "fingerprint": "71DDC5C6BE869A4641D779FEC7EA1BE1574DED5D",
+  "label": "Sruthi Chandran",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=71DDC5C6BE869A4641D779FEC7EA1BE1574DED5D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

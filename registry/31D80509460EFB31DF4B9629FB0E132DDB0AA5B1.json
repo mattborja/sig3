@@ -1,0 +1,25 @@
+{
+  "fingerprint": "31D80509460EFB31DF4B9629FB0E132DDB0AA5B1",
+  "label": "Daniel Lenharo de Souza",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=31D80509460EFB31DF4B9629FB0E132DDB0AA5B1"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

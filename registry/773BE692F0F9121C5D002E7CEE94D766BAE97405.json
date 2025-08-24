@@ -1,0 +1,25 @@
+{
+  "fingerprint": "773BE692F0F9121C5D002E7CEE94D766BAE97405",
+  "label": "Anupa Ann Joseph",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=773BE692F0F9121C5D002E7CEE94D766BAE97405"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

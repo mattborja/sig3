@@ -1,0 +1,25 @@
+{
+  "fingerprint": "D1E1316E93A760A8104D85FABB3A68018649AA06",
+  "label": "Gregor Herrmann",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=D1E1316E93A760A8104D85FABB3A68018649AA06"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

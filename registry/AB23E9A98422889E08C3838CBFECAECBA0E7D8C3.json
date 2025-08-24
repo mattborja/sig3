@@ -1,0 +1,25 @@
+{
+  "fingerprint": "AB23E9A98422889E08C3838CBFECAECBA0E7D8C3",
+  "label": "James Downing Page",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=AB23E9A98422889E08C3838CBFECAECBA0E7D8C3"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

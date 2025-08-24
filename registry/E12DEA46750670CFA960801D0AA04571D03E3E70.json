@@ -1,0 +1,25 @@
+{
+  "fingerprint": "E12DEA46750670CFA960801D0AA04571D03E3E70",
+  "label": "Rene Engelhard",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=E12DEA46750670CFA960801D0AA04571D03E3E70"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

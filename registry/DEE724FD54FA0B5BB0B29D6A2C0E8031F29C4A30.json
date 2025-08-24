@@ -1,0 +1,25 @@
+{
+  "fingerprint": "DEE724FD54FA0B5BB0B29D6A2C0E8031F29C4A30",
+  "label": "Mark Purcell",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=DEE724FD54FA0B5BB0B29D6A2C0E8031F29C4A30"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

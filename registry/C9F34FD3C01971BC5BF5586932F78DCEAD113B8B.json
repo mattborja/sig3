@@ -1,0 +1,25 @@
+{
+  "fingerprint": "C9F34FD3C01971BC5BF5586932F78DCEAD113B8B",
+  "label": "Paul Slootman",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=C9F34FD3C01971BC5BF5586932F78DCEAD113B8B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

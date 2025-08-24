@@ -1,0 +1,25 @@
+{
+  "fingerprint": "58E1222F9696C885A3CD104C5D328D082AAAB140",
+  "label": "Hideki Yamane",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=58E1222F9696C885A3CD104C5D328D082AAAB140"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

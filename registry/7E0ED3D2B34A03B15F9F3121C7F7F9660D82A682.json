@@ -1,0 +1,25 @@
+{
+  "fingerprint": "7E0ED3D2B34A03B15F9F3121C7F7F9660D82A682",
+  "label": "Laurent Bigonville",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=7E0ED3D2B34A03B15F9F3121C7F7F9660D82A682"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

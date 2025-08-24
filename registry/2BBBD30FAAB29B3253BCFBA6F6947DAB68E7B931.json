@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2BBBD30FAAB29B3253BCFBA6F6947DAB68E7B931",
+  "label": "Hannes von Haugwitz",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2BBBD30FAAB29B3253BCFBA6F6947DAB68E7B931"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

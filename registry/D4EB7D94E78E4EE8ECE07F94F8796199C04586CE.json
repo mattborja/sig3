@@ -1,0 +1,25 @@
+{
+  "fingerprint": "D4EB7D94E78E4EE8ECE07F94F8796199C04586CE",
+  "label": "Richard Laager",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=D4EB7D94E78E4EE8ECE07F94F8796199C04586CE"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

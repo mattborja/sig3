@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B60DB5994D39BEC4D1A95CCF7E6528DA752F1BE1",
+  "label": "Sylvestre Ledru",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B60DB5994D39BEC4D1A95CCF7E6528DA752F1BE1"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

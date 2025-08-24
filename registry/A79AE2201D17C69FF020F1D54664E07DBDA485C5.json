@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A79AE2201D17C69FF020F1D54664E07DBDA485C5",
+  "label": "Benjamin Barenblat",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A79AE2201D17C69FF020F1D54664E07DBDA485C5"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

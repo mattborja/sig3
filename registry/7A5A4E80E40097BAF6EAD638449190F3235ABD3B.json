@@ -1,0 +1,25 @@
+{
+  "fingerprint": "7A5A4E80E40097BAF6EAD638449190F3235ABD3B",
+  "label": "Brice Goglin",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=7A5A4E80E40097BAF6EAD638449190F3235ABD3B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

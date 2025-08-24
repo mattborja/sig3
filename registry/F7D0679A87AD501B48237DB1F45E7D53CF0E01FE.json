@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F7D0679A87AD501B48237DB1F45E7D53CF0E01FE",
+  "label": "Krzysztof Krzyzaniak",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F7D0679A87AD501B48237DB1F45E7D53CF0E01FE"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

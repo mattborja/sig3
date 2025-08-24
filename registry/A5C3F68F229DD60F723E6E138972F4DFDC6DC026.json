@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A5C3F68F229DD60F723E6E138972F4DFDC6DC026",
+  "label": "Kees Cook",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A5C3F68F229DD60F723E6E138972F4DFDC6DC026"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "5CE7510A8FBC0D4E72ABBA9B0C70557B5A06513E",
+  "label": "Jan Wagner",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=5CE7510A8FBC0D4E72ABBA9B0C70557B5A06513E"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "E7D0C6A75BEE6D84D638F60A3798AF15A1565658",
+  "label": "Matthijs Kooijman",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=E7D0C6A75BEE6D84D638F60A3798AF15A1565658"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

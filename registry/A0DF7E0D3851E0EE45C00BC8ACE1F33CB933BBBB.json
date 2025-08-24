@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A0DF7E0D3851E0EE45C00BC8ACE1F33CB933BBBB",
+  "label": "László Böszörményi",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A0DF7E0D3851E0EE45C00BC8ACE1F33CB933BBBB"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

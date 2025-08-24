@@ -1,0 +1,25 @@
+{
+  "fingerprint": "46D87F4F70492BCFE3587852B1A88A2FD52D3AF3",
+  "label": "John V. Belmonte",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=46D87F4F70492BCFE3587852B1A88A2FD52D3AF3"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

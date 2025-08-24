@@ -1,0 +1,25 @@
+{
+  "fingerprint": "3CCCC613C34F3D54718A983CEE887356CD2F16A0",
+  "label": "Sylvain Beucler",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=3CCCC613C34F3D54718A983CEE887356CD2F16A0"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

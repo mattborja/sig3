@@ -1,0 +1,25 @@
+{
+  "fingerprint": "E30154F5429FFBB9B22E49C2DA82830E3CCC3A3A",
+  "label": "Alexandre Viau",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=E30154F5429FFBB9B22E49C2DA82830E3CCC3A3A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

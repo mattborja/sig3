@@ -1,0 +1,25 @@
+{
+  "fingerprint": "ECE5B5BF952A3AEA92C137F9C9230A4849ACE0DB",
+  "label": "Molly de Blanc",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=ECE5B5BF952A3AEA92C137F9C9230A4849ACE0DB"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

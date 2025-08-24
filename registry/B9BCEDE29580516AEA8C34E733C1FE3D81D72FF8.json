@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B9BCEDE29580516AEA8C34E733C1FE3D81D72FF8",
+  "label": "Tomas Fasth",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B9BCEDE29580516AEA8C34E733C1FE3D81D72FF8"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

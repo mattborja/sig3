@@ -1,0 +1,25 @@
+{
+  "fingerprint": "741B5485DB27D5CDC6E75D4D8D29AB07711AE871",
+  "label": "Josip Rodin",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=741B5485DB27D5CDC6E75D4D8D29AB07711AE871"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

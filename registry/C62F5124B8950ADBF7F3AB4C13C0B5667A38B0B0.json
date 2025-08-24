@@ -1,0 +1,25 @@
+{
+  "fingerprint": "C62F5124B8950ADBF7F3AB4C13C0B5667A38B0B0",
+  "label": "Ludovico Cavedon",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=C62F5124B8950ADBF7F3AB4C13C0B5667A38B0B0"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

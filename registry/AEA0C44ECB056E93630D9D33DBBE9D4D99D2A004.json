@@ -1,0 +1,25 @@
+{
+  "fingerprint": "AEA0C44ECB056E93630D9D33DBBE9D4D99D2A004",
+  "label": "Damyan Ivanov",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=AEA0C44ECB056E93630D9D33DBBE9D4D99D2A004"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

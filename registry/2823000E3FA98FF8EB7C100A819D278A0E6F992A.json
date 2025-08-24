@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2823000E3FA98FF8EB7C100A819D278A0E6F992A",
+  "label": "Phil Brooke",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2823000E3FA98FF8EB7C100A819D278A0E6F992A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

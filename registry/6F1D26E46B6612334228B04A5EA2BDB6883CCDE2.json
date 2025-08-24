@@ -1,0 +1,25 @@
+{
+  "fingerprint": "6F1D26E46B6612334228B04A5EA2BDB6883CCDE2",
+  "label": "Chen Baozi",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=6F1D26E46B6612334228B04A5EA2BDB6883CCDE2"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

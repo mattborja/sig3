@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8DC2487E51ABDD90B5C4753F0F56D0553B6D411B",
+  "label": "Sean Whitton",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8DC2487E51ABDD90B5C4753F0F56D0553B6D411B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

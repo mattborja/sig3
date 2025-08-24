@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2870A31BEA9DBCF274723108C274DB64C2300F7B",
+  "label": "Sjoerd Simons",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2870A31BEA9DBCF274723108C274DB64C2300F7B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

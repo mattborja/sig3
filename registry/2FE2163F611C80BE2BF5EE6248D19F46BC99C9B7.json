@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2FE2163F611C80BE2BF5EE6248D19F46BC99C9B7",
+  "label": "Mark Lee Garrett",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2FE2163F611C80BE2BF5EE6248D19F46BC99C9B7"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

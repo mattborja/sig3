@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B3131A451DBFDF7CA05B4197054BBB9F7D806442",
+  "label": "Niels Thykier",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B3131A451DBFDF7CA05B4197054BBB9F7D806442"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

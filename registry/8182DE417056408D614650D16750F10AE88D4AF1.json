@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8182DE417056408D614650D16750F10AE88D4AF1",
+  "label": "Sebastiaan Couwenberg",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8182DE417056408D614650D16750F10AE88D4AF1"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

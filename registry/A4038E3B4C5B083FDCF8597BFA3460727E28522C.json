@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A4038E3B4C5B083FDCF8597BFA3460727E28522C",
+  "label": "Erik Johansson",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A4038E3B4C5B083FDCF8597BFA3460727E28522C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

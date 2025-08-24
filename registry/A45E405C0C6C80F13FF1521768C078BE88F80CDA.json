@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A45E405C0C6C80F13FF1521768C078BE88F80CDA",
+  "label": "Noèl Köthe",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A45E405C0C6C80F13FF1521768C078BE88F80CDA"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

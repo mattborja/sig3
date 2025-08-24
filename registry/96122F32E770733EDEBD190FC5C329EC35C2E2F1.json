@@ -1,0 +1,25 @@
+{
+  "fingerprint": "96122F32E770733EDEBD190FC5C329EC35C2E2F1",
+  "label": "Jean Baptiste Favre",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=96122F32E770733EDEBD190FC5C329EC35C2E2F1"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

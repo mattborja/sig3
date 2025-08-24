@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2E98D4D0F8B723A1FF326B5B45E2CDA5A7FD90F9",
+  "label": "Eric Sharkey",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2E98D4D0F8B723A1FF326B5B45E2CDA5A7FD90F9"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "7387F7B9073E5AD91DB205F44E4A159E17A2F564",
+  "label": "Bernhard Urban",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=7387F7B9073E5AD91DB205F44E4A159E17A2F564"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

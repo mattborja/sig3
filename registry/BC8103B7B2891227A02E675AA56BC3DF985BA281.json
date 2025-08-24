@@ -1,0 +1,25 @@
+{
+  "fingerprint": "BC8103B7B2891227A02E675AA56BC3DF985BA281",
+  "label": "Gleydson Mazioli da Silva",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=BC8103B7B2891227A02E675AA56BC3DF985BA281"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

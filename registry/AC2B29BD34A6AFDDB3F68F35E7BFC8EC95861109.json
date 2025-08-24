@@ -1,0 +1,25 @@
+{
+  "fingerprint": "AC2B29BD34A6AFDDB3F68F35E7BFC8EC95861109",
+  "label": "Ben Hutchings",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=AC2B29BD34A6AFDDB3F68F35E7BFC8EC95861109"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

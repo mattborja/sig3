@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8A4D01D983DF73C51DCC745B308355FA32C5067D",
+  "label": "Torsten Landschoff",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8A4D01D983DF73C51DCC745B308355FA32C5067D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

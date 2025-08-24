@@ -1,0 +1,25 @@
+{
+  "fingerprint": "9EC3BB66E2FC129A6F90B39556A0D81F9F782DA9",
+  "label": "Ricardo Ribalda Delgado",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=9EC3BB66E2FC129A6F90B39556A0D81F9F782DA9"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

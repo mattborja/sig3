@@ -1,0 +1,25 @@
+{
+  "fingerprint": "C6045C813887B77C2DFF97A57C56ACFE947897D8",
+  "label": "Anibal Monsalve Salazar",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=C6045C813887B77C2DFF97A57C56ACFE947897D8"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

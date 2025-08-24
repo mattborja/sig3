@@ -1,0 +1,25 @@
+{
+  "fingerprint": "62C017B12A96919BBB7AD45DD84747ACE4B6813D",
+  "label": "Tiago Bortoletto Vaz",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=62C017B12A96919BBB7AD45DD84747ACE4B6813D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

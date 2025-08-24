@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B8BF54137B09D35CF026FE9D091AB856069AAA1C",
+  "label": "Holger Levsen",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B8BF54137B09D35CF026FE9D091AB856069AAA1C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

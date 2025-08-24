@@ -1,0 +1,25 @@
+{
+  "fingerprint": "02988A8F528FA493E1B98E388F89871CDB75972E",
+  "label": "Gioele Barabucci",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=02988A8F528FA493E1B98E388F89871CDB75972E"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

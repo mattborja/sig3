@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8D208172388840811B85DA1CC6D50A4188C70E43",
+  "label": "Patrick Winnertz",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8D208172388840811B85DA1CC6D50A4188C70E43"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

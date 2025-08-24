@@ -1,0 +1,25 @@
+{
+  "fingerprint": "0D2511F322BFAB1C1580266BE2DCDD9132669BD6",
+  "label": "Uwe Kleine-König",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=0D2511F322BFAB1C1580266BE2DCDD9132669BD6"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "FFFF328C0D4BBCC8033DFA92D1A539B0B0C3105C",
+  "label": "Hwei Sheng Teoh",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=FFFF328C0D4BBCC8033DFA92D1A539B0B0C3105C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F18BDC8B6C25F90AA23D5174634DC4F0687046F8",
+  "label": "Christopher Michael Obbard",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F18BDC8B6C25F90AA23D5174634DC4F0687046F8"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8981D0A5FF1F578CF8AF1143EC7012E6DC10C23A",
+  "label": "Dann Frazier",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8981D0A5FF1F578CF8AF1143EC7012E6DC10C23A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

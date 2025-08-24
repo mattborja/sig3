@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2BEC79D6FB49FB227872901BB0D9D4A83CD3BBC1",
+  "label": "Bartosz Fenski",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2BEC79D6FB49FB227872901BB0D9D4A83CD3BBC1"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

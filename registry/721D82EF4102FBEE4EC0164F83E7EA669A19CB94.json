@@ -1,0 +1,25 @@
+{
+  "fingerprint": "721D82EF4102FBEE4EC0164F83E7EA669A19CB94",
+  "label": "Matthieu Caneill",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=721D82EF4102FBEE4EC0164F83E7EA669A19CB94"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

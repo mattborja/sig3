@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B8CE4DE21080DCF903E16C40F513C419E4B9D0AC",
+  "label": "Emmanuel Bourg",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B8CE4DE21080DCF903E16C40F513C419E4B9D0AC"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

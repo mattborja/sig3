@@ -1,0 +1,25 @@
+{
+  "fingerprint": "68CB5B3A48FC18F17D79A94681872F9B54C1C1C9",
+  "label": "Ivan Kohler",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=68CB5B3A48FC18F17D79A94681872F9B54C1C1C9"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

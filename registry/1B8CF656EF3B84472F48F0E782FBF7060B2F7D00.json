@@ -1,0 +1,25 @@
+{
+  "fingerprint": "1B8CF656EF3B84472F48F0E782FBF7060B2F7D00",
+  "label": "Francisco Vilmar Cardoso Ruviaro",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=1B8CF656EF3B84472F48F0E782FBF7060B2F7D00"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

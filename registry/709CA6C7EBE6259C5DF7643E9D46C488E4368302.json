@@ -1,0 +1,25 @@
+{
+  "fingerprint": "709CA6C7EBE6259C5DF7643E9D46C488E4368302",
+  "label": "Emilio Pozuelo Monfort",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=709CA6C7EBE6259C5DF7643E9D46C488E4368302"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

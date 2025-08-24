@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2875F6B1C2D27A4F0C8AF60B2A714497E37363AE",
+  "label": "Aleksey Kravchenko",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2875F6B1C2D27A4F0C8AF60B2A714497E37363AE"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

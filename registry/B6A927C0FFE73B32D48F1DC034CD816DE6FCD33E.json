@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B6A927C0FFE73B32D48F1DC034CD816DE6FCD33E",
+  "label": "Arto Jantunen",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B6A927C0FFE73B32D48F1DC034CD816DE6FCD33E"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "FE96A3E9B6685DDD0CE3E63E49DDA59BA2EC1A7F",
+  "label": "Raphael Geissert",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=FE96A3E9B6685DDD0CE3E63E49DDA59BA2EC1A7F"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "BD9E4CEC13FC34495682074EF5392FD213FBFEDD",
+  "label": "Punit Agrawal",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=BD9E4CEC13FC34495682074EF5392FD213FBFEDD"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

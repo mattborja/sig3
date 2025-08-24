@@ -1,0 +1,25 @@
+{
+  "fingerprint": "521E58F17E96D712AA0FF102DFC671EEB333FA25",
+  "label": "Jonathan Nieder",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=521E58F17E96D712AA0FF102DFC671EEB333FA25"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

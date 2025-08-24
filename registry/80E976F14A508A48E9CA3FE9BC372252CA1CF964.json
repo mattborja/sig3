@@ -1,0 +1,25 @@
+{
+  "fingerprint": "80E976F14A508A48E9CA3FE9BC372252CA1CF964",
+  "label": "- Ansgar",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=80E976F14A508A48E9CA3FE9BC372252CA1CF964"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

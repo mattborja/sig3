@@ -1,0 +1,25 @@
+{
+  "fingerprint": "59D84D44CCD0E82647AEDA29C21D9AD423A39727",
+  "label": "Blair Noctis",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=59D84D44CCD0E82647AEDA29C21D9AD423A39727"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

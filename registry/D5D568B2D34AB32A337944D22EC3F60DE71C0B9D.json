@@ -1,0 +1,25 @@
+{
+  "fingerprint": "D5D568B2D34AB32A337944D22EC3F60DE71C0B9D",
+  "label": "James Lu",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=D5D568B2D34AB32A337944D22EC3F60DE71C0B9D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

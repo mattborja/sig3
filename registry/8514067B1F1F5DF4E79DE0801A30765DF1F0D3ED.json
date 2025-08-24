@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8514067B1F1F5DF4E79DE0801A30765DF1F0D3ED",
+  "label": "Sune Vuorela",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8514067B1F1F5DF4E79DE0801A30765DF1F0D3ED"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

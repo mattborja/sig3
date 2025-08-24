@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2E6B7C0E128B8F9B16DAA76A5857883E277DB3CC",
+  "label": "Félix Sipma",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2E6B7C0E128B8F9B16DAA76A5857883E277DB3CC"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

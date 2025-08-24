@@ -1,0 +1,25 @@
+{
+  "fingerprint": "97D0E2B125185AF7C95FEC776B982DEBBFE91C29",
+  "label": "Christian Bayle",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=97D0E2B125185AF7C95FEC776B982DEBBFE91C29"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

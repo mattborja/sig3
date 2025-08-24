@@ -1,0 +1,25 @@
+{
+  "fingerprint": "5BD067A29DFCA64B19CC7AD9D4330926497D44FE",
+  "label": "Gabriele Giacone",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=5BD067A29DFCA64B19CC7AD9D4330926497D44FE"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

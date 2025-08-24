@@ -1,0 +1,25 @@
+{
+  "fingerprint": "73173B093B03CFB85108AD14B11BD919079A3B98",
+  "label": "Joseph Nahmias",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=73173B093B03CFB85108AD14B11BD919079A3B98"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

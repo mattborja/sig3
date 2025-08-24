@@ -1,0 +1,25 @@
+{
+  "fingerprint": "352FBF2D3FA41D25DCAA8910DD0C9594DF926C90",
+  "label": "Henry-Nicolas Tourneur",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=352FBF2D3FA41D25DCAA8910DD0C9594DF926C90"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

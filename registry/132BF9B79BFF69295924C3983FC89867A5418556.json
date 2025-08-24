@@ -1,0 +1,25 @@
+{
+  "fingerprint": "132BF9B79BFF69295924C3983FC89867A5418556",
+  "label": "Peter Spiess-Knafl",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=132BF9B79BFF69295924C3983FC89867A5418556"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

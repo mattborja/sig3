@@ -1,0 +1,25 @@
+{
+  "fingerprint": "56522C5F712B8BA202C99C093884437B13D8FF8B",
+  "label": "Martin Bagge",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=56522C5F712B8BA202C99C093884437B13D8FF8B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

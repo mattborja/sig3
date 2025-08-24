@@ -1,0 +1,25 @@
+{
+  "fingerprint": "4D0D537E8C37BC99DFF10B874B077723929D42C3",
+  "label": "Emmanuel Bouthenot",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=4D0D537E8C37BC99DFF10B874B077723929D42C3"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

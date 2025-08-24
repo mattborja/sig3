@@ -1,0 +1,25 @@
+{
+  "fingerprint": "357DCB0EEC95A01AEBA1F0D2DE63B9C704EBE9EF",
+  "label": "Joao Eriberto Mota Filho",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=357DCB0EEC95A01AEBA1F0D2DE63B9C704EBE9EF"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

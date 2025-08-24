@@ -1,0 +1,25 @@
+{
+  "fingerprint": "43673975973406E650A64124CF0E265B7DFBB2F2",
+  "label": "Shengjing Zhu",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=43673975973406E650A64124CF0E265B7DFBB2F2"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

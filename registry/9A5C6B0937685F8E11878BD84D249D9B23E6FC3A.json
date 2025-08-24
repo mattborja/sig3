@@ -1,0 +1,25 @@
+{
+  "fingerprint": "9A5C6B0937685F8E11878BD84D249D9B23E6FC3A",
+  "label": "Timo Juhani Lindfors",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=9A5C6B0937685F8E11878BD84D249D9B23E6FC3A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

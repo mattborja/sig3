@@ -1,0 +1,25 @@
+{
+  "fingerprint": "D54C3BFAFFB042DE382DA5D741CE7F0B9F1B8B32",
+  "label": "Santiago Vila",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=D54C3BFAFFB042DE382DA5D741CE7F0B9F1B8B32"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8AD6A0674EA6BA29D3C822D9FEAA132F983191EA",
+  "label": "Paul Martin Novotny",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8AD6A0674EA6BA29D3C822D9FEAA132F983191EA"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}
