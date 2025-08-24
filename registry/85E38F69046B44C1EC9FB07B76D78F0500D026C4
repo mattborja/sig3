@@ -23,19 +23,19 @@
     },
     {
       "date": "2016-12-30",
-      "comment": "Forum post from support staff (Luke Le, 1407470) bearing signature and primary key fingerprint",
+      "comment": "Forum post from developer (Luke Le, #1407470) bearing signature and primary key fingerprint",
       "url": "https://gpgtools.tenderapp.com/discussions/beta/1244-first-beta-of-gpgmail-for-macos-sierra-out-now",
       "type": "key"
     },
     {
       "date": "2025-08-12",
-      "comment": "Forum system attributing role of SUPPORT STAFF to Luke Le (1407470)",
+      "comment": "Forum system attributing role of SUPPORT STAFF to Luke Le (#1407470)",
       "url": "https://gpgtools.tenderapp.com/discussions/feedback/18587-how-to-enter-license-key-from-the-command-line",
       "type": "role"
     },
     {
       "date": "2025-08-18",
-      "comment": "Forum activity of support staff member Luke Le (1407470)",
+      "comment": "Forum activity of developer Luke Le (#1407470)",
       "url": "https://gpgtools.tenderapp.com/users/1407470",
       "type": "role"
     },
