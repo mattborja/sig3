@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8BDD013080E9A0E8C0D6A1573B365DE93EBD1CD4",
+  "label": "Julien Lamy",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8BDD013080E9A0E8C0D6A1573B365DE93EBD1CD4"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

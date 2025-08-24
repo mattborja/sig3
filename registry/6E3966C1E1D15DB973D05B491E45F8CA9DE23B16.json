@@ -1,0 +1,25 @@
+{
+  "fingerprint": "6E3966C1E1D15DB973D05B491E45F8CA9DE23B16",
+  "label": "Alexander Wirt",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=6E3966C1E1D15DB973D05B491E45F8CA9DE23B16"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

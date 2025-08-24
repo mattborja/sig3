@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8ED6C3F8BAC9DB7FC130A870F823A2729883C97C",
+  "label": "Lucas Kanashiro",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8ED6C3F8BAC9DB7FC130A870F823A2729883C97C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

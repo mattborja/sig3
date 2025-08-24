@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A095B66EE09024BEE6A2F0722A27904BD7243EDA",
+  "label": "Nilesh Patra",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A095B66EE09024BEE6A2F0722A27904BD7243EDA"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

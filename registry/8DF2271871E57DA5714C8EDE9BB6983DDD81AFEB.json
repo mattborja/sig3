@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8DF2271871E57DA5714C8EDE9BB6983DDD81AFEB",
+  "label": "Darshaka Pathirana",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8DF2271871E57DA5714C8EDE9BB6983DDD81AFEB"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

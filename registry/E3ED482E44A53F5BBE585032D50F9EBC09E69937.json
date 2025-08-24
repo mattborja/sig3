@@ -1,0 +1,25 @@
+{
+  "fingerprint": "E3ED482E44A53F5BBE585032D50F9EBC09E69937",
+  "label": "Peter Palfrader",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=E3ED482E44A53F5BBE585032D50F9EBC09E69937"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

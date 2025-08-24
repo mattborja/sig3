@@ -1,0 +1,25 @@
+{
+  "fingerprint": "DF0BFDFF4A4DDA0179441B8F69064B0195206DD3",
+  "label": "Richard Michael Hartmann",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=DF0BFDFF4A4DDA0179441B8F69064B0195206DD3"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

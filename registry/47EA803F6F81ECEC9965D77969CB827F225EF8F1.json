@@ -1,0 +1,25 @@
+{
+  "fingerprint": "47EA803F6F81ECEC9965D77969CB827F225EF8F1",
+  "label": "Takeshi YAEGASHI",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=47EA803F6F81ECEC9965D77969CB827F225EF8F1"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

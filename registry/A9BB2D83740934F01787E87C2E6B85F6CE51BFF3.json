@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A9BB2D83740934F01787E87C2E6B85F6CE51BFF3",
+  "label": "Murat Demirten",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A9BB2D83740934F01787E87C2E6B85F6CE51BFF3"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

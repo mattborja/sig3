@@ -1,0 +1,25 @@
+{
+  "fingerprint": "BE167620044D6142A8C68E9D648047B2D723891C",
+  "label": "Jean-Philippe MENGUAL",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=BE167620044D6142A8C68E9D648047B2D723891C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

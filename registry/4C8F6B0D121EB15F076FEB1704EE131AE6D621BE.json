@@ -1,0 +1,25 @@
+{
+  "fingerprint": "4C8F6B0D121EB15F076FEB1704EE131AE6D621BE",
+  "label": "Christoph Martin",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=4C8F6B0D121EB15F076FEB1704EE131AE6D621BE"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

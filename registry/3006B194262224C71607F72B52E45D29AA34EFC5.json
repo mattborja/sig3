@@ -1,0 +1,25 @@
+{
+  "fingerprint": "3006B194262224C71607F72B52E45D29AA34EFC5",
+  "label": "Jonathan Bustillos",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=3006B194262224C71607F72B52E45D29AA34EFC5"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

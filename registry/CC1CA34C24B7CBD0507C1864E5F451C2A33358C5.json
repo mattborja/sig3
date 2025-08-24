@@ -1,0 +1,25 @@
+{
+  "fingerprint": "CC1CA34C24B7CBD0507C1864E5F451C2A33358C5",
+  "label": "Johan Van de Wauw",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=CC1CA34C24B7CBD0507C1864E5F451C2A33358C5"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

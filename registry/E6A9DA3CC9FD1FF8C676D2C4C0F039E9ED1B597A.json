@@ -1,0 +1,25 @@
+{
+  "fingerprint": "E6A9DA3CC9FD1FF8C676D2C4C0F039E9ED1B597A",
+  "label": "Rob Browning",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=E6A9DA3CC9FD1FF8C676D2C4C0F039E9ED1B597A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

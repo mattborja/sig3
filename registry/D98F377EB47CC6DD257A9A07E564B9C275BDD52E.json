@@ -1,0 +1,25 @@
+{
+  "fingerprint": "D98F377EB47CC6DD257A9A07E564B9C275BDD52E",
+  "label": "Robie Basak",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=D98F377EB47CC6DD257A9A07E564B9C275BDD52E"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "66AE2B4AFCCF3F52DA184D184B043FCDB9444540",
+  "label": "Mattia Rizzolo",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=66AE2B4AFCCF3F52DA184D184B043FCDB9444540"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

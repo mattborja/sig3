@@ -1,0 +1,25 @@
+{
+  "fingerprint": "7E9474EAEE69093B207AB76527DE3D45104886EF",
+  "label": "Santiago Ruano Rincón",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=7E9474EAEE69093B207AB76527DE3D45104886EF"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

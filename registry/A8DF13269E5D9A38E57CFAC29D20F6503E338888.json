@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A8DF13269E5D9A38E57CFAC29D20F6503E338888",
+  "label": "Mikhail Gusarov",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A8DF13269E5D9A38E57CFAC29D20F6503E338888"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

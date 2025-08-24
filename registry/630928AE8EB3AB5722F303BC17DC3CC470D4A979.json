@@ -1,0 +1,25 @@
+{
+  "fingerprint": "630928AE8EB3AB5722F303BC17DC3CC470D4A979",
+  "label": "Peter S. Galbraith",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=630928AE8EB3AB5722F303BC17DC3CC470D4A979"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "E42F80297DE2955CB34F5BBE21BDD5BE10FFF2CC",
+  "label": "Werner Heuser",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=E42F80297DE2955CB34F5BBE21BDD5BE10FFF2CC"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

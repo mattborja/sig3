@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2F1C04A3697FDE6E22FECE95F040BD4C93C85AD2",
+  "label": "Richard Kreckel",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2F1C04A3697FDE6E22FECE95F040BD4C93C85AD2"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

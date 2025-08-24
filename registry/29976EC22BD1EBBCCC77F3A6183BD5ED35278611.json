@@ -1,0 +1,25 @@
+{
+  "fingerprint": "29976EC22BD1EBBCCC77F3A6183BD5ED35278611",
+  "label": "Peter Colberg",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=29976EC22BD1EBBCCC77F3A6183BD5ED35278611"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

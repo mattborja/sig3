@@ -1,0 +1,25 @@
+{
+  "fingerprint": "9122D77A6212860737F36FA5C6DE073EDA9EEC4D",
+  "label": "Paul van Tilburg",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=9122D77A6212860737F36FA5C6DE073EDA9EEC4D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

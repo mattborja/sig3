@@ -1,0 +1,25 @@
+{
+  "fingerprint": "2BC83F55A4007468864C680E1B7CC8D4D4E914AA",
+  "label": "Robert Haist",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=2BC83F55A4007468864C680E1B7CC8D4D4E914AA"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

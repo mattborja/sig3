@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F00C9F2F4F7EB714AFAD1A42538C0766F4BCB38E",
+  "label": "Clint Byrum",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F00C9F2F4F7EB714AFAD1A42538C0766F4BCB38E"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

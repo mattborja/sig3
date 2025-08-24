@@ -1,0 +1,25 @@
+{
+  "fingerprint": "58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A",
+  "label": "Philipp Matthias Hahn",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=58AF7C2E007CDBE62C59E078F50EFDCF8AD04B1A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

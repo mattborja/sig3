@@ -1,0 +1,25 @@
+{
+  "fingerprint": "C3C7AB7305C85849C4BE8BE85E08AFD2A1DE50E9",
+  "label": "José L. Redrejo Rodríguez",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=C3C7AB7305C85849C4BE8BE85E08AFD2A1DE50E9"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

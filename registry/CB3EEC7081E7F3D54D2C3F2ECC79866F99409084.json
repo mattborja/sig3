@@ -1,0 +1,25 @@
+{
+  "fingerprint": "CB3EEC7081E7F3D54D2C3F2ECC79866F99409084",
+  "label": "John Wright",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=CB3EEC7081E7F3D54D2C3F2ECC79866F99409084"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

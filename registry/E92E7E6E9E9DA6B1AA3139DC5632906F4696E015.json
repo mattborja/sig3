@@ -1,0 +1,25 @@
+{
+  "fingerprint": "E92E7E6E9E9DA6B1AA3139DC5632906F4696E015",
+  "label": "Frédéric-Emmanuel Picca",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=E92E7E6E9E9DA6B1AA3139DC5632906F4696E015"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

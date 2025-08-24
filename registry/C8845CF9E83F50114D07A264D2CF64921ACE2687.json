@@ -1,0 +1,25 @@
+{
+  "fingerprint": "C8845CF9E83F50114D07A264D2CF64921ACE2687",
+  "label": "Jeremy Lainé",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=C8845CF9E83F50114D07A264D2CF64921ACE2687"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

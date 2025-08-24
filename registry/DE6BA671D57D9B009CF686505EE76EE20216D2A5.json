@@ -1,0 +1,25 @@
+{
+  "fingerprint": "DE6BA671D57D9B009CF686505EE76EE20216D2A5",
+  "label": "Lev Lamberov",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=DE6BA671D57D9B009CF686505EE76EE20216D2A5"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

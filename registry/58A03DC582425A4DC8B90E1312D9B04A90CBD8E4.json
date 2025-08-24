@@ -1,0 +1,25 @@
+{
+  "fingerprint": "58A03DC582425A4DC8B90E1312D9B04A90CBD8E4",
+  "label": "Patrick Matthäi",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=58A03DC582425A4DC8B90E1312D9B04A90CBD8E4"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

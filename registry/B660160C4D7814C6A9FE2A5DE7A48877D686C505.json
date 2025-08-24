@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B660160C4D7814C6A9FE2A5DE7A48877D686C505",
+  "label": "Kevin M. Rosenberg",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B660160C4D7814C6A9FE2A5DE7A48877D686C505"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

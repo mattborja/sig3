@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F8583EFAA9A91F3AA34B3C92CE11A7B07B3AB946",
+  "label": "Shengqi Chen",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F8583EFAA9A91F3AA34B3C92CE11A7B07B3AB946"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

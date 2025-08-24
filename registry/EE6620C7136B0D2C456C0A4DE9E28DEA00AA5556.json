@@ -1,0 +1,25 @@
+{
+  "fingerprint": "EE6620C7136B0D2C456C0A4DE9E28DEA00AA5556",
+  "label": "Hans-Christoph Steiner",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=EE6620C7136B0D2C456C0A4DE9E28DEA00AA5556"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

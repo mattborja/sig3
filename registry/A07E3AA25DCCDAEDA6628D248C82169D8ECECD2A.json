@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A07E3AA25DCCDAEDA6628D248C82169D8ECECD2A",
+  "label": "Tobias Hansen",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A07E3AA25DCCDAEDA6628D248C82169D8ECECD2A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

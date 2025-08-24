@@ -1,0 +1,25 @@
+{
+  "fingerprint": "BCADFB52B41998D74D99D98E93945348E0DC2840",
+  "label": "Thibaut Jean-Claude Paumard",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=BCADFB52B41998D74D99D98E93945348E0DC2840"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

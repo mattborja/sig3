@@ -1,0 +1,25 @@
+{
+  "fingerprint": "20A741B470D74B2077D029E86C7BFF9E99746B65",
+  "label": "Pablo Lorenzzoni",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=20A741B470D74B2077D029E86C7BFF9E99746B65"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "1E0BAAD85C2232A1B3CE92EBB7047105830B9FA1",
+  "label": "Bdale Garbee",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=1E0BAAD85C2232A1B3CE92EBB7047105830B9FA1"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

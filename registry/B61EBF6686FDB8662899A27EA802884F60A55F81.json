@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B61EBF6686FDB8662899A27EA802884F60A55F81",
+  "label": "Carles Pina i Estany",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B61EBF6686FDB8662899A27EA802884F60A55F81"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

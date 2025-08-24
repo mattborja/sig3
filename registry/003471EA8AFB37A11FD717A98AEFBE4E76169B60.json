@@ -1,0 +1,25 @@
+{
+  "fingerprint": "003471EA8AFB37A11FD717A98AEFBE4E76169B60",
+  "label": "Tommi Vainikainen",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=003471EA8AFB37A11FD717A98AEFBE4E76169B60"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

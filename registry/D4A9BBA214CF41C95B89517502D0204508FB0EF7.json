@@ -1,0 +1,25 @@
+{
+  "fingerprint": "D4A9BBA214CF41C95B89517502D0204508FB0EF7",
+  "label": "Dave Holland",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=D4A9BBA214CF41C95B89517502D0204508FB0EF7"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

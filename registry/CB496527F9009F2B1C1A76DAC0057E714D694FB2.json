@@ -1,0 +1,25 @@
+{
+  "fingerprint": "CB496527F9009F2B1C1A76DAC0057E714D694FB2",
+  "label": "Dominic Hargreaves",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=CB496527F9009F2B1C1A76DAC0057E714D694FB2"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

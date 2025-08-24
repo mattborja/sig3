@@ -1,0 +1,25 @@
+{
+  "fingerprint": "4573E9D2AD27DB896BBF2F9EF15DCE5316051F27",
+  "label": "Sérgio Almeida Cipriano Júnior",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=4573E9D2AD27DB896BBF2F9EF15DCE5316051F27"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

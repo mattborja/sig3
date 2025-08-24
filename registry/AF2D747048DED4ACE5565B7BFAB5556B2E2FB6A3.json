@@ -1,0 +1,25 @@
+{
+  "fingerprint": "AF2D747048DED4ACE5565B7BFAB5556B2E2FB6A3",
+  "label": "Andreas Franzen",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=AF2D747048DED4ACE5565B7BFAB5556B2E2FB6A3"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

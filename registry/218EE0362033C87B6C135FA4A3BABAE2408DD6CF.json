@@ -1,0 +1,25 @@
+{
+  "fingerprint": "218EE0362033C87B6C135FA4A3BABAE2408DD6CF",
+  "label": "Felipe Sateler",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=218EE0362033C87B6C135FA4A3BABAE2408DD6CF"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

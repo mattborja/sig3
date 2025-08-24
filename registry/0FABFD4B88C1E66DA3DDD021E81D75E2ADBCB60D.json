@@ -1,0 +1,25 @@
+{
+  "fingerprint": "0FABFD4B88C1E66DA3DDD021E81D75E2ADBCB60D",
+  "label": "Denis Barbier",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=0FABFD4B88C1E66DA3DDD021E81D75E2ADBCB60D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F83356BBE112B7462A41552F7D5D8C60CF4D3EB4",
+  "label": "Johannes Schauer Marin Rodrigues",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F83356BBE112B7462A41552F7D5D8C60CF4D3EB4"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

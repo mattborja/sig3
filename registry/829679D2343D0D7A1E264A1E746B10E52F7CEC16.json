@@ -1,0 +1,25 @@
+{
+  "fingerprint": "829679D2343D0D7A1E264A1E746B10E52F7CEC16",
+  "label": "Christopher Taylor",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=829679D2343D0D7A1E264A1E746B10E52F7CEC16"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

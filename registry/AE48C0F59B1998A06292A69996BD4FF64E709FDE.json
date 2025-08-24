@@ -1,0 +1,25 @@
+{
+  "fingerprint": "AE48C0F59B1998A06292A69996BD4FF64E709FDE",
+  "label": "Alban Vidal",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=AE48C0F59B1998A06292A69996BD4FF64E709FDE"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "BE164328ADB828DAA8DC0628F3801F5B10D7F7EC",
+  "label": "Orestis Ioannou",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=BE164328ADB828DAA8DC0628F3801F5B10D7F7EC"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

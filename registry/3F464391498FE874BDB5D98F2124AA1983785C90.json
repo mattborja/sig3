@@ -1,0 +1,25 @@
+{
+  "fingerprint": "3F464391498FE874BDB5D98F2124AA1983785C90",
+  "label": "Rafael Laboissiere",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=3F464391498FE874BDB5D98F2124AA1983785C90"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

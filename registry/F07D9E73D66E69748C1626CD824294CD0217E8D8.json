@@ -1,0 +1,25 @@
+{
+  "fingerprint": "F07D9E73D66E69748C1626CD824294CD0217E8D8",
+  "label": "Ivo De Decker",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=F07D9E73D66E69748C1626CD824294CD0217E8D8"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

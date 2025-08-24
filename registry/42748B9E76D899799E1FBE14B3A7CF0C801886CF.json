@@ -1,0 +1,25 @@
+{
+  "fingerprint": "42748B9E76D899799E1FBE14B3A7CF0C801886CF",
+  "label": "Salvo Tomaselli",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=42748B9E76D899799E1FBE14B3A7CF0C801886CF"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

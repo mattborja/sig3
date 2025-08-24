@@ -1,0 +1,25 @@
+{
+  "fingerprint": "59662401165C0A3E92D6CAA5B7EE4099F720DDCB",
+  "label": "Enkelena Haxhija",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=59662401165C0A3E92D6CAA5B7EE4099F720DDCB"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

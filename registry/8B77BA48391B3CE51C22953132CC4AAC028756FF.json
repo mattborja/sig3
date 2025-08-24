@@ -1,0 +1,25 @@
+{
+  "fingerprint": "8B77BA48391B3CE51C22953132CC4AAC028756FF",
+  "label": "Julian Taylor",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=8B77BA48391B3CE51C22953132CC4AAC028756FF"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "A565CE64F866A2584DDCF9C7ECB73E37E887AA8C",
+  "label": "Tomasz Rybak",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=A565CE64F866A2584DDCF9C7ECB73E37E887AA8C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

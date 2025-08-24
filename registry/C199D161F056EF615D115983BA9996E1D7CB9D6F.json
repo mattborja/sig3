@@ -1,0 +1,25 @@
+{
+  "fingerprint": "C199D161F056EF615D115983BA9996E1D7CB9D6F",
+  "label": "Samuel James Joseph Bronson",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=C199D161F056EF615D115983BA9996E1D7CB9D6F"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

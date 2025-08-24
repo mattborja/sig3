@@ -1,0 +1,25 @@
+{
+  "fingerprint": "96A58F182BB8F9B81C5F2733854F07BE082DF14F",
+  "label": "Kyle Robbertze",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=96A58F182BB8F9B81C5F2733854F07BE082DF14F"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

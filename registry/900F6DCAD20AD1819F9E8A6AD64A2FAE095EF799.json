@@ -1,0 +1,25 @@
+{
+  "fingerprint": "900F6DCAD20AD1819F9E8A6AD64A2FAE095EF799",
+  "label": "Sakirnth Nagarasa",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=900F6DCAD20AD1819F9E8A6AD64A2FAE095EF799"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

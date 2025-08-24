@@ -1,0 +1,25 @@
+{
+  "fingerprint": "ACA6C3F4E1003986F35388043BBF839336ECA931",
+  "label": "Michael Tautschnig",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=ACA6C3F4E1003986F35388043BBF839336ECA931"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

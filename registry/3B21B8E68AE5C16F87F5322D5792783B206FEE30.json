@@ -1,0 +1,25 @@
+{
+  "fingerprint": "3B21B8E68AE5C16F87F5322D5792783B206FEE30",
+  "label": "Sophie Brun",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=3B21B8E68AE5C16F87F5322D5792783B206FEE30"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

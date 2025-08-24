@@ -1,0 +1,25 @@
+{
+  "fingerprint": "27263FA42553615F904A7EBE2A40A2ECB8DAD8D5",
+  "label": "Gustavo Panizzo",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=27263FA42553615F904A7EBE2A40A2ECB8DAD8D5"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

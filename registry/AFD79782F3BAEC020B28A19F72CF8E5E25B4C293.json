@@ -1,0 +1,25 @@
+{
+  "fingerprint": "AFD79782F3BAEC020B28A19F72CF8E5E25B4C293",
+  "label": "Matthias Urlichs",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=AFD79782F3BAEC020B28A19F72CF8E5E25B4C293"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "9F7239FCB664F10B33E9DC03C31F4FD949AB2B6C",
+  "label": "Dominique Dumont",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=9F7239FCB664F10B33E9DC03C31F4FD949AB2B6C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "32D61D61F1281FFE1EF28A056594486E01294708",
+  "label": "Guilherme Puida Moreira",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=32D61D61F1281FFE1EF28A056594486E01294708"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

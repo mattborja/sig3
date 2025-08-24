@@ -1,0 +1,25 @@
+{
+  "fingerprint": "FA7FB8C09F87C4A0482F4A86EBB31A62C85D8F71",
+  "label": "Kevin Coyner",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=FA7FB8C09F87C4A0482F4A86EBB31A62C85D8F71"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

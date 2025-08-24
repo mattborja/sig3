@@ -1,0 +1,25 @@
+{
+  "fingerprint": "737357552CC0B16C4339258FC0A4F11DE06B3F97",
+  "label": "Mattias Nordstrom",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=737357552CC0B16C4339258FC0A4F11DE06B3F97"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

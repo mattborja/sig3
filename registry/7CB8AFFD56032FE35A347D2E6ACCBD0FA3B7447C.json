@@ -1,0 +1,25 @@
+{
+  "fingerprint": "7CB8AFFD56032FE35A347D2E6ACCBD0FA3B7447C",
+  "label": "Marcos Fouces",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=7CB8AFFD56032FE35A347D2E6ACCBD0FA3B7447C"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

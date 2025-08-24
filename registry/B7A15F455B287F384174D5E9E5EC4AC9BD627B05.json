@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B7A15F455B287F384174D5E9E5EC4AC9BD627B05",
+  "label": "Donald Norwood",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B7A15F455B287F384174D5E9E5EC4AC9BD627B05"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

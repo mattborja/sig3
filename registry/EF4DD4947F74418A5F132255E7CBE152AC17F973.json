@@ -1,0 +1,25 @@
+{
+  "fingerprint": "EF4DD4947F74418A5F132255E7CBE152AC17F973",
+  "label": "Andrew Lee",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=EF4DD4947F74418A5F132255E7CBE152AC17F973"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "1EC26450E831FAA295C1C5F0B85D12EC9BFA3B80",
+  "label": "Albert Huang",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=1EC26450E831FAA295C1C5F0B85D12EC9BFA3B80"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "3453B5A2F40603D7FF9FFAF07E0A399DB24B3B15",
+  "label": "Matthew Garrett",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=3453B5A2F40603D7FF9FFAF07E0A399DB24B3B15"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

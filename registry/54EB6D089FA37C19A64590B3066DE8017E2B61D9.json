@@ -1,0 +1,25 @@
+{
+  "fingerprint": "54EB6D089FA37C19A64590B3066DE8017E2B61D9",
+  "label": "Stephan Suerken",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=54EB6D089FA37C19A64590B3066DE8017E2B61D9"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

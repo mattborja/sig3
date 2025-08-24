@@ -1,0 +1,25 @@
+{
+  "fingerprint": "ED31791B2C5C1613AF388B8AD113FCAC3C4E599F",
+  "label": "Nikolaus Rath",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=ED31791B2C5C1613AF388B8AD113FCAC3C4E599F"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "fingerprint": "BEED4DED5544A4C03E283DC74BCD0567C296D05D",
+  "label": "Daniel Leidert",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=BEED4DED5544A4C03E283DC74BCD0567C296D05D"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

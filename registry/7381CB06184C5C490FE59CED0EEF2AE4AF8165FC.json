@@ -1,0 +1,25 @@
+{
+  "fingerprint": "7381CB06184C5C490FE59CED0EEF2AE4AF8165FC",
+  "label": "Anselm Lingnau",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=7381CB06184C5C490FE59CED0EEF2AE4AF8165FC"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

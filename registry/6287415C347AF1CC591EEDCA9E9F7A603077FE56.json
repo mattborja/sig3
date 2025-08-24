@@ -1,0 +1,25 @@
+{
+  "fingerprint": "6287415C347AF1CC591EEDCA9E9F7A603077FE56",
+  "label": "Patrick Franz",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=6287415C347AF1CC591EEDCA9E9F7A603077FE56"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

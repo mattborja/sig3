@@ -1,0 +1,25 @@
+{
+  "fingerprint": "7345F2F751F07700FEB7FE2087D5E190EBC73D63",
+  "label": "Miah Gregory",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=7345F2F751F07700FEB7FE2087D5E190EBC73D63"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

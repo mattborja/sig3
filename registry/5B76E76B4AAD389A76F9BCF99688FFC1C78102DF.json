@@ -1,0 +1,25 @@
+{
+  "fingerprint": "5B76E76B4AAD389A76F9BCF99688FFC1C78102DF",
+  "label": "Allison Randal",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=5B76E76B4AAD389A76F9BCF99688FFC1C78102DF"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

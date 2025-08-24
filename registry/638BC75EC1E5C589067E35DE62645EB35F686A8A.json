@@ -1,0 +1,25 @@
+{
+  "fingerprint": "638BC75EC1E5C589067E35DE62645EB35F686A8A",
+  "label": "Mo Zhou",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=638BC75EC1E5C589067E35DE62645EB35F686A8A"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

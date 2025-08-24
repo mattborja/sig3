@@ -1,0 +1,25 @@
+{
+  "fingerprint": "5E4F545193E8969C8A59B80A03A1FB7A1904771B",
+  "label": "Dave Hibberd",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=5E4F545193E8969C8A59B80A03A1FB7A1904771B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

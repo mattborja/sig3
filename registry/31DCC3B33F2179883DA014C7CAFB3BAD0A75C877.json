@@ -1,0 +1,25 @@
+{
+  "fingerprint": "31DCC3B33F2179883DA014C7CAFB3BAD0A75C877",
+  "label": "Nathaniel Harrison Handler",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=31DCC3B33F2179883DA014C7CAFB3BAD0A75C877"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

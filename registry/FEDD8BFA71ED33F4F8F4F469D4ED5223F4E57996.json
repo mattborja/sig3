@@ -1,0 +1,25 @@
+{
+  "fingerprint": "FEDD8BFA71ED33F4F8F4F469D4ED5223F4E57996",
+  "label": "Shaun Jackman",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=FEDD8BFA71ED33F4F8F4F469D4ED5223F4E57996"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

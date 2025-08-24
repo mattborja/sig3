@@ -1,0 +1,25 @@
+{
+  "fingerprint": "B1D2BD1375BECB784CF4F8C4D73CF638C53C06BE",
+  "label": "Simon Josefsson",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=B1D2BD1375BECB784CF4F8C4D73CF638C53C06BE"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

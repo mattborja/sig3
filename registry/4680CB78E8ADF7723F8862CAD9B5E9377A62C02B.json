@@ -1,0 +1,25 @@
+{
+  "fingerprint": "4680CB78E8ADF7723F8862CAD9B5E9377A62C02B",
+  "label": "Nicholas Guriev",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=4680CB78E8ADF7723F8862CAD9B5E9377A62C02B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

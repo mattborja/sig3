@@ -1,0 +1,25 @@
+{
+  "fingerprint": "9F73032EEAC9F7AD951F280ECB668E29A3FD0DF7",
+  "label": "Mohammed Sameer",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=9F73032EEAC9F7AD951F280ECB668E29A3FD0DF7"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

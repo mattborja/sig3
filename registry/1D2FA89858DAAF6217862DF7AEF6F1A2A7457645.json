@@ -1,0 +1,25 @@
+{
+  "fingerprint": "1D2FA89858DAAF6217862DF7AEF6F1A2A7457645",
+  "label": "Piotr Ożarowski",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=1D2FA89858DAAF6217862DF7AEF6F1A2A7457645"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}

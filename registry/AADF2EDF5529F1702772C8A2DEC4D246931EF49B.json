@@ -1,0 +1,25 @@
+{
+  "fingerprint": "AADF2EDF5529F1702772C8A2DEC4D246931EF49B",
+  "label": "Jan Mojžíš",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://db.debian.org/fetchkey.cgi?fingerprint=AADF2EDF5529F1702772C8A2DEC4D246931EF49B"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-24",
+      "comment": "Listed in Debian Developers Database",
+      "url": "https://db.debian.org/search.cgi",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian-dev"
+  ]
+}
