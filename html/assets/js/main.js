@@ -302,7 +302,7 @@ function renderKeyDetails(json) {
 
         const fpr = results[0].fpr;
 
-        fetch(`dist/${fpr.toUpperCase()}.json`)
+        fetch(`dist/${fpr.toUpperCase()}.json?_=${Date.now()}`)
             .then(res => {
               if (!res.ok)
                 throw 'No entry found for your search terms.\n\nPlease modify your query and try again.';
@@ -322,7 +322,7 @@ function renderKeyDetails(json) {
     const $serviceDegraded = $('<div />').addClass('text-danger text-small my-3')
                                          .html('<strong>Service Degraded.</strong> Some features may be temporarily unavailable.');
     
-    fetch('/dist/registry.idx.txt')
+    fetch(`/dist/registry.idx.txt?_=${Date.now()}`)
       .then(res => {
         if (!res.ok)
         {
