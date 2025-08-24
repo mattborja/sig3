@@ -1,0 +1,34 @@
+{
+  "fingerprint": "F41D30342F3546695F65C66942468F4009EA8AC3",
+  "label": "Debian Testing CDs Automatic Signing Key",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://www.debian.org/CD/key-42468F4009EA8AC3.txt"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-08-04",
+      "comment": "Valid GPG signature on signed checksums file bearing public key fingerprint",
+      "url": [
+        "https://cdimage.debian.org/cdimage/weekly-builds/armhf/iso-cd/SHA512SUMS.sign",
+        "https://cdimage.debian.org/cdimage/weekly-builds/armhf/iso-cd/SHA512SUMS"
+      ],
+      "type": "key"
+    },
+    {
+      "date": "2025-04-04",
+      "comment": "Listed primary key fingerprint on official documentation page for verifying authenticity of Debian images",
+      "url": "https://www.debian.org/CD/verify",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian"
+  ]
+}

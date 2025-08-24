@@ -1,0 +1,25 @@
+{
+  "fingerprint": "10460DAD76165AD81FBC0CE9988021A964E6EA7D",
+  "label": "Debian CD signing key",
+  "sources": [
+    {
+      "type": "hkps",
+      "uri": "hkps://keyring.debian.org:443"
+    },
+    {
+      "type": "url",
+      "uri": "https://www.debian.org/CD/key-988021A964E6EA7D.txt"
+    }
+  ],
+  "refs": [
+    {
+      "date": "2025-04-04",
+      "comment": "Listed primary key fingerprint on official documentation page for verifying authenticity of Debian images",
+      "url": "https://www.debian.org/CD/verify",
+      "type": "role"
+    }
+  ],
+  "tags": [
+    "debian"
+  ]
+}
